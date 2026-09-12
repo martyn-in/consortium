@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
-import { Calendar, MapPin, Trophy, Users, ArrowRight, Compass } from 'lucide-react';
+import { Calendar, MapPin, Trophy, ArrowRight, Compass } from 'lucide-react';
 import Button from './Button';
 import Countdown from './Countdown';
 import Reveal from './Reveal';
@@ -21,12 +21,11 @@ const Hero = ({ onOpenPassModal }) => {
 
 
 
-  // 4 Elegant Glass Information Cards requested
+  // 3 Elegant Glass Information Cards: Date, Venue, Events
   const infoCards = [
-    { label: 'ROYAL DATES', value: 'Oct 15 - 16, 2026', icon: Calendar },
-    { label: 'HOST PALACE', value: 'IARE Campus, Hyderabad', icon: MapPin },
-    { label: 'FLAGSHIP EVENTS', value: '30+ Competitions', icon: Trophy },
-    { label: 'NATIONAL DELEGATES', value: '5,000+ Innovators', icon: Users }
+    { label: 'DATE', value: 'Oct 15 - 16, 2026', icon: Calendar },
+    { label: 'VENUE', value: 'IARE Campus, Hyderabad', icon: MapPin },
+    { label: 'EVENTS', value: '30+ Flagship Arenas', icon: Trophy }
   ];
 
   return (
@@ -44,7 +43,7 @@ const Hero = ({ onOpenPassModal }) => {
           <span className="crest-bullet">❖</span>
         </motion.div>
 
-        {/* 2. Large Cinematic Futuristic Title */}
+        {/* 2. Large Cinematic Futuristic Chrome Title */}
         <motion.h1
           className="future-title"
           initial={{
@@ -69,23 +68,22 @@ const Hero = ({ onOpenPassModal }) => {
           </strong>
         </motion.h1>
 
-        {/* 3. Luxury Editorial Subtitle with Fade Up */}
+        {/* 3. Cinematic Subtitle */}
         <motion.p 
           className="royal-hero-subtitle"
-          initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+          initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
         >
-          The Annual National Technical &amp; Innovation Summit. Where academic majesty meets futuristic
-          engineering, autonomous combat robotics, high-stakes algorithmic hackathons, and creative warfare.
+          The Annual National Tech Summit
         </motion.p>
 
-        {/* 4. PRIMARY CALL TO ACTION BUTTONS — PROMINENT AND BEAUTIFUL */}
+        {/* 4. Primary Call to Action Buttons: [ REGISTER NOW ] and [ EXPLORE ] */}
         <motion.div 
           className="royal-hero-actions"
-          initial={{ opacity: 0, scale: 0.88, y: 25 }}
+          initial={{ opacity: 0, scale: 0.88, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.65, type: 'spring', stiffness: 200 }}
+          transition={{ duration: 0.7, delay: 0.55, type: 'spring', stiffness: 200 }}
         >
           <Button
             variant="primary"
@@ -101,7 +99,7 @@ const Hero = ({ onOpenPassModal }) => {
             onClick={() => sound.playClick()}
           >
             <Compass size={18} />
-            <span>EXPLORE EVENTS</span>
+            <span>EXPLORE</span>
           </Button>
         </motion.div>
 

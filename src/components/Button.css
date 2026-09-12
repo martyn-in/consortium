@@ -34,16 +34,24 @@
   transition: all 0.3s ease;
 }
 
-/* Primary: Metallic Gold Gradient */
+/* Primary: Futuristic Energy Cyan-Indigo Glow */
+.royal-btn-primary,
 .royal-btn-root.primary .royal-btn-inner {
-  background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-  color: #060914;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(254, 240, 138, 0.8);
+  background: linear-gradient(
+    135deg,
+    #00eaff,
+    #635bff
+  );
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 0 25px rgba(0, 220, 255, 0.5);
+  transition: 0.3s;
 }
 
+.royal-btn-primary:hover,
 .royal-btn-root.primary:hover .royal-btn-inner {
-  filter: brightness(1.1);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 0 60px #00eaff;
 }
 
 /* Secondary: Royal Frosted Glass with Gold Rim */
@@ -62,18 +70,17 @@
   box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
 }
 
-/* Animated Neon Gold Border Sweep */
+/* Animated Neon Cyan-Purple Border Sweep */
 .royal-border-glow {
   position: absolute;
   inset: -2px;
   border-radius: 16px;
   background: linear-gradient(
     90deg,
-    #aa771c,
-    #fcf6ba,
-    #d4af37,
-    #38bdf8,
-    #aa771c
+    #00eaff,
+    #635bff,
+    #8b5cff,
+    #00eaff
   );
   background-size: 300% 100%;
   opacity: 0;
