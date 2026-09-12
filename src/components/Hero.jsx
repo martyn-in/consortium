@@ -19,39 +19,7 @@ const Hero = ({ onOpenPassModal }) => {
     onOpenPassModal();
   };
 
-  const titleLetters = 'CONSORTIUM'.split('');
 
-  const titleContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.25
-      }
-    }
-  };
-
-  const letterVariants = {
-    hidden: {
-      opacity: 0,
-      y: 40,
-      filter: 'blur(16px)',
-      scale: 0.9,
-      rotateX: -35
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: 'blur(0px)',
-      scale: 1,
-      rotateX: 0,
-      transition: {
-        duration: 0.75,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    }
-  };
 
   // 4 Elegant Glass Information Cards requested
   const infoCards = [
@@ -76,34 +44,30 @@ const Hero = ({ onOpenPassModal }) => {
           <span className="crest-bullet">❖</span>
         </motion.div>
 
-        {/* 2. Large Cinematic Title with Metallic Gold Gradient & Shine Sweep */}
-        <h1 className="royal-hero-title">
-          <motion.span 
-            className="royal-letters-container"
-            variants={titleContainerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {titleLetters.map((char, index) => (
-              <motion.span
-                key={index}
-                variants={letterVariants}
-                className="royal-letter"
-              >
-                {char}
-              </motion.span>
-            ))}
-          </motion.span>
-          {' '}
-          <motion.span 
-            className="royal-year-badge"
-            initial={{ opacity: 0, scale: 0.75, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 0.75, delay: 0.7, type: 'spring', stiffness: 180 }}
-          >
+        {/* 2. Large Cinematic Futuristic Title */}
+        <motion.h1
+          className="future-title"
+          initial={{
+            opacity: 0,
+            scale: 0.7,
+            filter: "blur(20px)"
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            filter: "blur(0)"
+          }}
+          transition={{
+            duration: 1.2
+          }}
+        >
+          <span>
+            CONSORTIUM
+          </span>
+          <strong>
             2026
-          </motion.span>
-        </h1>
+          </strong>
+        </motion.h1>
 
         {/* 3. Luxury Editorial Subtitle with Fade Up */}
         <motion.p 

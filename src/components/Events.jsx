@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Terminal, Code, Bot, Radio, Gamepad2, Crosshair, Clapperboard, Camera } from 'lucide-react';
-import EventCard from './EventCard';
+import EventCard from './AuraEventCard';
 import Reveal from './common/Reveal';
 import { sound } from '../utils/soundEffects';
 import './Events.css';

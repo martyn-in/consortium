@@ -1,0 +1,98 @@
+.aura-card {
+  position: relative;
+  height: 440px;
+  border-radius: 28px;
+  padding: 1px;
+  overflow: hidden;
+  background: linear-gradient(
+    130deg,
+    #00eaff,
+    #7b4dff,
+    transparent,
+    #00eaff
+  );
+  box-shadow: 0 0 40px rgba(0, 220, 255, 0.25);
+  perspective: 1000px;
+}
+
+.aura-light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    300px circle at var(--my) var(--mx),
+    rgba(0, 238, 255, 0.45),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.aura-card:hover .aura-light {
+  opacity: 1;
+}
+
+.card-inner {
+  height: 100%;
+  padding: 30px;
+  border-radius: 27px;
+  background: rgba(8, 12, 35, 0.78);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+  transform-style: preserve-3d;
+}
+
+.event-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00eaff, #7b4dff);
+  box-shadow: 0 0 30px #00eaff;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.event-tag {
+  color: #8beaff;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.aura-card h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  background: linear-gradient(90deg, white, #00eaff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.aura-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.event-info span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.aura-card button {
+  margin-top: auto;
+}

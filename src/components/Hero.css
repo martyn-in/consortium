@@ -38,60 +38,57 @@
 }
 
 /* Master Headline: Large Cinematic Title */
-.royal-hero-title {
-  font-family: var(--font-royal);
-  font-size: clamp(3.2rem, 8vw, 6.8rem);
+.future-title {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
   font-weight: 900;
-  letter-spacing: 0.04em;
-  line-height: 1.05;
-  margin-bottom: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  text-shadow: 0 8px 35px rgba(0, 0, 0, 0.9);
+  line-height: 0.9;
+  margin-bottom: 2rem;
 }
 
-.royal-letters-container {
-  display: inline-flex;
+.future-title span {
+  display: block;
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  letter-spacing: 0.15em;
   background: linear-gradient(
-    135deg,
-    #bf953f 0%,
-    #fcf6ba 25%,
-    #b38728 50%,
-    #fbf5b7 75%,
-    #aa771c 100%
+    180deg,
+    white,
+    #9deaff,
+    #635bff
   );
-  background-size: 200% auto;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: goldShineSweep 6s linear infinite;
+  color: transparent;
+  text-shadow:
+    0 0 30px #00eaff,
+    0 0 80px #635bff;
+  animation: floatTitle 5s infinite ease-in-out;
 }
 
-@keyframes goldShineSweep {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+.future-title strong {
+  display: block;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  letter-spacing: 0.3em;
+  background: linear-gradient(
+    90deg,
+    #00eaff,
+    white,
+    #8b5cff
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 40px #00eaff);
+  margin-top: 0.4rem;
 }
 
-.royal-letter {
-  display: inline-block;
-  will-change: transform, opacity, filter;
+@keyframes floatTitle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-.royal-year-badge {
-  display: inline-block;
-  font-family: var(--font-royal);
-  font-weight: 900;
-  padding: 0.1rem 0.8rem;
-  border-radius: 12px;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #fef08a;
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-  text-shadow: none;
-  -webkit-text-fill-color: #fef08a;
-}
 
 /* Subtitle */
 .royal-hero-subtitle {
