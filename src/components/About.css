@@ -1,0 +1,326 @@
+.royal-about-section {
+  padding: 7.5rem 0;
+  position: relative;
+}
+
+.about-header-block {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.royal-gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.royal-gold-divider::before,
+.royal-gold-divider::after {
+  content: '';
+  display: inline-block;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.divider-diamond {
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+}
+
+/* Split Layout */
+.royal-about-split {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Column: Imperial Showcase Card */
+.imperial-showcase-card {
+  position: relative;
+  padding: 2.8rem 2.4rem;
+  background: rgba(11, 19, 41, 0.78);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(254, 240, 138, 0.2);
+  overflow: hidden;
+}
+
+.imperial-glow-halo {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.imperial-crest-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.crest-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-royal);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #fef08a;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.imperial-star {
+  color: var(--gold-primary);
+  font-size: 1rem;
+}
+
+.imperial-inst-title {
+  font-family: var(--font-royal);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
+}
+
+.imperial-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.imperial-badges-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.2rem;
+}
+
+.imperial-badge-box {
+  padding: 1rem 0.6rem;
+  background: rgba(13, 22, 48, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge-big-stat {
+  font-family: var(--font-royal);
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.badge-sub {
+  font-family: var(--font-royal);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #94a3b8;
+  margin-top: 0.35rem;
+}
+
+/* Floating Orbit Animation */
+.imperial-orbit-wrap {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.orbit-center-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  z-index: 2;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  pointer-events: none;
+}
+
+.ring-1 {
+  width: 90px;
+  height: 90px;
+  border-color: rgba(212, 175, 55, 0.45);
+}
+
+.ring-2 {
+  width: 130px;
+  height: 130px;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.imperial-footer-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+/* Right Column: Editorial Narrative */
+.royal-narrative-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.editorial-eyebrow {
+  font-family: var(--font-royal);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--gold-primary);
+  margin-bottom: 0.6rem;
+}
+
+.royal-content-title {
+  font-family: var(--font-luxury), 'Plus Jakarta Sans', serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+}
+
+.royal-gold-line {
+  width: 60px;
+  height: 2px;
+  background: var(--gold-gradient);
+  margin-bottom: 1.5rem;
+}
+
+.royal-paragraph {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+}
+
+.royal-paragraph strong {
+  color: #fef08a;
+}
+
+/* Pillars Stack */
+.royal-pillars-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.royal-pillar-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  background: rgba(11, 19, 41, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  transition: all 0.25s ease;
+}
+
+.royal-pillar-row:hover {
+  border-color: rgba(254, 240, 138, 0.5);
+  background: rgba(18, 30, 66, 0.75);
+}
+
+.pillar-roman-num {
+  font-family: var(--font-royal);
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--gold-primary);
+  min-width: 25px;
+}
+
+.pillar-icon-shield {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pillar-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-heading {
+  font-family: var(--font-royal);
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.pillar-detail {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* CTA Bar */
+.royal-about-cta-bar {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.about-verified-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-royal);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+@media (max-width: 1024px) {
+  .royal-about-split {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

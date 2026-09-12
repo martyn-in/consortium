@@ -1,0 +1,298 @@
+:root {
+  /* Royal Futuristic Palette */
+  --bg-deep: #04060d;
+  --bg-primary: #070c1b;
+  --bg-secondary: #0b1329;
+  --bg-royal-navy: #0e1736;
+  
+  /* Glass Surfaces */
+  --glass-royal: rgba(11, 19, 41, 0.68);
+  --glass-royal-card: rgba(13, 22, 48, 0.72);
+  --glass-royal-hover: rgba(18, 30, 66, 0.88);
+  --glass-border-gold: rgba(212, 175, 55, 0.22);
+  --glass-border-gold-bright: rgba(243, 229, 171, 0.5);
+
+  /* Primary Typography Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  /* Metallic Gold Palette */
+  --gold-primary: #d4af37;
+  --gold-light: #fef08a;
+  --gold-bright: #fcf6ba;
+  --gold-dark: #aa771c;
+  --gold-bronze: #855818;
+  --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  --gold-text-gradient: linear-gradient(135deg, #fff2b2 0%, #d4af37 35%, #ffd700 70%, #aa771c 100%);
+  --gold-glow: 0 0 35px rgba(212, 175, 55, 0.45);
+  --gold-glow-subtle: 0 0 20px rgba(212, 175, 55, 0.2);
+
+  /* Royal Futuristic Accents */
+  --sapphire-blue: #38bdf8;
+  --sapphire-glow: 0 0 35px rgba(56, 189, 248, 0.35);
+  --royal-purple: #9333ea;
+  --royal-purple-glow: 0 0 35px rgba(147, 51, 234, 0.35);
+
+  /* Typography */
+  --font-royal: 'Cinzel', serif;
+  --font-luxury: 'Playfair Display', serif;
+  --font-heading: 'Cinzel', 'Plus Jakarta Sans', serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Luxury Royal Gold Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.5) 0%, rgba(13, 22, 48, 0.8) 100%);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-gradient);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-royal);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+h2.section-heading {
+  font-family: var(--font-royal);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.9rem;
+  background: linear-gradient(180deg, #ffffff 0%, #fef08a 40%, #d4af37 80%, #aa771c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
+}
+
+.section-tagline {
+  font-family: var(--font-royal);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3.5px;
+  color: #fef08a;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.section-tagline::before,
+.section-tagline::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Luxury Glassmorphism Cards */
+.pro-card, .luxury-card {
+  background: var(--glass-royal-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border-gold);
+  border-radius: 18px;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(254, 240, 138, 0.15);
+}
+
+.pro-card::before, .luxury-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+}
+
+.pro-card:hover, .luxury-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--glass-border-gold-bright);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 35px rgba(212, 175, 55, 0.25);
+}
+
+/* Luxury Text Gradients */
+.text-gradient, .text-gold {
+  background: var(--gold-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: var(--gold-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Royal Tech Pill */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-royal);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #fef08a;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+.tech-pill.purple {
+  background: rgba(147, 51, 234, 0.12);
+  border-color: rgba(147, 51, 234, 0.4);
+  color: #d8b4fe;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fef08a;
+  box-shadow: 0 0 10px #fef08a, 0 0 20px #d4af37;
+  animation: pulse-ring 2s infinite ease-in-out;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.35); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+/* Luxury Primary Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-royal);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.95rem 2.2rem;
+  color: #04060d;
+  background: var(--gold-gradient);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.65), 0 0 25px rgba(212, 175, 55, 0.4);
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-royal);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.95rem 2.2rem;
+  color: #fef08a;
+  background: rgba(13, 22, 48, 0.75);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(18, 30, 66, 0.9);
+  border-color: #fef08a;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}

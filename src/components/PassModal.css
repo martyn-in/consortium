@@ -1,0 +1,442 @@
+.modal-backdrop-wrap {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 6, 13, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1.5rem;
+  animation: modalFadeIn 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-dialog-panel {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(8, 14, 30, 0.96);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 
+    0 30px 70px rgba(0, 0, 0, 0.9), 
+    0 0 50px rgba(212, 175, 55, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 2.4rem;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  padding-bottom: 1.4rem;
+}
+
+.modal-heading-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-top: 0.5rem;
+  color: #ffffff;
+}
+
+.modal-dismiss-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  color: #cbd5e1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.modal-dismiss-btn:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.6);
+  color: #fef08a;
+  transform: rotate(90deg);
+}
+
+.modal-body-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.8rem;
+  align-items: center;
+}
+
+/* Form Side */
+.modal-form-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field-group label {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #fef08a;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.form-field-group input,
+.form-field-group select {
+  background: rgba(11, 19, 41, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--font-body);
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.25s;
+}
+
+.form-field-group input:focus,
+.form-field-group select:focus {
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+  background: rgba(14, 25, 54, 0.95);
+}
+
+.form-field-group select option {
+  background: #0b1329;
+  color: #ffffff;
+}
+
+.pass-theme-tabs {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.theme-tab-btn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 0.5rem;
+  border-radius: 10px;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.theme-tab-btn.gold.active {
+  border-color: rgba(212, 175, 55, 0.8);
+  background: rgba(212, 175, 55, 0.2);
+  color: #fef08a;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.theme-tab-btn.sapphire.active {
+  border-color: rgba(59, 130, 246, 0.8);
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.theme-tab-btn.amethyst.active {
+  border-color: rgba(168, 85, 247, 0.8);
+  background: rgba(168, 85, 247, 0.2);
+  color: #d8b4fe;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+.royal-claim-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 1rem 1.6rem;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #04060d;
+  background: linear-gradient(135deg, #d4af37 0%, #fef08a 50%, #b8860b 100%);
+  border: 1px solid rgba(254, 240, 138, 0.6);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  margin-top: 0.6rem;
+}
+
+.royal-claim-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.55);
+}
+
+/* Digital Attendee Pass Preview */
+.modal-preview-side {
+  display: flex;
+  justify-content: center;
+}
+
+.digital-badge-ticket {
+  width: 100%;
+  max-width: 330px;
+  height: 480px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 1.8rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.digital-badge-ticket.gold {
+  background: linear-gradient(145deg, rgba(22, 20, 10, 0.95) 0%, rgba(10, 14, 26, 0.98) 100%);
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(212, 175, 55, 0.25);
+}
+
+.digital-badge-ticket.sapphire {
+  background: linear-gradient(145deg, rgba(10, 20, 48, 0.95) 0%, rgba(6, 10, 24, 0.98) 100%);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(59, 130, 246, 0.25);
+}
+
+.digital-badge-ticket.amethyst {
+  background: linear-gradient(145deg, rgba(28, 12, 45, 0.95) 0%, rgba(8, 10, 24, 0.98) 100%);
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(168, 85, 247, 0.25);
+}
+
+.badge-light-sweep {
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: linear-gradient(
+    45deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(212, 175, 55, 0.15) 50%,
+    transparent 65%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: sweepAnim 8s infinite linear;
+}
+
+@keyframes sweepAnim {
+  0% { transform: translateY(-30%) rotate(25deg); }
+  50% { transform: translateY(30%) rotate(25deg); }
+  100% { transform: translateY(-30%) rotate(25deg); }
+}
+
+.badge-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-name {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+.badge-year {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fef08a;
+  margin-left: 5px;
+}
+
+.badge-vip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-heading);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #fef08a;
+}
+
+.crown-badge-icon {
+  color: #d4af37;
+}
+
+.badge-chip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.2rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-microchip {
+  width: 38px;
+  height: 28px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #92400e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #04060d;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.badge-verified-stamp {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #fef08a;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.badge-attendee-wrap {
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-mini-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 1.2px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.badge-attendee-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.badge-info-value {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+.arena-highlight {
+  color: #fef08a;
+}
+
+.badge-footer-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(212, 175, 55, 0.25);
+}
+
+.badge-qr-container {
+  background: #ffffff;
+  padding: 5px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #04060d;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.badge-barcode-container {
+  flex: 1;
+}
+
+.barcode-stripes {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 30px;
+}
+
+.barcode-stripe-bar {
+  background: #cbd5e1;
+  border-radius: 1px;
+}
+
+.badge-serial-code {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 1.2px;
+  margin-top: 4px;
+  display: block;
+}
+
+.badge-watermark-text {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .modal-body-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

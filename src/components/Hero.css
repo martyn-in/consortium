@@ -1,0 +1,203 @@
+.royal-hero-section {
+  padding: 8.5rem 0 4.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.royal-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1100px;
+}
+
+/* Institutional Top Crest */
+.royal-hero-crest {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1.3rem;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-family: var(--font-royal);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #fef08a;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.crest-bullet {
+  color: var(--gold-primary);
+  font-size: 0.65rem;
+}
+
+/* Master Headline: Large Cinematic Title */
+.royal-hero-title {
+  font-family: var(--font-royal);
+  font-size: clamp(3.2rem, 8vw, 6.8rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  text-shadow: 0 8px 35px rgba(0, 0, 0, 0.9);
+}
+
+.royal-letters-container {
+  display: inline-flex;
+  background: linear-gradient(
+    135deg,
+    #bf953f 0%,
+    #fcf6ba 25%,
+    #b38728 50%,
+    #fbf5b7 75%,
+    #aa771c 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShineSweep 6s linear infinite;
+}
+
+@keyframes goldShineSweep {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.royal-letter {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.royal-year-badge {
+  display: inline-block;
+  font-family: var(--font-royal);
+  font-weight: 900;
+  padding: 0.1rem 0.8rem;
+  border-radius: 12px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #fef08a;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  text-shadow: none;
+  -webkit-text-fill-color: #fef08a;
+}
+
+/* Subtitle */
+.royal-hero-subtitle {
+  font-family: var(--font-luxury), 'Plus Jakarta Sans', serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: #cbd5e1;
+  max-width: 820px;
+  margin: 0 auto 2.4rem;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* Actions Row */
+.royal-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-bottom: 3.5rem;
+  width: 100%;
+}
+
+/* 4 Elegant Glass Information Cards */
+.royal-info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+.royal-info-card {
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(11, 19, 41, 0.72);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.royal-info-card:hover {
+  border-color: rgba(254, 240, 138, 0.6);
+  background: rgba(18, 30, 66, 0.85);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.info-card-icon-halo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-card-label {
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+}
+
+.info-card-val {
+  font-family: var(--font-royal);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fef08a;
+  letter-spacing: 0.02em;
+  margin-top: 0.2rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .royal-info-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .royal-hero-section {
+    padding: 7rem 0 3.5rem;
+  }
+  .royal-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  .royal-hero-actions .royal-btn-root {
+    width: 100%;
+  }
+  .royal-info-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+}
