@@ -8,6 +8,13 @@ import './Events.css';
 // Authoritative Google Form registration link
 const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
 
+const getCardOffset = (index, activeIndex, total) => {
+  let diff = index - activeIndex;
+  while (diff > total / 2) diff -= total;
+  while (diff < -total / 2) diff += total;
+  return diff;
+};
+
 export default function Events() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [dragStartX, setDragStartX] = useState(null);
@@ -64,15 +71,15 @@ export default function Events() {
           </AnimatePresence>
         </div>
 
-        {/* Card Stage: Large Display Card with Navigation Paddles */}
+        {/* Card Stage: Glassmorphism 3D Peeking Carousel Stage */}
         <div 
           className="events-card-stage"
           onMouseDown={(e) => setDragStartX(e.clientX)}
           onMouseUp={(e) => {
             if (dragStartX !== null) {
               const delta = e.clientX - dragStartX;
-              if (delta < -45) handleNext();
-              else if (delta > 45) handlePrev();
+              if (delta < -40) handleNext();
+              else if (delta > 40) handlePrev();
               setDragStartX(null);
             }
           }}
@@ -80,8 +87,8 @@ export default function Events() {
           onTouchEnd={(e) => {
             if (dragStartX !== null) {
               const delta = e.changedTouches[0].clientX - dragStartX;
-              if (delta < -45) handleNext();
-              else if (delta > 45) handlePrev();
+              if (delta < -40) handleNext();
+              else if (delta > 40) handlePrev();
               setDragStartX(null);
             }
           }}
@@ -89,43 +96,81 @@ export default function Events() {
           {/* Previous Arrow Button */}
           <button 
             className="events-slide-arrow-btn prev"
-            onClick={handlePrev}
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrev();
+            }}
             aria-label="Previous Event"
           >
-            <ChevronLeft size={26} />
+            <ChevronLeft size={24} />
           </button>
 
-          {/* Clean Grand Display Card with Laser Aura Border */}
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={activeEvent.id}
-              className="events-display-card"
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            >
-              {/* Moving Laser Aura Perimeter Line */}
-              <div className="events-card-laser-border" aria-hidden="true"></div>
+          {/* Carousel Viewport with Peeking Cards */}
+          <div className="events-carousel-viewport">
+            {eventsList.map((evt, idx) => {
+              const diff = getCardOffset(idx, activeIndex, count);
+              const isCenter = diff === 0;
+              const isPrev = diff === -1;
+              const isNext = diff === 1;
+              const isVisible = Math.abs(diff) <= 1;
+              const isNear = Math.abs(diff) <= 2;
 
-              {/* Clean Image Container with Zero Overlay Clutter */}
-              <div className="events-card-image-wrap">
-                <img 
-                  src={activeEvent.image} 
-                  alt={activeEvent.title} 
-                  className="events-card-img" 
-                />
-              </div>
-            </motion.div>
-          </AnimatePresence>
+              if (!isNear) return null;
+
+              return (
+                <motion.div 
+                  key={evt.id}
+                  className={`events-glass-card ${isCenter ? 'is-active' : ''} ${isPrev ? 'is-prev' : ''} ${isNext ? 'is-next' : ''}`}
+                  initial={false}
+                  animate={{
+                    x: diff === 0 ? '0%' : diff === -1 ? '-78%' : diff === 1 ? '78%' : diff < 0 ? '-140%' : '140%',
+                    scale: diff === 0 ? 1 : 0.84,
+                    opacity: diff === 0 ? 1 : isVisible ? 0.45 : 0,
+                    zIndex: diff === 0 ? 10 : isVisible ? 4 : 1,
+                  }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 30,
+                    mass: 0.8
+                  }}
+                  onClick={() => {
+                    if (isPrev) handlePrev();
+                    if (isNext) handleNext();
+                  }}
+                >
+                  {/* Moving Laser Aura Perimeter Line on Active Card */}
+                  {isCenter && (
+                    <div className="events-card-laser-border" aria-hidden="true"></div>
+                  )}
+
+                  {/* Specular Top Glass Sheen */}
+                  <div className="events-glass-sheen" aria-hidden="true"></div>
+
+                  {/* Clean Image Container with Glass Bezel */}
+                  <div className="events-card-image-wrap">
+                    <img 
+                      src={evt.image} 
+                      alt={evt.title} 
+                      className="events-card-img" 
+                      loading={isVisible ? 'eager' : 'lazy'}
+                    />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
 
           {/* Next Arrow Button */}
           <button 
             className="events-slide-arrow-btn next"
-            onClick={handleNext}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNext();
+            }}
             aria-label="Next Event"
           >
-            <ChevronRight size={26} />
+            <ChevronRight size={24} />
           </button>
         </div>
 

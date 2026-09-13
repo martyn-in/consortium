@@ -1,12 +1,10 @@
 /* ============================================================
-   EVENTS ARENA SECTION (Perfect Full-Viewport Fit for All Devices)
-   - Perfectly calibrated for desktop, tablet, and narrow/mobile screens
-   - Full viewport fit with zero awkward scrolling or cutoff
-   - Event Title & Tagline cleanly elevated above card
-   - Grand Display Card with laser aura border & unobstructed artwork
-   - Navigation arrows ALWAYS outside the card (never blocking artwork)
-   - Single prominent REGISTER NOW button (no duplicate broken links)
-   - Quick arena navigation dots
+   EVENTS ARENA SECTION: 3D GLASSMORPHISM PEEKING CAROUSEL
+   - Center Active Card in full glorious neon-frosted glassmorphism
+   - Previous & Next cards peek out slightly on both sides
+   - Smooth 60fps spring transitions when clicking or swiping
+   - Specular gloss sheen & frosted blur backdrops
+   - Arrows positioned elegantly on outer bounds (never blocking center art)
    ============================================================ */
 
 .events-clean-section {
@@ -17,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1.8rem, 4vh, 3.2rem) clamp(0.75rem, 2.5vw, 1.5rem);
+  padding: clamp(1.6rem, 3.5vh, 2.8rem) clamp(0.5rem, 2vw, 1.2rem);
   scroll-margin-top: 60px;
   background: transparent;
   overflow: hidden;
@@ -27,7 +25,7 @@
 .events-clean-container {
   position: relative;
   width: 100%;
-  max-width: 1060px;
+  max-width: 1240px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -40,13 +38,13 @@
    ABOVE CARD: EVENT NAME & CRISP TAGLINE
    ============================================================ */
 .events-name-header {
-  margin-bottom: clamp(0.6rem, 1.6vh, 1.2rem);
+  margin-bottom: clamp(0.6rem, 1.4vh, 1.1rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: clamp(52px, 8vh, 70px);
+  min-height: clamp(50px, 7.5vh, 68px);
 }
 
 .events-name-inner {
@@ -58,7 +56,7 @@
 
 .events-arena-name {
   font-family: 'Oxanium', 'Orbitron', sans-serif;
-  font-size: clamp(1.65rem, 3.8vw, 3rem);
+  font-size: clamp(1.65rem, 3.8vw, 2.9rem);
   font-weight: 900;
   letter-spacing: 0.08em;
   color: #ffffff;
@@ -80,15 +78,17 @@
 }
 
 /* ============================================================
-   CARD STAGE: DISPLAY CARD & OUTSIDE NAVIGATION PADDLES
+   CARD STAGE: 3D PEEKING GLASSMORPHISM CAROUSEL
    ============================================================ */
 .events-card-stage {
   position: relative;
   width: 100%;
+  max-width: 1240px;
+  height: clamp(230px, 39vw, 440px);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(0.5rem, 2vw, 1.4rem);
+  margin: 0 auto;
   cursor: grab;
 }
 
@@ -96,67 +96,90 @@
   cursor: grabbing;
 }
 
-/* Grand Slide Navigation Arrows (Always outside the card) */
-.events-slide-arrow-btn {
-  flex-shrink: 0;
+/* Carousel Viewport Layer */
+.events-carousel-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(38px, 5vw, 54px);
-  height: clamp(38px, 5vw, 54px);
-  border-radius: 50%;
-  background: rgba(6, 14, 34, 0.88);
-  border: 1.5px solid rgba(0, 234, 255, 0.45);
-  color: #00eaff;
+  overflow: visible;
+}
+
+/* Authentic Glassmorphism Card Frame */
+.events-glass-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(760px, 72vw);
+  max-width: 760px;
+  aspect-ratio: 16 / 9.5;
+  transform-origin: center center;
+  margin-top: calc(min(760px, 72vw) * 9.5 / 16 / -2);
+  margin-left: calc(min(760px, 72vw) / -2);
+  
+  /* Frosted Glassmorphism Base */
+  background: rgba(8, 16, 40, 0.65);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  
+  /* Specular Highlight Glass Border */
+  border: 1.5px solid rgba(0, 234, 255, 0.35);
+  border-radius: clamp(16px, 2.2vw, 24px);
+  padding: clamp(6px, 1vw, 10px);
+  box-sizing: border-box;
+  
+  box-shadow: 
+    0 24px 60px rgba(0, 0, 0, 0.88),
+    0 0 25px rgba(0, 234, 255, 0.2),
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px rgba(0, 234, 255, 0.2);
+    
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+/* Peeking Cards (Previous & Next) - Interactive Dimmed Glass */
+.events-glass-card.is-prev,
+.events-glass-card.is-next {
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 12px rgba(0, 234, 255, 0.12);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  z-index: 5;
+  filter: brightness(0.65);
+  transition: filter 0.25s ease;
 }
 
-.events-slide-arrow-btn:hover {
-  background: #00eaff;
-  color: #020617;
-  border-color: #00eaff;
-  box-shadow: 0 0 28px rgba(0, 234, 255, 0.95);
-  transform: scale(1.08);
+.events-glass-card.is-prev:hover,
+.events-glass-card.is-next:hover {
+  filter: brightness(0.88);
 }
 
-.events-slide-arrow-btn:active {
-  transform: scale(0.94);
-}
-
-/* Grand Display Card */
-.events-display-card {
-  position: relative;
-  flex: 1;
-  min-width: 0;
-  max-width: 860px;
-  aspect-ratio: 16 / 9;
-  max-height: 480px;
-  background: #040814;
-  border-radius: clamp(14px, 2vw, 22px);
-  border: 2px solid rgba(0, 234, 255, 0.65);
+/* Active Center Card Glow */
+.events-glass-card.is-active {
+  border-color: rgba(0, 234, 255, 0.75);
   box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.95), 
-    0 0 25px rgba(0, 234, 255, 0.4), 
-    0 0 50px rgba(123, 77, 255, 0.25);
-  display: flex;
-  flex-direction: column;
-  transition: all 0.35s ease;
+    0 28px 75px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(0, 234, 255, 0.45),
+    0 0 70px rgba(168, 85, 247, 0.28),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.6),
+    inset 0 -1px 2px rgba(0, 234, 255, 0.35);
 }
 
-.events-display-card:hover {
-  border-color: #00eaff;
-  box-shadow: 
-    0 25px 75px rgba(0, 0, 0, 0.98), 
-    0 0 35px rgba(0, 234, 255, 0.7), 
-    0 0 65px rgba(239, 36, 255, 0.4);
+/* Specular Top Glass Sheen across the card */
+.events-glass-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.03) 35%,
+    transparent 60%
+  );
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 2;
 }
 
-/* Luminous Electric Glow Aura Perimeter Line */
+/* Luminous Electric Glow Aura Perimeter Line on Active Card */
 .events-card-laser-border {
   position: absolute;
   inset: -3px;
@@ -172,17 +195,13 @@
   pointer-events: none;
   z-index: 0;
   animation: cardPureGlowPulse 4s infinite ease-in-out;
-  transition: opacity 0.35s ease, filter 0.35s ease;
-}
-
-.events-display-card:hover .events-card-laser-border {
-  opacity: 0.95;
-  filter: blur(16px);
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 @keyframes cardPureGlowPulse {
   0%, 100% {
-    opacity: 0.6;
+    opacity: 0.58;
     transform: scale(0.996);
   }
   50% {
@@ -191,14 +210,14 @@
   }
 }
 
-/* Clean Image Container */
+/* Inner Glass Frame holding the Event Image */
 .events-card-image-wrap {
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: clamp(12px, 1.8vw, 20px);
+  border-radius: clamp(12px, 1.8vw, 18px);
   overflow: hidden;
-  background: #02050f;
+  background: #02050e;
   z-index: 1;
 }
 
@@ -209,15 +228,57 @@
   display: block;
 }
 
+/* Grand Slide Navigation Arrows (Floating elegantly at outer bounds) */
+.events-slide-arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(40px, 5vw, 56px);
+  height: clamp(40px, 5vw, 56px);
+  border-radius: 50%;
+  background: rgba(6, 14, 34, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(0, 234, 255, 0.45);
+  color: #00eaff;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75), 0 0 16px rgba(0, 234, 255, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.events-slide-arrow-btn.prev {
+  left: clamp(8px, 2.5vw, 28px);
+}
+
+.events-slide-arrow-btn.next {
+  right: clamp(8px, 2.5vw, 28px);
+}
+
+.events-slide-arrow-btn:hover {
+  background: #00eaff;
+  color: #020617;
+  border-color: #00eaff;
+  box-shadow: 0 0 30px rgba(0, 234, 255, 0.95);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.events-slide-arrow-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
 /* ============================================================
    BELOW CARD: SINGLE PROMINENT REGISTER CTA & NAVIGATION DOTS
    ============================================================ */
 .events-bottom-actions {
-  margin-top: clamp(0.9rem, 2.2vh, 1.6rem);
+  margin-top: clamp(0.8rem, 2vh, 1.4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.35rem, 0.9vh, 0.65rem);
+  gap: clamp(0.35rem, 0.8vh, 0.6rem);
   width: 100%;
 }
 
@@ -306,50 +367,53 @@
 }
 
 /* ============================================================
-   RESPONSIVE ADJUSTMENTS: PERFECT SCALING ACROSS ALL SIZES
+   RESPONSIVE ADJUSTMENTS: PERFECT FIT FOR TABLET & MOBILE
    ============================================================ */
 @media (max-width: 768px) {
   .events-clean-section {
-    padding: clamp(1.4rem, 3vh, 2.2rem) 0.6rem clamp(1rem, 2.5vh, 1.8rem);
+    padding: clamp(1.2rem, 2.5vh, 2rem) 0.5rem clamp(1rem, 2vh, 1.6rem);
   }
 
   .events-card-stage {
-    gap: 0.4rem;
+    height: clamp(200px, 48vw, 300px);
+  }
+
+  .events-glass-card {
+    width: 76vw;
+    border-radius: 16px;
+    padding: 6px;
   }
 
   .events-slide-arrow-btn {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
   }
 
-  .events-display-card {
-    border-radius: 14px;
+  .events-slide-arrow-btn.prev {
+    left: 4px;
   }
 
-  .events-card-image-wrap {
-    border-radius: 12px;
+  .events-slide-arrow-btn.next {
+    right: 4px;
   }
 
   .events-register-cta-btn {
     width: 100%;
-    max-width: 310px;
-    padding: 0.9rem 1.6rem;
-    font-size: 1.05rem;
+    max-width: 300px;
+    padding: 0.88rem 1.6rem;
+    font-size: 1.02rem;
   }
 }
 
 @media (max-width: 480px) {
-  .events-clean-section {
-    padding: 1.2rem 0.4rem 1rem;
-  }
-
-  .events-name-header {
-    min-height: 48px;
-    margin-bottom: 0.5rem;
+  .events-glass-card {
+    width: 78vw;
+    border-radius: 14px;
+    padding: 5px;
   }
 
   .events-arena-name {
-    font-size: 1.55rem;
+    font-size: 1.5rem;
   }
 
   .events-arena-tagline {
