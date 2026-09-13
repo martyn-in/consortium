@@ -84,35 +84,33 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.45);
-  transform: skewX(-8deg);
+  transform: skewX(-8deg) translateZ(0);
   user-select: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85))
+          drop-shadow(0 0 14px rgba(0, 234, 255, 0.7))
+          drop-shadow(0 0 28px rgba(239, 36, 255, 0.55));
   animation: neonYearPulse 3s infinite ease-in-out;
+  will-change: opacity, transform;
   position: relative;
 }
 
 @keyframes neonYearPulse {
   0%, 100% {
-    filter: 
-      drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85))
-      drop-shadow(0 0 10px rgba(0, 234, 255, 0.6))
-      drop-shadow(0 0 22px rgba(239, 36, 255, 0.5));
-    transform: skewX(-8deg) scale(1);
+    opacity: 0.92;
+    transform: skewX(-8deg) scale(1) translateZ(0);
   }
   50% {
-    filter: 
-      drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9))
-      drop-shadow(0 0 16px rgba(0, 234, 255, 0.75))
-      drop-shadow(0 0 35px rgba(239, 36, 255, 0.65));
-    transform: skewX(-8deg) scale(1.015);
+    opacity: 1;
+    transform: skewX(-8deg) scale(1.015) translateZ(0);
   }
 }
 
 @keyframes heroTitleFloat {
   0%, 100% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translate3d(0, -6px, 0);
   }
 }
 
