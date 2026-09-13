@@ -1,232 +1,338 @@
-.royal-hero-section {
-  padding: 8.5rem 0 4.5rem;
+.hero-section {
+  padding: clamp(2.5rem, 5vh, 4.5rem) 1.5rem clamp(1.2rem, 2.5vh, 2.2rem);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.royal-hero-inner {
+.hero-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 1100px;
-}
-
-/* Institutional Top Crest */
-.royal-hero-crest {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.45rem 1.3rem;
-  border-radius: 999px;
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  font-family: var(--font-royal);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  color: #fef08a;
-  margin-bottom: 1.8rem;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
-}
-
-.crest-bullet {
-  color: var(--gold-primary);
-  font-size: 0.65rem;
-}
-
-/* Master Headline: Large Cinematic Futuristic Chrome Title */
-.future-title {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
   position: relative;
-  text-align: center;
   z-index: 5;
-  margin-top: 40px;
 }
 
-.future-title span {
-  display: block;
-  font-family: "Orbitron", sans-serif;
-  font-size: clamp(3.8rem, 10.5vw, 9.5rem);
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #b7f3ff 25%,
-    #5ce1ff 45%,
-    #6d5cff 80%
-  );
-  -webkit-background-clip: text;
-  color: transparent;
+/* ============================================================
+   MASSIVE REGENERATED 3D CHROME CONSORTIUM TITLE & 2026
+   ============================================================ */
+.hero-title-wrap {
+  margin: 0 auto clamp(0.3rem, 1vh, 0.8rem);
   position: relative;
-  filter: drop-shadow(0 0 25px #00eaff) drop-shadow(0 0 60px #6d5cff);
-  animation: titleHover 6s infinite ease-in-out;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.future-title span::after {
-  content: "CONSORTIUM";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.8) 50%,
-    transparent 100%
-  );
-  background-size: 200%;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: shineMove 4s infinite linear;
+.hero-consortium-banner-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  z-index: 2;
+  animation: heroTitleFloat 6s infinite ease-in-out;
+}
+
+.hero-consortium-artwork {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  max-height: clamp(140px, 18vw, 240px);
+  object-fit: contain;
+  display: block;
+  /* Crisp 3D specular depth with ambient festival glow */
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.92)) 
+         drop-shadow(0 0 20px rgba(0, 234, 255, 0.45)) 
+         drop-shadow(0 0 40px rgba(239, 36, 255, 0.35));
+  user-select: none;
   pointer-events: none;
 }
 
-.future-title strong {
+/* Slanted Radiant Glowing Neon Year 2026 */
+.hero-title-year-brush {
   display: block;
-  font-family: "Orbitron", sans-serif;
-  font-size: clamp(2.8rem, 7.5vw, 6.5rem);
-  letter-spacing: 0.35em;
-  margin-top: -15px;
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(2.8rem, 8vw, 6.5rem);
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  line-height: 0.95;
+  margin-top: -0.4rem;
   background: linear-gradient(
-    90deg,
-    #00eaff,
-    white,
-    #7c3aed
+    105deg,
+    #ffffff 0%,
+    #00eaff 18%,
+    #818cf8 42%,
+    #ef24ff 70%,
+    #ff007f 100%
   );
   -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 0 40px #00eaff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.45);
+  transform: skewX(-8deg);
+  user-select: none;
+  animation: neonYearPulse 3s infinite ease-in-out;
+  position: relative;
 }
 
-@keyframes shineMove {
-  0% {
-    background-position: -200%;
+@keyframes neonYearPulse {
+  0%, 100% {
+    filter: 
+      drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85))
+      drop-shadow(0 0 10px rgba(0, 234, 255, 0.6))
+      drop-shadow(0 0 22px rgba(239, 36, 255, 0.5));
+    transform: skewX(-8deg) scale(1);
   }
-  100% {
-    background-position: 200%;
+  50% {
+    filter: 
+      drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9))
+      drop-shadow(0 0 16px rgba(0, 234, 255, 0.75))
+      drop-shadow(0 0 35px rgba(239, 36, 255, 0.65));
+    transform: skewX(-8deg) scale(1.015);
   }
 }
 
-@keyframes titleHover {
+@keyframes heroTitleFloat {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-6px);
   }
 }
 
-/* 3. Cinematic Subtitle */
-.royal-hero-subtitle {
-  max-width: 800px;
-  margin: 30px auto;
-  font-family: 'Plus Jakarta Sans', var(--font-luxury), sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #dbeafe;
-  text-align: center;
-  opacity: 0.9;
-  letter-spacing: 0.02em;
-}
-
-/* Actions Row with Premium Breathing Space */
-.royal-hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.8rem;
-  margin-bottom: 4.5rem;
-  width: 100%;
-}
-
-/* 3 Elegant Glass Information Cards Grid */
-.royal-info-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto 4.5rem;
-}
-
-.royal-info-card {
-  padding: 1.2rem 1.4rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: rgba(11, 19, 41, 0.72);
-  border: 1px solid rgba(212, 175, 55, 0.22);
-  border-radius: 16px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  text-align: left;
-  transition: all 0.3s ease;
-}
-
-.royal-info-card:hover {
-  border-color: rgba(254, 240, 138, 0.6);
-  background: rgba(18, 30, 66, 0.85);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.2);
-}
-
-.info-card-icon-halo {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.info-card-content {
+/* ============================================================
+   ORGANIZED BY INSTITUTE OF AERONAUTICAL ENGINEERING
+   ============================================================ */
+.hero-organizer-block {
+  margin-bottom: clamp(0.6rem, 1.4vh, 1.2rem);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 0.28rem;
 }
 
-.info-card-label {
-  font-family: var(--font-royal);
-  font-size: 0.68rem;
+.hero-org-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.12rem;
+}
+
+.org-flourish-line {
+  width: clamp(28px, 4vw, 55px);
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #00eaff);
+}
+
+.org-flourish-line:last-child {
+  background: linear-gradient(90deg, #00eaff, transparent);
+}
+
+.hero-org-label {
+  font-family: 'Chakra Petch', monospace;
+  font-size: clamp(0.72rem, 1.1vw, 0.85rem);
   font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #94a3b8;
+  letter-spacing: 0.32em;
+  color: #00eaff;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+  text-transform: uppercase;
 }
 
-.info-card-val {
-  font-family: var(--font-royal);
-  font-size: 1.05rem;
+/* Native dark-mode floating crest (Zero white circle disc) */
+.hero-iare-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(82px, 10.5vh, 108px);
+  height: clamp(82px, 10.5vh, 108px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0.25rem 0 0.35rem;
+  filter: drop-shadow(0 0 18px rgba(0, 234, 255, 0.45)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.85));
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.hero-iare-logo-wrap:hover {
+  filter: drop-shadow(0 0 28px rgba(0, 234, 255, 0.85)) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.95));
+  transform: scale(1.08);
+}
+
+.hero-iare-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.hero-org-name {
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(1.05rem, 2.2vw, 1.55rem);
   font-weight: 800;
-  color: #fef08a;
-  letter-spacing: 0.02em;
-  margin-top: 0.2rem;
+  letter-spacing: 0.15em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.25;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
 }
 
-/* Responsiveness */
-@media (max-width: 1024px) {
-  .royal-info-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.hero-org-sub {
+  font-family: 'Chakra Petch', monospace;
+  font-size: clamp(0.7rem, 1vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
 }
 
+/* ============================================================
+   PRIMARY ACTION BUTTON (Vibrant Electric Festival CTA)
+   ============================================================ */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(0.3rem, 1vh, 0.7rem);
+  position: relative;
+  z-index: 5;
+}
+
+.hero-btn-primary-mockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: clamp(0.92rem, 1.8vh, 1.15rem) clamp(2.8rem, 4.8vw, 4rem);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #a855f7 0%, #ef24ff 50%, #ff007f 100%);
+  color: #ffffff;
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(0.98rem, 1.6vw, 1.22rem);
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    0 0 35px rgba(239, 36, 255, 0.75), 
+    0 12px 28px rgba(0, 0, 0, 0.75),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn-primary-mockup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transition: 0.6s ease;
+}
+
+.hero-btn-primary-mockup:hover::before {
+  left: 100%;
+}
+
+.hero-btn-primary-mockup:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 
+    0 0 55px rgba(239, 36, 255, 0.95), 
+    0 16px 36px rgba(0, 0, 0, 0.85),
+    inset 0 1px 3px rgba(255, 255, 255, 0.8);
+  border-color: #ffffff;
+}
+
+.hero-btn-primary-mockup:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ============================================================
+   NATURAL FLOW SCROLL FOR MORE
+   ============================================================ */
+.hero-scroll-indicator {
+  margin-top: clamp(1.1rem, 2.5vh, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.hero-scroll-indicator:hover {
+  color: #00eaff;
+}
+
+.hero-scroll-indicator:hover .hero-scroll-chevron {
+  filter: drop-shadow(0 0 8px #00eaff);
+}
+
+.hero-scroll-text {
+  font-family: 'Chakra Petch', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.hero-chevron-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-scroll-chevron {
+  color: #00eaff;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .royal-hero-section {
-    padding: 7rem 0 3.5rem;
+  .hero-section {
+    padding: 6rem 1rem 2.5rem;
   }
-  .royal-hero-actions {
-    flex-direction: column;
+
+  .hero-title-year-brush {
+    letter-spacing: 0.12em;
+    margin-top: -0.3rem;
+  }
+
+  .hero-organizer-block {
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-btn-primary-mockup {
     width: 100%;
-    gap: 1rem;
+    max-width: 340px;
+    padding: 1.05rem 2rem;
   }
-  .royal-hero-actions .royal-btn-root {
-    width: 100%;
-  }
-  .royal-info-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 0.9rem;
+
+  .hero-scroll-indicator {
+    margin-top: 1.4rem;
   }
 }

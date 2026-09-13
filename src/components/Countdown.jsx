@@ -45,57 +45,32 @@ export default function Countdown({ targetDate = '2026-10-15T09:00:00+05:30' }) 
   ];
 
   return (
-    <div className="royal-countdown-wrapper">
-      <div className="countdown-royal-heading">
-        <span className="gold-ornament">❖</span>
-        <span>ROYAL CONVERGENCE COMMENCES IN</span>
-        <span className="gold-ornament">❖</span>
-      </div>
-
-      <div className="countdown-dials-flex">
-        {units.map((unit, index) => (
-          <div key={unit.label} className="dial-unit-pair">
-            <motion.div 
-              className="royal-glass-dial"
-              animate={{
-                scale: [1, 1.025, 1],
-                boxShadow: [
-                  '0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.15)',
-                  '0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.35)',
-                  '0 8px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.15)'
-                ]
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 2.4,
-                ease: 'easeInOut',
-                delay: index * 0.2
-              }}
-            >
-              <div className="dial-shine-line" />
-              <div className="dial-digit-container">
-                <AnimatePresence mode="popLayout">
-                  <motion.span
-                    key={unit.value}
-                    initial={{ y: -20, opacity: 0, filter: 'blur(5px)' }}
-                    animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-                    exit={{ y: 20, opacity: 0, filter: 'blur(5px)' }}
-                    transition={{ duration: 0.35, ease: 'easeOut' }}
-                    className="royal-dial-number"
-                  >
-                    {unit.value}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
-              <span className="royal-dial-label">{unit.label}</span>
-            </motion.div>
-
-            {index < units.length - 1 && (
-              <span className="royal-dial-separator">:</span>
-            )}
+    <div className="countdown-pill-bar">
+      {units.map((unit, index) => (
+        <div key={unit.label} className="countdown-unit-wrap">
+          <div className="countdown-glass-box">
+            <div className="countdown-digit-viewport">
+              <AnimatePresence mode="popLayout">
+                <motion.span
+                  key={unit.value}
+                  initial={{ y: -14, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 14, opacity: 0 }}
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                  className="countdown-number"
+                >
+                  {unit.value}
+                </motion.span>
+              </AnimatePresence>
+            </div>
+            <span className="countdown-label">{unit.label}</span>
           </div>
-        ))}
-      </div>
+
+          {index < units.length - 1 && (
+            <span className="countdown-separator">:</span>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

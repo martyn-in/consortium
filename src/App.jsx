@@ -1,63 +1,52 @@
-import { useState } from 'react';
 import GraphicBackground from './components/GraphicBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
 import Events from './components/Events';
-import Schedule from './components/Schedule';
-import Sponsors from './components/Sponsors';
+import SplitArenaSection from './components/SplitArenaSection';
+import WhyConsortium from './components/WhyConsortium';
+import AdditionalSections from './components/AdditionalSections';
+import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
-import PassModal from './components/PassModal';
-import CursorTrail from './components/common/CursorTrail';
 
 function App() {
-  const [isPassModalOpen, setIsPassModalOpen] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-
-  const handleOpenPassModal = () => {
-    setIsPassModalOpen(true);
-  };
-
-  const handleClosePassModal = () => {
-    setIsPassModalOpen(false);
-  };
-
-  const handleToggleVideo = () => {
-    setIsVideoPlaying((prev) => !prev);
+  const handleGoToEvents = () => {
+    const el = document.getElementById('events');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <>
-      {/* Ambient Glowing Laser Cursor Trail */}
-      <CursorTrail />
+      {/* Existing Background System — Untouched as mandated */}
+      <GraphicBackground isVideoPlaying={true} />
 
-      {/* High-Level Professional Graphics & Aurora Video System */}
-      <GraphicBackground isVideoPlaying={isVideoPlaying} />
+      {/* 1. Floating Futuristic Navbar */}
+      <Navbar onNavigateToEvents={handleGoToEvents} />
 
-      {/* Main Navigation */}
-      <Navbar 
-        onOpenPassModal={handleOpenPassModal} 
-        isVideoPlaying={isVideoPlaying}
-        onToggleVideo={handleToggleVideo}
-      />
-
-      {/* Main Experience Stream */}
+      {/* Main Experience Flow matching Mockup & Brief */}
       <main>
-        <Hero onOpenPassModal={handleOpenPassModal} />
-        <About onOpenPassModal={handleOpenPassModal} />
-        <Events onOpenPassModal={handleOpenPassModal} />
-        <Schedule />
-        <Sponsors />
+        {/* 2. Hero Section (Chrome Title, Slanted Brush 2026, Action Buttons) */}
+        <Hero onNavigateToEvents={handleGoToEvents} />
+
+        {/* 3. Featured Events (CHOOSE YOUR ARENA, 5 Visible Cards, Center Project Expo Highlight, Carousel) */}
+        <Events />
+
+        {/* 4. Battle Beyond Boundaries Section */}
+        <SplitArenaSection />
+
+        {/* 5. Why Consortium Matrix (IT'S MORE THAN A FEST: Compete, Learn, Network, Grow) */}
+        <WhyConsortium />
+
+        {/* 7. Additional Confirmed Requirements (Schedule, Gallery, Team, Venue) */}
+        <AdditionalSections />
+
+        {/* 8. Trophy Banner CTA (READY TO MAKE YOUR MARK?) */}
+        <FinalCTA onNavigateToEvents={handleGoToEvents} />
       </main>
 
-      {/* Aerospace Terminal Footer */}
-      <Footer onOpenPassModal={handleOpenPassModal} />
-
-      {/* Interactive Holographic Cyber Pass Generator Modal */}
-      <PassModal 
-        isOpen={isPassModalOpen} 
-        onClose={handleClosePassModal} 
-      />
+      {/* 9. Wordmark Footer with confirmed section links */}
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,147 @@
+/* ============================================================
+   TROPHY BANNER CTA (Matching Mockup 1000152741.png)
+   ============================================================ */
+.mockup-cta-banner-section {
+  padding: 2rem 1.5rem 3.5rem;
+  position: relative;
+}
+
+.mockup-trophy-banner {
+  position: relative;
+  border-radius: 20px;
+  padding: 1.8rem 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  transition: all 0.35s ease;
+}
+
+.cta-corner-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #00eaff;
+  border-left: 2px solid #00eaff;
+  pointer-events: none;
+}
+
+.cta-corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid #ef24ff;
+  border-right: 2px solid #ef24ff;
+  pointer-events: none;
+}
+
+/* Left Section */
+.trophy-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.banner-chevron {
+  opacity: 0.6;
+}
+
+.trophy-cup-halo {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.2) 0%, rgba(7, 13, 33, 0.8) 75%);
+  border: 1.5px solid rgba(0, 200, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trophy-cup-icon {
+  color: #00eaff;
+  filter: drop-shadow(0 0 12px #00eaff) drop-shadow(0 0 20px #8a36ff);
+}
+
+/* Center Content */
+.trophy-banner-center {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.trophy-banner-title {
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.35rem;
+}
+
+.trophy-banner-subtitle {
+  font-family: 'Chakra Petch', 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #b9c1d4;
+  margin: 0;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+/* Right Action */
+.trophy-banner-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.trophy-btn-register {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ef24ff 0%, #8a36ff 100%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 0 25px rgba(239, 36, 255, 0.6), 0 0 45px rgba(138, 54, 255, 0.35);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.trophy-btn-register:hover {
+  transform: translateY(-2px) scale(1.02);
+  border-color: #ffffff;
+  box-shadow: 0 0 35px rgba(239, 36, 255, 0.85), 0 0 60px rgba(138, 54, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+  .mockup-trophy-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  .trophy-banner-center {
+    text-align: center;
+  }
+  .trophy-banner-right {
+    width: 100%;
+    justify-content: center;
+  }
+  .trophy-btn-register {
+    width: 100%;
+    justify-content: center;
+  }
+}

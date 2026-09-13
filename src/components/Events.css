@@ -1,82 +1,370 @@
-.events-pro-section {
-  padding: 7rem 0;
+/* ============================================================
+   EVENTS ARENA SECTION (Perfect Full-Viewport Fit for All Devices)
+   - Perfectly calibrated for desktop, tablet, and narrow/mobile screens
+   - Full viewport fit with zero awkward scrolling or cutoff
+   - Event Title & Tagline cleanly elevated above card
+   - Grand Display Card with laser aura border & unobstructed artwork
+   - Navigation arrows ALWAYS outside the card (never blocking artwork)
+   - Single prominent REGISTER NOW button (no duplicate broken links)
+   - Quick arena navigation dots
+   ============================================================ */
+
+.events-clean-section {
   position: relative;
-}
-
-.events-header-block {
-  text-align: center;
-  margin-bottom: 3.5rem;
-}
-
-.events-subtext {
-  font-family: var(--font-luxury), 'Plus Jakarta Sans', serif;
-  font-size: 1.15rem;
-  color: #cbd5e1;
-  max-width: 760px;
-  margin: 0 auto;
-  line-height: 1.75;
-}
-
-/* Category Filter Track */
-.category-filter-container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  box-sizing: border-box;
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-bottom: 3.5rem;
-}
-
-.category-filter-track {
-  display: flex;
-  gap: 0.6rem;
-  background: rgba(11, 19, 41, 0.75);
-  padding: 0.45rem;
-  border-radius: 14px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  backdrop-filter: blur(20px);
-  max-width: 100%;
-  overflow-x: auto;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-}
-
-.category-filter-btn {
+  padding: clamp(1.8rem, 4vh, 3.2rem) clamp(0.75rem, 2.5vw, 1.5rem);
+  scroll-margin-top: 60px;
   background: transparent;
-  border: none;
-  color: #94a3b8;
-  font-family: var(--font-royal);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.events-clean-container {
+  position: relative;
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ============================================================
+   ABOVE CARD: EVENT NAME & CRISP TAGLINE
+   ============================================================ */
+.events-name-header {
+  margin-bottom: clamp(0.6rem, 1.6vh, 1.2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: clamp(52px, 8vh, 70px);
+}
+
+.events-name-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.events-arena-name {
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(1.65rem, 3.8vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #ffffff;
   text-transform: uppercase;
-  padding: 0.65rem 1.4rem;
-  border-radius: 10px;
+  margin: 0;
+  line-height: 1.15;
+  text-shadow: 0 0 25px rgba(0, 234, 255, 0.45), 0 0 50px rgba(168, 85, 247, 0.3);
+}
+
+.events-arena-tagline {
+  font-family: 'Chakra Petch', monospace;
+  font-size: clamp(0.72rem, 1.1vw, 0.88rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   CARD STAGE: DISPLAY CARD & OUTSIDE NAVIGATION PADDLES
+   ============================================================ */
+.events-card-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1.4rem);
+  cursor: grab;
+}
+
+.events-card-stage:active {
+  cursor: grabbing;
+}
+
+/* Grand Slide Navigation Arrows (Always outside the card) */
+.events-slide-arrow-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(38px, 5vw, 54px);
+  height: clamp(38px, 5vw, 54px);
+  border-radius: 50%;
+  background: rgba(6, 14, 34, 0.88);
+  border: 1.5px solid rgba(0, 234, 255, 0.45);
+  color: #00eaff;
   cursor: pointer;
-  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), inset 0 0 12px rgba(0, 234, 255, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 5;
+}
+
+.events-slide-arrow-btn:hover {
+  background: #00eaff;
+  color: #020617;
+  border-color: #00eaff;
+  box-shadow: 0 0 28px rgba(0, 234, 255, 0.95);
+  transform: scale(1.08);
+}
+
+.events-slide-arrow-btn:active {
+  transform: scale(0.94);
+}
+
+/* Grand Display Card */
+.events-display-card {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  max-width: 860px;
+  aspect-ratio: 16 / 9;
+  max-height: 480px;
+  background: #040814;
+  border-radius: clamp(14px, 2vw, 22px);
+  border: 2px solid rgba(0, 234, 255, 0.65);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.95), 
+    0 0 25px rgba(0, 234, 255, 0.4), 
+    0 0 50px rgba(123, 77, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+}
+
+.events-display-card:hover {
+  border-color: #00eaff;
+  box-shadow: 
+    0 25px 75px rgba(0, 0, 0, 0.98), 
+    0 0 35px rgba(0, 234, 255, 0.7), 
+    0 0 65px rgba(239, 36, 255, 0.4);
+}
+
+/* Luminous Electric Glow Aura Perimeter Line */
+.events-card-laser-border {
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg, 
+    rgba(0, 234, 255, 0.75) 0%, 
+    rgba(123, 77, 255, 0.6) 50%, 
+    rgba(0, 234, 255, 0.75) 100%
+  );
+  filter: blur(12px);
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 0;
+  animation: cardPureGlowPulse 4s infinite ease-in-out;
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+.events-display-card:hover .events-card-laser-border {
+  opacity: 0.95;
+  filter: blur(16px);
+}
+
+@keyframes cardPureGlowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.996);
+  }
+  50% {
+    opacity: 0.88;
+    transform: scale(1.004);
+  }
+}
+
+/* Clean Image Container */
+.events-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(12px, 1.8vw, 20px);
+  overflow: hidden;
+  background: #02050f;
+  z-index: 1;
+}
+
+.events-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================================
+   BELOW CARD: SINGLE PROMINENT REGISTER CTA & NAVIGATION DOTS
+   ============================================================ */
+.events-bottom-actions {
+  margin-top: clamp(0.9rem, 2.2vh, 1.6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.35rem, 0.9vh, 0.65rem);
+  width: 100%;
+}
+
+/* Big Glowing Register Button */
+.events-register-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: clamp(0.82rem, 1.7vh, 1.05rem) clamp(2.4rem, 4.8vw, 3.8rem);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #00f0ff 0%, #0284c7 40%, #2563eb 75%, #1e1b4b 100%);
+  color: #ffffff;
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    0 0 25px rgba(0, 240, 255, 0.45), 
+    0 10px 24px rgba(0, 0, 0, 0.75), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.events-register-cta-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #38bdf8 0%, #00eaff 40%, #3b82f6 75%, #1e40af 100%);
+  box-shadow: 
+    0 0 40px rgba(0, 234, 255, 0.85), 
+    0 14px 32px rgba(0, 0, 0, 0.85), 
+    inset 0 1px 3px rgba(255, 255, 255, 0.8);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.events-register-cta-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Subtle GForm Official Subnote */
+.events-gform-subnote {
+  font-family: 'Chakra Petch', monospace;
+  font-size: clamp(0.66rem, 0.95vw, 0.76rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #94a3b8;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Arena Dot Indicators */
+.events-dots-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.events-dot-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
   transition: all 0.25s ease;
 }
 
-.category-filter-btn:hover {
-  color: #fef08a;
+.events-dot-indicator:hover {
+  background: #00eaff;
+  transform: scale(1.25);
 }
 
-.category-filter-btn.active {
-  background: rgba(212, 175, 55, 0.18);
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  color: #fef08a;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+.events-dot-indicator.active {
+  width: 26px;
+  border-radius: 999px;
+  background: #00eaff;
+  box-shadow: 0 0 12px #00eaff;
 }
 
-.events-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 2rem;
-}
-
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS: PERFECT SCALING ACROSS ALL SIZES
+   ============================================================ */
 @media (max-width: 768px) {
-  .events-pro-section {
-    padding: 5rem 0;
+  .events-clean-section {
+    padding: clamp(1.4rem, 3vh, 2.2rem) 0.6rem clamp(1rem, 2.5vh, 1.8rem);
   }
-  .category-filter-container {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
+
+  .events-card-stage {
+    gap: 0.4rem;
+  }
+
+  .events-slide-arrow-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .events-display-card {
+    border-radius: 14px;
+  }
+
+  .events-card-image-wrap {
+    border-radius: 12px;
+  }
+
+  .events-register-cta-btn {
+    width: 100%;
+    max-width: 310px;
+    padding: 0.9rem 1.6rem;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-clean-section {
+    padding: 1.2rem 0.4rem 1rem;
+  }
+
+  .events-name-header {
+    min-height: 48px;
+    margin-bottom: 0.5rem;
+  }
+
+  .events-arena-name {
+    font-size: 1.55rem;
+  }
+
+  .events-arena-tagline {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+  }
+
+  .events-slide-arrow-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .events-register-cta-btn {
+    max-width: 280px;
+    padding: 0.82rem 1.2rem;
+    font-size: 0.98rem;
   }
 }

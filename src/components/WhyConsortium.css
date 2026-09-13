@@ -1,0 +1,135 @@
+/* ============================================================
+   WHY CONSORTIUM? IT'S MORE THAN A FEST (Mockup 1000152741.png)
+   ============================================================ */
+.why-consortium-section {
+  padding: 3rem 1.5rem 4.5rem;
+  position: relative;
+}
+
+.why-header-block {
+  text-align: center;
+  margin-bottom: 2.8rem;
+}
+
+.why-kicker {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #ef24ff;
+  text-shadow: 0 0 10px rgba(239, 36, 255, 0.6);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.why-main-title {
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.why-title-brush {
+  display: inline-block;
+  font-family: 'Oxanium', 'Audiowide', cursive, sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  background: linear-gradient(105deg, #00eaff 0%, #b34eff 45%, #ef24ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(239, 36, 255, 0.6));
+  transform: skewX(-6deg);
+}
+
+/* 4 Pillars Grid */
+.why-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.why-pillar-card {
+  position: relative;
+  background: #050a18 !important; /* Solid dark interior - no color bleed */
+  border-radius: 18px;
+  padding: 2.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: default;
+}
+
+
+.pillar-corner-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid #00eaff;
+  border-left: 2px solid #00eaff;
+  pointer-events: none;
+}
+
+.pillar-corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-bottom: 2px solid #ef24ff;
+  border-right: 2px solid #ef24ff;
+  pointer-events: none;
+}
+
+.pillar-icon-shell {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: rgba(8, 20, 48, 0.8);
+  border: 1.5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.why-pillar-card:hover .pillar-icon-shell {
+  transform: scale(1.12) rotate(4deg);
+}
+
+.pillar-title {
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.5rem;
+}
+
+.pillar-desc {
+  font-family: 'Chakra Petch', 'Rajdhani', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #b9c1d4;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .why-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .why-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}

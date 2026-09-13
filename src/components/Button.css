@@ -24,53 +24,60 @@
   gap: 0.75rem;
   width: 100%;
   height: 100%;
-  padding: 1rem 2.4rem;
+  padding: 0.95rem 2.2rem;
   border-radius: 14px;
-  font-family: var(--font-royal);
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  font-family: 'Oxanium', var(--font-future), sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Primary: Futuristic Energy Cyan-Indigo Glow */
+/* Primary: Futuristic Electric Cyan & Indigo Glow Control Panel */
 .royal-btn-primary,
 .royal-btn-root.primary .royal-btn-inner {
   background: linear-gradient(
     135deg,
-    #00eaff,
-    #635bff
+    rgba(0, 234, 255, 0.95) 0%,
+    rgba(99, 91, 255, 0.95) 50%,
+    rgba(123, 77, 255, 0.95) 100%
+  );
+  color: #030712;
+  font-weight: 900;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 234, 255, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.royal-btn-root.primary:hover .royal-btn-inner {
+  background: linear-gradient(
+    135deg,
+    #00eaff 0%,
+    #635bff 55%,
+    #7b4dff 100%
   );
   color: #ffffff;
-  border: none;
-  box-shadow: 0 0 25px rgba(0, 220, 255, 0.5);
-  transition: 0.3s;
+  box-shadow: 0 0 35px rgba(0, 234, 255, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-.royal-btn-primary:hover,
-.royal-btn-root.primary:hover .royal-btn-inner {
-  transform: translateY(-6px) scale(1.05);
-  box-shadow: 0 0 60px #00eaff;
-}
-
-/* Secondary: Royal Frosted Glass with Gold Rim */
+/* Secondary: Futuristic Glass Control Panel with Cyan Rim */
 .royal-btn-root.secondary .royal-btn-inner {
-  background: rgba(11, 19, 41, 0.8);
-  color: #fef08a;
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(8, 18, 44, 0.75);
+  color: #b7f3ff;
+  border: 1px solid rgba(0, 234, 255, 0.35);
   backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(254, 240, 138, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .royal-btn-root.secondary:hover .royal-btn-inner {
-  background: rgba(18, 30, 66, 0.95);
-  border-color: #fef08a;
+  background: rgba(12, 26, 62, 0.9);
+  border-color: rgba(0, 234, 255, 0.75);
   color: #ffffff;
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 35px rgba(0, 234, 255, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
-/* Animated Neon Cyan-Purple Border Sweep */
+/* Animated Neon Cyan-Violet Border Sweep */
 .royal-border-glow {
   position: absolute;
   inset: -2px;
@@ -79,7 +86,7 @@
     90deg,
     #00eaff,
     #635bff,
-    #8b5cff,
+    #7b4dff,
     #00eaff
   );
   background-size: 300% 100%;
@@ -92,7 +99,7 @@
 }
 
 .royal-btn-root:hover .royal-border-glow {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 @keyframes royalNeonSweep {

@@ -1,137 +1,130 @@
 import { motion } from 'framer-motion';
-import confetti from 'canvas-confetti';
-import { Calendar, MapPin, Trophy, ArrowRight, Compass } from 'lucide-react';
-import Button from './Button';
-import Countdown from './Countdown';
-import Reveal from './Reveal';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
+import { fadeUp } from '../animations/motion';
+import consortiumTitleArtwork from '../assets/consortium_title.png';
+import iareLogo from '../assets/iare_logo_white_text.png';
 import './Hero.css';
 
-const Hero = ({ onOpenPassModal }) => {
+const Hero = ({ onNavigateToEvents }) => {
   const handleRegisterClick = () => {
-    sound.playSuccess();
-    confetti({
-      particleCount: 70,
-      spread: 80,
-      origin: { y: 0.6 },
-      colors: ['#ffd700', '#d4af37', '#fcf6ba', '#38bdf8', '#9333ea']
-    });
-    onOpenPassModal();
+    sound.playClick();
+    if (onNavigateToEvents) {
+      onNavigateToEvents();
+    } else {
+      const el = document.getElementById('events');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
-
-
-  // 3 Elegant Glass Information Cards: Date, Venue, Events
-  const infoCards = [
-    { label: 'DATE', value: 'Oct 15 - 16, 2026', icon: Calendar },
-    { label: 'VENUE', value: 'IARE Campus, Hyderabad', icon: MapPin },
-    { label: 'EVENTS', value: '30+ Flagship Arenas', icon: Trophy }
-  ];
+  const handleScrollDown = () => {
+    sound.playClick();
+    const el = document.getElementById('events');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
-    <section id="home" className="royal-hero-section">
-      <div className="container royal-hero-inner">
-        {/* 1. Royal Institutional Header Crest */}
+    <section id="home" className="hero-section">
+      <div className="container hero-inner">
+        {/* Massive 3D Chrome Title Artwork + Slanted 2026 */}
+        <div className="hero-title-wrap">
+          <h1 className="sr-only">CONSORTIUM 2026</h1>
+
+          <motion.div 
+            className="hero-consortium-banner-wrap"
+            initial={{ opacity: 0, scale: 0.88, y: 25 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <img 
+              src={consortiumTitleArtwork} 
+              alt="CONSORTIUM" 
+              className="hero-consortium-artwork" 
+            />
+          </motion.div>
+
+          {/* Slanted Vibrant Neon Year 2026 */}
+          <motion.span 
+            className="hero-title-year-brush"
+            initial={{ opacity: 0, scale: 0.7, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{
+              delay: 0.25,
+              type: 'spring',
+              stiffness: 260,
+              damping: 20
+            }}
+          >
+            2026
+          </motion.span>
+        </div>
+
+        {/* Organized By Section */}
         <motion.div 
-          className="royal-hero-crest"
-          initial={{ opacity: 0, y: -20, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="hero-organizer-block"
+          variants={fadeUp(0.35, 12)}
+          initial="hidden"
+          animate="visible"
         >
-          <span className="crest-bullet">❖</span>
-          <span>INSTITUTE OF AERONAUTICAL ENGINEERING PRESENTS</span>
-          <span className="crest-bullet">❖</span>
+          <div className="hero-org-badge-row">
+            <span className="org-flourish-line"></span>
+            <span className="hero-org-label">ORGANIZED BY</span>
+            <span className="org-flourish-line"></span>
+          </div>
+
+          <motion.div 
+            className="hero-iare-logo-wrap"
+            whileHover={{ scale: 1.08 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 20 }}
+            title="Institute of Aeronautical Engineering"
+          >
+            <img 
+              src={iareLogo} 
+              alt="Institute of Aeronautical Engineering" 
+              className="hero-iare-logo-img" 
+            />
+          </motion.div>
+
+          <h2 className="hero-org-name">INSTITUTE OF AERONAUTICAL ENGINEERING</h2>
+          <span className="hero-org-sub">AUTONOMOUS • HYDERABAD</span>
         </motion.div>
 
-        {/* 2. Large Cinematic Futuristic Chrome Title */}
-        <motion.h1
-          className="future-title"
-          initial={{
-            opacity: 0,
-            scale: 0.7,
-            filter: "blur(20px)"
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            filter: "blur(0)"
-          }}
-          transition={{
-            duration: 1.2
-          }}
-        >
-          <span>
-            CONSORTIUM
-          </span>
-          <strong>
-            2026
-          </strong>
-        </motion.h1>
-
-        {/* 3. Cinematic Subtitle */}
-        <motion.p 
-          className="royal-hero-subtitle"
-          initial={{ opacity: 0, y: 25, filter: 'blur(8px)' }}
-          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        >
-          The Annual National Tech Summit
-        </motion.p>
-
-        {/* 4. Primary Call to Action Buttons: [ REGISTER NOW ] and [ EXPLORE ] */}
+        {/* Single Primary Register Now Button */}
         <motion.div 
-          className="royal-hero-actions"
-          initial={{ opacity: 0, scale: 0.88, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.55, type: 'spring', stiffness: 200 }}
+          className="hero-actions"
+          variants={fadeUp(0.5, 12)}
+          initial="hidden"
+          animate="visible"
         >
-          <Button
-            variant="primary"
+          <button 
+            className="hero-btn-primary-mockup"
             onClick={handleRegisterClick}
           >
             <span>REGISTER NOW</span>
             <ArrowRight size={18} />
-          </Button>
-
-          <Button
-            variant="secondary"
-            href="#events"
-            onClick={() => sound.playClick()}
-          >
-            <Compass size={18} />
-            <span>EXPLORE</span>
-          </Button>
+          </button>
         </motion.div>
 
-        {/* 5. 4 Elegant Glass Information Cards */}
-        <Reveal direction="up" delay={0.75} distance={30}>
-          <div className="royal-info-cards-grid">
-            {infoCards.map((info, idx) => {
-              const Icon = info.icon;
-              return (
-                <motion.div 
-                  key={idx}
-                  className="royal-info-card pro-card"
-                  whileHover={{ y: -4, transition: { duration: 0.25 } }}
-                  onMouseEnter={() => sound.playHover()}
-                >
-                  <div className="info-card-icon-halo">
-                    <Icon size={18} className="text-gold" />
-                  </div>
-                  <div className="info-card-content">
-                    <span className="info-card-label">{info.label}</span>
-                    <strong className="info-card-val">{info.value}</strong>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </Reveal>
-
-        {/* 6. Luxury Digital Flip Countdown */}
-        <Reveal direction="up" delay={0.9} distance={35}>
-          <Countdown targetDate="2026-10-15T09:00:00+05:30" />
-        </Reveal>
+        {/* Natural Flow Scroll for More */}
+        <motion.div 
+          className="hero-scroll-indicator"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75, duration: 0.5 }}
+          onClick={handleScrollDown}
+          role="button"
+          tabIndex={0}
+          title="Scroll to explore arenas"
+        >
+          <span className="hero-scroll-text">SCROLL FOR MORE</span>
+          <motion.div
+            animate={{ y: [0, 5, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+            className="hero-chevron-wrap"
+          >
+            <ChevronDown size={18} className="hero-scroll-chevron" />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

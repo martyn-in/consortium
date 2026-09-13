@@ -1,0 +1,157 @@
+/* ============================================================
+   VENUE & CAMPUS LOCATION (IARE Hyderabad)
+   ============================================================ */
+
+.content-panel-section {
+  padding: 4.5rem 1.5rem;
+  position: relative;
+}
+
+.section-panel-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-kicker {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #00eaff;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.section-panel-title {
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.section-panel-desc {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #b9c1d4;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* Venue Card with Full Aura Lighting Border */
+.venue-details-card {
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.venue-info-side {
+  padding: 3rem 2.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.venue-badge-row {
+  margin-bottom: 1rem;
+}
+
+.venue-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #00eaff;
+  background: rgba(0, 234, 255, 0.12);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 234, 255, 0.4);
+}
+
+.venue-campus-title {
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.8rem;
+  line-height: 1.25;
+}
+
+.venue-address-text {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+
+.venue-action-box {
+  display: flex;
+  align-items: center;
+}
+
+.venue-btn-view-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #00eaff 0%, #635bff 100%);
+  color: #ffffff;
+  font-family: 'Oxanium', 'Orbitron', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.5), 0 0 45px rgba(99, 91, 255, 0.35);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.venue-btn-view-map:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 35px rgba(0, 234, 255, 0.8), 0 0 60px rgba(99, 91, 255, 0.6);
+  color: #ffffff;
+}
+
+/* Map Embed Side */
+.venue-map-embed-side {
+  position: relative;
+  min-height: 320px;
+  border-left: 1px solid rgba(0, 234, 255, 0.3);
+}
+
+.venue-google-map-iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  filter: contrast(1.1) brightness(0.9);
+}
+
+@media (max-width: 860px) {
+  .venue-details-card {
+    grid-template-columns: 1fr;
+  }
+  .venue-map-embed-side {
+    border-left: none;
+    border-top: 1px solid rgba(0, 234, 255, 0.3);
+    min-height: 260px;
+  }
+  .venue-info-side {
+    padding: 2rem 1.6rem;
+  }
+}

@@ -72,15 +72,15 @@ export default function Button({
         y: springY
       }}
       whileHover={{
-        scale: 1.08,
-        y: -8,
+        scale: 1.05,
+        y: -4,
         boxShadow: variant === 'primary' 
-          ? '0 12px 40px rgba(212, 175, 55, 0.65)' 
-          : '0 12px 35px rgba(212, 175, 55, 0.35)',
+          ? '0 12px 40px rgba(0, 234, 255, 0.55), 0 0 30px rgba(99, 91, 255, 0.4)' 
+          : '0 12px 35px rgba(0, 234, 255, 0.25), inset 0 0 20px rgba(0, 234, 255, 0.12)',
         transition: { duration: 0.25, ease: 'easeOut' }
       }}
       whileTap={{
-        scale: 0.95,
+        scale: 0.96,
         transition: { duration: 0.1 }
       }}
       className={`royal-btn-root ${variant} ${className}`}
