@@ -122,7 +122,7 @@ const EventCard = ({ event, index = 0, onSelectEvent }) => {
             }}
             strength={0.15}
           >
-            <span>REGISTER FOR ARENA</span>
+            <span>REGISTER FOR EVENT</span>
             <ChevronRight size={16} />
           </Button>
         </div>

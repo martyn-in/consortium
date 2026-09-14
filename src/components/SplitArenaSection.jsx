@@ -12,7 +12,7 @@ export default function SplitArenaSection() {
             <div className="battle-card-content">
               <div className="battle-kicker-chip">
                 <span className="battle-kicker-dot">●</span>
-                <span>NATIONAL TECHNICAL ARENA</span>
+                <span>NATIONAL TECHNICAL FESTIVAL</span>
               </div>
 
               <h2 className="battle-heading">
@@ -27,7 +27,7 @@ export default function SplitArenaSection() {
               <div className="battle-features-row">
                 <div className="battle-feat-item">
                   <Target size={16} className="text-cyan" />
-                  <span>10 Technical Arenas</span>
+                  <span>10 Flagship Events</span>
                 </div>
                 <div className="battle-feat-item">
                   <Zap size={16} className="text-magenta" />
@@ -45,7 +45,7 @@ export default function SplitArenaSection() {
                   className="battle-btn-know-more"
                   onClick={() => sound.playClick()}
                 >
-                  <span>EXPLORE ALL ARENAS</span>
+                  <span>EXPLORE ALL EVENTS</span>
                   <ArrowRight size={15} />
                 </a>
               </div>

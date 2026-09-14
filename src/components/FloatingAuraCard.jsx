@@ -99,7 +99,7 @@ export default function FloatingAuraCard({
               onRegister(event);
             }}
           >
-            <span>REGISTER FOR THIS ARENA</span>
+            <span>REGISTER FOR THIS EVENT</span>
             <ArrowRight size={16} />
           </button>
 

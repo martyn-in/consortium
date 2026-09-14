@@ -69,7 +69,7 @@ const Hero = ({ onNavigateToEvents }) => {
               <Calendar size={14} className="hero-timeline-icon" />
               <span className="hero-timeline-text">OCTOBER 09 – 10, 2026</span>
               <span className="hero-timeline-spark">✦</span>
-              <span className="hero-timeline-sub">2-DAY NATIONAL ARENA</span>
+              <span className="hero-timeline-sub">2-DAY NATIONAL FESTIVAL</span>
             </div>
           </motion.div>
         </div>
@@ -131,7 +131,7 @@ const Hero = ({ onNavigateToEvents }) => {
           onClick={handleScrollDown}
           role="button"
           tabIndex={0}
-          title="Scroll to explore arenas"
+          title="Scroll to explore events"
         >
           <span className="hero-scroll-text">SCROLL FOR MORE</span>
           <motion.div

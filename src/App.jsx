@@ -29,7 +29,7 @@ function App() {
         {/* 2. Hero Section (Chrome Title, Slanted Brush 2026, Action Buttons) */}
         <Hero onNavigateToEvents={handleGoToEvents} />
 
-        {/* 3. Featured Events (CHOOSE YOUR ARENA, 5 Visible Cards, Center Project Expo Highlight, Carousel) */}
+        {/* 3. Featured Events (10 Flagship Events, Carousel) */}
         <Events />
 
         {/* 4. Battle Beyond Boundaries Section */}

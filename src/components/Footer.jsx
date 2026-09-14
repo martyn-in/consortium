@@ -59,7 +59,7 @@ export default function Footer() {
               <span className="footer-nav-heading">NAVIGATION</span>
               <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#events">Arenas (10 Events)</a></li>
+                <li><a href="#events">Events (10 Flagships)</a></li>
                 <li><a href="#about">About Consortium</a></li>
               </ul>
             </div>

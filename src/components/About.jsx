@@ -10,14 +10,14 @@ const pillars = [
     title: 'Autonomous AI & Generative Agents',
     desc: '48-hour continuous build sprint pushing frontier LLM agents, multi-modal frameworks, and high-throughput systems evaluated by Silicon Valley engineers.',
     icon: Cpu,
-    tag: 'FLAGSHIP ARENA',
+    tag: 'FLAGSHIP TRACK',
     color: '#00eaff'
   },
   {
     title: 'Titanium Combat Robotics & Drones',
     desc: 'High-kinetic pneumatic flippers and 30KG steel spinners in armored battle cages, alongside precision autonomous FPV obstacle flight circuits.',
     icon: Bot,
-    tag: 'HARDWARE ARENA',
+    tag: 'HARDWARE TRACK',
     color: '#7b4dff'
   },
   {

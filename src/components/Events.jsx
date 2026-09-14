@@ -18,6 +18,7 @@ const getCardOffset = (index, activeIndex, total) => {
 export default function Events() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [dragStartX, setDragStartX] = useState(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   const count = eventsList.length;
   const activeEvent = eventsList[activeIndex] || eventsList[0];
@@ -32,6 +33,17 @@ export default function Events() {
     setActiveIndex((prev) => (prev - 1 + count) % count);
   }, [count]);
 
+  // Auto-scroll: advance cards smoothly every 3.9s unless paused (on hover or touch/drag)
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % count);
+    }, 3900);
+
+    return () => clearInterval(timer);
+  }, [isPaused, count]);
+
   // Keyboard arrow navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -45,7 +57,12 @@ export default function Events() {
   if (!activeEvent) return null;
 
   return (
-    <section id="events" className="events-clean-section">
+    <section 
+      id="events" 
+      className="events-clean-section"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Electric Lightning Displacement Filter for authentic crackling plasma arcs */}
       <svg className="lightning-filter-svg" aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
         <defs>
@@ -72,7 +89,7 @@ export default function Events() {
               className="events-name-inner"
             >
               <div className="events-arena-kicker-row">
-                <span className="events-arena-code-chip">{activeEvent.arenaCode || `ARENA #0${activeEvent.sourceOrder} // 10`}</span>
+                <span className="events-arena-code-chip">{activeEvent.eventCode || activeEvent.arenaCode || `EVENT #0${activeEvent.sourceOrder} // 10`}</span>
                 <span className="events-arena-kicker-sep">◆</span>
                 <span className="events-arena-cat-chip">{activeEvent.category}</span>
               </div>
@@ -91,7 +108,12 @@ export default function Events() {
         {/* Card Stage: Glassmorphism 3D Peeking Carousel Stage */}
         <div 
           className="events-card-stage"
-          onMouseDown={(e) => setDragStartX(e.clientX)}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onMouseDown={(e) => {
+            setIsPaused(true);
+            setDragStartX(e.clientX);
+          }}
           onMouseUp={(e) => {
             if (dragStartX !== null) {
               const delta = e.clientX - dragStartX;
@@ -100,7 +122,10 @@ export default function Events() {
               setDragStartX(null);
             }
           }}
-          onTouchStart={(e) => setDragStartX(e.touches[0].clientX)}
+          onTouchStart={(e) => {
+            setIsPaused(true);
+            setDragStartX(e.touches[0].clientX);
+          }}
           onTouchEnd={(e) => {
             if (dragStartX !== null) {
               const delta = e.changedTouches[0].clientX - dragStartX;
@@ -108,6 +133,7 @@ export default function Events() {
               else if (delta > 40) handlePrev();
               setDragStartX(null);
             }
+            setIsPaused(false);
           }}
         >
           {/* Previous Arrow Button */}
@@ -177,14 +203,27 @@ export default function Events() {
                     </div>
                   )}
 
+                  {/* Real Photographic Background with Cinematic Obsidian Gradient Plate */}
+                  {evt.image && (
+                    <div className="events-card-photo-layer" aria-hidden="true">
+                      <img 
+                        src={evt.image} 
+                        alt={evt.title} 
+                        className="events-card-photo-img" 
+                        loading="lazy" 
+                      />
+                      <div className="events-card-photo-gradient" />
+                    </div>
+                  )}
+
                   {/* Specular Top Glass Sheen */}
                   <div className="events-glass-sheen" aria-hidden="true"></div>
 
-                  {/* Pure Text Obsidian Card (No Anime Images, Pure Typography) */}
+                  {/* Realistic Content & High-Contrast Typography */}
                   <div className="events-card-text-body">
                     {/* Header Row: Code & Category */}
                     <div className="events-textcard-header">
-                      <span className="events-textcard-code">{evt.arenaCode || `ARENA #0${evt.sourceOrder} // 10`}</span>
+                      <span className="events-textcard-code">{evt.eventCode || evt.arenaCode || `EVENT #0${evt.sourceOrder} // 10`}</span>
                       <span className="events-textcard-cat">{evt.category}</span>
                     </div>
 
@@ -201,19 +240,19 @@ export default function Events() {
                       </div>
                     </div>
 
-                    {/* High-Impact Description */}
+                    {/* High-Impact Realistic Description */}
                     <p className="events-textcard-desc">{evt.description}</p>
 
-                    {/* Cyber Spec Tags */}
+                    {/* Authentic Spec Tags */}
                     {evt.cyberTags && (
                       <div className="events-textcard-tags-row">
-                        {evt.cyberTags.slice(0, 3).map((tag) => (
+                        {evt.cyberTags.slice(0, 4).map((tag) => (
                           <span key={tag} className="events-textcard-tag">{tag}</span>
                         ))}
                       </div>
                     )}
 
-                    {/* Telemetry Metadata Specs */}
+                    {/* Event Telemetry Metadata Specs */}
                     <div className="events-textcard-specs-row">
                       <div className="events-textcard-spec">
                         <span className="spec-label">TEAM:</span>
@@ -260,7 +299,7 @@ export default function Events() {
             Official Registration via Google Forms
           </span>
 
-          {/* Quick Arena Navigation Dots */}
+          {/* Quick Event Navigation Dots */}
           <div className="events-dots-row">
             {eventsList.map((evt, idx) => (
               <button

@@ -13,7 +13,7 @@ export default function EventDirectoryModal({
   onViewDetails 
 }) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All Arenas');
+  const [selectedCategory, setSelectedCategory] = useState('All Events');
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -34,7 +34,7 @@ export default function EventDirectoryModal({
   // Filter events based on search and category
   const filteredEvents = eventsList.filter((event) => {
     const matchesCategory = 
-      selectedCategory === 'All Arenas' || event.category === selectedCategory;
+      selectedCategory === 'All Events' || event.category === selectedCategory;
     const matchesSearch = 
       event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       event.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -45,25 +45,35 @@ export default function EventDirectoryModal({
   const handleResetFilters = () => {
     sound.playClick();
     setSearchQuery('');
-    setSelectedCategory('All Arenas');
+    setSelectedCategory('All Events');
   };
 
   return (
     <AnimatePresence>
-      <div className="directory-modal-backdrop" onClick={onClose}>
+      <div className="directory-modal-overlay">
         <motion.div 
-          className="directory-modal-container"
-          onClick={(e) => e.stopPropagation()}
-          initial={{ opacity: 0, scale: 0.95, y: 25 }}
+          className="directory-modal-backdrop"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => {
+            sound.playClick();
+            onClose();
+          }}
+        />
+
+        <motion.div 
+          className="directory-modal-window"
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 25 }}
+          exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Header */}
           <div className="directory-modal-header">
             <div className="directory-title-area">
               <span className="directory-kicker">✦ COMPLETE EVENT DIRECTORY</span>
-              <h2 className="directory-main-title">ALL 10 FESTIVAL ARENAS</h2>
+              <h2 className="directory-main-title">ALL 10 FESTIVAL EVENTS</h2>
               <p className="directory-subtext">
                 Explore the complete authoritative event lineup for CONSORTIUM 2026.
               </p>
@@ -88,7 +98,7 @@ export default function EventDirectoryModal({
               <Search size={16} className="search-icon text-cyan" />
               <input
                 type="text"
-                placeholder="Search arenas by keyword..."
+                placeholder="Search events by keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="directory-search-input"
@@ -120,7 +130,7 @@ export default function EventDirectoryModal({
             </div>
 
             {/* Reset Button */}
-            {(searchQuery || selectedCategory !== 'All Arenas') && (
+            {(searchQuery || selectedCategory !== 'All Events') && (
               <button 
                 className="directory-reset-btn"
                 onClick={handleResetFilters}
@@ -154,7 +164,7 @@ export default function EventDirectoryModal({
             ) : (
               <div className="directory-empty-state">
                 <Sparkles size={36} className="text-cyan mb-2" />
-                <h3>NO ARENAS MATCH YOUR SEARCH</h3>
+                <h3>NO EVENTS MATCH YOUR SEARCH</h3>
                 <p>Try adjusting your search terms or category filter to discover all 10 events.</p>
                 <button 
                   className="dir-empty-reset-btn"

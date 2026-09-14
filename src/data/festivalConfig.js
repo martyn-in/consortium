@@ -42,7 +42,7 @@ export const festivalConfig = {
     statusMessage: 'Student coordinators, faculty convenors, and official contact channels will be announced soon.'
   },
   gallery: {
-    heading: 'MOMENTS FROM THE ARENA',
+    heading: 'MOMENTS FROM THE FESTIVAL',
     statusMessage: 'Gallery updates and official media coverage coming soon.'
   },
   registration: {
