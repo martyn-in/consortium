@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Calendar } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
 import { fadeUp } from '../animations/motion';
 import consortiumTitleArtwork from '../assets/consortium_title.png';
@@ -57,6 +57,21 @@ const Hero = ({ onNavigateToEvents }) => {
           >
             2026
           </motion.span>
+
+          {/* Official Event Timeline Badge: OCTOBER 9 & 10 */}
+          <motion.div 
+            className="hero-timeline-badge-wrap"
+            variants={fadeUp(0.3, 10)}
+            initial="hidden"
+            animate="visible"
+          >
+            <div className="hero-timeline-badge">
+              <Calendar size={14} className="hero-timeline-icon" />
+              <span className="hero-timeline-text">OCTOBER 09 – 10, 2026</span>
+              <span className="hero-timeline-spark">✦</span>
+              <span className="hero-timeline-sub">2-DAY NATIONAL ARENA</span>
+            </div>
+          </motion.div>
         </div>
 
         {/* Organized By Section */}
@@ -86,7 +101,9 @@ const Hero = ({ onNavigateToEvents }) => {
           </motion.div>
 
           <h2 className="hero-org-name">INSTITUTE OF AERONAUTICAL ENGINEERING</h2>
-          <span className="hero-org-sub">AUTONOMOUS • HYDERABAD</span>
+          <span className="hero-org-sub">
+            AUTONOMOUS <span className="hero-sub-diamond">◆</span> HYDERABAD
+          </span>
         </motion.div>
 
         {/* Single Primary Register Now Button */}

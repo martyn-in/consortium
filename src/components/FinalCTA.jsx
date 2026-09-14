@@ -26,10 +26,6 @@ export default function FinalCTA({ onNavigateToEvents }) {
       <div className="container">
         <Reveal direction="up" distance={25}>
           <div className="mockup-trophy-banner aura-glow-border">
-            {/* Glowing Corner Accents */}
-            <div className="cta-corner-tl" />
-            <div className="cta-corner-br" />
-
             {/* Left Trophy Art & Chevrons */}
             <div className="trophy-banner-left">
               <ChevronsLeft size={24} className="banner-chevron text-cyan" />
@@ -42,7 +38,7 @@ export default function FinalCTA({ onNavigateToEvents }) {
             <div className="trophy-banner-center">
               <h2 className="trophy-banner-title">READY TO MAKE YOUR MARK?</h2>
               <p className="trophy-banner-subtitle">
-                Explore the events and check registration details for CONSORTIUM 2026.
+                Join the battle on October 9 & 10, 2026 at IARE Hyderabad. Explore the events and register your team now.
               </p>
             </div>
 

@@ -13,10 +13,11 @@
 .schedule-kicker {
   display: inline-block;
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 800;
   letter-spacing: 2.5px;
-  color: #00eaff;
+  color: #a5f3fc;
+  text-shadow: 0 2px 6px #000000, 0 0 12px rgba(0, 234, 255, 0.7);
   text-transform: uppercase;
   margin-bottom: 0.8rem;
 }

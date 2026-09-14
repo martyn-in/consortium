@@ -55,9 +55,6 @@ export default function WhyConsortium() {
                   style={{ '--beam-delay': `${-(index * 0.95)}s` }}
                   whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 >
-                  <div className="pillar-corner-tl" />
-                  <div className="pillar-corner-br" />
-
                   <div className="pillar-icon-shell" style={{ borderColor: `${pillar.accent}60` }}>
                     <PillarIcon size={26} style={{ color: pillar.accent }} />
                   </div>

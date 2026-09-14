@@ -9,12 +9,9 @@ export default function SplitArenaSection() {
       <div className="container">
         <Reveal direction="up" distance={25}>
           <div className="split-card battle-card full-battle-card aura-glow-border">
-            <div className="split-corner-tl" aria-hidden="true" />
-            <div className="split-corner-br" aria-hidden="true" />
-
             <div className="battle-card-content">
               <div className="battle-kicker-chip">
-                <Zap size={14} className="text-cyan" />
+                <span className="battle-kicker-dot">●</span>
                 <span>NATIONAL TECHNICAL ARENA</span>
               </div>
 

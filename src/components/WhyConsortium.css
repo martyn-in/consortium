@@ -12,10 +12,10 @@
 }
 
 .why-kicker {
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: var(--font-sub);
   font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
   color: #ef24ff;
   text-shadow: 0 0 10px rgba(239, 36, 255, 0.6);
   text-transform: uppercase;
@@ -24,17 +24,17 @@
 }
 
 .why-main-title {
-  font-family: 'Oxanium', 'Orbitron', sans-serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+  font-weight: 800;
   color: #ffffff;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.04em;
   margin: 0;
 }
 
 .why-title-brush {
   display: inline-block;
-  font-family: 'Oxanium', 'Audiowide', cursive, sans-serif;
+  font-family: var(--font-heading);
   font-style: italic;
   font-weight: 800;
   background: linear-gradient(105deg, #00eaff 0%, #b34eff 45%, #ef24ff 100%);
@@ -64,26 +64,9 @@
 }
 
 
-.pillar-corner-tl {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  border-top: 2px solid #00eaff;
-  border-left: 2px solid #00eaff;
-  pointer-events: none;
-}
-
+.pillar-corner-tl,
 .pillar-corner-br {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 12px;
-  height: 12px;
-  border-bottom: 2px solid #ef24ff;
-  border-right: 2px solid #ef24ff;
-  pointer-events: none;
+  display: none !important;
 }
 
 .pillar-icon-shell {
@@ -105,20 +88,20 @@
 }
 
 .pillar-title {
-  font-family: 'Oxanium', 'Orbitron', sans-serif;
-  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   margin: 0 0 0.5rem;
 }
 
 .pillar-desc {
-  font-family: 'Chakra Petch', 'Rajdhani', sans-serif;
-  font-size: 0.92rem;
-  font-weight: 600;
-  line-height: 1.45;
-  color: #b9c1d4;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #cbd5e1;
   margin: 0;
 }
 

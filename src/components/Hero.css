@@ -66,11 +66,11 @@
 /* Slanted Radiant Glowing Neon Year 2026 */
 .hero-title-year-brush {
   display: block;
-  font-family: 'Oxanium', 'Orbitron', sans-serif;
-  font-size: clamp(2.8rem, 8vw, 6.5rem);
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 7.5vw, 6.2rem);
   font-style: italic;
   font-weight: 900;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   line-height: 0.95;
   margin-top: -0.4rem;
   background: linear-gradient(
@@ -115,6 +115,80 @@
 }
 
 /* ============================================================
+   OFFICIAL EVENT TIMELINE BADGE (OCTOBER 9 & 10, 2026)
+   ============================================================ */
+.hero-timeline-badge-wrap {
+  margin: clamp(0.5rem, 1.2vh, 0.9rem) 0 clamp(0.6rem, 1.4vh, 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+}
+
+.hero-timeline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(0.45rem, 1.1vw, 0.8rem);
+  padding: clamp(0.45rem, 0.9vh, 0.58rem) clamp(1.1rem, 2.6vw, 1.8rem);
+  border-radius: 999px;
+  background: rgba(4, 10, 28, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(0, 234, 255, 0.5);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.85),
+    0 0 24px rgba(0, 234, 255, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.hero-timeline-badge:hover {
+  border-color: #00eaff;
+  box-shadow: 
+    0 8px 28px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(0, 234, 255, 0.65),
+    inset 0 1px 3px rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.hero-timeline-icon {
+  color: #00eaff;
+  filter: drop-shadow(0 0 8px #00eaff);
+  flex-shrink: 0;
+}
+
+.hero-timeline-text {
+  font-family: var(--font-heading);
+  font-size: clamp(0.76rem, 1.25vw, 0.96rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  background: linear-gradient(90deg, #ffffff 0%, #67e8f9 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 16px rgba(0, 234, 255, 0.45);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-timeline-spark {
+  color: #ef24ff;
+  font-size: 0.7em;
+  filter: drop-shadow(0 0 6px #ef24ff);
+}
+
+.hero-timeline-sub {
+  font-family: var(--font-sub);
+  font-size: clamp(0.66rem, 0.9vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ============================================================
    ORGANIZED BY INSTITUTE OF AERONAUTICAL ENGINEERING
    ============================================================ */
 .hero-organizer-block {
@@ -122,34 +196,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.28rem;
+  gap: 0.32rem;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-org-badge-row {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 0.12rem;
+  gap: clamp(0.75rem, 1.8vw, 1.4rem);
+  margin-bottom: 0.25rem;
+  user-select: none;
 }
 
 .org-flourish-line {
-  width: clamp(28px, 4vw, 55px);
-  height: 1.5px;
-  background: linear-gradient(90deg, transparent, #00eaff);
+  width: clamp(35px, 5.5vw, 85px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.85));
+  box-shadow: 0 0 8px rgba(0, 234, 255, 0.8);
+  position: relative;
 }
 
 .org-flourish-line:last-child {
-  background: linear-gradient(90deg, #00eaff, transparent);
+  background: linear-gradient(90deg, rgba(0, 234, 255, 0.85), transparent);
 }
 
 .hero-org-label {
-  font-family: 'Chakra Petch', monospace;
-  font-size: clamp(0.72rem, 1.1vw, 0.85rem);
+  font-family: var(--font-sub);
+  font-size: clamp(0.72rem, 1vw, 0.86rem);
   font-weight: 700;
-  letter-spacing: 0.32em;
-  color: #00eaff;
-  text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
+  letter-spacing: 0.24em;
   text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #d8f5ff 45%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 16px rgba(0, 234, 255, 0.7));
 }
 
 /* Native dark-mode floating crest (Zero white circle disc) */
@@ -164,14 +245,14 @@
   box-shadow: none;
   border-radius: 0;
   padding: 0;
-  margin: 0.25rem 0 0.35rem;
-  filter: drop-shadow(0 0 18px rgba(0, 234, 255, 0.45)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.85));
+  margin: 0.2rem 0 0.3rem;
+  filter: drop-shadow(0 0 20px rgba(0, 234, 255, 0.5)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.9));
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .hero-iare-logo-wrap:hover {
-  filter: drop-shadow(0 0 28px rgba(0, 234, 255, 0.85)) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.95));
+  filter: drop-shadow(0 0 32px rgba(0, 234, 255, 0.9)) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.98));
   transform: scale(1.08);
 }
 
@@ -183,24 +264,37 @@
 }
 
 .hero-org-name {
-  font-family: 'Oxanium', 'Orbitron', sans-serif;
-  font-size: clamp(1.05rem, 2.2vw, 1.55rem);
-  font-weight: 800;
-  letter-spacing: 0.15em;
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
   color: #ffffff;
   text-transform: uppercase;
   margin: 0;
   line-height: 1.25;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 24px rgba(0, 0, 0, 0.85);
 }
 
 .hero-org-sub {
-  font-family: 'Chakra Petch', monospace;
-  font-size: clamp(0.7rem, 1vw, 0.82rem);
+  font-family: var(--font-sub);
+  font-size: clamp(0.72rem, 1vw, 0.84rem);
   font-weight: 700;
-  letter-spacing: 0.25em;
-  color: #38bdf8;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.45);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e2e8f0;
+  margin-top: 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 16px rgba(0, 234, 255, 0.4);
+}
+
+.hero-sub-diamond {
+  color: #00eaff;
+  font-size: 0.65em;
+  margin: 0 0.55rem;
+  filter: drop-shadow(0 0 8px #00eaff);
+  vertical-align: middle;
 }
 
 /* ============================================================
@@ -210,7 +304,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(0.3rem, 1vh, 0.7rem);
+  margin-top: clamp(0.4rem, 1.2vh, 0.8rem);
   position: relative;
   z-index: 5;
 }
@@ -220,24 +314,31 @@
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
-  padding: clamp(0.92rem, 1.8vh, 1.15rem) clamp(2.8rem, 4.8vw, 4rem);
+  padding: clamp(0.95rem, 1.8vh, 1.2rem) clamp(2.8rem, 4.8vw, 4.2rem);
   border-radius: 999px;
   background: linear-gradient(135deg, #a855f7 0%, #ef24ff 50%, #ff007f 100%);
   color: #ffffff;
-  font-family: 'Oxanium', 'Orbitron', sans-serif;
-  font-size: clamp(0.98rem, 1.6vw, 1.22rem);
-  font-weight: 900;
-  letter-spacing: 0.2em;
+  font-family: var(--font-heading);
+  font-size: clamp(0.88rem, 1.35vw, 1.12rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
   box-shadow: 
     0 0 35px rgba(239, 36, 255, 0.75), 
     0 12px 28px rgba(0, 0, 0, 0.75),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-btn-primary-mockup span {
+  white-space: nowrap !important;
+  display: inline-block;
 }
 
 .hero-btn-primary-mockup::before {
@@ -272,31 +373,27 @@
    NATURAL FLOW SCROLL FOR MORE
    ============================================================ */
 .hero-scroll-indicator {
-  margin-top: clamp(1.1rem, 2.5vh, 2rem);
-  display: flex;
+  margin-top: clamp(1.2rem, 2.5vh, 2.2rem);
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.45rem;
   cursor: pointer;
-  color: #94a3b8;
-  transition: all 0.25s ease;
   user-select: none;
-}
-
-.hero-scroll-indicator:hover {
-  color: #00eaff;
-}
-
-.hero-scroll-indicator:hover .hero-scroll-chevron {
-  filter: drop-shadow(0 0 8px #00eaff);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-scroll-text {
-  font-family: 'Chakra Petch', monospace;
-  font-size: 0.72rem;
+  font-family: var(--font-sub);
+  font-size: clamp(0.7rem, 0.9vw, 0.8rem);
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 50%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.95));
+  transition: all 0.3s ease;
 }
 
 .hero-chevron-wrap {
@@ -307,30 +404,99 @@
 
 .hero-scroll-chevron {
   color: #00eaff;
+  filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.8));
+  transition: all 0.3s ease;
+}
+
+.hero-scroll-indicator:hover .hero-scroll-text {
+  filter: drop-shadow(0 0 14px rgba(0, 234, 255, 0.95));
+  letter-spacing: 0.48em;
+}
+
+.hero-scroll-indicator:hover .hero-scroll-chevron {
+  transform: translateY(4px);
+  filter: drop-shadow(0 0 16px #00eaff);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 6rem 1rem 2.5rem;
+    padding: clamp(5rem, 10vh, 6.5rem) 1.2rem clamp(2rem, 4vh, 2.8rem);
+    min-height: 100svh;
+    min-height: 100dvh;
   }
 
   .hero-title-year-brush {
     letter-spacing: 0.12em;
-    margin-top: -0.3rem;
+    margin-top: -0.2rem;
+    margin-bottom: 0.5rem;
+    font-size: clamp(2.8rem, 11vw, 4.4rem);
   }
 
   .hero-organizer-block {
-    margin-bottom: 1.2rem;
+    margin-bottom: clamp(1rem, 2.5vh, 1.6rem);
+    gap: 0.4rem;
+  }
+
+  .hero-org-badge-row {
+    gap: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .hero-org-label {
+    font-size: clamp(0.66rem, 2.4vw, 0.78rem);
+    letter-spacing: 0.22em;
+  }
+
+  .hero-iare-logo-wrap {
+    width: clamp(74px, 9.5vh, 92px);
+    height: clamp(74px, 9.5vh, 92px);
+    margin: 0.15rem 0 0.25rem;
+  }
+
+  .hero-org-name {
+    font-size: clamp(0.95rem, 3.8vw, 1.25rem);
+    line-height: 1.35;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-org-sub {
+    font-size: clamp(0.64rem, 2.2vw, 0.76rem);
+    letter-spacing: 0.16em;
+    margin-top: 0.25rem;
+  }
+
+  .hero-actions {
+    margin-top: clamp(0.6rem, 1.8vh, 1.1rem);
   }
 
   .hero-btn-primary-mockup {
-    width: 100%;
-    max-width: 340px;
-    padding: 1.05rem 2rem;
+    white-space: nowrap !important;
+    width: auto;
+    min-width: 250px;
+    max-width: 90vw;
+    padding: 0.92rem 2.2rem;
+    font-size: clamp(0.92rem, 3.4vw, 1.08rem);
+    letter-spacing: 0.16em;
+    gap: 0.75rem;
   }
 
   .hero-scroll-indicator {
-    margin-top: 1.4rem;
+    margin-top: clamp(1.2rem, 2.8vh, 1.8rem);
+    gap: 0.35rem;
+  }
+
+  .hero-scroll-text {
+    font-size: clamp(0.62rem, 2vw, 0.72rem);
+    letter-spacing: 0.22em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-btn-primary-mockup {
+    min-width: 240px;
+    padding: 0.88rem 1.8rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
   }
 }

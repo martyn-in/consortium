@@ -52,28 +52,63 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.events-arena-kicker-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.45rem;
+  user-select: none;
+}
+
+.events-arena-code-chip {
+  font-family: var(--font-sub);
+  font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #00eaff;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.75);
+}
+
+.events-arena-kicker-sep {
+  color: #ef24ff;
+  font-size: 0.6em;
+  filter: drop-shadow(0 0 6px #ef24ff);
+}
+
+.events-arena-cat-chip {
+  font-family: var(--font-sub);
+  font-size: clamp(0.72rem, 0.9vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #cbd5e1;
+  text-transform: uppercase;
 }
 
 .events-arena-name {
-  font-family: 'Oxanium', 'Orbitron', sans-serif;
-  font-size: clamp(1.65rem, 3.8vw, 2.9rem);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4.2vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin: 0;
   line-height: 1.15;
-  text-shadow: 0 0 25px rgba(0, 234, 255, 0.45), 0 0 50px rgba(168, 85, 247, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #d8f5ff 35%, #00eaff 70%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 28px rgba(0, 234, 255, 0.6));
 }
 
 .events-arena-tagline {
-  font-family: 'Chakra Petch', monospace;
-  font-size: clamp(0.72rem, 1.1vw, 0.88rem);
+  font-family: var(--font-sub);
+  font-size: clamp(0.82rem, 1.2vw, 1rem);
   font-weight: 600;
-  letter-spacing: 0.16em;
-  color: #38bdf8;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-  margin-top: 0.25rem;
+  letter-spacing: 0.14em;
+  color: #e2e8f0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 12px rgba(0, 234, 255, 0.45);
+  margin-top: 0.45rem;
   text-transform: uppercase;
 }
 
@@ -114,26 +149,26 @@
   left: 50%;
   width: min(760px, 72vw);
   max-width: 760px;
-  aspect-ratio: 16 / 9.5;
+  aspect-ratio: 16 / 10.2;
   transform-origin: center center;
-  margin-top: calc(min(760px, 72vw) * 9.5 / 16 / -2);
+  margin-top: calc(min(760px, 72vw) * 10.2 / 16 / -2);
   margin-left: calc(min(760px, 72vw) / -2);
   
-  /* Frosted Glassmorphism Base */
-  background: rgba(8, 16, 40, 0.65);
-  backdrop-filter: blur(22px) saturate(180%);
-  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  /* Pure Solid Obsidian Interior - 100% Opaque (Zero Light Penetration) */
+  background: #02040a !important;
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
   
-  /* Specular Highlight Glass Border */
-  border: 1.5px solid rgba(0, 234, 255, 0.35);
+  /* Specular Highlight Glass Rim */
+  border: 1.5px solid rgba(0, 234, 255, 0.4);
   border-radius: clamp(16px, 2.2vw, 24px);
   padding: clamp(6px, 1vw, 10px);
   box-sizing: border-box;
   
   box-shadow: 
-    0 24px 60px rgba(0, 0, 0, 0.88),
-    0 0 25px rgba(0, 234, 255, 0.2),
-    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.35),
+    0 35px 95px rgba(0, 0, 0, 0.98),
+    0 0 25px rgba(0, 234, 255, 0.15),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.35),
     inset 0 -1px 2px rgba(0, 234, 255, 0.2);
     
   will-change: transform, opacity;
@@ -153,15 +188,15 @@
   filter: brightness(0.88);
 }
 
-/* Active Center Card Glow */
+/* Active Center Card Glow Rim */
 .events-glass-card.is-active {
-  border-color: rgba(0, 234, 255, 0.75);
+  border-color: rgba(0, 234, 255, 0.65);
   box-shadow: 
-    0 28px 75px rgba(0, 0, 0, 0.95),
-    0 0 35px rgba(0, 234, 255, 0.45),
-    0 0 70px rgba(168, 85, 247, 0.28),
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.6),
-    inset 0 -1px 2px rgba(0, 234, 255, 0.35);
+    0 35px 100px rgba(0, 0, 0, 0.98),
+    0 0 35px rgba(0, 234, 255, 0.25),
+    0 0 75px rgba(168, 85, 247, 0.18),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgba(0, 234, 255, 0.3);
 }
 
 /* Specular Top Glass Sheen across the card */
@@ -170,8 +205,8 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.03) 35%,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.02) 35%,
     transparent 60%
   );
   pointer-events: none;
@@ -179,53 +214,365 @@
   z-index: 2;
 }
 
-/* Luminous Electric Glow Aura Perimeter Line on Active Card */
-.events-card-laser-border {
+/* ============================================================
+   AURA CARD LIGHTNINGS SYSTEM (STRICTLY ON BORDER — NO OUTSIDE GLOW)
+   High-Voltage Crackling Lightning Plasma Arcs Circuit
+   ============================================================ */
+.events-card-lightning-border {
   position: absolute;
-  inset: -3px;
+  inset: -1.5px;
   border-radius: inherit;
-  background: linear-gradient(
-    135deg, 
-    rgba(0, 234, 255, 0.75) 0%, 
-    rgba(123, 77, 255, 0.6) 50%, 
-    rgba(0, 234, 255, 0.75) 100%
-  );
-  filter: blur(12px);
-  opacity: 0.7;
   pointer-events: none;
-  z-index: 0;
-  animation: cardPureGlowPulse 4s infinite ease-in-out;
-  will-change: transform, opacity;
-  transform: translateZ(0);
+  z-index: 4;
+  overflow: hidden;
+  transition: opacity 0.35s ease;
 }
 
-@keyframes cardPureGlowPulse {
+/* Base High-Voltage Electric Border Rail */
+.lightning-rail {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1.5px solid rgba(0, 234, 255, 0.28);
+  pointer-events: none;
+}
+
+/* Primary Crackling Lightning Bolt Stream */
+.lightning-bolt-track {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2.2px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: url(#electric-lightning-displacement) drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 5px #00f0ff);
+  animation: lightningVoltageCrackle 0.22s infinite alternate ease-in-out;
+}
+
+/* Counter-Current Electric Spark Arcs */
+.lightning-spark-arcs {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.6px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 7px #ef24ff);
+  opacity: 0.85;
+  animation: lightningVoltageCrackle 0.35s infinite alternate-reverse ease-in-out;
+}
+
+/* High-Velocity Spinning Plasma Rotor (Electric Lightning Gradient) */
+.lightning-plasma-rotor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260%;
+  height: 260%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 140deg,
+    rgba(0, 234, 255, 0.12) 190deg,
+    #00b4d8 240deg,
+    #00f0ff 275deg,
+    #7928ca 310deg,
+    #b026ff 335deg,
+    #ff007a 348deg,
+    #00ffff 354deg,
+    #ffffff 357deg,
+    #ffffff 359deg,
+    transparent 360deg
+  );
+  animation: runLightningBolt 2.2s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.lightning-plasma-rotor.reverse {
+  animation: runLightningBolt 3.5s linear infinite reverse;
+  opacity: 0.65;
+}
+
+/* 4 Corner Electric Spark Nodes */
+.lightning-corner-spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 6px #00ffff, 0 0 12px #ef24ff;
+  pointer-events: none;
+  animation: cornerSparkSurge 1.4s infinite ease-in-out;
+}
+
+.lightning-corner-spark.spark-tl {
+  top: -1px;
+  left: -1px;
+  animation-delay: 0s;
+}
+
+.lightning-corner-spark.spark-tr {
+  top: -1px;
+  right: -1px;
+  animation-delay: 0.35s;
+}
+
+.lightning-corner-spark.spark-br {
+  bottom: -1px;
+  right: -1px;
+  animation-delay: 0.7s;
+}
+
+.lightning-corner-spark.spark-bl {
+  bottom: -1px;
+  left: -1px;
+  animation-delay: 1.05s;
+}
+
+/* Active Center Card Mode */
+.events-card-lightning-border.is-active-lightning {
+  opacity: 1;
+}
+
+.events-glass-card.is-active:hover .lightning-plasma-rotor {
+  animation-duration: 1.5s;
+}
+
+/* Peeking Side Cards Mode (Low-Voltage Standby) */
+.events-card-lightning-border.is-side-lightning {
+  opacity: 0.32;
+  filter: saturate(0.75);
+}
+
+.events-card-lightning-border.is-side-lightning .lightning-plasma-rotor {
+  animation-duration: 4.8s;
+}
+
+.events-card-lightning-border.is-side-lightning .lightning-corner-spark {
+  opacity: 0.2;
+}
+
+/* Hover on Side Cards (Surges Voltage to 100%) */
+.events-glass-card.is-prev:hover .events-card-lightning-border.is-side-lightning,
+.events-glass-card.is-next:hover .events-card-lightning-border.is-side-lightning {
+  opacity: 1;
+  filter: saturate(1.4);
+}
+
+.events-glass-card.is-prev:hover .lightning-plasma-rotor,
+.events-glass-card.is-next:hover .lightning-plasma-rotor {
+  animation-duration: 1.8s;
+}
+
+/* Lightning Bolt High-Speed Circuit Animation */
+@keyframes runLightningBolt {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* High-Voltage Micro-Voltage Flicker / Crackle */
+@keyframes lightningVoltageCrackle {
   0%, 100% {
-    opacity: 0.58;
-    transform: scale(0.996);
+    opacity: 0.92;
+    filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 5px #00f0ff);
+  }
+  20% {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 8px #00ffff) drop-shadow(0 0 14px #d946ef);
+  }
+  40% {
+    opacity: 0.78;
+    filter: drop-shadow(0 0 1.5px #ffffff) drop-shadow(0 0 3px #00c8ff);
+  }
+  65% {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 9px #00eaff) drop-shadow(0 0 16px #a855f7);
+  }
+  85% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 4px #38bdf8);
+  }
+}
+
+/* Intermittent Electric Corner Spark Pulse */
+@keyframes cornerSparkSurge {
+  0%, 100% {
+    transform: scale(0.7);
+    opacity: 0.4;
   }
   50% {
-    opacity: 0.88;
-    transform: scale(1.004);
+    transform: scale(1.35);
+    opacity: 1;
+    box-shadow: 0 0 8px #ffffff, 0 0 16px #00ffff, 0 0 22px #ef24ff;
   }
 }
 
-/* Inner Glass Frame holding the Event Image */
-.events-card-image-wrap {
+/* ============================================================
+   PURE TEXT OBSIDIAN CARD (NO ANIME ART, PURE CYBER TYPOGRAPHY)
+   ============================================================ */
+.events-card-text-body {
   position: relative;
   width: 100%;
   height: 100%;
   border-radius: clamp(12px, 1.8vw, 18px);
   overflow: hidden;
-  background: #02050e;
-  z-index: 1;
+  background: #02040a;
+  z-index: 2;
+  padding: clamp(1.2rem, 2.4vw, 2.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  box-sizing: border-box;
 }
 
-.events-card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.events-textcard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.events-textcard-code {
+  font-family: var(--font-sub);
+  font-size: clamp(0.72rem, 0.95vw, 0.84rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #00eaff;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.events-textcard-cat {
+  font-family: var(--font-sub);
+  font-size: clamp(0.66rem, 0.85vw, 0.76rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(239, 36, 255, 0.12);
+  border: 1px solid rgba(239, 36, 255, 0.35);
+  color: #f5b0ff;
+  text-transform: uppercase;
+}
+
+.events-textcard-hero {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 1.8vw, 1.5rem);
+  margin: clamp(0.4rem, 1vh, 0.8rem) 0;
+}
+
+.events-textcard-icon-shell {
+  width: clamp(52px, 5.5vw, 66px);
+  height: clamp(52px, 5.5vw, 66px);
+  border-radius: 16px;
+  background: radial-gradient(circle, rgba(0, 234, 255, 0.2) 0%, rgba(4, 10, 32, 0.95) 80%);
+  border: 1.5px solid rgba(0, 234, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00eaff;
+  flex-shrink: 0;
+}
+
+.events-textcard-title-group {
+  flex-grow: 1;
+}
+
+.events-textcard-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.15rem, 2.3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 234, 255, 0.25);
+}
+
+.events-textcard-tagline {
+  font-family: var(--font-sub);
+  font-size: clamp(0.78rem, 1.05vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #38bdf8;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.events-textcard-desc {
+  font-family: var(--font-sub);
+  font-size: clamp(0.82rem, 1.1vw, 0.95rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin: clamp(0.2rem, 0.6vh, 0.4rem) 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.events-textcard-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin: clamp(0.2rem, 0.5vh, 0.4rem) 0;
+}
+
+.events-textcard-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: clamp(0.62rem, 0.8vw, 0.72rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.events-textcard-specs-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: clamp(0.5rem, 1vh, 0.8rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.events-textcard-spec {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-sub);
+  font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+  letter-spacing: 0.06em;
+}
+
+.events-textcard-spec .spec-label {
+  color: #00eaff;
+  font-weight: 700;
+}
+
+.events-textcard-spec .spec-val {
+  color: #e2e8f0;
+  font-weight: 500;
 }
 
 /* Grand Slide Navigation Arrows (Floating elegantly at outer bounds) */
@@ -284,35 +631,43 @@
 
 /* Big Glowing Register Button */
 .events-register-cta-btn {
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: clamp(0.82rem, 1.7vh, 1.05rem) clamp(2.4rem, 4.8vw, 3.8rem);
+  gap: 0.85rem;
+  padding: clamp(0.92rem, 1.8vh, 1.15rem) clamp(2.8rem, 4.8vw, 4.2rem);
   border-radius: 999px;
-  background: linear-gradient(135deg, #00f0ff 0%, #0284c7 40%, #2563eb 75%, #1e1b4b 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #ef24ff 50%, #ff007f 100%);
   color: #ffffff;
-  font-family: 'Oxanium', 'Orbitron', sans-serif;
-  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
-  font-weight: 900;
-  letter-spacing: 0.18em;
+  font-family: var(--font-heading);
+  font-size: clamp(0.88rem, 1.35vw, 1.12rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
   box-shadow: 
-    0 0 25px rgba(0, 240, 255, 0.45), 
-    0 10px 24px rgba(0, 0, 0, 0.75), 
-    inset 0 1px 2px rgba(255, 255, 255, 0.5);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    0 0 35px rgba(239, 36, 255, 0.75), 
+    0 12px 28px rgba(0, 0, 0, 0.75), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.events-register-cta-btn span {
+  white-space: nowrap !important;
+  display: inline-block;
 }
 
 .events-register-cta-btn:hover {
-  transform: translateY(-2px) scale(1.02);
-  background: linear-gradient(135deg, #38bdf8 0%, #00eaff 40%, #3b82f6 75%, #1e40af 100%);
+  transform: translateY(-3px) scale(1.03);
   box-shadow: 
-    0 0 40px rgba(0, 234, 255, 0.85), 
-    0 14px 32px rgba(0, 0, 0, 0.85), 
+    0 0 50px rgba(239, 36, 255, 0.95), 
+    0 16px 36px rgba(0, 0, 0, 0.85), 
     inset 0 1px 3px rgba(255, 255, 255, 0.8);
   border-color: #ffffff;
   color: #ffffff;
@@ -324,10 +679,10 @@
 
 /* Subtle GForm Official Subnote */
 .events-gform-subnote {
-  font-family: 'Chakra Petch', monospace;
+  font-family: var(--font-sub);
   font-size: clamp(0.66rem, 0.95vw, 0.76rem);
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   color: #94a3b8;
   text-transform: uppercase;
   display: flex;
@@ -371,64 +726,169 @@
    ============================================================ */
 @media (max-width: 768px) {
   .events-clean-section {
-    padding: clamp(1.2rem, 2.5vh, 2rem) 0.5rem clamp(1rem, 2vh, 1.6rem);
+    padding: clamp(2rem, 5vh, 3.5rem) 1rem clamp(1.8rem, 4vh, 2.5rem);
   }
 
+  .events-name-header {
+    margin-bottom: clamp(1.2rem, 2.8vh, 1.8rem);
+    min-height: auto;
+  }
+
+  .events-arena-kicker-row {
+    gap: 0.45rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .events-arena-code-chip,
+  .events-arena-cat-chip {
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+  }
+
+  .events-arena-name {
+    font-size: clamp(1.65rem, 6.5vw, 2.4rem);
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+  }
+
+  .events-arena-tagline {
+    font-size: clamp(0.72rem, 2.8vw, 0.86rem);
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+  }
+
+  /* Optimized card stage and card width for pure text card */
   .events-card-stage {
-    height: clamp(200px, 48vw, 300px);
+    height: clamp(300px, 55vh, 380px);
+    margin: 0 auto;
   }
 
   .events-glass-card {
-    width: 76vw;
+    width: clamp(260px, 80vw, 360px);
+    max-width: 360px;
+    aspect-ratio: 16 / 15;
     border-radius: 16px;
     padding: 6px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    will-change: transform, opacity;
   }
 
+  .events-card-text-body {
+    padding: 1.1rem 1.15rem;
+  }
+
+  .events-textcard-icon-shell {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .events-textcard-title {
+    font-size: clamp(1rem, 4.4vw, 1.3rem);
+  }
+
+  .events-textcard-tagline {
+    font-size: 0.72rem;
+  }
+
+  .events-textcard-desc {
+    font-size: 0.78rem;
+    -webkit-line-clamp: 3;
+    line-height: 1.45;
+  }
+
+  .events-textcard-specs-row {
+    padding-top: 0.5rem;
+  }
+
+  .events-textcard-spec {
+    font-size: 0.68rem;
+  }
+
+  /* Floating arrows with safe margin from cards */
   .events-slide-arrow-btn {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
+    background: rgba(4, 9, 28, 0.92);
+    border-color: rgba(0, 234, 255, 0.6);
   }
 
   .events-slide-arrow-btn.prev {
-    left: 4px;
+    left: clamp(4px, 2vw, 12px);
   }
 
   .events-slide-arrow-btn.next {
-    right: 4px;
+    right: clamp(4px, 2vw, 12px);
+  }
+
+  /* Spacious bottom actions */
+  .events-bottom-actions {
+    margin-top: clamp(1.2rem, 2.8vh, 1.8rem);
+    gap: 0.75rem;
   }
 
   .events-register-cta-btn {
-    width: 100%;
-    max-width: 300px;
-    padding: 0.88rem 1.6rem;
-    font-size: 1.02rem;
+    white-space: nowrap !important;
+    width: auto;
+    min-width: 250px;
+    max-width: 90vw;
+    padding: 0.88rem 2rem;
+    font-size: clamp(0.92rem, 3.2vw, 1.05rem);
+    letter-spacing: 0.14em;
+    gap: 0.65rem;
+  }
+
+  .events-gform-subnote {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    margin-top: 0.15rem;
+  }
+
+  .events-dots-row {
+    gap: 0.55rem;
+    margin-top: 0.25rem;
   }
 }
 
 @media (max-width: 480px) {
+  .events-clean-section {
+    padding: 2rem 0.75rem 2.2rem;
+  }
+
   .events-glass-card {
-    width: 78vw;
+    width: clamp(220px, 66vw, 300px);
     border-radius: 14px;
     padding: 5px;
   }
 
   .events-arena-name {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 6.8vw, 1.95rem);
   }
 
   .events-arena-tagline {
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
   }
 
   .events-slide-arrow-btn {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .events-slide-arrow-btn.prev {
+    left: 2px;
+  }
+
+  .events-slide-arrow-btn.next {
+    right: 2px;
   }
 
   .events-register-cta-btn {
-    max-width: 280px;
-    padding: 0.82rem 1.2rem;
-    font-size: 0.98rem;
+    min-width: 240px;
+    padding: 0.85rem 1.8rem;
+    font-size: 0.94rem;
+    letter-spacing: 0.12em;
   }
 }

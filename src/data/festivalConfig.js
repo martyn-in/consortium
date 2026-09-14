@@ -14,10 +14,11 @@ export const festivalConfig = {
   missionText:
     'CONSORTIUM 2026 brings ideas, creativity, engineering, and competition together. Present your work, explore new challenges, and connect with fellow participants across ten flagship arenas.',
   
-  // Unconfirmed status fallbacks per specification
+  // Confirmed event timeline
   dates: {
-    status: 'Dates to be announced',
-    referenceHint: 'October 2026 (Dates TBA)'
+    status: 'October 9 - 10, 2026',
+    formatted: 'OCTOBER 09 & 10, 2026',
+    referenceHint: 'October 9 - 10, 2026'
   },
   venue: {
     status: 'Venue details coming soon',

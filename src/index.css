@@ -39,16 +39,16 @@
   --chrome-cyan-gradient: linear-gradient(180deg, #ffffff 0%, #b7f3ff 35%, #00eaff 70%, #635bff 100%);
   --chrome-text-gradient: linear-gradient(90deg, #00eaff 0%, #ffffff 50%, #7b4dff 100%);
 
-  /* Typography - Premium Futuristic Luxury Suite */
-  --font-crazy: 'Oxanium', 'Orbitron', sans-serif;
-  --font-future: 'Oxanium', 'Orbitron', sans-serif;
-  --font-title: 'Orbitron', 'Oxanium', sans-serif;
-  --font-heading: 'Oxanium', 'Orbitron', sans-serif;
-  --font-cyber: 'Oxanium', sans-serif;
-  --font-hud: 'Chakra Petch', 'Rajdhani', sans-serif;
+  /* Typography - Locked: Unbounded & Space Grotesk (Modern Luxury Tech) */
+  --font-crazy: 'Unbounded', sans-serif;
+  --font-future: 'Unbounded', sans-serif;
+  --font-title: 'Unbounded', sans-serif;
+  --font-heading: 'Unbounded', sans-serif;
+  --font-cyber: 'Space Grotesk', sans-serif;
+  --font-hud: 'Space Grotesk', sans-serif;
   --font-sub: 'Space Grotesk', sans-serif;
-  --font-body: 'Space Grotesk', 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Grotesk', 'JetBrains Mono', monospace;
 }
 
 * {
@@ -197,33 +197,77 @@ a {
    STRICT BORDER-LINE DARK AURA SYSTEM
    (No full card haze, no cloud. Aura is strictly on the border lines)
    ============================================================ */
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotateBorderBeam {
+  0% {
+    --beam-angle: 0deg;
+  }
+  100% {
+    --beam-angle: 360deg;
+  }
+}
+
 /* Strict Border-Line Dark Aura System (Hardware-Accelerated, Zero GPU Strain) */
 .aura-glow-border {
+  --beam-angle: 0deg;
   position: relative;
   background: #050a18 !important;
-  border: 1.5px solid rgba(0, 234, 255, 0.35) !important;
+  border: 1.5px solid rgba(0, 234, 255, 0.22) !important;
   border-radius: 22px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 234, 255, 0.12) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95), 0 0 20px rgba(0, 234, 255, 0.08) !important;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s ease,
               border-color 0.35s ease;
 }
 
-.aura-glow-border:hover {
-  border-color: rgba(0, 234, 255, 0.85) !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.98), 0 0 25px rgba(0, 234, 255, 0.4), 0 0 50px rgba(168, 85, 247, 0.25) !important;
+/* 360° Moving Electric Lightning Border (Strictly on 2px border rim, zero outside blur) */
+.aura-glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--beam-angle, 0deg),
+    transparent 0deg,
+    transparent 140deg,
+    rgba(0, 234, 255, 0.12) 190deg,
+    #00b4d8 240deg,
+    #00f0ff 275deg,
+    #7928ca 310deg,
+    #b026ff 335deg,
+    #ff007a 348deg,
+    #00ffff 354deg,
+    #ffffff 357deg,
+    #ffffff 359deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: rotateBorderBeam 2.5s linear infinite;
+  animation-delay: var(--beam-delay, 0s);
+  z-index: 2;
+  filter: drop-shadow(0 0 2px #ffffff) drop-shadow(0 0 5px #00f0ff);
+  opacity: 1;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-@keyframes auraBorderSpin {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.aura-glow-border:hover {
+  border-color: rgba(0, 234, 255, 0.6) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.98);
+}
+
+.aura-glow-border:hover::before {
+  animation-duration: 1.5s;
+  filter: drop-shadow(0 0 3px #ffffff) drop-shadow(0 0 8px #00ffff) drop-shadow(0 0 14px #ef24ff);
 }
 
 /* Chrome Shimmer Text */

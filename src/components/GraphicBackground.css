@@ -39,12 +39,12 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(3, 7, 18, 0.45) 0%,
-    rgba(3, 7, 18, 0.15) 20%,
-    rgba(3, 7, 18, 0.12) 50%,
-    rgba(3, 7, 18, 0.3) 75%,
-    rgba(3, 7, 18, 0.8) 92%,
-    rgba(3, 7, 18, 0.95) 100%
+    rgba(3, 7, 18, 0.55) 0%,
+    rgba(3, 7, 18, 0.3) 20%,
+    rgba(3, 7, 18, 0.32) 50%,
+    rgba(3, 7, 18, 0.5) 75%,
+    rgba(3, 7, 18, 0.85) 92%,
+    rgba(3, 7, 18, 0.98) 100%
   );
   pointer-events: none;
   contain: strict;

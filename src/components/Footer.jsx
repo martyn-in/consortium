@@ -50,6 +50,7 @@ export default function Footer() {
               <span className="footer-logo-title">CONSORTIUM</span>
             </div>
             <p className="footer-brand-motto">Innovate Today. Impact Tomorrow.</p>
+            <p className="footer-brand-dates">OCTOBER 9 & 10, 2026 • IARE HYDERABAD</p>
           </div>
 
           {/* Links to Active Sections */}

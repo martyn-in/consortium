@@ -46,6 +46,18 @@ export default function Events() {
 
   return (
     <section id="events" className="events-clean-section">
+      {/* Electric Lightning Displacement Filter for authentic crackling plasma arcs */}
+      <svg className="lightning-filter-svg" aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
+        <defs>
+          <filter id="electric-lightning-displacement" x="-10%" y="-10%" width="120%" height="120%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.04 0.9" numOctaves="2" result="noise">
+              <animate attributeName="baseFrequency" dur="0.1s" values="0.04 0.9; 0.08 0.75; 0.03 0.95; 0.07 0.85; 0.04 0.9" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+      </svg>
+
       <div className="events-clean-container">
         
         {/* Above Card: Huge Event Name & Tagline */}
@@ -59,6 +71,11 @@ export default function Events() {
               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
               className="events-name-inner"
             >
+              <div className="events-arena-kicker-row">
+                <span className="events-arena-code-chip">{activeEvent.arenaCode || `ARENA #0${activeEvent.sourceOrder} // 10`}</span>
+                <span className="events-arena-kicker-sep">◆</span>
+                <span className="events-arena-cat-chip">{activeEvent.category}</span>
+              </div>
               <h2 className="events-arena-name">
                 {activeEvent.title}
               </h2>
@@ -139,22 +156,74 @@ export default function Events() {
                     if (isNext) handleNext();
                   }}
                 >
-                  {/* Moving Laser Aura Perimeter Line on Active Card */}
-                  {isCenter && (
-                    <div className="events-card-laser-border" aria-hidden="true"></div>
+                  {/* 360° Moving Electric Lightning Border — Strictly On Border, Zero Outside Bleed, Zero Inside Bleed */}
+                  {isVisible && (
+                    <div 
+                      className={`events-card-lightning-border ${isCenter ? 'is-active-lightning' : 'is-side-lightning'}`} 
+                      aria-hidden="true"
+                    >
+                      {/* High-Voltage Electric Rail */}
+                      <div className="lightning-rail" />
+
+                      {/* Primary Moving Lightning Bolt Stream */}
+                      <div className="lightning-bolt-track">
+                        <div className="lightning-plasma-rotor" />
+                      </div>
+
+                      {/* Electric Counter-Current Spark Arcs */}
+                      <div className="lightning-spark-arcs">
+                        <div className="lightning-plasma-rotor reverse" />
+                      </div>
+                    </div>
                   )}
 
                   {/* Specular Top Glass Sheen */}
                   <div className="events-glass-sheen" aria-hidden="true"></div>
 
-                  {/* Clean Image Container with Glass Bezel */}
-                  <div className="events-card-image-wrap">
-                    <img 
-                      src={evt.image} 
-                      alt={evt.title} 
-                      className="events-card-img" 
-                      loading={isVisible ? 'eager' : 'lazy'}
-                    />
+                  {/* Pure Text Obsidian Card (No Anime Images, Pure Typography) */}
+                  <div className="events-card-text-body">
+                    {/* Header Row: Code & Category */}
+                    <div className="events-textcard-header">
+                      <span className="events-textcard-code">{evt.arenaCode || `ARENA #0${evt.sourceOrder} // 10`}</span>
+                      <span className="events-textcard-cat">{evt.category}</span>
+                    </div>
+
+                    {/* Middle Block: Glowing Icon Shell & Large Title */}
+                    <div className="events-textcard-hero">
+                      {evt.icon && (
+                        <div className="events-textcard-icon-shell">
+                          <evt.icon size={28} className="events-textcard-icon" />
+                        </div>
+                      )}
+                      <div className="events-textcard-title-group">
+                        <h3 className="events-textcard-title">{evt.title}</h3>
+                        <p className="events-textcard-tagline">{evt.tagline}</p>
+                      </div>
+                    </div>
+
+                    {/* High-Impact Description */}
+                    <p className="events-textcard-desc">{evt.description}</p>
+
+                    {/* Cyber Spec Tags */}
+                    {evt.cyberTags && (
+                      <div className="events-textcard-tags-row">
+                        {evt.cyberTags.slice(0, 3).map((tag) => (
+                          <span key={tag} className="events-textcard-tag">{tag}</span>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Telemetry Metadata Specs */}
+                    <div className="events-textcard-specs-row">
+                      <div className="events-textcard-spec">
+                        <span className="spec-label">TEAM:</span>
+                        <span className="spec-val">{evt.teamSize || 'Individual / Team'}</span>
+                      </div>
+                      <div className="events-textcard-spec">
+                        <span className="spec-label">VENUE:</span>
+                        <span className="spec-val">{evt.venue || 'IARE Campus'}</span>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               );

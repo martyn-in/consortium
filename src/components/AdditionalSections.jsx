@@ -1,4 +1,4 @@
-import { MapPin, ExternalLink, Navigation } from 'lucide-react';
+import { MapPin, ExternalLink, Navigation, Calendar } from 'lucide-react';
 import Reveal from './Reveal';
 import { sound } from '../utils/soundEffects';
 import './AdditionalSections.css';
@@ -13,7 +13,7 @@ export default function AdditionalSections() {
         <div className="container">
           <Reveal direction="up" distance={25}>
             <div className="section-panel-header">
-              <span className="section-kicker">✦ FESTIVAL LOCATION</span>
+              <span className="section-kicker">✦ FESTIVAL LOCATION ✦</span>
               <h2 className="section-panel-title">CAMPUS VENUE</h2>
               <p className="section-panel-desc">
                 Institute of Aeronautical Engineering (Autonomous) — Hyderabad
@@ -23,14 +23,15 @@ export default function AdditionalSections() {
 
           <Reveal direction="up" distance={20} delay={0.15}>
             <div className="venue-details-card aura-glow-border">
-              <div className="split-corner-tl" aria-hidden="true" />
-              <div className="split-corner-br" aria-hidden="true" />
-
               <div className="venue-info-side">
                 <div className="venue-badge-row">
                   <span className="venue-status-chip">
                     <MapPin size={13} className="text-cyan inline mr-1" />
                     OFFICIAL HOST CAMPUS
+                  </span>
+                  <span className="venue-status-chip venue-timeline-chip">
+                    <Calendar size={13} className="text-magenta inline mr-1" />
+                    OCTOBER 9 & 10, 2026
                   </span>
                 </div>
 
