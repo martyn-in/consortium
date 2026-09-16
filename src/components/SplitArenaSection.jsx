@@ -12,7 +12,7 @@ export default function SplitArenaSection() {
             <div className="battle-card-content">
               <div className="battle-kicker-chip">
                 <span className="battle-kicker-dot">●</span>
-                <span>NATIONAL TECHNICAL FESTIVAL</span>
+                <span>2 DAYS NATIONAL LEVEL FEST</span>
               </div>
 
               <h2 className="battle-heading">

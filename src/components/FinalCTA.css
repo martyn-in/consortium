@@ -149,3 +149,37 @@
     font-size: clamp(0.88rem, 3.2vw, 1rem);
   }
 }
+
+@media (max-width: 480px) {
+  .mockup-cta-banner-section {
+    padding: 1.5rem 0.75rem 2.5rem;
+  }
+
+  .mockup-trophy-banner {
+    padding: 1.4rem 0.95rem;
+    border-radius: 16px;
+    gap: 1.1rem;
+  }
+
+  .trophy-cup-halo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+
+  .trophy-banner-title {
+    font-size: 1.25rem;
+  }
+
+  .trophy-banner-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .trophy-btn-register {
+    min-width: 0;
+    width: 100%;
+    max-width: 280px;
+    padding: 0.82rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}

@@ -196,15 +196,38 @@
 }
 
 @media (max-width: 768px) {
+  .mockup-footer-section {
+    padding: 2.8rem 1rem 2rem;
+  }
   .footer-top-row {
     flex-direction: column;
     gap: 2rem;
   }
+  .footer-brand-side {
+    max-width: 100%;
+  }
   .footer-nav-groups {
     gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
   .footer-bottom-row {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mockup-footer-section {
+    padding: 2.2rem 0.75rem 1.6rem;
+  }
+  .footer-nav-groups {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .footer-copyright-text {
+    font-size: 0.8rem;
   }
 }

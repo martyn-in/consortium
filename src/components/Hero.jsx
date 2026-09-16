@@ -69,7 +69,7 @@ const Hero = ({ onNavigateToEvents }) => {
               <Calendar size={14} className="hero-timeline-icon" />
               <span className="hero-timeline-text">OCTOBER 09 – 10, 2026</span>
               <span className="hero-timeline-spark">✦</span>
-              <span className="hero-timeline-sub">2-DAY NATIONAL FESTIVAL</span>
+              <span className="hero-timeline-sub">2 DAYS NATIONAL LEVEL FEST</span>
             </div>
           </motion.div>
         </div>

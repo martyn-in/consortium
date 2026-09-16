@@ -112,7 +112,30 @@
 }
 
 @media (max-width: 540px) {
+  .why-consortium-section {
+    padding: 2.2rem 0.75rem 3.2rem;
+  }
+
+  .why-header-block {
+    margin-bottom: 2rem;
+  }
+
+  .why-main-title {
+    font-size: clamp(1.4rem, 6.5vw, 1.9rem);
+  }
+
   .why-pillars-grid {
     grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+
+  .why-pillar-card {
+    padding: 1.6rem 1.1rem;
+    border-radius: 16px;
+  }
+
+  .pillar-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 }

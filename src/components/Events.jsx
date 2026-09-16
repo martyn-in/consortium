@@ -1,322 +1,241 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
-import { eventsList } from '../data/eventsData';
+import { 
+  Users, MapPin, Calendar, ArrowRight, 
+  Sparkles, ExternalLink, Info 
+} from 'lucide-react';
+import { eventsList, categories } from '../data/eventsData';
 import { sound } from '../utils/soundEffects';
+import EventDetailModal from './EventDetailModal';
 import './Events.css';
 
 // Authoritative Google Form registration link
 const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
 
-const getCardOffset = (index, activeIndex, total) => {
-  let diff = index - activeIndex;
-  while (diff > total / 2) diff -= total;
-  while (diff < -total / 2) diff += total;
-  return diff;
-};
-
 export default function Events() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [dragStartX, setDragStartX] = useState(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('All Events');
+  const [activeModalEvent, setActiveModalEvent] = useState(null);
 
-  const count = eventsList.length;
-  const activeEvent = eventsList[activeIndex] || eventsList[0];
+  const filteredEvents = useMemo(() => {
+    if (selectedCategory === 'All Events') return eventsList;
+    return eventsList.filter((e) => e.category === selectedCategory);
+  }, [selectedCategory]);
 
-  const handleNext = useCallback(() => {
+  const handleOpenModal = (event) => {
     sound.playClick();
-    setActiveIndex((prev) => (prev + 1) % count);
-  }, [count]);
+    setActiveModalEvent(event);
+  };
 
-  const handlePrev = useCallback(() => {
+  const handleCloseModal = () => {
+    setActiveModalEvent(null);
+  };
+
+  const handleRegister = () => {
     sound.playClick();
-    setActiveIndex((prev) => (prev - 1 + count) % count);
-  }, [count]);
-
-  // Auto-scroll: advance cards smoothly every 3.9s unless paused (on hover or touch/drag)
-  useEffect(() => {
-    if (isPaused) return;
-
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % count);
-    }, 3900);
-
-    return () => clearInterval(timer);
-  }, [isPaused, count]);
-
-  // Keyboard arrow navigation
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'ArrowRight') handleNext();
-      if (e.key === 'ArrowLeft') handlePrev();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleNext, handlePrev]);
-
-  if (!activeEvent) return null;
+    window.open(GOOGLE_FORM_URL, '_blank', 'noopener,noreferrer');
+  };
 
   return (
-    <section 
-      id="events" 
-      className="events-clean-section"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      {/* Electric Lightning Displacement Filter for authentic crackling plasma arcs */}
-      <svg className="lightning-filter-svg" aria-hidden="true" style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
-        <defs>
-          <filter id="electric-lightning-displacement" x="-10%" y="-10%" width="120%" height="120%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.04 0.9" numOctaves="2" result="noise">
-              <animate attributeName="baseFrequency" dur="0.1s" values="0.04 0.9; 0.08 0.75; 0.03 0.95; 0.07 0.85; 0.04 0.9" repeatCount="indefinite" />
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
-          </filter>
-        </defs>
-      </svg>
+    <section id="events" className="events-boxes-section">
+      <div className="events-boxes-container">
 
-      <div className="events-clean-container">
-        
-        {/* Above Card: Huge Event Name & Tagline */}
-        <div className="events-name-header">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeEvent.id}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              className="events-name-inner"
-            >
-              <div className="events-arena-kicker-row">
-                <span className="events-arena-code-chip">{activeEvent.eventCode || activeEvent.arenaCode || `EVENT #0${activeEvent.sourceOrder} // 10`}</span>
-                <span className="events-arena-kicker-sep">◆</span>
-                <span className="events-arena-cat-chip">{activeEvent.category}</span>
-              </div>
-              <h2 className="events-arena-name">
-                {activeEvent.title}
-              </h2>
-              {activeEvent.tagline && (
-                <p className="events-arena-tagline">
-                  {activeEvent.tagline}
-                </p>
-              )}
-            </motion.div>
-          </AnimatePresence>
+        {/* Section Header */}
+        <div className="events-section-header">
+          <div className="events-header-kicker-chip">
+            <span className="events-kicker-spark">✦</span>
+            <span>10 FLAGSHIP NATIONAL ARENAS</span>
+            <span className="events-kicker-spark">✦</span>
+          </div>
+
+          <h2 className="events-main-heading">
+            EXPLORE <span className="events-title-brush">ARENAS</span>
+          </h2>
+
+          <p className="events-sub-copy">
+            Battle, innovate, and conquer across 10 official competitive domains at Consortium 2026.
+          </p>
+
+          {/* Responsive Category Filter Chips */}
+          <div className="events-filter-bar-wrap">
+            <div className="events-filter-bar">
+              {categories.map((cat) => {
+                const isActive = selectedCategory === cat;
+                const count = cat === 'All Events' 
+                  ? eventsList.length 
+                  : eventsList.filter((e) => e.category === cat).length;
+
+                return (
+                  <button
+                    key={cat}
+                    className={`events-filter-pill ${isActive ? 'is-active' : ''}`}
+                    onClick={() => {
+                      sound.playClick();
+                      setSelectedCategory(cat);
+                    }}
+                    onMouseEnter={() => sound.playHover()}
+                  >
+                    <span>{cat}</span>
+                    <span className="filter-count-badge">{count}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
-        {/* Card Stage: Glassmorphism 3D Peeking Carousel Stage */}
-        <div 
-          className="events-card-stage"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onMouseDown={(e) => {
-            setIsPaused(true);
-            setDragStartX(e.clientX);
-          }}
-          onMouseUp={(e) => {
-            if (dragStartX !== null) {
-              const delta = e.clientX - dragStartX;
-              if (delta < -40) handleNext();
-              else if (delta > 40) handlePrev();
-              setDragStartX(null);
-            }
-          }}
-          onTouchStart={(e) => {
-            setIsPaused(true);
-            setDragStartX(e.touches[0].clientX);
-          }}
-          onTouchEnd={(e) => {
-            if (dragStartX !== null) {
-              const delta = e.changedTouches[0].clientX - dragStartX;
-              if (delta < -40) handleNext();
-              else if (delta > 40) handlePrev();
-              setDragStartX(null);
-            }
-            setIsPaused(false);
-          }}
+        {/* Responsive Events Grid (3 per row on desktop, 2 per row on tablet, 1 on mobile) */}
+        <motion.div 
+          className="events-boxes-grid"
+          layout
         >
-          {/* Previous Arrow Button */}
-          <button 
-            className="events-slide-arrow-btn prev"
-            onClick={(e) => {
-              e.stopPropagation();
-              handlePrev();
-            }}
-            aria-label="Previous Event"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          {/* Carousel Viewport with Peeking Cards */}
-          <div className="events-carousel-viewport">
-            {eventsList.map((evt, idx) => {
-              const diff = getCardOffset(idx, activeIndex, count);
-              const isCenter = diff === 0;
-              const isPrev = diff === -1;
-              const isNext = diff === 1;
-              const isVisible = Math.abs(diff) <= 1;
-              const isNear = Math.abs(diff) <= 2;
-
-              if (!isNear) return null;
+          <AnimatePresence mode="popLayout">
+            {filteredEvents.map((evt, index) => {
+              const EventIcon = evt.icon || Sparkles;
 
               return (
-                <motion.div 
+                <motion.div
                   key={evt.id}
-                  className={`events-glass-card ${isCenter ? 'is-active' : ''} ${isPrev ? 'is-prev' : ''} ${isNext ? 'is-next' : ''}`}
-                  initial={false}
-                  animate={{
-                    x: diff === 0 ? '0%' : diff === -1 ? '-78%' : diff === 1 ? '78%' : diff < 0 ? '-140%' : '140%',
-                    scale: diff === 0 ? 1 : 0.84,
-                    opacity: diff === 0 ? 1 : isVisible ? 0.45 : 0,
-                    zIndex: diff === 0 ? 10 : isVisible ? 4 : 1,
+                  className="event-box-card aura-glow-border"
+                  layout
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ 
+                    duration: 0.35, 
+                    delay: Math.min(index * 0.05, 0.3),
+                    ease: [0.16, 1, 0.3, 1] 
                   }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 300,
-                    damping: 30,
-                    mass: 0.8
-                  }}
-                  onClick={() => {
-                    if (isPrev) handlePrev();
-                    if (isNext) handleNext();
-                  }}
+                  onMouseEnter={() => sound.playHover()}
                 >
-                  {/* 360° Moving Electric Lightning Border — Strictly On Border, Zero Outside Bleed, Zero Inside Bleed */}
-                  {isVisible && (
-                    <div 
-                      className={`events-card-lightning-border ${isCenter ? 'is-active-lightning' : 'is-side-lightning'}`} 
-                      aria-hidden="true"
-                    >
-                      {/* High-Voltage Electric Rail */}
-                      <div className="lightning-rail" />
-
-                      {/* Primary Moving Lightning Bolt Stream */}
-                      <div className="lightning-bolt-track">
-                        <div className="lightning-plasma-rotor" />
-                      </div>
-
-                      {/* Electric Counter-Current Spark Arcs */}
-                      <div className="lightning-spark-arcs">
-                        <div className="lightning-plasma-rotor reverse" />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Real Photographic Background with Cinematic Obsidian Gradient Plate */}
-                  {evt.image && (
-                    <div className="events-card-photo-layer" aria-hidden="true">
+                  {/* Top Image Banner with Floating HUD Badges */}
+                  <div 
+                    className="event-box-media-wrap"
+                    onClick={() => handleOpenModal(evt)}
+                  >
+                    {evt.image && (
                       <img 
                         src={evt.image} 
                         alt={evt.title} 
-                        className="events-card-photo-img" 
+                        className="event-box-img" 
                         loading="lazy" 
                       />
-                      <div className="events-card-photo-gradient" />
-                    </div>
-                  )}
+                    )}
+                    <div className="event-box-scrim" />
 
-                  {/* Specular Top Glass Sheen */}
-                  <div className="events-glass-sheen" aria-hidden="true"></div>
-
-                  {/* Realistic Content & High-Contrast Typography */}
-                  <div className="events-card-text-body">
-                    {/* Header Row: Code & Category */}
-                    <div className="events-textcard-header">
-                      <span className="events-textcard-code">{evt.eventCode || evt.arenaCode || `EVENT #0${evt.sourceOrder} // 10`}</span>
-                      <span className="events-textcard-cat">{evt.category}</span>
+                    {/* Top Chips */}
+                    <div className="event-box-top-chips">
+                      <span className="event-box-code-chip">
+                        {evt.eventCode || `EVENT #0${evt.sourceOrder}`}
+                      </span>
+                      <span className="event-box-cat-chip">
+                        {evt.category}
+                      </span>
                     </div>
 
-                    {/* Middle Block: Glowing Icon Shell & Large Title */}
-                    <div className="events-textcard-hero">
-                      {evt.icon && (
-                        <div className="events-textcard-icon-shell">
-                          <evt.icon size={28} className="events-textcard-icon" />
-                        </div>
-                      )}
-                      <div className="events-textcard-title-group">
-                        <h3 className="events-textcard-title">{evt.title}</h3>
-                        <p className="events-textcard-tagline">{evt.tagline}</p>
-                      </div>
+                    {/* Floating Icon Orb */}
+                    <div className="event-box-icon-orb">
+                      <EventIcon size={20} className="text-cyan" />
+                    </div>
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="event-box-content">
+                    {/* Title & Tagline */}
+                    <div className="event-box-title-group" onClick={() => handleOpenModal(evt)}>
+                      <h3 className="event-box-title">{evt.title}</h3>
+                      <p className="event-box-tagline">{evt.tagline}</p>
                     </div>
 
-                    {/* High-Impact Realistic Description */}
-                    <p className="events-textcard-desc">{evt.description}</p>
+                    {/* Description */}
+                    <p className="event-box-desc">{evt.description}</p>
 
-                    {/* Authentic Spec Tags */}
-                    {evt.cyberTags && (
-                      <div className="events-textcard-tags-row">
-                        {evt.cyberTags.slice(0, 4).map((tag) => (
-                          <span key={tag} className="events-textcard-tag">{tag}</span>
+                    {/* Cyber Spec Tags */}
+                    {evt.cyberTags && evt.cyberTags.length > 0 && (
+                      <div className="event-box-tags-row">
+                        {evt.cyberTags.slice(0, 3).map((tag) => (
+                          <span key={tag} className="event-box-tag-pill">{tag}</span>
                         ))}
                       </div>
                     )}
 
-                    {/* Event Telemetry Metadata Specs */}
-                    <div className="events-textcard-specs-row">
-                      <div className="events-textcard-spec">
-                        <span className="spec-label">TEAM:</span>
-                        <span className="spec-val">{evt.teamSize || 'Individual / Team'}</span>
+                    {/* Telemetry Specs Row */}
+                    <div className="event-box-specs-bar">
+                      <div className="event-box-spec-item" title="Team Structure">
+                        <Users size={14} className="spec-icon text-cyan" />
+                        <span>{evt.teamSize || 'Open'}</span>
                       </div>
-                      <div className="events-textcard-spec">
-                        <span className="spec-label">VENUE:</span>
-                        <span className="spec-val">{evt.venue || 'IARE Campus'}</span>
+                      <span className="event-spec-dot">•</span>
+                      <div className="event-box-spec-item" title="Venue">
+                        <MapPin size={14} className="spec-icon text-magenta" />
+                        <span>{evt.venue ? evt.venue.split('/')[0].trim() : 'IARE'}</span>
                       </div>
+                      <span className="event-spec-dot">•</span>
+                      <div className="event-box-spec-item" title="Date">
+                        <Calendar size={14} className="spec-icon text-cyan" />
+                        <span>Oct 09-10</span>
+                      </div>
+                    </div>
+
+                    {/* Action Buttons Row */}
+                    <div className="event-box-actions-row">
+                      <button
+                        type="button"
+                        className="event-box-btn-details"
+                        onClick={() => handleOpenModal(evt)}
+                        aria-label={`View rules and info for ${evt.title}`}
+                      >
+                        <Info size={15} />
+                        <span>DETAILS</span>
+                      </button>
+
+                      <a
+                        href={GOOGLE_FORM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="event-box-btn-register"
+                        onClick={() => sound.playClick()}
+                        aria-label={`Register for ${evt.title}`}
+                      >
+                        <span>REGISTER</span>
+                        <ArrowRight size={15} />
+                      </a>
                     </div>
                   </div>
                 </motion.div>
               );
             })}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Global Bottom Register Banner */}
+        <div className="events-grid-bottom-bar">
+          <div className="events-grid-bottom-info">
+            <span className="events-bottom-pulse-dot">●</span>
+            <span>All 10 events accept inter-college registrations. Early registration grants fast-track campus access.</span>
           </div>
-
-          {/* Next Arrow Button */}
-          <button 
-            className="events-slide-arrow-btn next"
-            onClick={(e) => {
-              e.stopPropagation();
-              handleNext();
-            }}
-            aria-label="Next Event"
-          >
-            <ChevronRight size={24} />
-          </button>
-        </div>
-
-        {/* Below Card: Single Primary Register CTA & Navigation Dots */}
-        <div className="events-bottom-actions">
-          {/* Prominent Glowing Register Button */}
-          <a 
+          <a
             href={GOOGLE_FORM_URL}
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
-            className="events-register-cta-btn"
+            className="events-grid-master-register-btn"
+            onClick={() => sound.playClick()}
           >
-            <span>REGISTER NOW</span>
-            <ArrowRight size={20} />
+            <span>OFFICIAL GOOGLE FORM REGISTRATION</span>
+            <ExternalLink size={17} />
           </a>
-
-          <span className="events-gform-subnote">
-            Official Registration via Google Forms
-          </span>
-
-          {/* Quick Event Navigation Dots */}
-          <div className="events-dots-row">
-            {eventsList.map((evt, idx) => (
-              <button
-                key={evt.id}
-                className={`events-dot-indicator ${idx === activeIndex ? 'active' : ''}`}
-                onClick={() => {
-                  sound.playHover();
-                  setActiveIndex(idx);
-                }}
-                aria-label={`Jump to ${evt.title}`}
-                title={evt.title}
-              />
-            ))}
-          </div>
         </div>
 
       </div>
+
+      {/* Detail Rulebook Modal */}
+      {activeModalEvent && (
+        <EventDetailModal
+          event={activeModalEvent}
+          isOpen={Boolean(activeModalEvent)}
+          onClose={handleCloseModal}
+          onRegister={handleRegister}
+        />
+      )}
     </section>
   );
 }
