@@ -1,5 +1,4 @@
 {
-  "name": "consortium2026",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
