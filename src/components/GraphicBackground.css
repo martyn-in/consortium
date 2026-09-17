@@ -1,5 +1,6 @@
 /* ============================================================
-   PROFESSIONAL MULTI-THEME MOTION BACKGROUND SYSTEM
+   CHROMATIC QUANTUM SPECTRUM BACKGROUND
+   Harmoniously blends Cyan, Violet, Magenta, Sapphire & Teal
    ============================================================ */
 
 .graphic-background-wrapper {
@@ -14,66 +15,88 @@
   background-color: #030712;
 }
 
-/* 1. Deep Obsidian Base */
-.cyber-obsidian-base {
+/* 1. Deep Obsidian Base Canvas */
+.spectrum-obsidian-base {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    circle at 50% 20%,
-    #050b1a 0%,
-    #030714 50%,
-    #010309 100%
+    circle at 50% 15%,
+    #050b1d 0%,
+    #030714 45%,
+    #010207 100%
   );
   pointer-events: none;
 }
 
-/* ============================================================
-   THEME 1: EXECUTIVE CYBER MESH (Linear / Apple Pro Luxury Style)
-   ============================================================ */
-.exec-glow-orb-cyan {
+/* 2. Full-Spectrum Ambient Aurora Pools */
+
+/* Electric Cyan (#00eaff) - Upper Left Focus */
+.spectrum-aurora-cyan {
   position: absolute;
-  top: -5%;
-  left: 15%;
+  top: -8%;
+  left: 10%;
+  width: min(780px, 80vw);
+  height: min(780px, 80vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 234, 255, 0.14) 0%,
+    rgba(14, 165, 233, 0.05) 50%,
+    transparent 72%
+  );
+  filter: blur(100px);
+  animation: orbitCyan 28s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Neon Violet & Indigo (#7b4dff / #635bff) - Upper Right Focus */
+.spectrum-aurora-violet {
+  position: absolute;
+  top: 15%;
+  right: 6%;
   width: min(850px, 85vw);
   height: min(850px, 85vw);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(14, 165, 233, 0.15) 0%,
-    rgba(2, 132, 199, 0.04) 50%,
-    transparent 72%
-  );
-  filter: blur(100px);
-  animation: execFloat1 28s ease-in-out infinite alternate;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.exec-glow-orb-violet {
-  position: absolute;
-  top: 35%;
-  right: 5%;
-  width: min(900px, 90vw);
-  height: min(900px, 90vw);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(124, 58, 237, 0.13) 0%,
-    rgba(79, 70, 229, 0.03) 50%,
+    rgba(123, 77, 255, 0.13) 0%,
+    rgba(99, 102, 241, 0.04) 50%,
     transparent 72%
   );
   filter: blur(110px);
-  animation: execFloat2 32s ease-in-out infinite alternate;
+  animation: orbitViolet 34s ease-in-out infinite alternate;
   pointer-events: none;
   will-change: transform;
 }
 
-.exec-glow-orb-sapphire {
+/* Cyber Magenta (#ec4899) - Mid Center & Schedule Accent */
+.spectrum-aurora-magenta {
   position: absolute;
-  bottom: -10%;
-  left: 25%;
-  width: min(750px, 75vw);
-  height: min(750px, 75vw);
+  top: 45%;
+  right: 18%;
+  width: min(720px, 75vw);
+  height: min(720px, 75vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.11) 0%,
+    rgba(217, 70, 239, 0.035) 45%,
+    transparent 70%
+  );
+  filter: blur(95px);
+  animation: orbitMagenta 30s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Royal Sapphire (#2563eb / #1d4ed8) - Lower Left & Depth */
+.spectrum-aurora-sapphire {
+  position: absolute;
+  bottom: 5%;
+  left: 8%;
+  width: min(800px, 80vw);
+  height: min(800px, 80vw);
   border-radius: 50%;
   background: radial-gradient(
     circle,
@@ -81,161 +104,77 @@
     rgba(29, 78, 216, 0.03) 50%,
     transparent 72%
   );
-  filter: blur(95px);
-  animation: execFloat3 24s ease-in-out infinite alternate;
+  filter: blur(105px);
+  animation: orbitSapphire 26s ease-in-out infinite alternate;
   pointer-events: none;
   will-change: transform;
 }
 
-.exec-fine-dot-grid {
+/* Prismatic Teal (#00f2fe / #10b981) - Lower Center & Arena Shimmer */
+.spectrum-aurora-teal {
   position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(56, 189, 248, 0.075) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%);
-  pointer-events: none;
-  opacity: 0.85;
-}
-
-@keyframes execFloat1 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(70px, 50px) scale(1.1); }
-  100% { transform: translate(-40px, 70px) scale(0.95); }
-}
-
-@keyframes execFloat2 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-80px, -60px) scale(1.12); }
-  100% { transform: translate(30px, 70px) scale(0.92); }
-}
-
-@keyframes execFloat3 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, -40px) scale(1.15); }
-  100% { transform: translate(-50px, 30px) scale(0.9); }
-}
-
-/* ============================================================
-   THEME 2: CYBER HORIZON 3D
-   ============================================================ */
-.horizon-sky-vignette {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 55%;
-  background: linear-gradient(
-    180deg,
-    #02040b 0%,
-    rgba(7, 13, 30, 0.85) 60%,
-    rgba(14, 25, 55, 0.5) 100%
-  );
-  pointer-events: none;
-}
-
-.horizon-ambient-core {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  height: 300px;
+  bottom: -5%;
+  left: 42%;
+  width: min(680px, 70vw);
+  height: min(680px, 70vw);
+  border-radius: 50%;
   background: radial-gradient(
-    ellipse 60% 40% at 50% 50%,
-    rgba(0, 234, 255, 0.12) 0%,
-    rgba(168, 85, 247, 0.08) 45%,
-    transparent 75%
+    circle,
+    rgba(0, 242, 254, 0.10) 0%,
+    rgba(16, 185, 129, 0.03) 50%,
+    transparent 70%
   );
-  filter: blur(60px);
+  filter: blur(90px);
+  animation: orbitTeal 22s ease-in-out infinite alternate;
   pointer-events: none;
+  will-change: transform;
 }
 
-/* ============================================================
-   THEME 3: NEURAL TECH NETWORK
-   ============================================================ */
-.neural-grid-backdrop {
+/* Multi-Axis Non-Repeating Ambient Orbits */
+@keyframes orbitCyan {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(75px, 60px) scale(1.12); }
+  100% { transform: translate(-45px, 85px) scale(0.94); }
+}
+
+@keyframes orbitViolet {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, -55px) scale(1.1); }
+  100% { transform: translate(35px, 75px) scale(0.92); }
+}
+
+@keyframes orbitMagenta {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-65px, 50px) scale(1.15); }
+  100% { transform: translate(50px, -40px) scale(0.9); }
+}
+
+@keyframes orbitSapphire {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -45px) scale(1.14); }
+  100% { transform: translate(-50px, 35px) scale(0.92); }
+}
+
+@keyframes orbitTeal {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -60px) scale(1.1); }
+  100% { transform: translate(65px, 45px) scale(0.95); }
+}
+
+/* 3. Subtle Cyber Blueprint Dot Matrix */
+.spectrum-dot-matrix {
   position: absolute;
   inset: 0;
-  background-image: 
-    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 80%);
+  background-image: radial-gradient(rgba(56, 189, 248, 0.065) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 20%, transparent 80%);
   pointer-events: none;
+  opacity: 0.8;
 }
 
-.neural-ambient-cyan {
-  position: absolute;
-  top: 15%;
-  left: 10%;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.14) 0%, transparent 70%);
-  filter: blur(85px);
-  pointer-events: none;
-}
-
-.neural-ambient-purple {
-  position: absolute;
-  bottom: 10%;
-  right: 15%;
-  width: 650px;
-  height: 650px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(147, 51, 234, 0.12) 0%, transparent 70%);
-  filter: blur(95px);
-  pointer-events: none;
-}
-
-/* ============================================================
-   THEME 4: DEEP SPACE NEBULA
-   ============================================================ */
-.nebula-dust-cloud-1 {
-  position: absolute;
-  top: 10%;
-  right: 15%;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(124, 58, 237, 0.04) 50%, transparent 75%);
-  filter: blur(90px);
-  animation: execFloat1 35s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-.nebula-dust-cloud-2 {
-  position: absolute;
-  bottom: 20%;
-  left: 10%;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.11) 0%, rgba(59, 130, 246, 0.03) 50%, transparent 75%);
-  filter: blur(100px);
-  animation: execFloat2 40s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-.nebula-dust-cloud-3 {
-  position: absolute;
-  top: 50%;
-  left: 45%;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
-  filter: blur(90px);
-  animation: execFloat3 30s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-
-/* ============================================================
-   CANVAS & CONTRAST
-   ============================================================ */
-.cyber-motion-canvas {
+/* 4. Canvas Layer (Harmonic Quantum Wave Ribbons) */
+.spectrum-motion-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -244,16 +183,15 @@
   display: block;
 }
 
-.cyber-contrast-vignette {
+/* 5. Edge Contrast Vignette (Preserves Ultra-High Text Legibility) */
+.spectrum-contrast-vignette {
   position: absolute;
   inset: 0;
   background: radial-gradient(
     circle at 50% 50%,
     transparent 50%,
-    rgba(2, 4, 11, 0.55) 85%,
-    rgba(2, 4, 11, 0.88) 100%
+    rgba(1, 2, 7, 0.50) 80%,
+    rgba(1, 2, 7, 0.85) 100%
   );
   pointer-events: none;
 }
-
-
