@@ -21,12 +21,12 @@
   --silver-metallic: #cbd5e1;
 
   /* Glass Surfaces */
-  --glass-surface: rgba(7, 16, 38, 0.75);
-  --glass-card: rgba(8, 18, 44, 0.78);
-  --glass-hover: rgba(12, 26, 62, 0.9);
-  --glass-border: rgba(0, 234, 255, 0.22);
-  --glass-border-bright: rgba(0, 234, 255, 0.55);
-  --glass-border-violet: rgba(123, 77, 255, 0.35);
+  --glass-surface: rgba(14, 26, 62, 0.65);
+  --glass-card: rgba(16, 30, 72, 0.58);
+  --glass-hover: rgba(22, 42, 98, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-border-bright: rgba(0, 234, 255, 0.65);
+  --glass-border-violet: rgba(123, 77, 255, 0.4);
 
   /* Primary Typography Colors */
   --text-primary: #f8fafc;
@@ -217,15 +217,19 @@ a {
 /* Ambient Aura Glow Border System (Static Luminous Rim & Cyber Radiance) */
 .aura-glow-border {
   position: relative;
-  background: #050a18 !important;
+  background: rgba(14, 26, 62, 0.68) !important;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   border: 1.5px solid rgba(0, 234, 255, 0.35) !important;
   border-radius: 22px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95), 
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 
               0 0 25px rgba(0, 234, 255, 0.2), 
-              0 0 50px rgba(168, 85, 247, 0.12) !important;
+              0 0 50px rgba(168, 85, 247, 0.12),
+              inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s ease,
-              border-color 0.35s ease;
+              border-color 0.35s ease,
+              background 0.3s ease;
 }
 
 /* Static Aura Rim Highlight (Zero moving lines, pure crisp luminous edge) */

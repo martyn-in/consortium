@@ -21,11 +21,11 @@
 
 .c26-navbar-header.is-scrolled {
   padding: clamp(0.65rem, 1.5vh, 0.85rem) clamp(1.2rem, 3vw, 2.5rem);
-  background: rgba(3, 7, 22, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 234, 255, 0.22);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 234, 255, 0.12);
+  background: rgba(10, 18, 44, 0.78);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 234, 255, 0.12);
 }
 
 .c26-navbar-inner {
@@ -276,15 +276,16 @@
   top: calc(100% + 10px);
   left: 1rem;
   right: 1rem;
-  background: rgba(4, 11, 30, 0.96) !important;
+  background: rgba(12, 22, 54, 0.88) !important;
   border-radius: 20px;
   padding: 1.4rem 1.3rem;
-  border: 1.5px solid rgba(0, 234, 255, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
   box-shadow: 
-    0 20px 45px rgba(0, 0, 0, 0.95), 
-    0 0 30px rgba(0, 234, 255, 0.25) !important;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+    0 20px 45px rgba(0, 0, 0, 0.85), 
+    0 0 30px rgba(0, 234, 255, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   animation: drawerSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

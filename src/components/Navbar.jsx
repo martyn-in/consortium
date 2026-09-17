@@ -108,21 +108,8 @@ export default function Navbar({ onNavigateToEvents }) {
           })}
         </nav>
 
-        {/* 3. Right: Sleek High-Contrast Cyber Register Button */}
+        {/* 3. Right: Mobile Hamburger Toggle */}
         <div className="c26-nav-right-actions">
-          <a
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="c26-nav-register-btn"
-            onClick={() => sound.playClick()}
-            onMouseEnter={() => sound.playHover()}
-            title="Register for Consortium 2026"
-          >
-            <span>REGISTER NOW</span>
-            <ArrowUpRight size={15} className="register-arrow-icon" />
-          </a>
-
           {/* Mobile Hamburger Toggle Button */}
           <button
             type="button"

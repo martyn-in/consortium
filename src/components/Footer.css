@@ -3,8 +3,10 @@
    ============================================================ */
 .mockup-footer-section {
   position: relative;
-  background: #02050d;
-  border-top: 1px solid rgba(0, 200, 255, 0.25);
+  background: rgba(8, 16, 40, 0.72);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
   padding: 4rem 1.5rem 2.5rem;
   overflow: hidden;
 }

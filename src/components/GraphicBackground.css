@@ -1,9 +1,9 @@
 /* ============================================================
-   CHROMATIC QUANTUM SPECTRUM BACKGROUND
-   Harmoniously blends Cyan, Violet, Magenta, Sapphire & Teal
+   LIGHT LUMINOUS GLASSMORPHISM BACKGROUND SYSTEM
+   (No wave lines, radiant ambient light pools, high luminosity)
    ============================================================ */
 
-.graphic-background-wrapper {
+.graphic-background-wrapper.glass-light-theme {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,169 +12,194 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background-color: #030712;
+  background-color: #0b142c;
 }
 
-/* 1. Deep Obsidian Base Canvas */
-.spectrum-obsidian-base {
+/* 1. Light, Radiant Ambient Gradient Base (Toned for Comfort) */
+.glass-light-base {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    circle at 50% 15%,
-    #050b1d 0%,
-    #030714 45%,
-    #010207 100%
+    ellipse 100% 85% at 50% 15%,
+    #162855 0%,
+    #101e44 38%,
+    #0b1530 72%,
+    #070e22 100%
   );
   pointer-events: none;
 }
 
-/* 2. Full-Spectrum Ambient Aurora Pools */
+/* 2. Vibrant Ambient Glass Aurora Glows (Balanced Intensity) */
 
-/* Electric Cyan (#00eaff) - Upper Left Focus */
-.spectrum-aurora-cyan {
+/* Luminous Electric Cyan (#00eaff) */
+.glass-light-aurora-cyan {
   position: absolute;
-  top: -8%;
-  left: 10%;
-  width: min(780px, 80vw);
-  height: min(780px, 80vw);
+  top: -12%;
+  left: 8%;
+  width: min(900px, 90vw);
+  height: min(900px, 90vw);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(0, 234, 255, 0.14) 0%,
-    rgba(14, 165, 233, 0.05) 50%,
+    rgba(0, 234, 255, 0.20) 0%,
+    rgba(14, 165, 233, 0.10) 45%,
     transparent 72%
   );
   filter: blur(100px);
-  animation: orbitCyan 28s ease-in-out infinite alternate;
+  animation: glassDrift1 26s ease-in-out infinite alternate;
   pointer-events: none;
   will-change: transform;
 }
 
-/* Neon Violet & Indigo (#7b4dff / #635bff) - Upper Right Focus */
-.spectrum-aurora-violet {
+/* Radiant Violet & Indigo (#8b5cf6 / #6366f1) */
+.glass-light-aurora-violet {
   position: absolute;
-  top: 15%;
-  right: 6%;
+  top: 10%;
+  right: 5%;
+  width: min(950px, 95vw);
+  height: min(950px, 95vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(139, 92, 246, 0.18) 0%,
+    rgba(99, 102, 241, 0.09) 45%,
+    transparent 72%
+  );
+  filter: blur(110px);
+  animation: glassDrift2 30s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Soft Rose & Cyber Magenta (#f472b6 / #ec4899) */
+.glass-light-aurora-rose {
+  position: absolute;
+  top: 45%;
+  right: 15%;
   width: min(850px, 85vw);
   height: min(850px, 85vw);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(123, 77, 255, 0.13) 0%,
-    rgba(99, 102, 241, 0.04) 50%,
-    transparent 72%
-  );
-  filter: blur(110px);
-  animation: orbitViolet 34s ease-in-out infinite alternate;
-  pointer-events: none;
-  will-change: transform;
-}
-
-/* Cyber Magenta (#ec4899) - Mid Center & Schedule Accent */
-.spectrum-aurora-magenta {
-  position: absolute;
-  top: 45%;
-  right: 18%;
-  width: min(720px, 75vw);
-  height: min(720px, 75vw);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(236, 72, 153, 0.11) 0%,
-    rgba(217, 70, 239, 0.035) 45%,
+    rgba(244, 114, 182, 0.16) 0%,
+    rgba(236, 72, 153, 0.08) 45%,
     transparent 70%
   );
   filter: blur(95px);
-  animation: orbitMagenta 30s ease-in-out infinite alternate;
+  animation: glassDrift3 28s ease-in-out infinite alternate;
   pointer-events: none;
   will-change: transform;
 }
 
-/* Royal Sapphire (#2563eb / #1d4ed8) - Lower Left & Depth */
-.spectrum-aurora-sapphire {
+/* Luminous Royal Sapphire (#3b82f6) */
+.glass-light-aurora-sapphire {
   position: absolute;
-  bottom: 5%;
-  left: 8%;
+  bottom: 0%;
+  left: 6%;
+  width: min(900px, 90vw);
+  height: min(900px, 90vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.20) 0%,
+    rgba(37, 99, 235, 0.09) 48%,
+    transparent 72%
+  );
+  filter: blur(105px);
+  animation: glassDrift4 24s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Shimmering Mint Teal (#2dd4bf / #00f2fe) */
+.glass-light-aurora-teal {
+  position: absolute;
+  bottom: -8%;
+  left: 45%;
   width: min(800px, 80vw);
   height: min(800px, 80vw);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(37, 99, 235, 0.12) 0%,
-    rgba(29, 78, 216, 0.03) 50%,
-    transparent 72%
-  );
-  filter: blur(105px);
-  animation: orbitSapphire 26s ease-in-out infinite alternate;
-  pointer-events: none;
-  will-change: transform;
-}
-
-/* Prismatic Teal (#00f2fe / #10b981) - Lower Center & Arena Shimmer */
-.spectrum-aurora-teal {
-  position: absolute;
-  bottom: -5%;
-  left: 42%;
-  width: min(680px, 70vw);
-  height: min(680px, 70vw);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 242, 254, 0.10) 0%,
-    rgba(16, 185, 129, 0.03) 50%,
+    rgba(45, 212, 191, 0.15) 0%,
+    rgba(0, 242, 254, 0.07) 50%,
     transparent 70%
   );
-  filter: blur(90px);
-  animation: orbitTeal 22s ease-in-out infinite alternate;
+  filter: blur(95px);
+  animation: glassDrift5 22s ease-in-out infinite alternate;
   pointer-events: none;
   will-change: transform;
 }
 
-/* Multi-Axis Non-Repeating Ambient Orbits */
-@keyframes orbitCyan {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(75px, 60px) scale(1.12); }
-  100% { transform: translate(-45px, 85px) scale(0.94); }
+/* 3. Center Luminous Ambient Core (Soft radiant backlight for frosted glass cards) */
+.glass-light-center-core {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1100px, 95vw);
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 50%,
+    rgba(0, 234, 255, 0.12) 0%,
+    rgba(99, 102, 241, 0.08) 45%,
+    transparent 75%
+  );
+  filter: blur(100px);
+  pointer-events: none;
+  animation: coreBreathe 16s ease-in-out infinite alternate;
 }
 
-@keyframes orbitViolet {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-80px, -55px) scale(1.1); }
-  100% { transform: translate(35px, 75px) scale(0.92); }
+@keyframes coreBreathe {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
 }
 
-@keyframes orbitMagenta {
+@keyframes glassDrift1 {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-65px, 50px) scale(1.15); }
-  100% { transform: translate(50px, -40px) scale(0.9); }
+  50% { transform: translate(85px, 65px) scale(1.12); }
+  100% { transform: translate(-50px, 90px) scale(0.95); }
 }
 
-@keyframes orbitSapphire {
+@keyframes glassDrift2 {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, -45px) scale(1.14); }
-  100% { transform: translate(-50px, 35px) scale(0.92); }
+  50% { transform: translate(-90px, -60px) scale(1.1); }
+  100% { transform: translate(40px, 80px) scale(0.93); }
 }
 
-@keyframes orbitTeal {
+@keyframes glassDrift3 {
   0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-50px, -60px) scale(1.1); }
-  100% { transform: translate(65px, 45px) scale(0.95); }
+  50% { transform: translate(-70px, 55px) scale(1.14); }
+  100% { transform: translate(55px, -45px) scale(0.92); }
 }
 
-/* 3. Subtle Cyber Blueprint Dot Matrix */
-.spectrum-dot-matrix {
+@keyframes glassDrift4 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(65px, -50px) scale(1.15); }
+  100% { transform: translate(-55px, 40px) scale(0.94); }
+}
+
+@keyframes glassDrift5 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-55px, -65px) scale(1.12); }
+  100% { transform: translate(70px, 50px) scale(0.96); }
+}
+
+/* 4. Fine Frosted Dot Matrix */
+.glass-light-dot-matrix {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(56, 189, 248, 0.065) 1px, transparent 1px);
-  background-size: 36px 36px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, black 20%, transparent 80%);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 40%, black 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 40%, black 30%, transparent 85%);
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.45;
 }
 
-/* 4. Canvas Layer (Harmonic Quantum Wave Ribbons) */
-.spectrum-motion-canvas {
+/* 5. Canvas Layer (Stardust & interactive cursor backlight - no waves) */
+.glass-motion-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -183,15 +208,15 @@
   display: block;
 }
 
-/* 5. Edge Contrast Vignette (Preserves Ultra-High Text Legibility) */
-.spectrum-contrast-vignette {
+/* 6. Soft Perimeter Vignette (Framed comfort) */
+.glass-light-vignette {
   position: absolute;
   inset: 0;
   background: radial-gradient(
     circle at 50% 50%,
-    transparent 50%,
-    rgba(1, 2, 7, 0.50) 80%,
-    rgba(1, 2, 7, 0.85) 100%
+    transparent 55%,
+    rgba(6, 12, 28, 0.35) 85%,
+    rgba(6, 12, 28, 0.65) 100%
   );
   pointer-events: none;
 }
