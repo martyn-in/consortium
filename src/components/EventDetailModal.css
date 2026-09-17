@@ -108,11 +108,11 @@
 
 /* Unboxed Clean Eyebrow */
 .split-badge-fest {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.72rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #60a5fa;
+  letter-spacing: 0.12em;
+  color: var(--modal-accent, #3b82f6) !important;
   text-transform: uppercase;
   background: transparent !important;
   border: none !important;
@@ -121,12 +121,12 @@
 }
 
 .split-left-title {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.75rem, 2.3vw, 2.3rem);
   font-weight: 700;
   color: #ffffff;
   margin: 0;
-  line-height: 1.18;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
@@ -140,7 +140,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.86rem;
   color: #94a3b8;
 }
@@ -150,22 +150,22 @@
 }
 
 .split-meta-icon {
-  color: #60a5fa;
+  color: var(--modal-accent, #3b82f6);
   flex-shrink: 0;
 }
 
 .split-dept-icon {
-  color: #60a5fa;
+  color: var(--modal-accent, #3b82f6);
   flex-shrink: 0;
 }
 
 .split-rules-icon {
-  color: #60a5fa;
+  color: var(--modal-accent, #3b82f6);
   flex-shrink: 0;
 }
 
 .split-theme-icon {
-  color: #34d399;
+  color: #10b981;
   flex-shrink: 0;
 }
 
@@ -182,24 +182,23 @@
   width: 100%;
   padding: 13px 22px;
   border-radius: 10px;
-  background: #2563eb;
-  border: 1px solid #3b82f6;
+  background: var(--modal-accent, #2563eb);
+  border: 1px solid var(--modal-accent, #3b82f6);
   color: #ffffff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.88rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 16px var(--modal-glow, rgba(37, 99, 235, 0.35));
 }
 
 .split-left-register-btn:hover {
-  background: #1d4ed8;
-  border-color: #60a5fa;
+  filter: brightness(1.12);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 8px 24px var(--modal-glow, rgba(37, 99, 235, 0.5));
 }
 
 /* ============================================================
@@ -227,11 +226,11 @@
 }
 
 .split-dept-eyebrow {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.72rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #60a5fa;
+  letter-spacing: 0.1em;
+  color: var(--modal-accent, #3b82f6);
   text-transform: uppercase;
 }
 
@@ -246,7 +245,7 @@
 }
 
 .split-dept-name {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.98rem;
   font-weight: 600;
   color: #f8fafc;
@@ -262,10 +261,10 @@
 }
 
 .split-block-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   color: #94a3b8;
   text-transform: uppercase;
   margin: 0;
@@ -349,11 +348,11 @@
 
 /* Clean Unboxed Department Code */
 .split-paper-dept-code {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #60a5fa;
+  color: var(--modal-accent, #3b82f6) !important;
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
@@ -362,8 +361,8 @@
 }
 
 .split-paper-dept-name {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.92rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.94rem;
   font-weight: 600;
   color: #f1f5f9;
 }
@@ -503,7 +502,7 @@
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #cbd5e1;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
@@ -522,20 +521,21 @@
   gap: 8px;
   padding: 10px 22px;
   border-radius: 8px;
-  background: #2563eb;
-  border: 1px solid #3b82f6;
+  background: var(--modal-accent, #2563eb);
+  border: 1px solid var(--modal-accent, #3b82f6);
   color: #ffffff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.84rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.86rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-shadow: 0 4px 16px var(--modal-glow, rgba(37, 99, 235, 0.35));
 }
 
 .split-btn-register-primary:hover {
-  background: #1d4ed8;
-  border-color: #60a5fa;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+  filter: brightness(1.12);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px var(--modal-glow, rgba(37, 99, 235, 0.5));
 }
 
 /* ============================================================

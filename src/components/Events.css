@@ -674,7 +674,7 @@
 }
 
 /* ============================================================
-   OUTSIDE EVENTS GRID: CLEAN PROFESSIONAL SOLID CARDS (NO GLASSMORPHISM)
+   OUTSIDE EVENTS GRID: VIBRANT COLOR-THEMED CARDS (ZERO GLASSMORPHISM)
    ============================================================ */
 
 .events-pure-grid {
@@ -688,30 +688,40 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  height: 270px;
+  height: 280px;
   cursor: pointer;
-  /* Solid Professional Dark Surface - Zero Glassmorphism */
-  background: #0b1120 !important;
-  border: 1px solid #1e293b;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  /* Solid Surface with Individual Event Color Theme - No Glassmorphism */
+  background: var(--evt-bg, #0b1120) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px 22px;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.25s ease,
-              box-shadow 0.25s ease,
-              background-color 0.25s ease;
+              box-shadow 0.25s ease;
   user-select: none;
 }
 
+/* Vibrant Top Border in Event Color */
+.event-color-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--evt-color, #3b82f6);
+  z-index: 5;
+  box-shadow: 0 0 10px var(--evt-color, #3b82f6);
+}
+
 .event-pure-card:hover {
-  transform: translateY(-5px);
-  background: #0f172a !important;
-  border-color: #38bdf8;
+  transform: translateY(-6px);
+  border-color: var(--evt-color, #3b82f6);
   box-shadow: 
-    0 16px 36px rgba(0, 0, 0, 0.7),
-    0 0 24px rgba(56, 189, 248, 0.18);
+    0 18px 42px rgba(0, 0, 0, 0.85),
+    0 0 28px var(--evt-glow, rgba(59, 130, 246, 0.4));
 }
 
 .event-pure-media-wrap {
@@ -727,84 +737,82 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
+  opacity: 0.5;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
 .event-pure-card:hover .event-pure-img {
-  transform: scale(1.06);
-  opacity: 0.5;
+  transform: scale(1.08);
+  opacity: 0.72;
 }
 
-.event-pure-glass-scrim {
+.event-pure-color-scrim {
   position: absolute;
   inset: 0;
-  /* Solid professional dark vignette without blur */
+  /* Solid high-contrast color vignette in event's theme color */
   background: linear-gradient(
     180deg,
-    rgba(11, 17, 32, 0.15) 0%,
-    rgba(11, 17, 32, 0.65) 45%,
-    #0b1120 100%
+    rgba(8, 12, 22, 0.05) 0%,
+    rgba(8, 12, 22, 0.45) 45%,
+    var(--evt-bg, #0b1120) 96%
   );
   transition: background 0.3s ease;
 }
 
-.event-pure-card:hover .event-pure-glass-scrim {
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.1) 0%,
-    rgba(15, 23, 42, 0.6) 45%,
-    #0f172a 100%
-  );
-}
-
 .event-pure-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .event-pure-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 1.55vw, 1.45rem);
-  font-weight: 800;
-  color: #f8fafc;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  font-weight: 700;
+  color: #ffffff;
   margin: 0;
-  line-height: 1.25;
+  line-height: 1.22;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   transition: color 0.2s ease;
 }
 
 .event-pure-card:hover .event-pure-title {
-  color: #38bdf8;
+  color: #ffffff;
 }
 
 .event-pure-action-hint {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
   gap: 6px;
-  font-family: var(--font-body);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--evt-color, #3b82f6);
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #94a3b8;
-  transition: color 0.2s ease, transform 0.2s ease;
+  color: var(--evt-color, #3b82f6);
+  transition: all 0.2s ease;
 }
 
 .hint-arrow {
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease;
 }
 
 .event-pure-card:hover .event-pure-action-hint {
-  color: #38bdf8;
+  background: var(--evt-color, #3b82f6);
+  color: #ffffff;
+  box-shadow: 0 0 16px var(--evt-glow, rgba(59, 130, 246, 0.4));
 }
 
 .event-pure-card:hover .hint-arrow {
-  transform: translate(3px, -3px);
-  color: #38bdf8;
+  transform: translate(2px, -2px);
+  color: #ffffff;
 }
 
 /* ============================================================

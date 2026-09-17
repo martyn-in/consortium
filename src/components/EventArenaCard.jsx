@@ -128,15 +128,7 @@ export default function EventArenaCard({
           <div className="arena-card-subtle-vignette" />
         </div>
 
-        {/* 3. Top Clean Number & Category Badge */}
-        <div className="arena-card-top-bar">
-          <div className="arena-card-badge-left">
-            <span className="arena-num-pill">{event.number} // 10</span>
-            <span className="arena-type-pill">{event.type}</span>
-          </div>
-        </div>
-
-        {/* 4. Bottom Content: Focused Purely on Event Name & Sleek Actions */}
+        {/* Bottom Content: Focused Purely on Event Name & Sleek Actions */}
         <div className="arena-card-content arena-card-content-minimal">
           <div className="arena-card-title-lockup">
             <h3 className="arena-card-title">{event.title}</h3>

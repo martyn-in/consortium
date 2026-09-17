@@ -272,10 +272,12 @@ export const paperPresentationDepartments = {
       name: 'Aeronautical Engineering',
       hasOfficialThemes: true,
       themes: [
-        'Aerodynamics & Computational Fluid Dynamics (CFD)',
-        'Unmanned Aerial Systems (UAV) & Autonomous Flight',
-        'Advanced Aerospace Materials & Composite Structures',
-        'Propulsion Systems & Space Exploration Technologies'
+        'AI-Powered Drones: Transforming Autonomous Flight and Intelligent Aerial Systems',
+        'The Future of Space Technology: Innovations, Opportunities and Emerging Trends',
+        'Advanced Materials for Aerospace and Engineering Applications: Beyond Conventional Composites',
+        'Aerodynamics and Propulsion: Engineering the Next Generation of Flight Future',
+        'Defence Technologies: Autonomous Systems, Surveillance and Strategic Innovations',
+        'Vāyuśastra: Exploring Ancient Indian Concepts of Aviation, Flight and Aerospace Knowledge'
       ]
     },
     {
@@ -284,10 +286,14 @@ export const paperPresentationDepartments = {
       name: 'CSE (AI & ML)',
       hasOfficialThemes: true,
       themes: [
-        'Generative AI, Large Language Models & Prompt Engineering',
-        'Computer Vision, Autonomous Navigation & Multimodal Perception',
-        'Deep Reinforcement Learning & Intelligent Robotics',
-        'Ethical AI, Explainability & Privacy-Preserving Machine Learning'
+        'Climate-Resilient AI For Smart Agriculture and Food Security',
+        'Trustworthy AI for Accessible and Preventive Healthcare',
+        'Inclusive Generative AI for Education and Skill Development',
+        'Green AI and Sustainable Computing for a Net-Zero Digital Future',
+        'GeoAI And Digital Twins for Resilient Cities and Disaster Management',
+        'AI For Water, Oceans, Biodiversity, And Ecosystem Intelligence',
+        'Human-Centred AI for Social Inclusion, Safety, and Digital Justice',
+        'Responsible Autonomous Intelligence for Sustainable Industry and Circular Economy'
       ]
     },
     {
@@ -312,10 +318,12 @@ export const paperPresentationDepartments = {
       name: 'Electrical & Electronics Engineering',
       hasOfficialThemes: true,
       themes: [
-        'Electric Vehicle Powertrains & Fast-Charging Architectures',
-        'Smart Microgrids, Renewable Integration & Energy Storage',
-        'Power Electronics for High-Voltage DC (HVDC) Systems',
-        'IoT-Enabled Industrial Automation & Smart Energy Metering'
+        'Smart and Resilient Power Systems: AI, Smart Grids and Cyber-Secure Electricity Networks',
+        'Next-Generation Renewable Energy Systems: Grid Integration of Solar, Wind, Green Hydrogen and Energy Storage',
+        'Electric Vehicles 2.0: Advanced Batteries, Fast Charging, V2G and Intelligent Energy Management',
+        'Power Electronics for a Sustainable Future: Wide-Bandgap Devices and High-Efficiency Converter Technologies',
+        'Industrial Electrification and Automation 5.0: Digital Twins, IoT, Robotics and Intelligent Motor Drives',
+        'Future of Electronics: Edge AI, Semiconductor Technologies and Intelligent Embedded Systems for Next-Generation Applications'
       ]
     }
   ],
@@ -326,10 +334,11 @@ export const paperPresentationDepartments = {
       name: 'Computer Science & Engineering',
       hasOfficialThemes: true,
       themes: [
-        'High-Performance Cloud Architectures & Distributed Systems',
-        'Next-Gen Cyber Security, Cryptography & Zero Trust Networks',
-        'Quantum Computing Algorithms & Post-Quantum Encryption',
-        'Decentralized Protocols, Blockchain & Web3 Infrastructure'
+        'Agentic AI & Future of Artificial Intelligence\n  Main Focus: Generative AI, AI agents, multimodal AI, reasoning',
+        'Cybersecurity, AI Security & Digital Trust\n  Main Focus: Cybersecurity, deepfakes, privacy, post-quantum security',
+        'Edge AI, IoT & Autonomous Systems\n  Main Focus: Robotics, drones, TinyML, autonomous systems, 6G',
+        'Green Technology & Sustainable Engineering\n  Main Focus: Green AI, EVs, smart grids, energy, climate tech',
+        'AI, Healthcare & Human Augmentation\n  Main Focus: Medical AI, BCI, wearables, biotechnology'
       ]
     },
     {
@@ -338,10 +347,12 @@ export const paperPresentationDepartments = {
       name: 'CSE (Data Science)',
       hasOfficialThemes: true,
       themes: [
-        'Big Data Analytics, Real-Time Streaming & Feature Engineering',
-        'Predictive Modeling & Scientific Machine Learning',
-        'Graph Data Science & Knowledge Graphs for Enterprise',
-        'Data Governance, Synthetic Data & Federated Learning'
+        'AI-Powered Quantum Resource Allocation for 6G Networks.',
+        'AI-Optimized Quantum Sensors for Autonomous Vehicles',
+        'Hybrid Quantum-Classical Neural Networks (QNN) for Real-Time Fraud Detection',
+        'Accelerating Unstructured Database Queries: Implementing Grover’s Search in Big Data Pipelines',
+        'Quantum-Enhanced Natural Language Processing (QNLP) for Sentiment Analysis in Financial Trading',
+        'Post-Quantum Cryptography (PQC) and the Imminent Threat to Data Science Blockchains'
       ]
     },
     {

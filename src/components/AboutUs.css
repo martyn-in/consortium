@@ -1,5 +1,6 @@
 /* ============================================================
    ABOUT US: WELCOME FROM INSTITUTE OF AERONAUTICAL ENGINEERING
+   (True Glassmorphism Aesthetic with Outfit & Plus Jakarta Sans)
    ============================================================ */
 
 .about-us-section {
@@ -52,8 +53,8 @@
   background: rgba(0, 234, 255, 0.08);
   border: 1px solid rgba(0, 234, 255, 0.3);
   box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.76rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
   font-weight: 800;
   color: #00eaff;
   letter-spacing: 1.5px;
@@ -61,11 +62,11 @@
 }
 
 .about-main-title {
-  font-family: 'Unbounded', sans-serif;
-  font-size: clamp(1.8rem, 3.8vw, 2.7rem);
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
   color: #ffffff;
-  line-height: 1.22;
+  line-height: 1.2;
   letter-spacing: -0.5px;
   margin: 0 0 14px;
 }
@@ -78,24 +79,25 @@
 }
 
 .about-lead-kicker {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.95rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.98rem;
   color: #cbd5e1;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Institutional Card */
+/* Institutional Card - Premium Glassmorphism */
 .about-institution-card {
-  border-radius: 20px;
-  background: rgba(10, 16, 36, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 24px 30px;
+  border-radius: 22px;
+  background: rgba(14, 22, 48, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 28px 34px;
   margin-bottom: 26px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .about-brand-row {
@@ -123,14 +125,16 @@
 }
 
 .about-cred-badge {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.72rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 1px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.8px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid currentColor;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .about-mission-quote {
@@ -141,23 +145,23 @@
 }
 
 .mission-label {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.7rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 1.5px;
   color: #00eaff;
 }
 
 .mission-quote-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.95rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.98rem;
   font-style: italic;
   color: #e2e8f0;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* Stats Matrix */
+/* Stats Matrix - Frosted Glassmorphism Tiles */
 .about-stats-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -166,25 +170,30 @@
 }
 
 .about-stat-box {
-  background: rgba(10, 16, 36, 0.6);
-  border-radius: 14px;
-  padding: 16px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(15, 23, 48, 0.4);
+  border-radius: 16px;
+  padding: 18px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .about-stat-box:hover {
-  transform: translateY(-3px);
-  border-color: rgba(0, 234, 255, 0.35);
+  transform: translateY(-4px);
+  background: rgba(22, 34, 70, 0.55);
+  border-color: rgba(0, 234, 255, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 234, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .stat-box-label {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.65rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 1px;
   color: #94a3b8;
@@ -192,8 +201,8 @@
 }
 
 .stat-box-val {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
   font-weight: 800;
   color: #00eaff;
   line-height: 1.1;
@@ -201,10 +210,10 @@
 }
 
 .stat-box-sub {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.7rem;
-  color: rgba(203, 213, 225, 0.75);
-  line-height: 1.25;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  color: rgba(203, 213, 225, 0.85);
+  line-height: 1.35;
 }
 
 /* Content Explorer / Nav */
@@ -230,16 +239,18 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
-  border-radius: 10px;
-  background: rgba(15, 23, 42, 0.6);
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #cbd5e1;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: all 0.22s ease;
 }
 
@@ -250,25 +261,27 @@
 }
 
 .about-tab-btn.is-active {
-  background: rgba(0, 234, 255, 0.18);
+  background: rgba(0, 234, 255, 0.16);
   border-color: #00eaff;
   color: #00eaff;
-  box-shadow: 0 0 16px rgba(0, 234, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .about-view-all-toggle {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
-  border-radius: 10px;
+  padding: 9px 18px;
+  border-radius: 12px;
   background: rgba(236, 72, 153, 0.12);
   border: 1px solid rgba(236, 72, 153, 0.35);
   color: #f472b6;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.78rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
   font-weight: 800;
   cursor: pointer;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: all 0.22s ease;
 }
 
@@ -276,17 +289,19 @@
 .about-view-all-toggle.is-active {
   background: rgba(236, 72, 153, 0.22);
   color: #ffffff;
-  box-shadow: 0 0 16px rgba(236, 72, 153, 0.25);
+  box-shadow: 0 0 18px rgba(236, 72, 153, 0.25);
 }
 
-/* Active Tab Panel & Full View Cards */
+/* Active Tab Panel & Full View Cards - Rich Glassmorphism */
 .about-active-panel,
 .about-single-card {
-  border-radius: 20px;
-  background: rgba(10, 16, 36, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 30px 34px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+  border-radius: 22px;
+  background: rgba(12, 18, 42, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  padding: 32px 36px;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
 }
 
 .about-all-sections-wrap {
@@ -320,11 +335,13 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .panel-badge {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.68rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
   font-weight: 800;
   color: #00eaff;
   letter-spacing: 1px;
@@ -333,8 +350,8 @@
 }
 
 .panel-title {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
   font-weight: 800;
   color: #ffffff;
   margin: 0;
@@ -347,9 +364,9 @@
 }
 
 .panel-paragraph {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.96rem;
+  line-height: 1.75;
   color: #cbd5e1;
   margin: 0;
   text-align: justify;
@@ -357,14 +374,14 @@
 
 /* Sub-matrices: Rankings & Recruiters */
 .about-sub-matrix {
-  margin-top: 14px;
+  margin-top: 16px;
   padding-top: 18px;
   border-top: 1px dashed rgba(255, 255, 255, 0.12);
 }
 
 .sub-matrix-heading {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.76rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 1.5px;
   color: #8beaff;
@@ -381,23 +398,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 9px 14px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .ranking-agency {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
   font-weight: 600;
   color: #e2e8f0;
 }
 
 .ranking-score {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
   color: #34d399;
 }
 
@@ -411,12 +430,14 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 8px;
-  background: rgba(0, 234, 255, 0.08);
+  background: rgba(0, 234, 255, 0.06);
   border: 1px solid rgba(0, 234, 255, 0.2);
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.78rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #f1f5f9;
 }
@@ -424,20 +445,22 @@
 /* Official Portal Banner */
 .about-official-portal-banner {
   margin-top: 30px;
-  border-radius: 16px;
-  background: linear-gradient(90deg, rgba(0, 234, 255, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
+  border-radius: 18px;
+  background: rgba(14, 22, 48, 0.45);
   border: 1px solid rgba(0, 234, 255, 0.25);
-  padding: 20px 26px;
+  padding: 22px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .portal-badge {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.7rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
   font-weight: 800;
   color: #00eaff;
   letter-spacing: 1px;
@@ -446,24 +469,24 @@
 }
 
 .portal-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.86rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
   color: #cbd5e1;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .portal-external-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 10px;
   background: linear-gradient(135deg, #00eaff, #3b82f6);
   border: none;
   color: #020617;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.84rem;
   font-weight: 800;
   letter-spacing: 0.5px;
   text-decoration: none;
@@ -501,11 +524,11 @@
   }
 
   .panel-title {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
 
   .panel-paragraph {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     text-align: left;
   }
 

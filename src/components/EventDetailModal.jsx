@@ -10,6 +10,19 @@ import './EventDetailModal.css';
 
 const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
 
+const EVENT_MODAL_THEMES = {
+  'paper-presentation': { accent: '#3b82f6', bg: '#081329', glow: 'rgba(59, 130, 246, 0.35)' },
+  'poster-presentations': { accent: '#10b981', bg: '#052219', glow: 'rgba(16, 185, 129, 0.35)' },
+  'project-expo': { accent: '#06b6d4', bg: '#051f28', glow: 'rgba(6, 182, 212, 0.35)' },
+  'lan-gaming': { accent: '#8b5cf6', bg: '#191030', glow: 'rgba(139, 92, 246, 0.35)' },
+  'photography': { accent: '#f59e0b', bg: '#261805', glow: 'rgba(245, 158, 11, 0.35)' },
+  'death-mystery': { accent: '#f43f5e', bg: '#290913', glow: 'rgba(244, 63, 94, 0.35)' },
+  'treasure-hunt': { accent: '#6366f1', bg: '#10122e', glow: 'rgba(99, 102, 241, 0.35)' },
+  'short-films': { accent: '#ec4899', bg: '#280a1c', glow: 'rgba(236, 72, 153, 0.35)' },
+  'flight-simulator': { accent: '#0ea5e9', bg: '#061c2b', glow: 'rgba(14, 165, 233, 0.35)' },
+  'bridge-mockup': { accent: '#eab308', bg: '#221903', glow: 'rgba(234, 179, 8, 0.35)' }
+};
+
 export default function EventDetailModal({ event, isOpen, onClose }) {
   const [openPaperDept, setOpenPaperDept] = useState('it');
 
@@ -30,6 +43,11 @@ export default function EventDetailModal({ event, isOpen, onClose }) {
   if (!isOpen || !event) return null;
 
   const isPaperPresentation = event.id === 'paper-presentation';
+  const modalTheme = EVENT_MODAL_THEMES[event.id] || { 
+    accent: '#3b82f6', 
+    bg: '#081329', 
+    glow: 'rgba(59, 130, 246, 0.35)' 
+  };
 
   const handleRegister = () => {
     sound.playSuccess();
@@ -41,6 +59,11 @@ export default function EventDetailModal({ event, isOpen, onClose }) {
       <div className="event-modal-backdrop" onClick={onClose}>
         <motion.div
           className="event-split-modal-container"
+          style={{
+            '--modal-accent': modalTheme.accent,
+            '--modal-glow': modalTheme.glow,
+            '--modal-bg': modalTheme.bg
+          }}
           onClick={(e) => e.stopPropagation()}
           initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

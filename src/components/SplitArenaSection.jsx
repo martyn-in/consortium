@@ -51,73 +51,46 @@ const scheduleDay1 = [
   {
     time: '08:30 AM – 09:30 AM',
     title: 'Delegate Reporting & Registration Kit Handover',
-    venue: 'Convention Atrium',
-    category: 'Reporting',
-    badgeColor: 'cyan',
     desc: 'Participant verification, official badge allotment, and symposium kit collection.'
   },
   {
     time: '09:30 AM – 10:30 AM',
     title: 'Grand Inaugural Ceremony & Keynote Address',
-    venue: 'Main Auditorium',
-    category: 'Ceremony',
-    badgeColor: 'magenta',
     desc: 'Welcome addresses by college leadership, keynote by distinguished guest speakers, and lighting of the lamp.'
   },
   {
     time: '10:30 AM – 04:30 PM',
     title: 'Project Expo 2026 — Live Working Model Exhibits',
-    venue: 'Central Exhibition Atrium',
-    category: 'Flagship Expo',
-    badgeColor: 'cyan',
     desc: 'Scholars showcase functioning prototypes, IoT systems, robotics, and hardware innovations before industry jurors.'
   },
   {
     time: '11:00 AM – 01:30 PM',
     title: 'Paper Presentation — Preliminary Tracks',
-    venue: 'Seminar Hall Alpha',
-    category: 'Academic Defense',
-    badgeColor: 'blue',
     desc: 'Research tracks across Aeronautical, CSE, IT, EEE, and Civil present 10m defense sessions.'
   },
   {
     time: '11:00 AM – 04:00 PM',
     title: 'LAN Gaming Arena — Qualifiers & Battle Royale',
-    venue: 'High Performance Computing Center',
-    category: 'Esports Arena',
-    badgeColor: 'magenta',
     desc: 'Competitive esports showdowns featuring intense brackets, live spectator stream, and ultra-low latency rigs.'
   },
   {
     time: '01:30 PM – 02:30 PM',
     title: 'Networking & Lunch Intermission',
-    venue: 'Campus Dining Atrium',
-    category: 'Intermission',
-    badgeColor: 'slate',
     desc: 'Recharge, collaborate, and exchange ideas with scholars and delegates from across the nation.'
   },
   {
     time: '02:30 PM – 05:00 PM',
     title: 'Poster Presentations — Visual Defense Exhibits',
-    venue: 'Convention Atrium Gallery',
-    category: 'Visual Defense',
-    badgeColor: 'cyan',
     desc: 'A1 infographic defense of research hypotheses and methodologies before academic referees.'
   },
   {
     time: '02:30 PM – 05:00 PM',
     title: 'Short Film Contest — Cinema Screenings & Jury Review',
-    venue: 'Audio-Visual Media Studio',
-    category: 'Creative Arts',
-    badgeColor: 'amber',
     desc: 'Screenings of curated student short films and cinematography evaluations by film critics.'
   },
   {
     time: '05:00 PM – 05:30 PM',
     title: 'Day 1 Wrap-up & Leaderboard Snapshot',
-    venue: 'Main Atrium Display Wall',
-    category: 'Briefing',
-    badgeColor: 'green',
     desc: 'Announcement of qualifying finalists for Day 2 championships.'
   }
 ];
@@ -126,57 +99,36 @@ const scheduleDay2 = [
   {
     time: '09:00 AM – 11:30 AM',
     title: 'Paper Presentation — Grand Finals & Jury Cross-Exam',
-    venue: 'Seminar Hall Alpha',
-    category: 'Academic Defense',
-    badgeColor: 'cyan',
     desc: 'Top shortlisted research teams from all departments defend technical papers before senior jury panels.'
   },
   {
     time: '09:30 AM – 01:00 PM',
     title: 'Bridge Architecture Challenge — Structural Load Testing',
-    venue: 'Civil Structures Testing Lab',
-    category: 'Engineering Showdown',
-    badgeColor: 'magenta',
     desc: 'Point-load destructive testing of popsicle/truss bridges to calculate maximum efficiency and load-to-weight ratios.'
   },
   {
     time: '10:00 AM – 01:00 PM',
     title: 'Flight Simulator Battle — Final Dogfight Sorties',
-    venue: 'Aeronautical Flight Sim Lab',
-    category: 'Aero Simulator',
-    badgeColor: 'blue',
     desc: 'Realistic aerodrome navigation, crosswind approaches, and simulated tactical flight operations.'
   },
   {
     time: '11:00 AM – 01:30 PM',
     title: 'Death Mystery — Crime Lab Forensic Investigation',
-    venue: 'Simulation Wing Alpha',
-    category: 'Deduction Arena',
-    badgeColor: 'amber',
     desc: 'Time-bound crime scene analysis, forensic deciphering, encrypted clues, and suspect cross-examination.'
   },
   {
     time: '01:30 PM – 02:30 PM',
     title: 'Networking & Lunch Intermission',
-    venue: 'Campus Dining Atrium',
-    category: 'Intermission',
-    badgeColor: 'slate',
     desc: 'Campus dining and final pre-showdown preparations.'
   },
   {
     time: '02:30 PM – 03:45 PM',
     title: 'Treasure Hunt Finale — Campus-Wide Crypto Trail',
-    venue: 'Campus Grounds & Landmarks',
-    category: 'Campus Quest',
-    badgeColor: 'magenta',
     desc: 'Multistage cryptic treasure hunt racing across 10 acres of campus to crack the master cipher.'
   },
   {
     time: '04:00 PM – 05:45 PM',
     title: 'Grand Valedictory Ceremony & National Prize Distribution',
-    venue: 'Main Auditorium (760 Seater)',
-    category: 'Awards Gala',
-    badgeColor: 'green',
     desc: 'Trophy awards, cash prize felicitations, jury recognitions, and celebratory closing banquet.'
   }
 ];
@@ -215,11 +167,11 @@ export default function SplitArenaSection() {
             <div className="countdown-inner">
               <div className="countdown-top-banner">
                 <div className="countdown-badge-left">
-                  <Clock size={16} className="text-cyan animate-spin-slow" />
+                  <span className="countdown-real-emoji">⏳</span>
                   <span>COUNTDOWN TO DAY 01 LAUNCH</span>
                 </div>
                 <div className="countdown-badge-right">
-                  <Calendar size={14} className="text-magenta" />
+                  <span className="countdown-real-emoji">📅</span>
                   <span>OCTOBER 09, 2026 • 09:00 AM IST</span>
                 </div>
               </div>
@@ -310,21 +262,14 @@ export default function SplitArenaSection() {
                 <div key={index} className="timeline-slot-item aura-glow-border">
                   <div className="slot-left-col">
                     <div className="slot-time-chip">
-                      <Clock size={13} className="text-cyan" />
+                      <span className="slot-time-emoji">⏱️</span>
                       <span>{item.time}</span>
                     </div>
-                    <span className={`slot-category-tag tag-${item.badgeColor}`}>
-                      {item.category}
-                    </span>
                   </div>
 
                   <div className="slot-content-col">
                     <h3 className="slot-event-title">{item.title}</h3>
                     <p className="slot-event-desc">{item.desc}</p>
-                    <div className="slot-venue-pill">
-                      <MapPin size={13} className="text-magenta" />
-                      <span>{item.venue}</span>
-                    </div>
                   </div>
                 </div>
               ))}
