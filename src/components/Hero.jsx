@@ -116,9 +116,12 @@ const Hero = ({ onNavigateToEvents }) => {
           <button 
             className="hero-btn-primary-mockup"
             onClick={handleRegisterClick}
+            aria-label="Register for Consortium 2026"
           >
-            <span>REGISTER NOW</span>
-            <ArrowRight size={18} />
+            <span className="hero-btn-text">REGISTER NOW</span>
+            <span className="hero-btn-icon-capsule">
+              <ArrowRight size={17} className="hero-btn-arrow" />
+            </span>
           </button>
         </motion.div>
 
