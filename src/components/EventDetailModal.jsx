@@ -1,18 +1,18 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  X, Trophy, Users, MapPin, Calendar, 
-  FileCheck, Shield, ArrowRight, Sparkles 
+  X, ArrowRight, ArrowUpRight, Building2, 
+  FileCheck, Calendar, MapPin, Users, ChevronRight, CheckCircle2, Clock
 } from 'lucide-react';
+import { paperPresentationDepartments } from '../data/eventsData';
 import { sound } from '../utils/soundEffects';
 import './EventDetailModal.css';
 
-export default function EventDetailModal({ 
-  event, 
-  isOpen, 
-  onClose, 
-  onRegister 
-}) {
+const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
+
+export default function EventDetailModal({ event, isOpen, onClose }) {
+  const [openPaperDept, setOpenPaperDept] = useState('it');
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -23,145 +23,227 @@ export default function EventDetailModal({
     }
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose]);
 
   if (!isOpen || !event) return null;
 
-  const EventIcon = event.icon || Sparkles;
+  const isPaperPresentation = event.id === 'paper-presentation';
+
+  const handleRegister = () => {
+    sound.playSuccess();
+    window.open(GOOGLE_FORM_URL, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <AnimatePresence>
       <div className="event-modal-backdrop" onClick={onClose}>
         <motion.div
-          className="event-modal-container aura-glow-border"
+          className="event-split-modal-container"
           onClick={(e) => e.stopPropagation()}
-          initial={{ opacity: 0, scale: 0.94, y: 20 }}
+          initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.94, y: 20 }}
-          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          exit={{ opacity: 0, scale: 0.96, y: 20 }}
+          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${event.title} Details`}
         >
-          {/* Neon Corner Accents */}
-          <div className="modal-corner-tl" />
-          <div className="modal-corner-br" />
-
           {/* Close Button */}
-          <button 
-            className="modal-close-btn" 
+          <button
+            type="button"
+            className="modal-close-btn"
             onClick={() => {
               sound.playClick();
               onClose();
             }}
-            aria-label="Close modal"
+            aria-label="Close details"
           >
             <X size={20} />
           </button>
 
-          {/* Arena Visual Artwork Banner */}
-          {event.image && (
-            <div className="modal-hero-artwork-wrap">
-              <img src={event.image} alt={event.title} className="modal-hero-artwork-img" />
-              <div className="modal-hero-artwork-gradient" />
-            </div>
-          )}
-
-          {/* Modal Header */}
-          <div className="modal-header-block">
-            <div className="modal-icon-badge">
-              <EventIcon size={34} className="text-cyan" />
-            </div>
-            <div className="modal-header-text">
-              <div className="modal-badge-row">
-                <span className="modal-cat-pill">{event.category}</span>
-                <span className="modal-order-tag">Catalog #{event.sourceOrder}</span>
+          {/* ============================================================
+              LEFT SIDE: EVENT CARD & NAME
+              ============================================================ */}
+          <div className="event-split-left">
+            <div className="split-left-card">
+              <div className="split-left-image-wrap">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="split-left-img"
+                />
+                <div className="split-left-glass-scrim" />
               </div>
-              <h2 className="modal-event-title">{event.title}</h2>
-              <p className="modal-event-tagline">{event.tagline}</p>
+
+              <div className="split-left-content">
+                <div className="split-left-meta-top">
+                  <span className="split-badge-fest">CONSORTIUM 2026</span>
+                </div>
+
+                <h2 className="split-left-title">{event.title}</h2>
+
+                <div className="split-left-meta-list">
+                  <div className="split-meta-item">
+                    <Calendar size={15} className="split-meta-icon" />
+                    <span>October 9 & 10, 2026</span>
+                  </div>
+                  <div className="split-meta-item">
+                    <MapPin size={15} className="split-meta-icon" />
+                    <span>IARE Campus, Hyderabad</span>
+                  </div>
+                  {event.teamSize && (
+                    <div className="split-meta-item">
+                      <Users size={15} className="split-meta-icon" />
+                      <span>{event.teamSize}</span>
+                    </div>
+                  )}
+                </div>
+
+                <button
+                  type="button"
+                  className="split-left-register-btn"
+                  onClick={handleRegister}
+                >
+                  <span>Register Now</span>
+                  <ArrowUpRight size={16} />
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Modal Body Grid */}
-          <div className="modal-body-scroll">
-            {/* Overview */}
-            <div className="modal-section">
-              <h4 className="modal-section-title">OVERVIEW & OBJECTIVE</h4>
-              <p className="modal-desc-text">{event.description}</p>
-            </div>
+          {/* ============================================================
+              RIGHT SIDE: CONDUCTED BY SO & SO DEPARTMENT AND ALL DETAILS
+              ============================================================ */}
+          <div className="event-split-right">
+            <div className="split-right-scrollable">
 
-            {/* Specifications Matrix */}
-            <div className="modal-specs-grid">
-              <div className="spec-card">
-                <Users size={16} className="text-cyan" />
-                <div className="spec-info">
-                  <span className="spec-label">TEAM STRUCTURE</span>
-                  <span className="spec-val">{event.teamSize || 'To be announced'}</span>
+              {/* 1. Conducted By Department Banner */}
+              {event.department && (
+                <div className="split-dept-section">
+                  <span className="split-dept-eyebrow">CONDUCTED BY:</span>
+                  <div className="split-dept-card">
+                    <Building2 size={18} className="split-dept-icon" />
+                    <h3 className="split-dept-name">{event.department}</h3>
+                  </div>
                 </div>
+              )}
+
+              {/* 2. Official Event Brief / Overview */}
+              <div className="split-detail-block">
+                <h4 className="split-block-title">EVENT OVERVIEW</h4>
+                <p className="split-block-desc">{event.description}</p>
               </div>
 
-              <div className="spec-card">
-                <MapPin size={16} className="text-magenta" />
-                <div className="spec-info">
-                  <span className="spec-label">VENUE / LOCATION</span>
-                  <span className="spec-val">{event.venue || 'Venue details coming soon'}</span>
+              {/* 3. Official Rules & Guidelines */}
+              {event.rules && (
+                <div className="split-detail-block">
+                  <h4 className="split-block-title">RULES &amp; GUIDELINES</h4>
+                  <div className="split-rules-card">
+                    <FileCheck size={18} className="split-rules-icon" />
+                    <p className="split-rules-text">{event.rules}</p>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div className="spec-card">
-                <Trophy size={16} className="text-gold" />
-                <div className="spec-info">
-                  <span className="spec-label">AWARDS & PRIZES</span>
-                  <span className="spec-val">Prize details coming soon</span>
+              {/* 4. Special Department Research Tracks (For Paper Presentation) */}
+              {isPaperPresentation && paperPresentationDepartments && (
+                <div className="split-detail-block">
+                  <h4 className="split-block-title">OFFICIAL DEPARTMENT RESEARCH TRACKS</h4>
+                  <p className="split-paper-sub">Click any department to view approved research themes:</p>
+
+                  <div className="split-paper-tracks-list">
+                    {[...paperPresentationDepartments.left, ...paperPresentationDepartments.right].map((dept) => {
+                      const isExpanded = openPaperDept === dept.id;
+
+                      return (
+                        <div key={dept.id} className={`split-paper-dept-box ${isExpanded ? 'is-active' : ''}`}>
+                          <div 
+                            className="split-paper-dept-header"
+                            onClick={() => {
+                              sound.playClick();
+                              setOpenPaperDept(isExpanded ? null : dept.id);
+                            }}
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setOpenPaperDept(isExpanded ? null : dept.id);
+                              }
+                            }}
+                          >
+                            <div className="split-paper-dept-title-row">
+                              <span className="split-paper-dept-code">{dept.code}</span>
+                              <strong className="split-paper-dept-name">{dept.name}</strong>
+                            </div>
+
+                            <div className="split-paper-dept-badge-row">
+                              {dept.hasOfficialThemes ? (
+                                <span className="split-tag-active">THEMES ACTIVE</span>
+                              ) : (
+                                <span className="split-tag-soon">COMING SOON</span>
+                              )}
+                              <ChevronRight 
+                                size={16} 
+                                className={`split-paper-chevron ${isExpanded ? 'is-rotated' : ''}`} 
+                              />
+                            </div>
+                          </div>
+
+                          {isExpanded && (
+                            <div className="split-paper-dept-body">
+                              {dept.hasOfficialThemes ? (
+                                <ul className="split-paper-themes">
+                                  {dept.themes.map((theme, i) => (
+                                    <li key={i} className="split-theme-item">
+                                      <CheckCircle2 size={15} className="split-theme-icon" />
+                                      <span>{theme}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              ) : (
+                                <div className="split-paper-pending-box">
+                                  <Clock size={16} className="split-pending-icon" />
+                                  <span>Official themes are being finalized by faculty jurors. Standard submissions in this domain remain open.</span>
+                                </div>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
+              )}
+
+              {/* 5. Bottom Action Buttons */}
+              <div className="split-right-footer-actions">
+                <button
+                  type="button"
+                  className="split-btn-back"
+                  onClick={() => {
+                    sound.playClick();
+                    onClose();
+                  }}
+                >
+                  Back to Events
+                </button>
+
+                <button
+                  type="button"
+                  className="split-btn-register-primary"
+                  onClick={handleRegister}
+                >
+                  <span>Register via Official Form</span>
+                  <ArrowRight size={16} />
+                </button>
               </div>
 
-              <div className="spec-card">
-                <Calendar size={16} className="text-cyan" />
-                <div className="spec-info">
-                  <span className="spec-label">SESSION SCHEDULE</span>
-                  <span className="spec-val">Schedule to be announced</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Rules & Guidelines */}
-            <div className="modal-section">
-              <h4 className="modal-section-title">RULES & CRITERIA</h4>
-              <div className="modal-rules-box">
-                <FileCheck size={18} className="text-cyan flex-shrink-0" />
-                <p>{event.rules || 'Official tournament and challenge rulebook will be published prior to festival commencement.'}</p>
-              </div>
-            </div>
-
-            {/* Notice / Status */}
-            <div className="modal-notice-box">
-              <Shield size={16} className="text-cyan flex-shrink-0" />
-              <span>
-                Event guidelines are subject to coordinator review. Registrations are operating in preview mode.
-              </span>
             </div>
           </div>
 
-          {/* Modal Footer Actions */}
-          <div className="modal-footer-bar">
-            <button
-              className="modal-btn-cancel"
-              onClick={onClose}
-            >
-              Back to Catalog
-            </button>
-            <button
-              className="modal-btn-register"
-              onClick={() => {
-                sound.playSuccess();
-                onClose();
-                onRegister(event);
-              }}
-            >
-              <span>REGISTER FOR THIS EVENT</span>
-              <ArrowRight size={16} />
-            </button>
-          </div>
         </motion.div>
       </div>
     </AnimatePresence>

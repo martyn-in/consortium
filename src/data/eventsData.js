@@ -1,12 +1,12 @@
 import { 
   FileText, 
-  LayoutTemplate, 
+  PanelsTopLeft, 
   Box, 
   Gamepad2, 
   Camera, 
   Search, 
   Compass, 
-  Film, 
+  Clapperboard, 
   Plane, 
   DraftingCompass 
 } from 'lucide-react';
@@ -24,241 +24,360 @@ import imgFlightSim from '../assets/real_flight_sim.jpg';
 import imgBridgeMockup from '../assets/real_bridge_mockup.jpg';
 
 /**
- * Authoritative 10-Event Catalog for CONSORTIUM 2026
- * 1. Paper Presentation
- * 2. Poster Presentations
- * 3. Project Expo
- * 4. LAN Gaming (BGMI & Free Fire Max)
- * 5. Photography
- * 6. Death Mystery
- * 7. Treasure Hunt
- * 8. Short Films
- * 9. Flight Simulator
- * 10. Bridge Mockup
+ * OFFICIAL CONSORTIUM 2026 10-EVENT CANONICAL CATALOG
+ * Strictly Ordered:
+ * 01 — Paper Presentation
+ * 02 — Poster Presentations
+ * 03 — Project Expo
+ * 04 — LAN Gaming
+ * 05 — Photography
+ * 06 — Death Mystery
+ * 07 — Treasure Hunt
+ * 08 — Short Films
+ * 09 — Flight Simulator
+ * 10 — Bridge Mockup
  */
 
 export const categories = [
   'All Events',
-  'Technical',
-  'Gaming & Simulation',
+  'Academic',
   'Creative',
-  'Challenges'
+  'Experience'
 ];
 
 export const eventsList = [
   {
     id: 'paper-presentation',
-    slug: 'paper-presentation',
-    sourceOrder: 1,
-    eventCode: 'EVENT #01 // 10',
-    arenaCode: 'EVENT #01 // 10',
-    dateHud: '2026 10.09',
+    number: '01',
+    displayNumber: '01',
     title: 'Paper Presentation',
-    category: 'Technical',
-    tagline: 'Present ideas. Spark discussion.',
-    subHeadline: 'DISRUPTIVE CONCEPTS // RESEARCH SYMPOSIUM',
-    cyberTags: ['[RESEARCH DEFENSE]', '[TECHNICAL PAPERS]', '[FACULTY JURY]', '[SEMINAR HALL A]'],
-    description: 'A prestigious forum for engineering scholars and researchers to defend original technical papers, disruptive findings, and breakthrough concepts before a distinguished panel of academicians and industry researchers.',
+    shortTitle: 'Paper Presentation',
+    type: 'RESEARCH / SYMPOSIUM',
+    category: 'Academic',
+    department: 'Inter-Departmental Technical Board (Aero, CSE, IT, EEE, ECE, Mech, Civil)',
+    tagline: 'Research. Present. Challenge the ordinary.',
+    description: 'A prestigious national forum for engineering scholars to defend original technical papers, disruptive findings, and breakthrough concepts before a distinguished panel of academicians and industry researchers.',
     image: imgPaperPresentation,
     icon: FileText,
-    isFeaturedCenter: false,
-    rules: 'Original research paper required. 10-minute presentation followed by a 5-minute technical Q&A session with the evaluation jury.',
+    accentColor: 'cyan',
+    rules: 'Original technical research paper required in IEEE format (max 6 pages). 10-minute presentation followed by a 5-minute defense before the academic evaluation jury. Plagiarism must be strictly under 15%.',
     teamSize: 'Individual or Team of 2',
-    venue: 'Seminar Hall Alpha',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: true
   },
   {
     id: 'poster-presentations',
-    slug: 'poster-presentations',
-    sourceOrder: 2,
-    eventCode: 'EVENT #02 // 10',
-    arenaCode: 'EVENT #02 // 10',
-    dateHud: '2026 10.09',
+    number: '02',
+    displayNumber: '02',
     title: 'Poster Presentations',
-    category: 'Technical',
-    tagline: 'Big ideas. Clear visual stories.',
-    subHeadline: 'SYNTHESIZING BREAKTHROUGHS // POSTER EXHIBIT',
-    cyberTags: ['[VISUAL RESEARCH]', '[INFOGRAPHICS]', '[EXPO FLOOR]', '[INTERACTIVE JURY]'],
+    shortTitle: 'Poster Presentations',
+    type: 'VISUAL / SCIENTIFIC',
+    category: 'Academic',
+    department: 'Department of Computer Science & Engineering (CSE)',
+    tagline: 'Turn complex ideas into powerful visuals.',
     description: 'Synthesize complex engineering breakthroughs, architectures, and scientific hypotheses into high-impact visual infographics and interactive physical poster exhibits reviewed by technical jurors.',
     image: imgPosterPresentation,
-    icon: LayoutTemplate,
-    isFeaturedCenter: false,
-    rules: 'Standard A1 poster format. Evaluation based on technical depth, visual synthesis, methodology, and live oral defense.',
+    icon: PanelsTopLeft,
+    accentColor: 'blue',
+    rules: 'Standard A1 poster format (594 x 841 mm). Evaluation based on technical depth, visual synthesis, methodology, and live oral defense before jury referees.',
     teamSize: 'Individual or Team of 2',
-    venue: 'Convention Atrium',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   },
   {
     id: 'project-expo',
-    slug: 'project-expo',
-    sourceOrder: 3,
-    eventCode: 'EVENT #03 // 10',
-    arenaCode: 'EVENT #03 // 10',
-    dateHud: '2026 10.09',
+    number: '03',
+    displayNumber: '03',
     title: 'Project Expo',
-    category: 'Technical',
-    tagline: 'Build it. Show it. Explain it.',
-    subHeadline: 'THE PREMIER INNOVATION PAVILION // LIVE DEMO',
-    cyberTags: ['[WORKING HARDWARE]', '[ROBOTICS & IOT]', '[LIVE PROTOTYPE]', '[MAIN PAVILION]'],
-    description: 'The premier innovation showcase of Consortium 2026. Live interactive demonstration of working hardware prototypes, embedded robotics, autonomous IoT devices, and production-ready engineering solutions.',
+    shortTitle: 'Project Expo',
+    type: 'TECH / EXHIBITION',
+    category: 'Academic',
+    department: 'Department of Electronics & Communication Engineering (ECE)',
+    tagline: 'Build it. Demonstrate it. Make it real.',
+    description: 'The premier innovation pavilion of Consortium 2026. Live interactive demonstration of working hardware prototypes, embedded robotics, autonomous IoT systems, and production-ready engineering solutions.',
     image: imgProjectExpo,
     icon: Box,
-    isFeaturedCenter: true,
-    rules: 'Working physical prototype or deployed software demonstration is mandatory. Open to IoT, robotics, AI, and multidisciplinary domains.',
+    accentColor: 'cyan',
+    rules: 'Working physical prototype or deployed software demonstration is mandatory. Open to IoT, robotics, AI, and multidisciplinary engineering domains. Power and Wi-Fi will be provided.',
     teamSize: 'Team of 2 to 4',
-    venue: 'Innovation Pavilion',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   },
   {
     id: 'lan-gaming',
-    slug: 'lan-gaming',
-    sourceOrder: 4,
-    eventCode: 'EVENT #04 // 10',
-    arenaCode: 'EVENT #04 // 10',
-    dateHud: '2026 10.09',
-    title: 'LAN Gaming: BGMI & Free Fire Max',
-    category: 'Gaming & Simulation',
-    tagline: 'Squad up. Drop in. Dominate.',
-    subHeadline: 'BGMI & FREE FIRE MAX // MOBILE ESPORTS CHAMPIONSHIP',
-    cyberTags: ['[BGMI SQUAD]', '[FREE FIRE MAX]', '[MOBILE ESPORTS]', '[STAGE FINALS]'],
-    description: 'The ultimate collegiate mobile esports championship. Squad up in Battlegrounds Mobile India (BGMI) and Free Fire Max. Drop into intense tactical battlegrounds, execute clutch maneuvers, and claim victory on the live esports stage.',
+    number: '04',
+    displayNumber: '04',
+    title: 'LAN Gaming',
+    shortTitle: 'LAN Gaming',
+    type: 'ESPORTS / COMBAT',
+    category: 'Experience',
+    department: 'Department of Information Technology (IT)',
+    tagline: 'Enter the arena. Play for the win.',
+    description: 'The ultimate collegiate mobile esports championship featuring Battlegrounds Mobile India (BGMI) and Free Fire Max. Tactical squad warfare, high-pressure clutch plays, and live esports stage showdowns.',
     image: imgLanGaming,
     icon: Gamepad2,
-    isFeaturedCenter: false,
-    rules: 'Tournament played on BGMI & Free Fire Max. Mobile smartphones only (no emulators, tablets, or external triggers). Point system based on placement and eliminations.',
+    accentColor: 'violet',
+    rules: 'Mobile smartphones only (strictly no emulators, iPads/tablets, or external triggers). Point system based on match placement and elimination score across tournament brackets.',
     teamSize: 'Squad of 4 (Mobile Only)',
-    venue: 'Esports Mainstage & Gaming Arena',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   },
   {
     id: 'photography',
-    slug: 'photography',
-    sourceOrder: 5,
-    eventCode: 'EVENT #05 // 10',
-    arenaCode: 'EVENT #05 // 10',
-    dateHud: '2026 10.09',
+    number: '05',
+    displayNumber: '05',
     title: 'Photography',
+    shortTitle: 'Photography',
+    type: 'VISUAL / LENS',
     category: 'Creative',
-    tagline: 'Frame a moment. Tell a story.',
-    subHeadline: 'CHRONICLING CONSORTIUM // PHOTOJOURNALISM',
-    cyberTags: ['[PHOTOJOURNALISM]', '[CAMPUS LIFE]', '[CANON / SONY / NIKON]', '[VISUAL ARTS]'],
-    description: 'Capture the visual aesthetic, candid technological intensity, human emotion, and vibrant campus spirit of Consortium 2026 through the creative lens of documentary photojournalism.',
+    department: 'Student Affairs & Media Club (IARE Photography Society)',
+    tagline: 'Find the frame everyone else missed.',
+    description: 'Capture the nocturnal cyber aesthetic, candid technological intensity, human emotion, and vibrant fest spirit of Consortium 2026 through the creative lens of documentary photojournalism.',
     image: imgPhotography,
     icon: Camera,
-    isFeaturedCenter: false,
-    rules: 'Photographs must be captured on-campus during festival days. Minimal color grading allowed; generative AI manipulation is strictly prohibited.',
+    accentColor: 'cyan',
+    rules: 'Photographs must be captured on-campus during festival days (October 9 & 10, 2026). Minimal color grading allowed; strictly no AI image generation or composite editing.',
     teamSize: 'Individual Photographer',
-    venue: 'Campus-wide',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   },
   {
     id: 'death-mystery',
-    slug: 'death-mystery',
-    sourceOrder: 6,
-    eventCode: 'EVENT #06 // 10',
-    arenaCode: 'EVENT #06 // 10',
-    dateHud: '2026 10.09',
+    number: '06',
+    displayNumber: '06',
     title: 'Death Mystery',
-    category: 'Challenges',
-    tagline: 'Follow the clues. Find the truth.',
-    subHeadline: 'CRIME SCENE INVESTIGATION // FORENSIC THRILLER',
-    cyberTags: ['[CRIME SCENE]', '[FORENSIC EVIDENCE]', '[CIPHER DECODING]', '[TIMED MYSTERY]'],
-    description: 'An immersive real-time investigative thriller. Examine physical crime scenes, analyze forensic evidence, interrogate suspicious role-play witnesses, decode cryptic clues, and identify the culprit before time expires.',
+    shortTitle: 'Death Mystery',
+    type: 'FORENSICS / THRILLER',
+    category: 'Experience',
+    department: 'Department of Science & Humanities',
+    tagline: 'Observe. Connect. Solve the impossible.',
+    description: 'An immersive real-time investigative thriller. Examine simulated crime scenes, inspect physical forensics, interrogate role-play witnesses, decode cryptic ciphers, and deduce the perpetrator before time runs out.',
     image: imgDeathMystery,
     icon: Search,
-    isFeaturedCenter: false,
-    rules: 'Timed forensic investigation in staged crime rooms. Teams must submit a coherent deduction dossier with physical evidence cross-references.',
+    accentColor: 'magenta',
+    rules: 'Timed forensic investigation in staged scenario chambers. Teams must examine physical clues, decode ciphers, and submit a coherent deduction dossier with physical evidence cross-references.',
     teamSize: 'Team of 2 to 4',
-    venue: 'Forensic Lab Deck B',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   },
   {
     id: 'treasure-hunt',
-    slug: 'treasure-hunt',
-    sourceOrder: 7,
-    eventCode: 'EVENT #07 // 10',
-    arenaCode: 'EVENT #07 // 10',
-    dateHud: '2026 10.09',
+    number: '07',
+    displayNumber: '07',
     title: 'Treasure Hunt',
-    category: 'Challenges',
-    tagline: 'Explore. Decode. Discover.',
-    subHeadline: 'CAMPUS-WIDE EXPEDITION // RIDDLE & TIME ATTACK',
-    cyberTags: ['[CAMPUS EXPEDITION]', '[RIDDLE SOLVING]', '[WAYPOINT HUNT]', '[FAST-PACED]'],
-    description: 'The legendary campus-wide navigation sprint. Solve mathematical riddles, decode GPS coordinates and cryptic clues, locate hidden checkpoint tokens across campus, and race against the ticking clock.',
+    shortTitle: 'Treasure Hunt',
+    type: 'EXPEDITION / PUZZLE',
+    category: 'Experience',
+    department: 'Department of Electrical & Electronics Engineering (EEE)',
+    tagline: 'Follow the clues. Beat the clock.',
+    description: 'The legendary campus-wide navigation sprint. Solve mathematical riddles, decode GPS waypoints and cryptographic coordinates, find hidden checkpoint tokens, and sprint against the clock.',
     image: imgTreasureHunt,
     icon: Compass,
-    isFeaturedCenter: false,
-    rules: 'Multi-stage navigation challenge. Checkpoints must be cleared in sequential order. First team to return with the master key wins.',
+    accentColor: 'blue',
+    rules: 'Multi-stage navigation challenge across 10 acres. Checkpoints must be solved and cleared sequentially. First squad to return with the verified master token wins.',
     teamSize: 'Team of 3 to 4',
-    venue: 'Central Campus Grounds',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   },
   {
     id: 'short-films',
-    slug: 'short-films',
-    sourceOrder: 8,
-    eventCode: 'EVENT #08 // 10',
-    arenaCode: 'EVENT #08 // 10',
-    dateHud: '2026 10.10',
+    number: '08',
+    displayNumber: '08',
     title: 'Short Films',
+    shortTitle: 'Short Films',
+    type: 'CINEMA / STORYTELLING',
     category: 'Creative',
-    tagline: 'Small runtime. Big stories.',
-    subHeadline: 'STUDENT CINEMA FESTIVAL // AUDITORIUM 4K',
-    cyberTags: ['[CINEMATOGRAPHY]', '[ORIGINAL NARRATIVE]', '[4K PROJECTION]', '[JURY SCREENING]'],
+    department: 'Student Activities Council (SAC) & Department of Humanities',
+    tagline: 'Tell a story worth remembering.',
     description: 'Screening and adjudication of original student cinematic shorts, visual documentaries, and creative fiction on the high-definition campus auditorium cinema display with live jury feedback.',
     image: imgShortFilms,
-    icon: Film,
-    isFeaturedCenter: false,
-    rules: 'Maximum runtime of 12 minutes including credits. Original student cinematography, storyline, and sound design required.',
+    icon: Clapperboard,
+    accentColor: 'magenta',
+    rules: 'Maximum runtime of 12 minutes including credits. Original student cinematography, narrative script, and sound design required. Submissions must be 1080p MP4 format.',
     teamSize: 'Crew of 1 to 5',
-    venue: 'Main 4K Auditorium',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   },
   {
     id: 'flight-simulator',
-    slug: 'flight-simulator',
-    sourceOrder: 9,
-    eventCode: 'EVENT #09 // 10',
-    arenaCode: 'EVENT #09 // 10',
-    dateHud: '2026 10.10',
+    number: '09',
+    displayNumber: '09',
     title: 'Flight Simulator',
-    category: 'Gaming & Simulation',
-    tagline: 'Take the controls. Test your focus.',
-    subHeadline: 'AVIONICS COCKPIT // PILOT FLIGHT TRIAL',
-    cyberTags: ['[FLIGHT COCKPIT]', '[CROSSWIND LANDING]', '[AVIONICS CONTROLS]', '[AERO LAB]'],
-    description: 'Take command in authentic aeronautical flight simulator rigs. Test your piloting skills through instrument takeoffs, turbulence handling, challenging crosswind runway landings, and emergency procedures.',
+    shortTitle: 'Flight Simulator',
+    type: 'AVIONICS / COCKPIT',
+    category: 'Experience',
+    department: 'Department of Aeronautical Engineering',
+    tagline: 'Take control. Own the skies.',
+    description: 'Take command in authentic aeronautical flight simulator rigs. Test piloting mastery across instrument takeoffs, turbulence handling, challenging crosswind runway approaches, and emergency maneuvers.',
     image: imgFlightSim,
     icon: Plane,
-    isFeaturedCenter: false,
-    rules: 'Standardized flight profile and landing evaluation protocol under challenging atmospheric and crosswind conditions.',
+    accentColor: 'cyan',
+    rules: 'Standardized flight profile and landing evaluation protocol under challenging atmospheric, turbulence, and crosswind runway scenarios in authentic simulation rigs.',
     teamSize: 'Individual Pilot',
-    venue: 'Aeronautical Simulation Lab',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   },
   {
     id: 'bridge-mockup',
-    slug: 'bridge-mockup',
-    sourceOrder: 10,
-    eventCode: 'EVENT #10 // 10',
-    arenaCode: 'EVENT #10 // 10',
-    dateHud: '2026 10.10',
+    number: '10',
+    displayNumber: '10',
     title: 'Bridge Mockup',
-    category: 'Technical',
-    tagline: 'Design a connection. Build an idea.',
-    subHeadline: 'CIVIL TRUSS SHOWDOWN // HYDRAULIC LOAD TESTING',
-    cyberTags: ['[STRUCTURAL TRUSS]', '[CIVIL ENGINEERING]', '[HYDRAULIC CRUSH]', '[LOAD CAPACITY]'],
+    shortTitle: 'Bridge Mockup',
+    type: 'STRUCTURAL / LOAD TEST',
+    category: 'Academic',
+    department: 'Department of Civil Engineering',
+    tagline: 'Design. Build. Test the limits.',
     description: 'Civil engineering structural showdown. Design, fabricate, and test load-bearing truss bridges using prescribed lightweight materials until destructive hydraulic load failure to prove optimal strength-to-weight.',
     image: imgBridgeMockup,
     icon: DraftingCompass,
-    isFeaturedCenter: false,
-    rules: 'Truss bridges must adhere to strict weight, span, and material specifications. Scored by ultimate load capacity divided by bridge self-weight.',
+    accentColor: 'blue',
+    rules: 'Truss bridges must adhere to strict dimensional envelopes, span, and material specifications. Scored by ultimate hydraulic failure load capacity divided by bridge self-weight.',
     teamSize: 'Team of 2 to 3',
-    venue: 'Civil Structures Testing Lab',
-    status: 'To be announced'
+    venue: 'IARE Campus, Hyderabad',
+    registrationEnabled: true,
+    isSpecialPaperFlow: false
   }
 ];
 
-export const getEventBySlug = (slug) => {
-  return eventsList.find((event) => event.slug === slug);
+/**
+ * PAPER PRESENTATION DEPARTMENT ORDER
+ * Strictly Structured:
+ * LEFT COLUMN:
+ * 1. AERONAUTICAL ENGINEERING
+ * 2. CSE (AI & ML)
+ * 3. INFORMATION TECHNOLOGY
+ * 4. EEE
+ * 
+ * RIGHT COLUMN:
+ * 1. CSE
+ * 2. CSE (DATA SCIENCE)
+ * 3. ECE
+ * 4. MECHANICAL ENGINEERING
+ * 5. CIVIL ENGINEERING
+ */
+export const paperPresentationDepartments = {
+  left: [
+    {
+      id: 'aero',
+      code: 'AERO',
+      name: 'Aeronautical Engineering',
+      hasOfficialThemes: true,
+      themes: [
+        'Aerodynamics & Computational Fluid Dynamics (CFD)',
+        'Unmanned Aerial Systems (UAV) & Autonomous Flight',
+        'Advanced Aerospace Materials & Composite Structures',
+        'Propulsion Systems & Space Exploration Technologies'
+      ]
+    },
+    {
+      id: 'cse-aiml',
+      code: 'CSE (AI & ML)',
+      name: 'CSE (AI & ML)',
+      hasOfficialThemes: true,
+      themes: [
+        'Generative AI, Large Language Models & Prompt Engineering',
+        'Computer Vision, Autonomous Navigation & Multimodal Perception',
+        'Deep Reinforcement Learning & Intelligent Robotics',
+        'Ethical AI, Explainability & Privacy-Preserving Machine Learning'
+      ]
+    },
+    {
+      id: 'it',
+      code: 'IT',
+      name: 'Information Technology',
+      hasOfficialThemes: true,
+      themes: [
+        'AI-Driven Personalized Learning System',
+        'AI-Powered Route Optimization Framework',
+        'AI-Powered Chest X-Ray Imaging Analytics for Pneumonia Detection',
+        'Automated Clinical Text Extraction System using NLP',
+        'AI-Powered Career Path Recommendation Framework',
+        'Robust Object Detection in Challenging Environmental Conditions Using FCOS',
+        'A Smart Knowledge Hub Overcoming Multilingual and Access Barriers',
+        'AI-Driven Logistics and Delivery Optimization.'
+      ]
+    },
+    {
+      id: 'eee',
+      code: 'EEE',
+      name: 'Electrical & Electronics Engineering',
+      hasOfficialThemes: true,
+      themes: [
+        'Electric Vehicle Powertrains & Fast-Charging Architectures',
+        'Smart Microgrids, Renewable Integration & Energy Storage',
+        'Power Electronics for High-Voltage DC (HVDC) Systems',
+        'IoT-Enabled Industrial Automation & Smart Energy Metering'
+      ]
+    }
+  ],
+  right: [
+    {
+      id: 'cse',
+      code: 'CSE',
+      name: 'Computer Science & Engineering',
+      hasOfficialThemes: true,
+      themes: [
+        'High-Performance Cloud Architectures & Distributed Systems',
+        'Next-Gen Cyber Security, Cryptography & Zero Trust Networks',
+        'Quantum Computing Algorithms & Post-Quantum Encryption',
+        'Decentralized Protocols, Blockchain & Web3 Infrastructure'
+      ]
+    },
+    {
+      id: 'cse-ds',
+      code: 'CSE (DATA SCIENCE)',
+      name: 'CSE (Data Science)',
+      hasOfficialThemes: true,
+      themes: [
+        'Big Data Analytics, Real-Time Streaming & Feature Engineering',
+        'Predictive Modeling & Scientific Machine Learning',
+        'Graph Data Science & Knowledge Graphs for Enterprise',
+        'Data Governance, Synthetic Data & Federated Learning'
+      ]
+    },
+    {
+      id: 'ece',
+      code: 'ECE',
+      name: 'Electronics & Communication Engineering',
+      hasOfficialThemes: false,
+      themes: []
+    },
+    {
+      id: 'mech',
+      code: 'MECH',
+      name: 'Mechanical Engineering',
+      hasOfficialThemes: false,
+      themes: []
+    },
+    {
+      id: 'civil',
+      code: 'CIVIL',
+      name: 'Civil Engineering',
+      hasOfficialThemes: true,
+      themes: [
+        'Sustainable Construction & Green Buildings',
+        'Artificial Intelligence & Machine Learning in Civil Engineering',
+        'Smart Cities & Intelligent Infrastructure',
+        'Sustainable & Innovative Construction Materials',
+        'Climate-Resilient Infrastructure',
+        'Structural Engineering: Innovations & Emerging Trends',
+        'Transportation Engineering & Future Mobility',
+        'Water Resources & Sustainable Water Management',
+        'Environmental Engineering & Waste Management',
+        'Smart Materials & Emerging Technologies',
+        'Heritage Conservation & Sustainable Restoration'
+      ]
+    }
+  ]
 };
 
+export const getEventById = (id) => eventsList.find((e) => e.id === id);

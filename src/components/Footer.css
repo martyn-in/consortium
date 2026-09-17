@@ -45,10 +45,12 @@
   margin-bottom: 0.5rem;
 }
 
-.footer-cube-icon {
-  color: #00eaff;
-  font-size: 1.2rem;
-  text-shadow: 0 0 10px #00eaff;
+.footer-c26-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
 }
 
 .footer-logo-title {

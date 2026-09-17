@@ -32,7 +32,7 @@ const pillars = [
 
 export default function WhyConsortium() {
   return (
-    <section id="about" className="why-consortium-section">
+    <section id="why-consortium" className="why-consortium-section">
       <div className="container">
         {/* Section Header */}
         <Reveal direction="up" distance={25}>

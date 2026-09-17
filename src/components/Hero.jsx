@@ -68,7 +68,7 @@ const Hero = ({ onNavigateToEvents }) => {
             <div className="hero-timeline-badge">
               <Calendar size={14} className="hero-timeline-icon" />
               <span className="hero-timeline-text">OCTOBER 09 – 10, 2026</span>
-              <span className="hero-timeline-spark">✦</span>
+              <span className="hero-timeline-spark">•</span>
               <span className="hero-timeline-sub">2 DAYS NATIONAL LEVEL FEST</span>
             </div>
           </motion.div>
@@ -102,7 +102,7 @@ const Hero = ({ onNavigateToEvents }) => {
 
           <h2 className="hero-org-name">INSTITUTE OF AERONAUTICAL ENGINEERING</h2>
           <span className="hero-org-sub">
-            AUTONOMOUS <span className="hero-sub-diamond">◆</span> HYDERABAD
+            AUTONOMOUS <span className="hero-sub-diamond">•</span> HYDERABAD
           </span>
         </motion.div>
 

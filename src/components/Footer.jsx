@@ -1,5 +1,6 @@
 import { ArrowUp } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
+import c26Logo from '../assets/consortium_c26_logo_clean.png';
 import './Footer.css';
 
 const InstagramIcon = ({ size = 18 }) => (
@@ -46,8 +47,7 @@ export default function Footer() {
         <div className="footer-top-row">
           <div className="footer-brand-side">
             <div className="footer-logo-row">
-              <span className="footer-cube-icon">❖</span>
-              <span className="footer-logo-title">CONSORTIUM</span>
+              <img src={c26Logo} alt="Consortium 2026" className="footer-c26-logo-img" />
             </div>
             <p className="footer-brand-motto">Innovate Today. Impact Tomorrow.</p>
             <p className="footer-brand-dates">OCTOBER 9 & 10, 2026 • IARE HYDERABAD</p>
@@ -60,7 +60,8 @@ export default function Footer() {
               <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#events">Events (10 Flagships)</a></li>
-                <li><a href="#about">About Consortium</a></li>
+                <li><a href="#schedule">Schedule &amp; Countdown</a></li>
+                <li><a href="#about">About IARE &amp; Consortium</a></li>
               </ul>
             </div>
 

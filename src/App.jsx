@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Events from './components/Events';
 import SplitArenaSection from './components/SplitArenaSection';
+import AboutUs from './components/AboutUs';
 import WhyConsortium from './components/WhyConsortium';
 import AdditionalSections from './components/AdditionalSections';
 import FinalCTA from './components/FinalCTA';
@@ -35,7 +36,10 @@ function App() {
         {/* 4. Battle Beyond Boundaries Section */}
         <SplitArenaSection />
 
-        {/* 5. Why Consortium Matrix (IT'S MORE THAN A FEST: Compete, Learn, Network, Grow) */}
+        {/* 5. About Us: Institute of Aeronautical Engineering (Host Institution) */}
+        <AboutUs />
+
+        {/* 6. Why Consortium Matrix (IT'S MORE THAN A FEST: Compete, Learn, Network, Grow) */}
         <WhyConsortium />
 
         {/* 7. Additional Confirmed Requirements (Schedule, Gallery, Team, Venue) */}

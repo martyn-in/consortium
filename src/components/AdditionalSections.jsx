@@ -13,7 +13,7 @@ export default function AdditionalSections() {
         <div className="container">
           <Reveal direction="up" distance={25}>
             <div className="section-panel-header">
-              <span className="section-kicker">✦ FESTIVAL LOCATION ✦</span>
+              <span className="section-kicker">FESTIVAL LOCATION</span>
               <h2 className="section-panel-title">CAMPUS VENUE</h2>
               <p className="section-panel-desc">
                 Institute of Aeronautical Engineering (Autonomous) — Hyderabad

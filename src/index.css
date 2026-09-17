@@ -39,16 +39,22 @@
   --chrome-cyan-gradient: linear-gradient(180deg, #ffffff 0%, #b7f3ff 35%, #00eaff 70%, #635bff 100%);
   --chrome-text-gradient: linear-gradient(90deg, #00eaff 0%, #ffffff 50%, #7b4dff 100%);
 
-  /* Typography - Locked: Unbounded & Space Grotesk (Modern Luxury Tech) */
-  --font-crazy: 'Unbounded', sans-serif;
-  --font-future: 'Unbounded', sans-serif;
-  --font-title: 'Unbounded', sans-serif;
-  --font-heading: 'Unbounded', sans-serif;
-  --font-cyber: 'Space Grotesk', sans-serif;
-  --font-hud: 'Space Grotesk', sans-serif;
-  --font-sub: 'Space Grotesk', sans-serif;
-  --font-body: 'Space Grotesk', sans-serif;
-  --font-mono: 'Space Grotesk', 'JetBrains Mono', monospace;
+  /* Typography - Modern Avant-Garde Tech: Syne & Inter */
+  --font-crazy: 'Syne', sans-serif;
+  --font-future: 'Syne', sans-serif;
+  --font-title: 'Syne', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --font-cyber: 'Inter', sans-serif;
+  --font-hud: 'Inter', sans-serif;
+  --font-sub: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Glassmorphism 1% Ultra-Sheer Surfaces */
+  --glass-1percent: rgba(255, 255, 255, 0.01);
+  --glass-1percent-hover: rgba(255, 255, 255, 0.03);
+  --glass-1percent-border: rgba(255, 255, 255, 0.08);
+  --glass-1percent-blur: blur(20px);
 }
 
 * {
