@@ -1,3 +1,7 @@
+/* ============================================================
+   PROFESSIONAL MULTI-THEME MOTION BACKGROUND SYSTEM
+   ============================================================ */
+
 .graphic-background-wrapper {
   position: fixed;
   top: 0;
@@ -10,42 +14,246 @@
   background-color: #030712;
 }
 
-/* 1. Video Viewport Layer (High Performance Native Hardware Decoding) */
-.video-viewport-layer {
+/* 1. Deep Obsidian Base */
+.cyber-obsidian-base {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  contain: strict;
-}
-
-.bg-festival-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.8;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-}
-
-/* 2. Balanced Cinematic Contrast Overlay */
-.video-cinematic-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(3, 7, 18, 0.55) 0%,
-    rgba(3, 7, 18, 0.3) 20%,
-    rgba(3, 7, 18, 0.32) 50%,
-    rgba(3, 7, 18, 0.5) 75%,
-    rgba(3, 7, 18, 0.85) 92%,
-    rgba(3, 7, 18, 0.98) 100%
+  background: radial-gradient(
+    circle at 50% 20%,
+    #050b1a 0%,
+    #030714 50%,
+    #010309 100%
   );
   pointer-events: none;
-  contain: strict;
 }
+
+/* ============================================================
+   THEME 1: EXECUTIVE CYBER MESH (Linear / Apple Pro Luxury Style)
+   ============================================================ */
+.exec-glow-orb-cyan {
+  position: absolute;
+  top: -5%;
+  left: 15%;
+  width: min(850px, 85vw);
+  height: min(850px, 85vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.15) 0%,
+    rgba(2, 132, 199, 0.04) 50%,
+    transparent 72%
+  );
+  filter: blur(100px);
+  animation: execFloat1 28s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.exec-glow-orb-violet {
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  width: min(900px, 90vw);
+  height: min(900px, 90vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.13) 0%,
+    rgba(79, 70, 229, 0.03) 50%,
+    transparent 72%
+  );
+  filter: blur(110px);
+  animation: execFloat2 32s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.exec-glow-orb-sapphire {
+  position: absolute;
+  bottom: -10%;
+  left: 25%;
+  width: min(750px, 75vw);
+  height: min(750px, 75vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.12) 0%,
+    rgba(29, 78, 216, 0.03) 50%,
+    transparent 72%
+  );
+  filter: blur(95px);
+  animation: execFloat3 24s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.exec-fine-dot-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.075) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+@keyframes execFloat1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(70px, 50px) scale(1.1); }
+  100% { transform: translate(-40px, 70px) scale(0.95); }
+}
+
+@keyframes execFloat2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, -60px) scale(1.12); }
+  100% { transform: translate(30px, 70px) scale(0.92); }
+}
+
+@keyframes execFloat3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, -40px) scale(1.15); }
+  100% { transform: translate(-50px, 30px) scale(0.9); }
+}
+
+/* ============================================================
+   THEME 2: CYBER HORIZON 3D
+   ============================================================ */
+.horizon-sky-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(
+    180deg,
+    #02040b 0%,
+    rgba(7, 13, 30, 0.85) 60%,
+    rgba(14, 25, 55, 0.5) 100%
+  );
+  pointer-events: none;
+}
+
+.horizon-ambient-core {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 300px;
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 50%,
+    rgba(0, 234, 255, 0.12) 0%,
+    rgba(168, 85, 247, 0.08) 45%,
+    transparent 75%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* ============================================================
+   THEME 3: NEURAL TECH NETWORK
+   ============================================================ */
+.neural-grid-backdrop {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 25%, transparent 80%);
+  pointer-events: none;
+}
+
+.neural-ambient-cyan {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.14) 0%, transparent 70%);
+  filter: blur(85px);
+  pointer-events: none;
+}
+
+.neural-ambient-purple {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.12) 0%, transparent 70%);
+  filter: blur(95px);
+  pointer-events: none;
+}
+
+/* ============================================================
+   THEME 4: DEEP SPACE NEBULA
+   ============================================================ */
+.nebula-dust-cloud-1 {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(124, 58, 237, 0.04) 50%, transparent 75%);
+  filter: blur(90px);
+  animation: execFloat1 35s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.nebula-dust-cloud-2 {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.11) 0%, rgba(59, 130, 246, 0.03) 50%, transparent 75%);
+  filter: blur(100px);
+  animation: execFloat2 40s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.nebula-dust-cloud-3 {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+  filter: blur(90px);
+  animation: execFloat3 30s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* ============================================================
+   CANVAS & CONTRAST
+   ============================================================ */
+.cyber-motion-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: block;
+}
+
+.cyber-contrast-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 50%,
+    rgba(2, 4, 11, 0.55) 85%,
+    rgba(2, 4, 11, 0.88) 100%
+  );
+  pointer-events: none;
+}
+
+
