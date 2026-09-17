@@ -298,13 +298,13 @@
 }
 
 /* ============================================================
-   PRIMARY ACTION BUTTON (Executive Cyber Festival CTA)
+   PRIMARY ACTION BUTTON (Animated Cyber Festival CTA with Laser Slash)
    ============================================================ */
 .hero-actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(0.5rem, 1.4vh, 1rem);
+  margin-top: clamp(0.6rem, 1.5vh, 1.1rem);
   position: relative;
   z-index: 5;
 }
@@ -313,97 +313,140 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(0.75rem, 1.4vw, 1.15rem);
-  padding: clamp(0.85rem, 1.6vh, 1.05rem) clamp(1.8rem, 3.2vw, 2.6rem);
+  gap: clamp(0.85rem, 1.6vw, 1.25rem);
+  padding: clamp(0.9rem, 1.8vh, 1.15rem) clamp(2rem, 3.5vw, 2.8rem);
   border-radius: 999px;
-  background: linear-gradient(135deg, #00f0ff 0%, #00d2eb 35%, #2575fc 100%);
-  color: #020718 !important;
-  font-family: var(--font-heading);
-  font-size: clamp(0.92rem, 1.25vw, 1.08rem);
+  background: linear-gradient(135deg, #e024c3 0%, #8b5cf6 42%, #3b82f6 80%, #00eaff 100%);
+  color: #ffffff !important;
+  font-family: 'Space Grotesk', 'Outfit', sans-serif;
+  font-size: clamp(0.95rem, 1.3vw, 1.12rem);
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
   box-shadow: 
-    0 8px 26px rgba(0, 234, 255, 0.45), 
-    0 0 45px rgba(37, 117, 252, 0.3), 
+    0 10px 32px rgba(224, 36, 195, 0.45), 
+    0 0 50px rgba(139, 92, 246, 0.35), 
     0 12px 30px rgba(0, 0, 0, 0.5),
-    inset 0 1.5px 2px rgba(255, 255, 255, 0.85);
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.7);
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   user-select: none;
+  animation: heroBtnFloat 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes heroBtnFloat {
+  0% {
+    transform: translateY(0);
+    box-shadow: 
+      0 10px 30px rgba(224, 36, 195, 0.4), 
+      0 0 45px rgba(139, 92, 246, 0.3), 
+      inset 0 1.5px 2px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 16px 42px rgba(224, 36, 195, 0.6), 
+      0 0 65px rgba(0, 234, 255, 0.4), 
+      inset 0 2px 3px rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Diagonal Laser Slash Beam (Comes and goes across the button) */
+.hero-btn-slash-beam {
+  position: absolute;
+  top: -60%;
+  left: 0;
+  width: 52px;
+  height: 220%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(0, 240, 255, 0.85) 65%,
+    transparent 100%
+  );
+  filter: drop-shadow(0 0 12px #ffffff) drop-shadow(0 0 22px #00eaff);
+  transform: translateX(-180px) skewX(-28deg);
+  pointer-events: none;
+  animation: heroLaserSlash 3.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 3;
+}
+
+@keyframes heroLaserSlash {
+  0% {
+    transform: translateX(-160px) skewX(-28deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  36% {
+    transform: translateX(360px) skewX(-28deg);
+    opacity: 1;
+  }
+  42%, 100% {
+    transform: translateX(380px) skewX(-28deg);
+    opacity: 0;
+  }
 }
 
 .hero-btn-text {
   white-space: nowrap !important;
   display: inline-block;
-  color: #020718 !important;
-  font-weight: 900;
-  letter-spacing: 0.14em;
+  color: #ffffff !important;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+  position: relative;
+  z-index: 2;
 }
 
 .hero-btn-icon-capsule {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: rgba(2, 7, 24, 0.88);
-  color: #00f0ff;
-  border: 1px solid rgba(0, 240, 255, 0.4);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+  background: rgba(8, 12, 30, 0.75);
+  color: #00eaff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
   flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-btn-arrow {
   transition: transform 0.25s ease;
 }
 
-/* Elegant Sheen Reflection */
-.hero-btn-primary-mockup::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.45) 50%,
-    transparent 100%
-  );
-  transform: skewX(-22deg);
-  transition: 0.75s ease;
-  pointer-events: none;
-}
-
-.hero-btn-primary-mockup:hover::before {
-  left: 140%;
-}
-
 .hero-btn-primary-mockup:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, #2bf4ff 0%, #00e0ff 35%, #3b82f6 100%);
+  transform: translateY(-5px) scale(1.025);
+  background: linear-gradient(135deg, #f033d5 0%, #9d6fff 42%, #4f93ff 80%, #2bf4ff 100%);
   border-color: #ffffff;
   box-shadow: 
-    0 12px 35px rgba(0, 234, 255, 0.65), 
-    0 0 60px rgba(37, 117, 252, 0.45), 
-    0 16px 36px rgba(0, 0, 0, 0.6),
+    0 16px 45px rgba(224, 36, 195, 0.7), 
+    0 0 75px rgba(0, 234, 255, 0.55), 
+    0 18px 40px rgba(0, 0, 0, 0.65),
     inset 0 2px 3px rgba(255, 255, 255, 1);
 }
 
 .hero-btn-primary-mockup:hover .hero-btn-icon-capsule {
-  transform: scale(1.08);
-  background: #020718;
-  color: #ffffff;
+  transform: scale(1.12);
+  background: #ffffff;
+  color: #8b5cf6;
   border-color: #ffffff;
-  box-shadow: 0 0 14px rgba(0, 234, 255, 0.7);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
 }
 
 .hero-btn-primary-mockup:hover .hero-btn-arrow {
@@ -411,8 +454,8 @@
 }
 
 .hero-btn-primary-mockup:active {
-  transform: translateY(0) scale(0.98);
-  box-shadow: 0 4px 16px rgba(0, 234, 255, 0.4);
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 4px 18px rgba(224, 36, 195, 0.5);
 }
 
 /* ============================================================

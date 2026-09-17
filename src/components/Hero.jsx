@@ -118,6 +118,9 @@ const Hero = ({ onNavigateToEvents }) => {
             onClick={handleRegisterClick}
             aria-label="Register for Consortium 2026"
           >
+            {/* Animated Laser Slash Line that comes and goes */}
+            <span className="hero-btn-slash-beam" aria-hidden="true" />
+
             <span className="hero-btn-text">REGISTER NOW</span>
             <span className="hero-btn-icon-capsule">
               <ArrowRight size={17} className="hero-btn-arrow" />
