@@ -176,6 +176,9 @@ export default function GraphicBackground({ isVideoPlaying = true }) {
 
       {/* 6. Soft Perimeter Vignette */}
       <div className="glass-light-vignette" />
+
+      {/* 7. Dark Side Screens (Dark flanks on left & right, middle radiant) */}
+      <div className="glass-light-side-curtains" />
     </div>
   );
 }
