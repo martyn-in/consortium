@@ -8,25 +8,25 @@ const pillars = [
     icon: Gamepad2,
     title: 'COMPETE',
     desc: 'Face the best. Prove your skill.',
-    accent: '#ef24ff'
+    accent: '#00e5ff'
   },
   {
     icon: Lightbulb,
     title: 'LEARN',
     desc: 'Gain insights from industry experts.',
-    accent: '#00eaff'
+    accent: '#38bdf8'
   },
   {
     icon: Users,
     title: 'NETWORK',
     desc: 'Connect with like-minded peers.',
-    accent: '#8a36ff'
+    accent: '#0ea5e9'
   },
   {
     icon: Rocket,
     title: 'GROW',
     desc: 'Turn your passion into opportunities.',
-    accent: '#00eaff'
+    accent: '#06b6d4'
   }
 ];
 

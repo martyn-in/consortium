@@ -18,10 +18,10 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #d8f5ff 45%, #67e8f9 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 45%, #00e5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 16px rgba(0, 234, 255, 0.65));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 16px rgba(0, 229, 255, 0.65));
   display: block;
   margin-bottom: 0.6rem;
   user-select: none;
@@ -35,7 +35,7 @@
   letter-spacing: 0.05em;
   margin: 0 0 0.6rem;
   text-transform: uppercase;
-  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95), 0 0 24px rgba(0, 234, 255, 0.35);
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95), 0 0 24px rgba(0, 229, 255, 0.35);
 }
 
 .section-panel-desc {
@@ -81,21 +81,21 @@
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: #a5f3fc;
-  background: rgba(4, 9, 28, 0.8);
+  color: #bae6fd;
+  background: rgba(4, 16, 38, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 0.42rem 1.15rem;
   border-radius: 999px;
-  border: 1px solid rgba(0, 234, 255, 0.5);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 12px rgba(0, 234, 255, 0.25);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 12px rgba(0, 229, 255, 0.25);
   text-shadow: 0 1px 3px #000000;
 }
 
 .venue-timeline-chip {
-  color: #f5d0fe;
-  border-color: rgba(239, 36, 255, 0.55);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 14px rgba(239, 36, 255, 0.35);
+  color: #7dd3fc;
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 14px rgba(56, 189, 248, 0.35);
 }
 
 .venue-campus-title {
@@ -129,7 +129,7 @@
   gap: 0.65rem;
   padding: 0.85rem 1.8rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #00eaff 0%, #635bff 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #00e5ff 100%);
   color: #ffffff;
   font-family: var(--font-heading);
   font-size: 0.82rem;
@@ -138,14 +138,14 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  box-shadow: 0 0 25px rgba(0, 234, 255, 0.5), 0 0 45px rgba(99, 91, 255, 0.35);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4), 0 0 45px rgba(2, 132, 199, 0.35);
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
 .venue-btn-view-map:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 0 35px rgba(0, 234, 255, 0.8), 0 0 60px rgba(99, 91, 255, 0.6);
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.7), 0 0 60px rgba(14, 165, 233, 0.6);
   color: #ffffff;
 }
 
@@ -153,7 +153,7 @@
 .venue-map-embed-side {
   position: relative;
   min-height: 320px;
-  border-left: 1px solid rgba(0, 234, 255, 0.3);
+  border-left: 1px solid rgba(0, 229, 255, 0.25);
 }
 
 .venue-google-map-iframe {
@@ -197,7 +197,7 @@
 
   .venue-map-embed-side {
     border-left: none;
-    border-top: 1px solid rgba(0, 234, 255, 0.3);
+    border-top: 1px solid rgba(0, 229, 255, 0.25);
     min-height: 240px;
   }
 

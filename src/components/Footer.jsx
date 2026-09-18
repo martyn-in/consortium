@@ -60,7 +60,7 @@ export default function Footer() {
               <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#events">Events (10 Flagships)</a></li>
-                <li><a href="#schedule">Schedule &amp; Countdown</a></li>
+                <li><a href="#schedule">Live Countdown</a></li>
                 <li><a href="#about">About IARE &amp; Consortium</a></li>
               </ul>
             </div>

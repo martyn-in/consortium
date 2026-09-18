@@ -33,8 +33,16 @@ const Hero = ({ onNavigateToEvents }) => {
           <motion.div 
             className="hero-consortium-banner-wrap"
             initial={{ opacity: 0, scale: 0.88, y: 25 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1, 
+              y: [0, -6, 0] 
+            }}
+            transition={{ 
+              opacity: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+              scale: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
+              y: { repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 0.85 }
+            }}
           >
             <img 
               src={consortiumTitleArtwork} 
@@ -118,9 +126,6 @@ const Hero = ({ onNavigateToEvents }) => {
             onClick={handleRegisterClick}
             aria-label="Register for Consortium 2026"
           >
-            {/* Animated Laser Slash Line that comes and goes */}
-            <span className="hero-btn-slash-beam" aria-hidden="true" />
-
             <span className="hero-btn-text">REGISTER NOW</span>
             <span className="hero-btn-icon-capsule">
               <ArrowRight size={17} className="hero-btn-arrow" />

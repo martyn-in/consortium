@@ -1,6 +1,6 @@
 /* ============================================================
-   LIGHT LUMINOUS GLASSMORPHISM BACKGROUND SYSTEM
-   (No wave lines, radiant ambient light pools, high luminosity)
+   HIGH-PERFORMANCE AQUA PREMIUM BLUE SKY AMBIENT BACKGROUND
+   GPU-Optimized: Pure Radial Gradients, Zero Blur Cost, 60-120 FPS
    ============================================================ */
 
 .graphic-background-wrapper.glass-light-theme {
@@ -12,126 +12,129 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background-color: #0b142c;
+  background-color: #020817;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  contain: strict;
 }
 
-/* 1. Light, Radiant Ambient Gradient Base (Toned for Comfort) */
+/* 1. Rich Radiant Aqua & Sky Blue Base Canvas */
 .glass-light-base {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse 100% 85% at 50% 15%,
-    #162855 0%,
-    #101e44 38%,
-    #0b1530 72%,
-    #070e22 100%
+    ellipse 125% 95% at 50% 15%,
+    #0c2856 0%,
+    #071a3d 35%,
+    #041026 70%,
+    #020817 100%
   );
   pointer-events: none;
 }
 
-/* 2. Vibrant Ambient Glass Aurora Glows (Balanced Intensity) */
+/* 2. Vibrant Ambient Glass Aurora Glows (Native Soft Radial Gradients, NO expensive filter: blur) */
 
-/* Luminous Electric Cyan (#00eaff) */
+/* Luminous Electric Aqua (#00e5ff / #38bdf8) */
 .glass-light-aurora-cyan {
   position: absolute;
-  top: -12%;
-  left: 8%;
+  top: -15%;
+  left: 5%;
   width: min(900px, 90vw);
   height: min(900px, 90vw);
   border-radius: 50%;
   background: radial-gradient(
-    circle,
-    rgba(0, 234, 255, 0.20) 0%,
-    rgba(14, 165, 233, 0.10) 45%,
-    transparent 72%
+    circle closest-side,
+    rgba(0, 229, 255, 0.32) 0%,
+    rgba(14, 165, 233, 0.18) 35%,
+    rgba(0, 229, 255, 0.05) 60%,
+    transparent 80%
   );
-  filter: blur(100px);
   animation: glassDrift1 26s ease-in-out infinite alternate;
   pointer-events: none;
-  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
-/* Radiant Violet & Indigo (#8b5cf6 / #6366f1) */
+/* Radiant Sky Blue & Cobalt (#38bdf8 / #2563eb) */
 .glass-light-aurora-violet {
   position: absolute;
-  top: 10%;
-  right: 5%;
+  top: 8%;
+  right: 2%;
   width: min(950px, 95vw);
   height: min(950px, 95vw);
   border-radius: 50%;
   background: radial-gradient(
-    circle,
-    rgba(139, 92, 246, 0.18) 0%,
-    rgba(99, 102, 241, 0.09) 45%,
-    transparent 72%
+    circle closest-side,
+    rgba(56, 189, 248, 0.30) 0%,
+    rgba(37, 99, 235, 0.18) 35%,
+    rgba(2, 132, 199, 0.05) 60%,
+    transparent 80%
   );
-  filter: blur(110px);
   animation: glassDrift2 30s ease-in-out infinite alternate;
   pointer-events: none;
-  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
-/* Soft Rose & Cyber Magenta (#f472b6 / #ec4899) */
+/* Soft Ice Aqua & Luminous Sky (#00f2fe / #7dd3fc) */
 .glass-light-aurora-rose {
   position: absolute;
-  top: 45%;
-  right: 15%;
+  top: 42%;
+  right: 12%;
   width: min(850px, 85vw);
   height: min(850px, 85vw);
   border-radius: 50%;
   background: radial-gradient(
-    circle,
-    rgba(244, 114, 182, 0.16) 0%,
-    rgba(236, 72, 153, 0.08) 45%,
-    transparent 70%
+    circle closest-side,
+    rgba(0, 242, 254, 0.26) 0%,
+    rgba(125, 211, 252, 0.14) 35%,
+    rgba(0, 242, 254, 0.04) 60%,
+    transparent 78%
   );
-  filter: blur(95px);
   animation: glassDrift3 28s ease-in-out infinite alternate;
   pointer-events: none;
-  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
-/* Luminous Royal Sapphire (#3b82f6) */
+/* Deep Sapphire & Royal Sky (#1d4ed8 / #0284c7) */
 .glass-light-aurora-sapphire {
   position: absolute;
-  bottom: 0%;
-  left: 6%;
+  bottom: -5%;
+  left: 4%;
   width: min(900px, 90vw);
   height: min(900px, 90vw);
   border-radius: 50%;
   background: radial-gradient(
-    circle,
-    rgba(59, 130, 246, 0.20) 0%,
-    rgba(37, 99, 235, 0.09) 48%,
-    transparent 72%
+    circle closest-side,
+    rgba(29, 78, 216, 0.28) 0%,
+    rgba(2, 132, 199, 0.15) 38%,
+    rgba(29, 78, 216, 0.04) 62%,
+    transparent 80%
   );
-  filter: blur(105px);
   animation: glassDrift4 24s ease-in-out infinite alternate;
   pointer-events: none;
-  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
-/* Shimmering Mint Teal (#2dd4bf / #00f2fe) */
+/* Shimmering Aqua Sky (#38e1ff / #0ea5e9) */
 .glass-light-aurora-teal {
   position: absolute;
-  bottom: -8%;
-  left: 45%;
+  bottom: -10%;
+  left: 42%;
   width: min(800px, 80vw);
   height: min(800px, 80vw);
   border-radius: 50%;
   background: radial-gradient(
-    circle,
-    rgba(45, 212, 191, 0.15) 0%,
-    rgba(0, 242, 254, 0.07) 50%,
-    transparent 70%
+    circle closest-side,
+    rgba(56, 225, 255, 0.28) 0%,
+    rgba(14, 165, 233, 0.15) 40%,
+    rgba(56, 225, 255, 0.04) 62%,
+    transparent 78%
   );
-  filter: blur(95px);
   animation: glassDrift5 22s ease-in-out infinite alternate;
   pointer-events: none;
-  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
-/* 3. Center Luminous Ambient Core (Soft radiant backlight for frosted glass cards) */
+/* 3. Center Luminous Ambient Core */
 .glass-light-center-core {
   position: absolute;
   top: 30%;
@@ -141,64 +144,62 @@
   height: 600px;
   border-radius: 50%;
   background: radial-gradient(
-    ellipse 70% 50% at 50% 50%,
-    rgba(0, 234, 255, 0.12) 0%,
-    rgba(99, 102, 241, 0.08) 45%,
+    ellipse 75% 55% at 50% 50%,
+    rgba(0, 229, 255, 0.22) 0%,
+    rgba(14, 165, 233, 0.12) 40%,
     transparent 75%
   );
-  filter: blur(100px);
   pointer-events: none;
   animation: coreBreathe 16s ease-in-out infinite alternate;
+  transform: translate3d(-50%, -50%, 0);
 }
 
 @keyframes coreBreathe {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.85; }
-  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+  0% { transform: translate3d(-50%, -50%, 0) scale(1); opacity: 0.85; }
+  100% { transform: translate3d(-50%, -50%, 0) scale(1.08); opacity: 1; }
 }
 
 @keyframes glassDrift1 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(85px, 65px) scale(1.12); }
-  100% { transform: translate(-50px, 90px) scale(0.95); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(55px, 45px, 0) scale(1.06); }
+  100% { transform: translate3d(-35px, 60px, 0) scale(0.97); }
 }
 
 @keyframes glassDrift2 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-90px, -60px) scale(1.1); }
-  100% { transform: translate(40px, 80px) scale(0.93); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-60px, -40px, 0) scale(1.05); }
+  100% { transform: translate3d(30px, 50px, 0) scale(0.96); }
 }
 
 @keyframes glassDrift3 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-70px, 55px) scale(1.14); }
-  100% { transform: translate(55px, -45px) scale(0.92); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-45px, 35px, 0) scale(1.06); }
+  100% { transform: translate3d(40px, -30px, 0) scale(0.95); }
 }
 
 @keyframes glassDrift4 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(65px, -50px) scale(1.15); }
-  100% { transform: translate(-55px, 40px) scale(0.94); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(45px, -35px, 0) scale(1.06); }
+  100% { transform: translate3d(-35px, 25px, 0) scale(0.97); }
 }
 
 @keyframes glassDrift5 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-55px, -65px) scale(1.12); }
-  100% { transform: translate(70px, 50px) scale(0.96); }
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-35px, -45px, 0) scale(1.05); }
+  100% { transform: translate3d(50px, 35px, 0) scale(0.98); }
 }
 
 /* 4. Fine Frosted Dot Matrix */
 .glass-light-dot-matrix {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 85% 75% at 50% 40%, black 30%, transparent 85%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 40%, black 30%, transparent 85%);
   pointer-events: none;
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
-/* 5. Canvas Layer (Stardust & interactive cursor backlight - no waves) */
+/* 5. Canvas Layer */
 .glass-motion-canvas {
   position: absolute;
   inset: 0;
@@ -208,35 +209,31 @@
   display: block;
 }
 
-/* 6. Soft Radial Center Window Vignette */
+/* 6. Soft Radial Perimeter Vignette (Obsidian-Navy Frame) */
 .glass-light-vignette {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse 90% 75% at 50% 50%,
-    transparent 45%,
-    rgba(4, 9, 24, 0.4) 80%,
-    rgba(2, 5, 16, 0.8) 100%
+    ellipse 95% 85% at 50% 50%,
+    transparent 55%,
+    rgba(3, 10, 28, 0.3) 80%,
+    rgba(2, 8, 23, 0.65) 100%
   );
   pointer-events: none;
 }
 
-/* 7. Dark Side Screens (Deep cinematic dark flanks on left & right, middle radiant & glowing) */
+/* 7. Subtle Soft Obsidian Lateral Falloff */
 .glass-light-side-curtains {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    #02050f 0%,
-    rgba(2, 6, 18, 0.98) 10%,
-    rgba(3, 8, 24, 0.88) 18%,
-    rgba(5, 12, 34, 0.5) 28%,
-    transparent 40%,
-    transparent 60%,
-    rgba(5, 12, 34, 0.5) 72%,
-    rgba(3, 8, 24, 0.88) 82%,
-    rgba(2, 6, 18, 0.98) 90%,
-    #02050f 100%
+    rgba(2, 8, 23, 0.45) 0%,
+    rgba(3, 12, 34, 0.2) 6%,
+    transparent 15%,
+    transparent 85%,
+    rgba(3, 12, 34, 0.2) 94%,
+    rgba(2, 8, 23, 0.45) 100%
   );
   pointer-events: none;
 }

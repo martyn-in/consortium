@@ -27,8 +27,6 @@ export default function PaperPresentationModal({ isOpen, onClose, onRegister }) 
     };
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
-
   const toggleDept = (deptId) => {
     sound.playClick();
     setOpenDeptId((prev) => (prev === deptId ? null : deptId));
@@ -96,7 +94,7 @@ export default function PaperPresentationModal({ isOpen, onClose, onRegister }) 
                     <div className="dept-themes-list">
                       {dept.themes.map((theme, i) => (
                         <div key={i} className="dept-theme-item">
-                          <CheckCircle2 size={15} className="text-cyan flex-shrink-0" />
+                          <CheckCircle2 size={15} className="text-violet flex-shrink-0" />
                           <span>{theme}</span>
                         </div>
                       ))}
@@ -148,18 +146,26 @@ export default function PaperPresentationModal({ isOpen, onClose, onRegister }) 
 
   return (
     <AnimatePresence>
-      <div className="event-modal-backdrop" onClick={onClose}>
-        <motion.div
-          className="paper-modal-container aura-glow-border"
-          onClick={(e) => e.stopPropagation()}
-          initial={{ opacity: 0, scale: 0.94, y: 24 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.94, y: 24 }}
-          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Paper Presentation - Choose Your Department"
+      {isOpen && (
+        <motion.div 
+          className="event-modal-backdrop" 
+          onClick={onClose}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
         >
+          <motion.div
+            className="paper-modal-container aura-glow-border"
+            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0, scale: 0.94, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.94, y: 24 }}
+            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Paper Presentation - Choose Your Department"
+          >
           {/* Neon Corner Accents */}
           <div className="modal-corner-tl" />
           <div className="modal-corner-br" />
@@ -254,7 +260,8 @@ export default function PaperPresentationModal({ isOpen, onClose, onRegister }) 
             </a>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
+    )}
     </AnimatePresence>
   );
 }

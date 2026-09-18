@@ -10,7 +10,7 @@ const navItems = [
   { label: 'HOME', href: '#home' },
   { label: 'ABOUT', href: '#about' },
   { label: 'EVENTS', href: '#events' },
-  { label: 'SCHEDULE', href: '#schedule' },
+  { label: 'COUNTDOWN', href: '#schedule' },
   { label: 'CONTACT', href: '#venue' }
 ];
 
@@ -20,23 +20,32 @@ export default function Navbar({ onNavigateToEvents }) {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 25);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.scrollY > 25;
+          setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
 
-      // Section spy
-      const sections = ['home', 'about', 'events', 'schedule', 'arena-experience', 'venue'];
-      const scrollPos = window.scrollY + 220;
+          // Section spy
+          const sections = ['home', 'about', 'events', 'schedule', 'arena-experience', 'venue'];
+          const scrollPos = window.scrollY + 220;
 
-      for (const sectionId of sections) {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(sectionId);
-            break;
+          for (const sectionId of sections) {
+            const el = document.getElementById(sectionId);
+            if (el) {
+              const top = el.offsetTop;
+              const height = el.offsetHeight;
+              if (scrollPos >= top && scrollPos < top + height) {
+                setActiveSection((prev) => (prev !== sectionId ? sectionId : prev));
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 

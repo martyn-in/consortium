@@ -11,7 +11,7 @@ export default function FinalCTA({ onNavigateToEvents }) {
       particleCount: 85,
       spread: 75,
       origin: { y: 0.72 },
-      colors: ['#00eaff', '#ef24ff', '#8a36ff', '#ffffff']
+      colors: ['#00e5ff', '#38bdf8', '#0ea5e9', '#ffffff']
     });
     if (onNavigateToEvents) {
       onNavigateToEvents();
@@ -51,7 +51,7 @@ export default function FinalCTA({ onNavigateToEvents }) {
                 <span>REGISTER NOW</span>
                 <ArrowRight size={17} />
               </button>
-              <ChevronsRight size={24} className="banner-chevron text-magenta" />
+              <ChevronsRight size={24} className="banner-chevron text-cyan" />
             </div>
           </div>
         </Reveal>

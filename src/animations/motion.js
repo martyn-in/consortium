@@ -123,9 +123,9 @@ export const cardFloat = (delay = 0) => ({
 export const pulseGlow = {
   animate: {
     boxShadow: [
-      '0 0 20px rgba(0, 234, 255, 0.2), 0 0 40px rgba(123, 77, 255, 0.1)',
-      '0 0 35px rgba(0, 234, 255, 0.45), 0 0 70px rgba(123, 77, 255, 0.3)',
-      '0 0 20px rgba(0, 234, 255, 0.2), 0 0 40px rgba(123, 77, 255, 0.1)'
+      '0 0 20px rgba(0, 229, 255, 0.25), 0 0 40px rgba(14, 165, 233, 0.1)',
+      '0 0 35px rgba(56, 189, 248, 0.5), 0 0 70px rgba(0, 229, 255, 0.35)',
+      '0 0 20px rgba(0, 229, 255, 0.25), 0 0 40px rgba(14, 165, 233, 0.1)'
     ]
   },
   transition: {

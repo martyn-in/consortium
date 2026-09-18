@@ -6,17 +6,17 @@
 .about-us-section {
   position: relative;
   padding: 80px 0 60px;
-  background: radial-gradient(circle at 50% 10%, rgba(13, 22, 54, 0.45) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.2) 0%, transparent 70%);
   overflow: hidden;
 }
 
 .about-glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.28;
   z-index: 0;
+  transform: translateZ(0);
 }
 
 .about-glow-orb-1 {
@@ -24,7 +24,7 @@
   left: -100px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, #00eaff 0%, #3b82f6 70%);
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.4) 0%, rgba(14, 165, 233, 0.18) 45%, transparent 70%);
 }
 
 .about-glow-orb-2 {
@@ -32,7 +32,7 @@
   right: -100px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, #ec4899 0%, #8b5cf6 70%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, rgba(2, 132, 199, 0.15) 45%, transparent 70%);
 }
 
 /* Header */
@@ -50,13 +50,13 @@
   gap: 8px;
   padding: 6px 18px;
   border-radius: 999px;
-  background: rgba(0, 234, 255, 0.08);
-  border: 1px solid rgba(0, 234, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.78rem;
   font-weight: 800;
-  color: #00eaff;
+  color: #00e5ff;
   letter-spacing: 1.5px;
   margin-bottom: 16px;
 }
@@ -72,7 +72,7 @@
 }
 
 .about-title-highlight {
-  background: linear-gradient(135deg, #00eaff 0%, #a855f7 60%, #ec4899 100%);
+  background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 60%, #00e5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline;
@@ -91,7 +91,7 @@
 /* Institutional Card - Premium Glassmorphism */
 .about-institution-card {
   border-radius: 22px;
-  background: rgba(14, 22, 48, 0.45);
+  background: rgba(4, 16, 38, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 28px 34px;
   margin-bottom: 26px;
@@ -114,7 +114,7 @@
   height: 52px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 12px rgba(0, 234, 255, 0.25));
+  filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.35));
 }
 
 .about-brand-creds {
@@ -149,7 +149,7 @@
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 1.5px;
-  color: #00eaff;
+  color: #00e5ff;
 }
 
 .mission-quote-text {
@@ -170,7 +170,7 @@
 }
 
 .about-stat-box {
-  background: rgba(15, 23, 48, 0.4);
+  background: rgba(4, 16, 38, 0.55);
   border-radius: 16px;
   padding: 18px 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -186,9 +186,9 @@
 
 .about-stat-box:hover {
   transform: translateY(-4px);
-  background: rgba(22, 34, 70, 0.55);
-  border-color: rgba(0, 234, 255, 0.4);
-  box-shadow: 0 12px 30px rgba(0, 234, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  background: rgba(8, 28, 64, 0.75);
+  border-color: rgba(0, 229, 255, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .stat-box-label {
@@ -204,7 +204,7 @@
   font-family: 'Outfit', sans-serif;
   font-size: 1.4rem;
   font-weight: 800;
-  color: #00eaff;
+  color: #00e5ff;
   line-height: 1.1;
   margin-bottom: 4px;
 }
@@ -255,16 +255,16 @@
 }
 
 .about-tab-btn:hover {
-  background: rgba(0, 234, 255, 0.12);
-  border-color: rgba(0, 234, 255, 0.35);
+  background: rgba(0, 229, 255, 0.12);
+  border-color: rgba(0, 229, 255, 0.4);
   color: #ffffff;
 }
 
 .about-tab-btn.is-active {
-  background: rgba(0, 234, 255, 0.16);
-  border-color: #00eaff;
-  color: #00eaff;
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  background: rgba(0, 229, 255, 0.18);
+  border-color: #00e5ff;
+  color: #00e5ff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .about-view-all-toggle {
@@ -273,9 +273,9 @@
   gap: 6px;
   padding: 9px 18px;
   border-radius: 12px;
-  background: rgba(236, 72, 153, 0.12);
-  border: 1px solid rgba(236, 72, 153, 0.35);
-  color: #f472b6;
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  color: #38bdf8;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.8rem;
   font-weight: 800;
@@ -287,16 +287,16 @@
 
 .about-view-all-toggle:hover,
 .about-view-all-toggle.is-active {
-  background: rgba(236, 72, 153, 0.22);
+  background: rgba(14, 165, 233, 0.25);
   color: #ffffff;
-  box-shadow: 0 0 18px rgba(236, 72, 153, 0.25);
+  box-shadow: 0 0 18px rgba(14, 165, 233, 0.25);
 }
 
 /* Active Tab Panel & Full View Cards - Rich Glassmorphism */
 .about-active-panel,
 .about-single-card {
   border-radius: 22px;
-  background: rgba(12, 18, 42, 0.45);
+  background: rgba(4, 16, 38, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.13);
   padding: 32px 36px;
   backdrop-filter: blur(28px);
@@ -329,8 +329,8 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(0, 234, 255, 0.1);
-  border: 1px solid rgba(0, 234, 255, 0.3);
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid rgba(0, 229, 255, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -343,7 +343,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.72rem;
   font-weight: 800;
-  color: #00eaff;
+  color: #00e5ff;
   letter-spacing: 1px;
   display: block;
   margin-bottom: 4px;
@@ -384,7 +384,7 @@
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 1.5px;
-  color: #8beaff;
+  color: #00e5ff;
   margin: 0 0 12px;
 }
 
@@ -432,8 +432,8 @@
   gap: 6px;
   padding: 6px 14px;
   border-radius: 8px;
-  background: rgba(0, 234, 255, 0.06);
-  border: 1px solid rgba(0, 234, 255, 0.2);
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.3);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -446,8 +446,8 @@
 .about-official-portal-banner {
   margin-top: 30px;
   border-radius: 18px;
-  background: rgba(14, 22, 48, 0.45);
-  border: 1px solid rgba(0, 234, 255, 0.25);
+  background: rgba(4, 16, 38, 0.65);
+  border: 1px solid rgba(0, 229, 255, 0.3);
   padding: 22px 28px;
   display: flex;
   align-items: center;
@@ -462,7 +462,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.74rem;
   font-weight: 800;
-  color: #00eaff;
+  color: #00e5ff;
   letter-spacing: 1px;
   display: inline-block;
   margin-bottom: 4px;
@@ -482,9 +482,9 @@
   gap: 8px;
   padding: 10px 22px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #00eaff, #3b82f6);
+  background: linear-gradient(135deg, #0284c7, #0ea5e9, #00e5ff);
   border: none;
-  color: #020617;
+  color: #ffffff;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.84rem;
   font-weight: 800;
@@ -496,7 +496,7 @@
 }
 
 .portal-external-btn:hover {
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
   transform: translateY(-2px);
 }
 

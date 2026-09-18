@@ -10,21 +10,21 @@
   background: transparent;
 }
 
-/* Seamless Glow Bridge from Hero */
+/* Seamless Glow Bridge from Hero (Hardware Accelerated, No filter: blur) */
 .events-arena-glow-bridge {
   position: absolute;
   top: -120px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
   width: 1000px;
   height: 250px;
   background: radial-gradient(
     ellipse at center,
-    rgba(0, 234, 255, 0.12) 0%,
-    rgba(123, 77, 255, 0.08) 45%,
-    transparent 70%
+    rgba(0, 229, 255, 0.2) 0%,
+    rgba(14, 165, 233, 0.12) 40%,
+    rgba(56, 189, 248, 0.03) 65%,
+    transparent 80%
   );
-  filter: blur(60px);
   pointer-events: none;
   z-index: 0;
 }
@@ -53,16 +53,16 @@
   gap: 10px;
   padding: 6px 18px;
   border-radius: 999px;
-  background: rgba(0, 234, 255, 0.08);
-  border: 1px solid rgba(0, 234, 255, 0.3);
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
   margin-bottom: 20px;
 }
 
 .eyebrow-spark {
-  color: #00eaff;
+  color: #00e5ff;
   font-size: 0.8rem;
-  text-shadow: 0 0 10px #00eaff;
+  text-shadow: 0 0 10px #00e5ff;
 }
 
 .eyebrow-text {
@@ -70,7 +70,7 @@
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 3px;
-  color: #8beaff;
+  color: #7dd3fc;
   text-transform: uppercase;
 }
 
@@ -86,11 +86,11 @@
 }
 
 .arena-title-accent {
-  background: linear-gradient(135deg, #00eaff 0%, #38bdf8 40%, #a855f7 75%, #ec4899 100%);
+  background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 40%, #00e5ff 75%, #0284c7 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 35px rgba(0, 234, 255, 0.35));
+  filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.35));
 }
 
 .events-arena-tagline {
@@ -113,12 +113,12 @@
   align-items: center;
   gap: 8px;
   padding: 6px;
-  background: rgba(14, 26, 62, 0.65);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(14, 26, 62, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .arena-cat-pill {
@@ -144,10 +144,10 @@
 }
 
 .arena-cat-pill.is-active {
-  background: linear-gradient(135deg, rgba(0, 234, 255, 0.25), rgba(123, 77, 255, 0.25));
-  border-color: rgba(0, 234, 255, 0.5);
-  color: #00eaff;
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.25);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.25), rgba(56, 189, 248, 0.25));
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #00e5ff;
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.25);
 }
 
 .cat-count-badge {
@@ -159,7 +159,7 @@
 }
 
 .arena-cat-pill.is-active .cat-count-badge {
-  background: rgba(0, 234, 255, 0.3);
+  background: rgba(14, 165, 233, 0.35);
   color: #ffffff;
 }
 
@@ -242,7 +242,7 @@
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #00eaff;
+  color: #00e5ff;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
@@ -262,9 +262,9 @@
 }
 
 .deck-nav-btn:hover {
-  background: rgba(0, 234, 255, 0.25);
-  border-color: #00eaff;
-  box-shadow: 0 0 35px rgba(0, 234, 255, 0.45);
+  background: rgba(14, 165, 233, 0.25);
+  border-color: #00e5ff;
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.45);
   transform: translateY(-50%) scale(1.1);
   color: #ffffff;
 }
@@ -289,15 +289,15 @@
 }
 
 .arena-card:focus-visible {
-  outline: 2px solid #00eaff;
+  outline: 2px solid #00e5ff;
   outline-offset: 4px;
 }
 
 .arena-card.is-active {
   box-shadow: 
     0 30px 80px -20px rgba(0, 0, 0, 0.9),
-    0 0 45px rgba(0, 234, 255, 0.25),
-    0 0 80px rgba(123, 77, 255, 0.15);
+    0 0 45px rgba(14, 165, 233, 0.25),
+    0 0 80px rgba(0, 229, 255, 0.15);
 }
 
 .arena-card.is-side {
@@ -317,10 +317,10 @@
   pointer-events: none;
   background: radial-gradient(
     380px circle at var(--spot-x, 50%) var(--spot-y, 50%),
-    rgba(0, 234, 255, 0.8) 0%,
+    rgba(0, 229, 255, 0.8) 0%,
     rgba(56, 189, 248, 0.6) 25%,
-    rgba(168, 85, 247, 0.4) 50%,
-    rgba(236, 72, 153, 0.2) 75%,
+    rgba(14, 165, 233, 0.4) 50%,
+    rgba(2, 132, 199, 0.2) 75%,
     rgba(255, 255, 255, 0.08) 100%
   );
   opacity: 0.65;
@@ -403,9 +403,9 @@
   letter-spacing: 2px;
   padding: 5px 12px;
   border-radius: 999px;
-  background: #0c203a;
-  border: 1px solid #1e3a5f;
-  color: #00eaff;
+  background: rgba(4, 18, 48, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #00e5ff;
   text-transform: uppercase;
 }
 
@@ -464,12 +464,12 @@
   gap: 5px;
   padding: 3px 8px;
   border-radius: 6px;
-  background: rgba(0, 234, 255, 0.08);
-  border: 1px solid rgba(0, 234, 255, 0.25);
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #8beaff;
+  color: #7dd3fc;
   max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -502,9 +502,9 @@
 
 .arena-btn-details:hover {
   background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(0, 234, 255, 0.6);
-  color: #00eaff;
-  box-shadow: 0 0 20px rgba(0, 234, 255, 0.25);
+  border-color: rgba(56, 189, 248, 0.6);
+  color: #00e5ff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.25);
 }
 
 .arena-btn-register {
@@ -513,9 +513,9 @@
   gap: 8px;
   padding: 11px 26px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #00eaff 0%, #3b82f6 50%, #8b5cf6 100%);
-  border: 1px solid rgba(0, 234, 255, 0.6);
-  color: #030712;
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+  border: 1px solid rgba(56, 189, 248, 0.6);
+  color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.86rem;
   font-weight: 800;
@@ -523,13 +523,13 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 25px rgba(0, 234, 255, 0.4);
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
 }
 
 .arena-btn-register:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 35px rgba(0, 234, 255, 0.65);
-  color: #000000;
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.65);
+  color: #ffffff;
 }
 
 /* Edge Spotlight inside card */
@@ -540,7 +540,7 @@
   pointer-events: none;
   background: radial-gradient(
     400px circle at var(--spot-x, 50%) var(--spot-y, 50%),
-    rgba(0, 234, 255, 0.08) 0%,
+    rgba(0, 229, 255, 0.08) 0%,
     transparent 55%
   );
   z-index: 2;
@@ -572,8 +572,8 @@
   font-size: 1rem;
   font-weight: 800;
   letter-spacing: 1px;
-  color: #00eaff;
-  text-shadow: 0 0 12px rgba(0, 234, 255, 0.5);
+  color: #00e5ff;
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
 }
 
 .deck-total-num {
@@ -592,9 +592,9 @@
 
 .deck-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #00eaff, #38bdf8, #a855f7, #ec4899);
+  background: linear-gradient(90deg, #00e5ff, #38bdf8, #0ea5e9);
   border-radius: 999px;
-  box-shadow: 0 0 15px #00eaff;
+  box-shadow: 0 0 15px #00e5ff;
 }
 
 .deck-swipe-hint {
@@ -609,7 +609,7 @@
 }
 
 .swipe-dot {
-  color: #00eaff;
+  color: #00e5ff;
   font-size: 0.6rem;
   animation: pulseDot 2s infinite ease-in-out;
 }
@@ -674,10 +674,10 @@
 }
 
 .switcher-toggle-btn.is-active {
-  background: rgba(0, 234, 255, 0.18);
-  border-color: rgba(0, 234, 255, 0.5);
-  color: #00eaff;
-  box-shadow: 0 0 18px rgba(0, 234, 255, 0.25);
+  background: rgba(14, 165, 233, 0.2);
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #00e5ff;
+  box-shadow: 0 0 18px rgba(14, 165, 233, 0.25);
 }
 
 /* ============================================================
@@ -697,16 +697,18 @@
   overflow: hidden;
   height: 280px;
   cursor: pointer;
-  /* Frosted Glassmorphism Surface */
-  background: rgba(16, 28, 64, 0.62) !important;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  /* High-Performance Frosted Surface */
+  background: rgba(4, 18, 48, 0.88) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(56, 189, 248, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 24px 22px;
+  transform: translateZ(0);
+  contain: content;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.25s ease,
               box-shadow 0.25s ease,
@@ -714,26 +716,26 @@
   user-select: none;
 }
 
-/* Vibrant Top Border in Event Color */
+/* Vibrant Top Border in Unified Aqua Sky Accent */
 .event-color-top-bar {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--evt-color, #3b82f6);
+  background: linear-gradient(90deg, #00e5ff 0%, #38bdf8 50%, #0284c7 100%);
   z-index: 5;
-  box-shadow: 0 0 12px var(--evt-color, #3b82f6);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.45);
 }
 
 .event-pure-card:hover {
   transform: translateY(-6px);
-  background: rgba(22, 38, 86, 0.78) !important;
-  border-color: var(--evt-color, #38bdf8) !important;
+  background: rgba(6, 26, 68, 0.92) !important;
+  border-color: rgba(56, 189, 248, 0.65) !important;
   box-shadow: 
-    0 18px 45px rgba(0, 0, 0, 0.45),
-    0 0 30px var(--evt-glow, rgba(59, 130, 246, 0.45)),
-    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 0 32px rgba(0, 229, 255, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
 }
 
 .event-pure-media-wrap {
@@ -761,12 +763,12 @@
 .event-pure-color-scrim {
   position: absolute;
   inset: 0;
-  /* Sheer frosted glass color vignette in event theme */
+  /* Sheer frosted glass color vignette in unified theme */
   background: linear-gradient(
     180deg,
-    rgba(10, 18, 42, 0.05) 0%,
-    rgba(10, 18, 42, 0.35) 45%,
-    rgba(10, 18, 42, 0.72) 96%
+    rgba(2, 8, 23, 0.05) 0%,
+    rgba(4, 18, 48, 0.4) 45%,
+    rgba(2, 8, 23, 0.85) 96%
   );
   transition: background 0.3s ease;
 }
@@ -802,14 +804,14 @@
   gap: 6px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--evt-color, #3b82f6);
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.38);
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--evt-color, #3b82f6);
-  transition: all 0.2s ease;
+  color: #e0f2fe;
+  transition: all 0.25s ease;
 }
 
 .hint-arrow {
@@ -817,9 +819,10 @@
 }
 
 .event-pure-card:hover .event-pure-action-hint {
-  background: var(--evt-color, #3b82f6);
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
   color: #ffffff;
-  box-shadow: 0 0 16px var(--evt-glow, rgba(59, 130, 246, 0.4));
+  border-color: #00e5ff;
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.45);
 }
 
 .event-pure-card:hover .hint-arrow {
@@ -837,11 +840,11 @@
   max-width: 980px;
   max-height: 90vh;
   border-radius: 20px;
-  background: rgba(12, 22, 54, 0.88) !important;
+  background: rgba(4, 18, 48, 0.95) !important;
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 234, 255, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 229, 255, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.25);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1190,7 +1193,7 @@
 }
 
 .dot-sep {
-  color: rgba(0, 234, 255, 0.5);
+  color: rgba(56, 189, 248, 0.5);
 }
 
 .dept-quick-register-btn {
@@ -1199,8 +1202,8 @@
   gap: 6px;
   padding: 7px 16px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #00eaff, #3b82f6);
-  color: #020617;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.78rem;
   font-weight: 800;
@@ -1210,7 +1213,7 @@
 }
 
 .dept-quick-register-btn:hover {
-  box-shadow: 0 0 15px rgba(0, 234, 255, 0.45);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.45);
   transform: translateY(-1px);
 }
 

@@ -2,29 +2,18 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
 
-// Curated Luxury Color Palettes for each event (Zero Glassmorphism & High Vibrancy)
-const EVENT_THEMES = {
-  'paper-presentation': { color: '#3b82f6', bg: '#081329', glow: 'rgba(59, 130, 246, 0.45)' },
-  'poster-presentations': { color: '#10b981', bg: '#052219', glow: 'rgba(16, 185, 129, 0.45)' },
-  'project-expo': { color: '#06b6d4', bg: '#051f28', glow: 'rgba(6, 182, 212, 0.45)' },
-  'lan-gaming': { color: '#8b5cf6', bg: '#191030', glow: 'rgba(139, 92, 246, 0.45)' },
-  'photography': { color: '#f59e0b', bg: '#261805', glow: 'rgba(245, 158, 11, 0.45)' },
-  'death-mystery': { color: '#f43f5e', bg: '#290913', glow: 'rgba(244, 63, 94, 0.45)' },
-  'treasure-hunt': { color: '#6366f1', bg: '#10122e', glow: 'rgba(99, 102, 241, 0.45)' },
-  'short-films': { color: '#ec4899', bg: '#280a1c', glow: 'rgba(236, 72, 153, 0.45)' },
-  'flight-simulator': { color: '#0ea5e9', bg: '#061c2b', glow: 'rgba(14, 165, 233, 0.45)' },
-  'bridge-mockup': { color: '#eab308', bg: '#221903', glow: 'rgba(234, 179, 8, 0.45)' }
+// Unified Professional Signature Theme (Consistent Aqua & Deep Oceanic Sky)
+const UNIFIED_THEME = { 
+  color: '#00e5ff', 
+  bg: '#041026', 
+  glow: 'rgba(0, 229, 255, 0.35)' 
 };
 
 export default function EventBentoGrid({ events, onOpenDetails }) {
   return (
     <div className="events-pure-grid">
       {events.map((evt, index) => {
-        const theme = EVENT_THEMES[evt.id] || { 
-          color: '#3b82f6', 
-          bg: '#081329', 
-          glow: 'rgba(59, 130, 246, 0.45)' 
-        };
+        const theme = UNIFIED_THEME;
 
         return (
           <motion.div

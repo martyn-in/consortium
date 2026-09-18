@@ -30,10 +30,10 @@ import imgBridgeMockup from '../assets/real_bridge_mockup.jpg';
  * 02 — Poster Presentations
  * 03 — Project Expo
  * 04 — LAN Gaming
- * 05 — Photography
- * 06 — Death Mystery
+ * 05 — CINEVO — Photography
+ * 06 — Magic Witch
  * 07 — Treasure Hunt
- * 08 — Short Films
+ * 08 — CINEVO — Short Films
  * 09 — Flight Simulator
  * 10 — Bridge Mockup
  */
@@ -70,21 +70,22 @@ export const eventsList = [
     id: 'poster-presentations',
     number: '02',
     displayNumber: '02',
-    title: 'Poster Presentations',
-    shortTitle: 'Poster Presentations',
-    type: 'VISUAL / SCIENTIFIC',
+    title: 'Poster Presentation',
+    shortTitle: 'Poster Presentation',
+    type: 'ECE / VISUAL RESEARCH',
     category: 'Academic',
-    department: 'Department of Computer Science & Engineering (CSE)',
-    tagline: 'Turn complex ideas into powerful visuals.',
-    description: 'Synthesize complex engineering breakthroughs, architectures, and scientific hypotheses into high-impact visual infographics and interactive physical poster exhibits reviewed by technical jurors.',
+    department: 'Department of Electronics & Communication Engineering (ECE)',
+    tagline: 'Visualize an idea. Explain the technology. Make an impact.',
+    description: 'Present your original research or innovative concept as a high-impact A3 poster before an expert jury. Open to all branches and years — translate complex technical ideas into clear, compelling visual narratives and defend your work in a focused 2–3 minute presentation.',
     image: imgPosterPresentation,
     icon: PanelsTopLeft,
     accentColor: 'blue',
-    rules: 'Standard A1 poster format (594 x 841 mm). Evaluation based on technical depth, visual synthesis, methodology, and live oral defense before jury referees.',
+    rules: 'Poster must be A3 size (oil prints preferred). Max team of 2. Each team gets 2–3 minutes to present, followed by a Q&A. Original work only — plagiarism strictly prohibited. Evaluation based on originality, technical content, creativity, relevance, presentation, and Q&A response.',
     teamSize: 'Individual or Team of 2',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
-    isSpecialPaperFlow: false
+    isSpecialPaperFlow: false,
+    isSpecialPosterFlow: true
   },
   {
     id: 'project-expo',
@@ -124,17 +125,18 @@ export const eventsList = [
     teamSize: 'Squad of 4 (Mobile Only)',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
+    registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScnxJBndJukZZ70fU1Pixf1u_Z1bkjOIuyEsnblpqJ1upNKHw/viewform?usp=header',
     isSpecialPaperFlow: false
   },
   {
     id: 'photography',
     number: '05',
     displayNumber: '05',
-    title: 'Photography',
-    shortTitle: 'Photography',
+    title: 'CINEVO — Photography',
+    shortTitle: 'CINEVO',
     type: 'VISUAL / LENS',
     category: 'Creative',
-    department: 'Student Affairs & Media Club (IARE Photography Society)',
+    department: 'Department of Computer Science and Engineering (CSE)',
     tagline: 'Find the frame everyone else missed.',
     description: 'Capture the nocturnal cyber aesthetic, candid technological intensity, human emotion, and vibrant fest spirit of Consortium 2026 through the creative lens of documentary photojournalism.',
     image: imgPhotography,
@@ -144,17 +146,18 @@ export const eventsList = [
     teamSize: 'Individual Photographer',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
+    registrationUrl: 'https://forms.gle/d8rPJCVxPcf7wgcy8',
     isSpecialPaperFlow: false
   },
   {
     id: 'death-mystery',
     number: '06',
     displayNumber: '06',
-    title: 'Death Mystery',
-    shortTitle: 'Death Mystery',
+    title: 'Magic Witch',
+    shortTitle: 'Magic Witch',
     type: 'FORENSICS / THRILLER',
     category: 'Experience',
-    department: 'Department of Science & Humanities',
+    department: 'Department of Electrical & Electronics Engineering (EEE)',
     tagline: 'Observe. Connect. Solve the impossible.',
     description: 'An immersive real-time investigative thriller. Examine simulated crime scenes, inspect physical forensics, interrogate role-play witnesses, decode cryptic ciphers, and deduce the perpetrator before time runs out.',
     image: imgDeathMystery,
@@ -164,6 +167,7 @@ export const eventsList = [
     teamSize: 'Team of 2 to 4',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
+    registrationUrl: 'https://forms.gle/BCGLRCbEVwuRBYGi7',
     isSpecialPaperFlow: false
   },
   {
@@ -190,11 +194,11 @@ export const eventsList = [
     id: 'short-films',
     number: '08',
     displayNumber: '08',
-    title: 'Short Films',
-    shortTitle: 'Short Films',
+    title: 'CINEVO — Short Films',
+    shortTitle: 'CINEVO',
     type: 'CINEMA / STORYTELLING',
     category: 'Creative',
-    department: 'Student Activities Council (SAC) & Department of Humanities',
+    department: 'Department of Computer Science and Engineering (CSE)',
     tagline: 'Tell a story worth remembering.',
     description: 'Screening and adjudication of original student cinematic shorts, visual documentaries, and creative fiction on the high-definition campus auditorium cinema display with live jury feedback.',
     image: imgShortFilms,
@@ -204,6 +208,7 @@ export const eventsList = [
     teamSize: 'Crew of 1 to 5',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
+    registrationUrl: 'https://forms.gle/DBNtqjMA8QpmdW15A',
     isSpecialPaperFlow: false
   },
   {
@@ -358,16 +363,38 @@ export const paperPresentationDepartments = {
     {
       id: 'ece',
       code: 'ECE',
-      name: 'Electronics & Communication Engineering',
-      hasOfficialThemes: false,
-      themes: []
+      name: 'Electronics and Communication Engineering',
+      hasOfficialThemes: true,
+      themes: [
+        'AI & Machine Learning in Electronics',
+        '5G/6G & Wireless Communication',
+        'VLSI & Semiconductor Technology',
+        'Embedded Systems & IoT',
+        'Signal & Image Processing',
+        'Power Electronics & Electric Vehicles',
+        'Satellite & Space Communication',
+        'Robotics & Automation',
+        'Hardware & Cybersecurity',
+        'Sustainable/Green Electronics'
+      ]
     },
     {
       id: 'mech',
       code: 'MECH',
       name: 'Mechanical Engineering',
-      hasOfficialThemes: false,
-      themes: []
+      hasOfficialThemes: true,
+      themes: [
+        'Future Mobility',
+        'Electric Aviation',
+        'Hydrogen Mobility',
+        'Generative Engineering',
+        'Digital Twins',
+        'Smart Manufacturing',
+        'Advanced Robotics',
+        'Space Propulsion',
+        'Hypersonic Engineering',
+        'Autonomous Vehicles'
+      ]
     },
     {
       id: 'civil',

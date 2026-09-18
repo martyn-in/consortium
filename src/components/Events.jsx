@@ -5,6 +5,7 @@ import { sound } from '../utils/soundEffects';
 import EventBentoGrid from './EventBentoGrid';
 import EventDetailModal from './EventDetailModal';
 import PaperPresentationModal from './PaperPresentationModal';
+import PosterPresentationModal from './PosterPresentationModal';
 import './Events.css';
 
 const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
@@ -12,12 +13,18 @@ const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
 export default function Events() {
   const [activeModalEvent, setActiveModalEvent] = useState(null);
   const [isPaperModalOpen, setIsPaperModalOpen] = useState(false);
+  const [isPosterModalOpen, setIsPosterModalOpen] = useState(false);
 
   const filteredEvents = eventsList;
 
   const handleOpenDetails = (event) => {
     sound.playClick();
-    setActiveModalEvent(event);
+    // Route poster-presentations to its dedicated premium modal
+    if (event.isSpecialPosterFlow) {
+      setIsPosterModalOpen(true);
+    } else {
+      setActiveModalEvent(event);
+    }
   };
 
   const handleCloseDetailModal = () => {
@@ -28,9 +35,14 @@ export default function Events() {
     setIsPaperModalOpen(false);
   };
 
-  const handleRegister = (_event) => {
+  const handleClosePosterModal = () => {
+    setIsPosterModalOpen(false);
+  };
+
+  const handleRegister = (event) => {
     sound.playClick();
-    window.open(GOOGLE_FORM_URL, '_blank', 'noopener,noreferrer');
+    const url = event?.registrationUrl || GOOGLE_FORM_URL;
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   // Transition variants from Hero to Events
@@ -93,20 +105,24 @@ export default function Events() {
       </div>
 
       {/* Standard Detail Modal for Events */}
-      {activeModalEvent && (
-        <EventDetailModal
-          event={activeModalEvent}
-          isOpen={Boolean(activeModalEvent)}
-          onClose={handleCloseDetailModal}
-          onRegister={handleRegister}
-        />
-      )}
+      <EventDetailModal
+        event={activeModalEvent}
+        isOpen={Boolean(activeModalEvent)}
+        onClose={handleCloseDetailModal}
+        onRegister={handleRegister}
+      />
 
       {/* Special Paper Presentation Department Selector Modal */}
       <PaperPresentationModal
         isOpen={isPaperModalOpen}
         onClose={handleClosePaperModal}
         onRegister={handleRegister}
+      />
+
+      {/* Special Poster Presentation Modal (ECE) */}
+      <PosterPresentationModal
+        isOpen={isPosterModalOpen}
+        onClose={handleClosePosterModal}
       />
     </section>
   );
