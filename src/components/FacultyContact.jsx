@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Phone, Search, X, Building2, UserCheck, PhoneCall, Code2, ExternalLink } from 'lucide-react';
-import { facultyCoordinators, departmentsList } from '../data/facultyData';
+import { festConveners, facultyCoordinators, departmentsList } from '../data/facultyData';
 import { sound } from '../utils/soundEffects';
 import Reveal from './Reveal';
 import './FacultyContact.css';
@@ -12,6 +12,19 @@ const LinkedinIcon = ({ size = 15 }) => (
     <circle cx="4" cy="4" r="2"/>
   </svg>
 );
+
+const deptEmojiMap = {
+  All: '🌐',
+  CSE: '💻',
+  AIML: '🤖',
+  IT: '🌐',
+  ECE: '📡',
+  EEE: '⚡',
+  DS: '📊',
+  AE: '✈️',
+  ME: '⚙️',
+  CE: '🏗️'
+};
 
 export default function FacultyContact() {
   const [selectedDept, setSelectedDept] = useState('All');
@@ -38,15 +51,71 @@ export default function FacultyContact() {
         {/* Section Header */}
         <Reveal direction="up" distance={25}>
           <div className="section-panel-header">
-            <span className="section-kicker">GET IN TOUCH // DIRECTORY</span>
-            <h2 className="section-panel-title">FACULTY COORDINATORS</h2>
+            <span className="section-kicker">📞 GET IN TOUCH // DIRECTORY</span>
+            <h2 className="section-panel-title">FEST LEADERSHIP &amp; FACULTY DIRECTORY</h2>
             <p className="section-panel-desc">
-              Connect directly with official departmental faculty coordinators for event guidance, registration assistance, and queries.
+              Connect directly with official conveners and departmental faculty coordinators for event guidance, registration assistance, and queries.
             </p>
           </div>
         </Reveal>
 
-        {/* Filter Controls: Department Pills & Search */}
+        {/* 1. Official Fest Conveners Showcase */}
+        <Reveal direction="up" distance={20} delay={0.05}>
+          <div className="faculty-conveners-container">
+            <div className="conveners-kicker-row">
+              <span className="conveners-kicker-pill">
+                <span>👑</span>
+                <span>FEST LEADERSHIP // CONVENERS</span>
+              </span>
+              <span className="conveners-sub-note">CONSORTIUM 2026 ORGANIZING COMMITTEE</span>
+            </div>
+
+            <div className="conveners-grid">
+              {festConveners.map((convener) => (
+                <div key={convener.id} className="convener-card aura-glow-border">
+                  <div className="convener-card-header">
+                    <span className="convener-role-badge">{convener.roleBadge}</span>
+                    <span className="convener-dept-badge">
+                      <span>{convener.deptEmoji}</span>
+                      <span>{convener.deptCode}</span>
+                    </span>
+                  </div>
+
+                  <div className="convener-card-body">
+                    <div className="convener-avatar-orb">
+                      <span className="convener-avatar-emoji">{convener.emoji}</span>
+                    </div>
+                    <div className="convener-details">
+                      <h3 className="convener-name">{convener.name}</h3>
+                      <p className="convener-role-title">
+                        <strong>{convener.role}</strong> • {convener.department}
+                      </p>
+                      <span className="convener-institution">
+                        🏛️ Institute of Aeronautical Engineering (Autonomous)
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="convener-card-footer">
+                    <a
+                      href={convener.profileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="convener-profile-btn"
+                      onClick={() => sound.playClick()}
+                      title={`View ${convener.name}'s Official IARE Profile`}
+                    >
+                      <span>🌐 OFFICIAL IARE PROFILE</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* 2. Filter Controls: Department Pills & Search */}
         <Reveal direction="up" distance={20} delay={0.1}>
           <div className="faculty-controls-bar">
             {/* Search Input */}
@@ -54,7 +123,7 @@ export default function FacultyContact() {
               <Search size={16} className="faculty-search-icon" />
               <input
                 type="text"
-                placeholder="Search coordinator or department..."
+                placeholder="🔍 Search coordinator, department, or phone..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="faculty-search-input"
@@ -79,6 +148,7 @@ export default function FacultyContact() {
                   ? facultyCoordinators.length
                   : facultyCoordinators.filter((c) => c.deptCode === dept).length;
                 const isActive = selectedDept === dept;
+                const emoji = deptEmojiMap[dept] || '📌';
 
                 return (
                   <button
@@ -92,6 +162,7 @@ export default function FacultyContact() {
                       setSelectedDept(dept);
                     }}
                   >
+                    <span className="dept-pill-emoji">{emoji}</span>
                     <span>{dept}</span>
                     <span className="dept-pill-count">{count}</span>
                   </button>
@@ -101,59 +172,63 @@ export default function FacultyContact() {
           </div>
         </Reveal>
 
-        {/* Coordinators Grid */}
+        {/* 3. Coordinators Grid */}
         <div className="faculty-grid">
           {filteredCoordinators.length > 0 ? (
-            filteredCoordinators.map((coord) => (
-              <div key={coord.id} className="faculty-card aura-glow-border">
-                <div className="faculty-card-top">
-                  <div className="faculty-dept-badge">
-                    <span className="dept-badge-code">{coord.deptCode}</span>
+            filteredCoordinators.map((coord) => {
+              const deptEmoji = deptEmojiMap[coord.deptCode] || '📌';
+              return (
+                <div key={coord.id} className="faculty-card aura-glow-border">
+                  <div className="faculty-card-top">
+                    <div className="faculty-dept-badge">
+                      <span>{deptEmoji}</span>
+                      <span className="dept-badge-code">{coord.deptCode}</span>
+                    </div>
+                    <span className="faculty-dept-name">{coord.department}</span>
                   </div>
-                  <span className="faculty-dept-name">{coord.department}</span>
-                </div>
 
-                <div className="faculty-card-body">
-                  <div className="faculty-avatar-row">
-                    <div className="faculty-avatar-box">
-                      <UserCheck size={18} className="faculty-avatar-icon" />
-                    </div>
-                    <div className="faculty-name-wrap">
-                      <h3 className="faculty-name">{coord.name}</h3>
-                      <span className="faculty-role">Faculty Coordinator</span>
+                  <div className="faculty-card-body">
+                    <div className="faculty-avatar-row">
+                      <div className="faculty-avatar-box">
+                        <UserCheck size={18} className="faculty-avatar-icon" />
+                      </div>
+                      <div className="faculty-name-wrap">
+                        <h3 className="faculty-name">{coord.name}</h3>
+                        <span className="faculty-role">👨‍🏫 Faculty Coordinator</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="faculty-card-footer">
-                  <a
-                    href={`tel:+91${coord.phone}`}
-                    className="faculty-phone-link"
-                    onClick={() => sound.playClick()}
-                    title={`Call ${coord.name}`}
-                  >
-                    <div className="phone-icon-circle">
-                      <Phone size={14} />
-                    </div>
-                    <span className="phone-number-text">+91 {coord.phone}</span>
-                  </a>
+                  <div className="faculty-card-footer">
+                    <a
+                      href={`tel:+91${coord.phone}`}
+                      className="faculty-phone-link"
+                      onClick={() => sound.playClick()}
+                      title={`Call ${coord.name}`}
+                    >
+                      <div className="phone-icon-circle">
+                        <Phone size={14} />
+                      </div>
+                      <span className="phone-number-text">+91 {coord.phone}</span>
+                    </a>
 
-                  <a
-                    href={`tel:+91${coord.phone}`}
-                    className="faculty-call-action-btn"
-                    onClick={() => sound.playClick()}
-                    aria-label={`Call ${coord.name} now`}
-                  >
-                    <PhoneCall size={13} />
-                    <span>CALL</span>
-                  </a>
+                    <a
+                      href={`tel:+91${coord.phone}`}
+                      className="faculty-call-action-btn"
+                      onClick={() => sound.playClick()}
+                      aria-label={`Call ${coord.name} now`}
+                    >
+                      <PhoneCall size={13} />
+                      <span>CALL</span>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           ) : (
             <div className="faculty-empty-state">
               <Building2 size={32} className="empty-state-icon" />
-              <p>No faculty coordinators match "{searchQuery}"</p>
+              <p>No faculty coordinators match &quot;{searchQuery}&quot;</p>
               <button
                 type="button"
                 className="empty-state-reset"
@@ -168,12 +243,12 @@ export default function FacultyContact() {
           )}
         </div>
 
-        {/* Website Developers Contact Card */}
+        {/* 4. Website Developers Contact Card */}
         <div className="faculty-dev-support-card aura-glow-border">
           <div className="dev-support-info">
             <div className="dev-support-badge">
               <Code2 size={15} className="dev-support-badge-icon" />
-              <span>DIGITAL &amp; TECHNICAL SUPPORT</span>
+              <span>💻 DIGITAL &amp; TECHNICAL SUPPORT</span>
             </div>
             <h4 className="dev-support-title">Website Developers</h4>
             <p className="dev-support-desc">
@@ -188,7 +263,7 @@ export default function FacultyContact() {
                   <Phone size={14} />
                 </div>
                 <div className="dev-chip-text">
-                  <span className="dev-chip-label">PULIVARTHI MARTYN</span>
+                  <span className="dev-chip-label">👨‍💻 PULIVARTHI MARTYN</span>
                   <a 
                     href="tel:+918555877044" 
                     className="dev-phone-num"
@@ -219,7 +294,7 @@ export default function FacultyContact() {
                   <Phone size={14} />
                 </div>
                 <div className="dev-chip-text">
-                  <span className="dev-chip-label">ASHWATH AMARCHINTA</span>
+                  <span className="dev-chip-label">👨‍💻 ASHWATH AMARCHINTA</span>
                   <a 
                     href="tel:+919177591324" 
                     className="dev-phone-num"
@@ -246,10 +321,10 @@ export default function FacultyContact() {
           </div>
         </div>
 
-        {/* Simple Institutional Note */}
+        {/* 5. Institutional Helpdesk Note */}
         <div className="faculty-footer-note">
           <p>
-            For urgent college inquiries, report to the <strong>IARE Central Registration Desk</strong> on fest days. Official updates on Instagram:&nbsp;
+            🏢 For urgent college inquiries, report to the <strong>IARE Central Registration Desk</strong> on fest days. Official updates on Instagram:&nbsp;
             <a 
               href="https://www.instagram.com/iareconsortium2026?stkn=bHpncG9tNTluYXZw" 
               target="_blank" 
@@ -257,7 +332,7 @@ export default function FacultyContact() {
               className="faculty-insta-link"
               onClick={() => sound.playClick()}
             >
-              @iareconsortium2026 ↗
+              📸 @iareconsortium2026 ↗
             </a>
           </p>
         </div>

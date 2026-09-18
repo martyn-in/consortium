@@ -99,6 +99,12 @@
   transform: scale(1.12) rotate(4deg);
 }
 
+.pillar-real-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
+}
+
 .pillar-title {
   font-family: var(--font-heading);
   font-size: 1.05rem;

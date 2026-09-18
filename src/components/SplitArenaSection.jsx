@@ -60,7 +60,7 @@ export default function SplitArenaSection() {
           <div className="schedule-header-block">
             <div className="schedule-kicker-chip">
               <span className="schedule-kicker-dot">●</span>
-              <span>OCTOBER 9 & 10, 2026 // IARE HYDERABAD</span>
+              <span>🗓️ OCTOBER 9 &amp; 10, 2026 // IARE HYDERABAD</span>
             </div>
             <h2 className="schedule-main-heading">
               LIVE FESTIVAL <span className="schedule-brush-title">COUNTDOWN</span>
@@ -117,7 +117,7 @@ export default function SplitArenaSection() {
 
               <div className="countdown-footer-note">
                 <MapPin size={14} className="text-violet" />
-                <span>Institute of Aeronautical Engineering (Autonomous) — Dundigal, Hyderabad</span>
+                <span>📍 Institute of Aeronautical Engineering (Autonomous) — Dundigal, Hyderabad</span>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function SplitArenaSection() {
             <div className="battle-card-content">
               <div className="battle-kicker-chip">
                 <span className="battle-kicker-dot">●</span>
-                <span>2 DAYS NATIONAL LEVEL FEST</span>
+                <span>⚡ 2 DAYS NATIONAL LEVEL FEST</span>
               </div>
 
               <h2 className="battle-heading">
@@ -144,15 +144,15 @@ export default function SplitArenaSection() {
               <div className="battle-features-row">
                 <div className="battle-feat-item">
                   <Target size={16} className="text-cyan" />
-                  <span>10 Flagship Events</span>
+                  <span>🎯 10 Flagship Events</span>
                 </div>
                 <div className="battle-feat-item">
                   <Zap size={16} className="text-magenta" />
-                  <span>Competitive Showdowns</span>
+                  <span>🔥 Competitive Showdowns</span>
                 </div>
                 <div className="battle-feat-item">
                   <Shield size={16} className="text-cyan" />
-                  <span>National Adjudication</span>
+                  <span>🛡️ National Adjudication</span>
                 </div>
               </div>
 
@@ -162,7 +162,7 @@ export default function SplitArenaSection() {
                   className="battle-btn-know-more"
                   onClick={() => sound.playClick()}
                 >
-                  <span>EXPLORE ALL 10 EVENTS</span>
+                  <span>🚀 EXPLORE ALL 10 EVENTS</span>
                   <ArrowRight size={15} />
                 </a>
               </div>

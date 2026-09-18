@@ -1,7 +1,36 @@
 /**
- * OFFICIAL FACULTY COORDINATORS - CONSORTIUM 2026
- * Departmental Faculty Points of Contact
+ * OFFICIAL FEST CONVENERS & FACULTY COORDINATORS - CONSORTIUM 2026
+ * Institute of Aeronautical Engineering (IARE)
  */
+
+export const festConveners = [
+  {
+    id: 'convener-shoba-rani',
+    role: 'CONVENER',
+    roleBadge: '👑 CONVENER',
+    name: 'Dr. D. SHOBA RANI',
+    title: 'Convener, Consortium 2026',
+    department: 'Department of Electrical and Electronics Engineering',
+    deptCode: 'EEE',
+    institution: 'Institute of Aeronautical Engineering',
+    profileUrl: 'https://www.iare.ac.in/?q=electrical-and-electronics-engineering/ms-d-shobha-rani',
+    emoji: '👑',
+    deptEmoji: '⚡'
+  },
+  {
+    id: 'convener-srilatha',
+    role: 'CO-CONVENER',
+    roleBadge: '🎖️ CO-CONVENER',
+    name: 'Dr. P. SRILATHA',
+    title: 'Co-Convener, Consortium 2026',
+    department: 'Department of Freshman Engineering',
+    deptCode: 'FE',
+    institution: 'Institute of Aeronautical Engineering',
+    profileUrl: 'https://www.iare.ac.in/?q=freshman-engineering/dr-p-srilatha',
+    emoji: '🎖️',
+    deptEmoji: '🔬'
+  }
+];
 
 export const facultyCoordinators = [
   {

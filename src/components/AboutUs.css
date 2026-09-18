@@ -212,6 +212,58 @@
   margin: 0;
 }
 
+/* Conveners Strip in Institutional Card */
+.about-conveners-strip {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.conveners-strip-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #38bdf8;
+  text-transform: uppercase;
+}
+
+.conveners-strip-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.convener-strip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.convener-strip-pill:hover {
+  background: #00e5ff;
+  color: #041026;
+  border-color: #00e5ff;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.4);
+  transform: translateY(-1px);
+}
+
 /* Stats Matrix - Frosted Glassmorphism Tiles */
 .about-stats-grid {
   display: grid;

@@ -163,6 +163,34 @@ export default function AboutUs() {
                   &ldquo;Education for Liberation&rdquo; — Run by Maruthi Educational Society founded by eminent professionals and industrialists. Autonomous Engineering College established in 2000.
                 </p>
               </div>
+
+              <div className="about-conveners-strip">
+                <span className="conveners-strip-label">👑 FEST CONVENERSHIP:</span>
+                <div className="conveners-strip-links">
+                  <a 
+                    href="https://www.iare.ac.in/?q=electrical-and-electronics-engineering/ms-d-shobha-rani" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="convener-strip-pill"
+                    onClick={() => sound.playClick()}
+                    title="Dr. D. Shoba Rani - Convener"
+                  >
+                    <span>👑 Convener: Dr. D. Shoba Rani (EEE)</span>
+                    <ExternalLink size={12} />
+                  </a>
+                  <a 
+                    href="https://www.iare.ac.in/?q=freshman-engineering/dr-p-srilatha" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="convener-strip-pill"
+                    onClick={() => sound.playClick()}
+                    title="Dr. P. Srilatha - Co-Convener"
+                  >
+                    <span>🎖️ Co-Convener: Dr. P. Srilatha (FE)</span>
+                    <ExternalLink size={12} />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </Reveal>

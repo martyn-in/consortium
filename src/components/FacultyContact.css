@@ -9,6 +9,206 @@
   background: transparent;
 }
 
+/* ============================================================
+   FEST CONVENERS & LEADERSHIP CARDS
+   ============================================================ */
+.faculty-conveners-container {
+  max-width: 1140px;
+  margin: 0 auto 3rem;
+}
+
+.conveners-kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+  padding: 0 4px;
+}
+
+.conveners-kicker-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #00e5ff;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.conveners-sub-note {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.conveners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.convener-card {
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(6, 26, 68, 0.8) 0%, rgba(3, 14, 38, 0.95) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 28px rgba(0, 229, 255, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.25s ease;
+}
+
+.convener-card:hover {
+  transform: translateY(-4px);
+  border-color: #00e5ff;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 36px rgba(0, 229, 255, 0.25);
+}
+
+.convener-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.convener-role-badge {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.6), rgba(0, 229, 255, 0.4));
+  border: 1px solid #00e5ff;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+}
+
+.convener-dept-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #38bdf8;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.convener-card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.convener-avatar-orb {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.25);
+}
+
+.convener-avatar-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.convener-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.convener-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.convener-role-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.84rem;
+  color: #bae6fd;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.convener-role-title strong {
+  color: #ffffff;
+}
+
+.convener-institution {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.76rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.convener-card-footer {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.convener-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  color: #00e5ff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.convener-profile-btn:hover {
+  background: #00e5ff;
+  color: #041026;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.dept-pill-emoji {
+  font-size: 0.95rem;
+  line-height: 1;
+  margin-right: 2px;
+}
+
 /* Controls Bar (Search + Filter Pills) */
 .faculty-controls-bar {
   max-width: 1140px;
@@ -558,6 +758,12 @@
 @media (max-width: 1024px) {
   .faculty-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .conveners-grid {
+    grid-template-columns: 1fr;
   }
 }
 
