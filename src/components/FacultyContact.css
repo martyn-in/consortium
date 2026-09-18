@@ -674,6 +674,7 @@
   letter-spacing: 0.1em;
   color: #38bdf8;
   text-transform: uppercase;
+  white-space: nowrap !important;
 }
 
 .dev-phone-num {
@@ -684,6 +685,8 @@
   letter-spacing: 0.03em;
   text-decoration: none;
   transition: color 0.2s ease;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
 }
 
 .dev-phone-num:hover {
@@ -707,6 +710,8 @@
   cursor: pointer;
   transition: all 0.2s ease;
   margin-left: 4px;
+  white-space: nowrap !important;
+  flex-shrink: 0;
 }
 
 .dev-linkedin-btn:hover {
@@ -762,38 +767,206 @@
 }
 
 @media (max-width: 768px) {
+  .faculty-contact-section {
+    padding: 3.5rem 0.85rem 2.5rem;
+  }
+
   .conveners-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
-}
 
-@media (max-width: 820px) {
   .faculty-dev-support-card {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 20px;
+    align-items: stretch;
+    padding: 22px 18px;
+    gap: 20px;
+  }
+
+  .dev-support-info {
+    max-width: 100%;
   }
 
   .dev-support-contacts {
     width: 100%;
     flex-direction: column;
+    gap: 12px;
   }
 
-  .dev-contact-chip {
+  .dev-contact-card {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
   }
 }
 
 @media (max-width: 680px) {
   .faculty-contact-section {
-    padding: 3.5rem 1rem 2.5rem;
+    padding: 3rem 0.75rem 2rem;
+  }
+
+  .conveners-kicker-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .conveners-sub-note {
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+  }
+
+  .convener-card {
+    padding: 18px 16px;
+    border-radius: 16px;
+    gap: 1rem;
+  }
+
+  .convener-card-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .convener-role-badge {
+    font-size: 0.74rem;
+    padding: 3px 10px;
+  }
+
+  .convener-dept-badge {
+    font-size: 0.72rem;
+    padding: 3px 8px;
+  }
+
+  .convener-card-body {
+    gap: 12px;
+  }
+
+  .convener-avatar-orb {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .convener-avatar-emoji {
+    font-size: 1.35rem;
+  }
+
+  .convener-name {
+    font-size: 1.1rem;
+  }
+
+  .convener-role-title {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .convener-institution {
+    font-size: 0.72rem;
+  }
+
+  .convener-profile-btn {
+    padding: 9px 12px;
+    font-size: 0.78rem;
+  }
+
+  /* Horizontal touch-scrollable department chips */
+  .faculty-dept-pills {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    padding: 4px 2px 8px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .faculty-dept-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faculty-dept-pill {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 5px 12px;
+    font-size: 0.74rem;
   }
 
   .faculty-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .faculty-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+
+  .faculty-name {
+    font-size: 1.05rem;
+  }
+
+  .faculty-phone-link {
+    font-size: 0.86rem;
+  }
+
+  .faculty-call-action-btn {
+    padding: 6px 12px;
+    font-size: 0.72rem;
   }
 
   .faculty-footer-note {
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-top: 1.5rem;
+  }
+
+  .faculty-footer-note p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 640px) {
+  .faculty-dev-support-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+    margin-top: 2rem;
+  }
+
+  .dev-support-title {
+    font-size: 1.15rem;
+  }
+
+  .dev-support-desc {
+    font-size: 0.8rem;
+  }
+
+  .dev-contact-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 14px;
+    gap: 10px;
     border-radius: 12px;
+  }
+
+  .dev-contact-main {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dev-linkedin-btn {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+    padding: 8px 12px;
+    font-size: 0.75rem;
   }
 }

@@ -4,8 +4,8 @@ import {
   Box, 
   Gamepad2, 
   Camera, 
-  Search, 
-  Compass, 
+  Search,
+  Sparkles,
   Clapperboard, 
   Plane, 
   DraftingCompass 
@@ -32,7 +32,7 @@ import imgBridgeMockup from '../assets/real_bridge_mockup.jpg';
  * 04 — LAN Gaming
  * 05 — CINEVO — Photography
  * 06 — Magic Witch
- * 07 — Treasure Hunt
+ * 07 — Death Mystery
  * 08 — CINEVO — Short Films
  * 09 — Flight Simulator
  * 10 — Bridge Mockup
@@ -184,7 +184,7 @@ export const eventsList = [
     isSpecialPaperFlow: false
   },
   {
-    id: 'death-mystery',
+    id: 'magic-witch',
     number: '06',
     displayNumber: '06',
     title: 'Magic Witch — The Elixir of Eternal Life',
@@ -195,8 +195,8 @@ export const eventsList = [
     department: 'Department of Electrical & Electronics Engineering (EEE)',
     tagline: 'Survive three worlds. Collect the 10 Sacred Ingredients. Claim the Witch\'s treasure.',
     description: 'Legend says that the most powerful witch in the realm created the Elixir of Eternal Life using 10 enchanted ingredients. Before disappearing, she scattered the ingredients across the Forbidden Realm and protected them with magical trials. The Witch Hunters must survive three worlds, solve challenges, collect the 10 Sacred Ingredients, and place them in the correct sequence. Only the team that successfully reconstructs the Elixir of Eternal Life can claim the Witch\'s treasure.',
-    image: imgDeathMystery,
-    icon: Search,
+    image: imgTreasureHunt,
+    icon: Sparkles,
     accentColor: 'magenta',
     fee: '₹360 per team',
     feeNote: 'A team contains 3 members max. Even 1 or 2 can participate but the amount is fixed at ₹360 per team.',
@@ -270,23 +270,125 @@ export const eventsList = [
     isSpecialPaperFlow: false
   },
   {
-    id: 'treasure-hunt',
+    id: 'death-mystery',
     number: '07',
     displayNumber: '07',
-    title: 'Treasure Hunt',
-    shortTitle: 'Treasure Hunt',
-    type: 'EXPEDITION / PUZZLE',
+    title: 'Death Mystery',
+    shortTitle: 'Death Mystery',
+    subtitle: 'A Technical Investigation Challenge',
+    type: 'INVESTIGATION / MYSTERY',
     category: 'Experience',
     department: 'Department of Electrical & Electronics Engineering (EEE)',
-    tagline: 'Follow the clues. Beat the clock.',
-    description: 'The legendary campus-wide navigation sprint. Solve mathematical riddles, decode GPS waypoints and cryptographic coordinates, find hidden checkpoint tokens, and sprint against the clock.',
-    image: imgTreasureHunt,
-    icon: Compass,
+    tagline: 'Debug. Decode. Investigate. Deduce.',
+    description: 'A laptop-only digital investigation challenge. Teams qualify through a technical gate, receive a QR case briefing, and solve a multi-level mystery using coding, SQL, logs, timestamps, and digital forensics — all inside a custom investigation website.',
+    image: imgDeathMystery,
+    icon: Search,
     accentColor: 'blue',
-    rules: 'Multi-stage navigation challenge across 10 acres. Checkpoints must be solved and cleared sequentially. First squad to return with the verified master token wins.',
-    teamSize: 'Team of 3 to 4',
+    fee: 'TBA',
+    teamSize: 'Team of 2 to 4',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
+    registrationUrl: 'https://forms.gle/q8sNCG6mc378WRyt8',
+    rules: 'Technical qualification + QR case briefing + laptop-only digital investigation + sequential clue solving + final verdict. No outside applications permitted.',
+    gameStory: 'A mysterious death has occurred. Your team of investigators must qualify through a technical entry gate, receive a confidential case briefing via QR code, and solve the entire case on the provided laptop. Debug code, decode messages, query databases, analyze logs, and reconstruct the timeline to deliver your final verdict.',
+    ruleSections: [
+      {
+        title: '1. Team & Registration',
+        points: [
+          'Each team must consist of 2-4 members.',
+          'All participants must complete registration before the event begins.',
+          'Team members must work together as one investigation team.'
+        ]
+      },
+      {
+        title: '2. Qualification Round',
+        points: [
+          'The entry gate contains 6 questions.',
+          '2 questions are based on Java / HTML / programming.',
+          '2 questions are based on EEE / ECE / Civil / Mechanical Engineering.',
+          '2 questions are General Knowledge based.',
+          'Teams must answer any 2 questions correctly to qualify.',
+          'Participants must press SUBMIT ANSWERS before the system checks qualification.'
+        ]
+      },
+      {
+        title: '3. QR Case Briefing',
+        points: [
+          'After qualification, a QR code will appear on the laptop.',
+          'Scan the QR code with a phone to open the case briefing.',
+          'The mobile briefing contains the victim, important people, incident background and crime-scene observations.',
+          'The mobile briefing does not reveal the technical clues or final solution.'
+        ]
+      },
+      {
+        title: '4. Main Investigation',
+        points: [
+          'The technical investigation begins on the provided laptop.',
+          'The complete case must be solved inside the event website.',
+          'Every major conclusion should be supported by evidence discovered during the investigation.'
+        ]
+      },
+      {
+        title: '5. Technical Challenges',
+        points: [
+          'Participants may face small coding/debugging tasks.',
+          'Encoding / decoding challenges may be used to reveal clues.',
+          'Simple SQL queries may be required to search fictional case data.',
+          'Logs, timestamps, network events, file metadata and hidden messages may be used.',
+          'A final timeline reconstruction connects the evidence.'
+        ]
+      },
+      {
+        title: '6. Level System',
+        points: [
+          'Levels are completed in sequence.',
+          'Solving one level unlocks the next level.',
+          'A clue recovered from one level is often required to solve the next level.',
+          'Random guessing should not be necessary; read the case evidence carefully.'
+        ]
+      },
+      {
+        title: '7. Secure Investigation Mode',
+        points: [
+          'The qualification stage is not secure mode.',
+          'Secure mode starts only after the team clicks START INVESTIGATION.',
+          'Once secure mode begins, leaving or hiding the investigation page may automatically close the attempt.',
+          'Participants should remain on the investigation website throughout the main case.'
+        ]
+      },
+      {
+        title: '8. Final Verdict',
+        points: [
+          'At the end, teams must submit who is responsible, what happened, the motive, and the supporting evidence.',
+          'The final answer should explain the evidence chain rather than only naming a suspect.',
+          'Incorrect or unsupported accusations may receive reduced points.'
+        ]
+      },
+      {
+        title: '9. Scoring',
+        points: [
+          'Scoring may include qualification, technical challenges solved, clues recovered, contradictions identified, timeline accuracy, final verdict, and time taken.',
+          'The organizer may apply penalties for rule violations or unauthorized assistance.'
+        ]
+      },
+      {
+        title: '10. General Instructions',
+        points: [
+          'Read every clue carefully, including timestamps and small details.',
+          'Keep track of names, technical identifiers, file names and contradictions.',
+          'Do not assume that the first suspicious clue is the answer.',
+          'Connect multiple independent clues before reaching the final conclusion.',
+          'Follow organizer instructions immediately if the investigation is paused or ended.'
+        ]
+      },
+      {
+        title: 'No Outside Applications',
+        isDisqualification: true,
+        points: [
+          'Google, external AI tools, online decoders, online SQL tools, external coding websites and communication with other teams are not permitted during the investigation.'
+        ]
+      }
+    ],
     isSpecialPaperFlow: false
   },
   {

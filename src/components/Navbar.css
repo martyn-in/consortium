@@ -20,12 +20,12 @@
 }
 
 .c26-navbar-header.is-scrolled {
-  padding: clamp(0.65rem, 1.5vh, 0.85rem) clamp(1.2rem, 3vw, 2.5rem);
-  background: rgba(4, 18, 48, 0.90);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.18);
+  padding: clamp(0.6rem, 1.5vh, 0.8rem) clamp(1.2rem, 3vw, 2.5rem);
+  background: rgba(2, 8, 24, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.22);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 2px 12px rgba(56, 189, 248, 0.15);
 }
 
 .c26-navbar-inner {
@@ -391,10 +391,16 @@
 @media (max-width: 920px) {
   .c26-navbar-header {
     padding: 0.75rem 1.2rem;
+    background: rgba(2, 8, 24, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.16);
   }
 
   .c26-navbar-header.is-scrolled {
     padding: 0.6rem 1.2rem;
+    background: rgba(2, 8, 24, 0.98);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.25);
   }
 
   .c26-nav-capsule-dock {

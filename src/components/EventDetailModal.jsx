@@ -26,6 +26,8 @@ const EVENT_MODAL_THEMES = {
   'lan-gaming': { ...UNIFIED_MODAL_THEME, deptCode: 'IT' },
   'photography': { ...UNIFIED_MODAL_THEME, deptCode: 'CSE' },
   'death-mystery': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
+  'death-mystery-investigation': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
+  'magic-witch': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
   'treasure-hunt': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
   'short-films': { ...UNIFIED_MODAL_THEME, deptCode: 'CSE' },
   'flight-simulator': { ...UNIFIED_MODAL_THEME, deptCode: 'AERO' },
