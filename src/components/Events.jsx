@@ -45,28 +45,25 @@ export default function Events() {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  // Transition variants from Hero to Events
+  // Snappy transition variants for Events Section (Zero lag, no blur)
   const sectionIntroVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.96 },
+    hidden: { opacity: 0, y: 16 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
       transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1],
-        staggerChildren: 0.12
+        duration: 0.3,
+        ease: [0.16, 1, 0.3, 1]
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
+    hidden: { opacity: 0, y: 12 },
     visible: { 
       opacity: 1, 
       y: 0, 
-      filter: 'blur(0px)',
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } 
+      transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } 
     }
   };
 

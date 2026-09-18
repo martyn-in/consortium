@@ -1,6 +1,7 @@
 import { MapPin, ExternalLink, Navigation, Calendar } from 'lucide-react';
 import Reveal from './Reveal';
 import { sound } from '../utils/soundEffects';
+import FacultyContact from './FacultyContact';
 import './AdditionalSections.css';
 
 export default function AdditionalSections() {
@@ -69,6 +70,9 @@ export default function AdditionalSections() {
           </Reveal>
         </div>
       </section>
+
+      {/* FACULTY COORDINATORS & CONTACT (#contact) */}
+      <FacultyContact />
     </div>
   );
 }

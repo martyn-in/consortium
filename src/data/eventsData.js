@@ -121,11 +121,28 @@ export const eventsList = [
     image: imgLanGaming,
     icon: Gamepad2,
     accentColor: 'violet',
-    rules: 'Mobile smartphones only (strictly no emulators, iPads/tablets, or external triggers). Point system based on match placement and elimination score across tournament brackets.',
-    teamSize: 'Squad of 4 (Mobile Only)',
+    teamSize: 'Squad / Team (Mobile Only)',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
     registrationUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScnxJBndJukZZ70fU1Pixf1u_Z1bkjOIuyEsnblpqJ1upNKHw/viewform?usp=header',
+    rules: 'Mobile smartphones only (strictly no emulators, iPads/tablets, or external triggers). Point system based on match placement and elimination score across tournament brackets.',
+    numberedRules: [
+      'Only registered students are allowed to participate in the event.',
+      'Participants must carry their valid college ID card.',
+      'All players must use the game version and settings provided by the organizers.',
+      'Players must report to the venue before their scheduled match time.',
+      'Each team must follow the specified team size and match format.',
+      'Use of cheats, hacks, unauthorized software, or scripts is strictly prohibited.',
+      'Exploiting game bugs or glitches to gain an unfair advantage is not allowed.',
+      'Players must use only the assigned computers and official LAN network.',
+      'Any technical or network issue must be immediately reported to the organizers.',
+      'Players must not interfere with other participants\' systems or network connections.',
+      'Abusive language, misconduct, and disruptive behavior are not permitted.',
+      'Players must respect opponents, coordinators, faculty, and college property.',
+      'Violation of rules may result in match loss or disqualification.',
+      'All disputes must be reported to the event coordinators immediately.',
+      'The decision of the organizing committee will be final.'
+    ],
     isSpecialPaperFlow: false
   },
   {
@@ -137,37 +154,119 @@ export const eventsList = [
     type: 'VISUAL / LENS',
     category: 'Creative',
     department: 'Department of Computer Science and Engineering (CSE)',
-    tagline: 'Find the frame everyone else missed.',
-    description: 'Capture the nocturnal cyber aesthetic, candid technological intensity, human emotion, and vibrant fest spirit of Consortium 2026 through the creative lens of documentary photojournalism.',
+    tagline: 'Our College Through Your Lens.',
+    description: 'Capture the essence of campus life, architectural aesthetics, candid emotion, and festival energy of Consortium 2026 through the creative lens of photography.',
     image: imgPhotography,
     icon: Camera,
     accentColor: 'cyan',
-    rules: 'Photographs must be captured on-campus during festival days (October 9 & 10, 2026). Minimal color grading allowed; strictly no AI image generation or composite editing.',
-    teamSize: 'Individual Photographer',
+    fee: '₹79 per participant',
+    teamSize: 'Individual Participation Only',
+    eventDuration: '2 Days (October 9 & 10, 2026)',
+    theme: '“Our College Through Your Lens” – Photos captured only within IARE campus',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
     registrationUrl: 'https://forms.gle/d8rPJCVxPcf7wgcy8',
+    rules: 'Individual participation only. Each participant can submit a maximum of two photos. Photos must be original and captured within the IARE campus during the event.',
+    guidelinesList: [
+      { label: 'Event Duration', detail: 'The contest will be conducted over two days.' },
+      { label: 'Theme', detail: '“Our College Through Your Lens” – Participants must capture photos only within the IARE campus.' },
+      { label: 'Participation', detail: 'Individual participation only. Each participant can submit a maximum of two photos.' },
+      { label: 'Submission Rules', detail: 'Photos should be in JPEG or PNG format. Basic editing like brightness, cropping, and contrast adjustment is allowed. AI-generated or overly edited images are not permitted.' },
+      { label: 'Originality & Integrity', detail: 'Photos must be original and captured during the event. Plagiarism or use of stock images will result in immediate disqualification.' },
+      { label: 'Decision', detail: 'Judges’ decisions will be final and binding.' }
+    ],
+    judgingCriteria: [
+      'Creativity & Originality',
+      'Composition',
+      'Relevance to Theme',
+      'Technical Quality'
+    ],
     isSpecialPaperFlow: false
   },
   {
     id: 'death-mystery',
     number: '06',
     displayNumber: '06',
-    title: 'Magic Witch',
+    title: 'Magic Witch — The Elixir of Eternal Life',
     shortTitle: 'Magic Witch',
-    type: 'FORENSICS / THRILLER',
+    subtitle: 'The Elixir of Eternal Life',
+    type: 'QUEST / ADVENTURE',
     category: 'Experience',
     department: 'Department of Electrical & Electronics Engineering (EEE)',
-    tagline: 'Observe. Connect. Solve the impossible.',
-    description: 'An immersive real-time investigative thriller. Examine simulated crime scenes, inspect physical forensics, interrogate role-play witnesses, decode cryptic ciphers, and deduce the perpetrator before time runs out.',
+    tagline: 'Survive three worlds. Collect the 10 Sacred Ingredients. Claim the Witch\'s treasure.',
+    description: 'Legend says that the most powerful witch in the realm created the Elixir of Eternal Life using 10 enchanted ingredients. Before disappearing, she scattered the ingredients across the Forbidden Realm and protected them with magical trials. The Witch Hunters must survive three worlds, solve challenges, collect the 10 Sacred Ingredients, and place them in the correct sequence. Only the team that successfully reconstructs the Elixir of Eternal Life can claim the Witch\'s treasure.',
     image: imgDeathMystery,
     icon: Search,
     accentColor: 'magenta',
-    rules: 'Timed forensic investigation in staged scenario chambers. Teams must examine physical clues, decode ciphers, and submit a coherent deduction dossier with physical evidence cross-references.',
-    teamSize: 'Team of 2 to 4',
+    fee: '₹360 per team',
+    feeNote: 'A team contains 3 members max. Even 1 or 2 can participate but the amount is fixed at ₹360 per team.',
+    teamSize: '1 to 3 Members Max',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
     registrationUrl: 'https://forms.gle/BCGLRCbEVwuRBYGi7',
+    rules: 'Teams must navigate three magical worlds, retrieve all 10 Sacred Ingredients legitimately, and arrange them in the precise sequence before time runs out.',
+    gameStory: 'Legend says that the most powerful witch in the realm created the Elixir of Eternal Life using 10 enchanted ingredients. Before disappearing, she scattered the ingredients across the Forbidden Realm and protected them with magical trials. The Witch Hunters must survive three worlds, solve challenges, collect the 10 Sacred Ingredients, and place them in the correct sequence. Only the team that successfully reconstructs the Elixir of Eternal Life can claim the Witch\'s treasure.',
+    ruleSections: [
+      {
+        title: '1. Team Integrity',
+        points: [
+          'Teams must remain together unless a challenge specifically allows separation.',
+          'Members cannot exchange clues or answers with other teams.',
+          'No outside assistance is permitted.'
+        ]
+      },
+      {
+        title: '2. Ingredient Rules',
+        points: [
+          'Ingredients cannot be stolen, exchanged, hidden, damaged or tampered with.',
+          'Teams may only collect ingredients that they have legitimately earned.',
+          'Ingredients must remain with the team throughout the game.',
+          'Organizers may verify ingredients at any checkpoint.'
+        ]
+      },
+      {
+        title: '3. Arrangement Rules',
+        points: [
+          'Teams may rearrange their ingredients during designated arrangement periods.',
+          'Once the final sequence is submitted, it is considered a final attempt.',
+          'The number of final attempts can be restricted by the organizers.'
+        ]
+      },
+      {
+        title: '4. Technology',
+        points: [
+          'Specifically permitted: Mobile phones and smartwatches are useable.',
+          'Phones may be permitted for specific QR-code or game mechanics if instructed by organizers.'
+        ]
+      },
+      {
+        title: '5. Time',
+        points: [
+          'Every challenge has a defined time limit.',
+          'When the time expires, the challenge ends.'
+        ]
+      },
+      {
+        title: '6. Hints',
+        points: [
+          'Hints can be provided by the Witch/Guardians.',
+          'Each hint can carry a Magic Power penalty or time penalty.'
+        ]
+      },
+      {
+        title: '7. Fair Play (Immediate Disqualification)',
+        isDisqualification: true,
+        points: [
+          'Cheating',
+          'Tampering with game installations',
+          'Entering restricted areas',
+          'Taking another team\'s ingredients',
+          'Receiving outside assistance',
+          'Damaging event property',
+          'Misconduct toward organizers or participants'
+        ]
+      }
+    ],
     isSpecialPaperFlow: false
   },
   {
@@ -199,16 +298,40 @@ export const eventsList = [
     type: 'CINEMA / STORYTELLING',
     category: 'Creative',
     department: 'Department of Computer Science and Engineering (CSE)',
-    tagline: 'Tell a story worth remembering.',
-    description: 'Screening and adjudication of original student cinematic shorts, visual documentaries, and creative fiction on the high-definition campus auditorium cinema display with live jury feedback.',
+    tagline: 'Tell a story worth remembering. Reflect positivity, awareness, or creativity.',
+    description: 'A platform for aspiring filmmakers to showcase cinematic creativity, powerful narratives, and meaningful visual storytelling on the grand auditorium cinema display.',
     image: imgShortFilms,
     icon: Clapperboard,
     accentColor: 'magenta',
-    rules: 'Maximum runtime of 12 minutes including credits. Original student cinematography, narrative script, and sound design required. Submissions must be 1080p MP4 format.',
-    teamSize: 'Crew of 1 to 5',
+    fee: '₹249 per team',
+    teamSize: 'Maximum 5 Members per Team',
+    duration: '3 to 10 Minutes (including credits)',
+    submissionFormat: 'MP4 format (Named as TeamName_ShortFilmTitle)',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
     registrationUrl: 'https://forms.gle/DBNtqjMA8QpmdW15A',
+    rules: 'No fixed theme – open to any genre, but must carry a meaningful message or motto. Strictly no offensive content. 3 to 10 minutes runtime.',
+    guidelinesList: [
+      { label: 'Theme', detail: 'No fixed theme – participants can choose any theme and genre of their choice. However, the short film must carry a meaningful message or motto that reflects positivity, awareness, or creativity.' },
+      { label: 'Content Restrictions', detail: 'Strictly no vulgar, offensive, or inappropriate content. Avoid abusive language, violent scenes, or sensitive political/religious depictions.' },
+      { label: 'Team Composition', detail: 'A team can have a maximum of 5 members.' },
+      { label: 'Duration', detail: 'The short film should be between 3 to 10 minutes in length, including credits.' },
+      { label: 'Submission Format', detail: 'The film should be submitted in MP4 format, named as TeamName_ShortFilmTitle. Submission details will be shared after registration through the WhatsApp group you are added to.' },
+      { label: 'Decision', detail: 'The judges’ decision will be final and binding.' }
+    ],
+    judgingCriteria: [
+      'Storyline & Creativity',
+      'Cinematography & Editing',
+      'Acting & Direction',
+      'Overall Message'
+    ],
+    generalInstructions: [
+      'All participants must register before the deadline.',
+      'Entries submitted after the due date will not be accepted.',
+      'Ensure that your entries align with college ethics and discipline.',
+      'Organizers reserve the right to disqualify entries violating guidelines.',
+      'Shortfilms will be shortlisted & screened for final adjudication.'
+    ],
     isSpecialPaperFlow: false
   },
   {

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   X, ArrowRight, Building2, 
   FileCheck, Calendar, MapPin, Users, ChevronRight, CheckCircle2, Clock,
-  Award, Sparkles
+  Award, Sparkles, IndianRupee, ShieldAlert
 } from 'lucide-react';
 import { paperPresentationDepartments } from '../data/eventsData';
 import { sound } from '../utils/soundEffects';
@@ -35,11 +35,9 @@ const EVENT_MODAL_THEMES = {
 export default function EventDetailModal({ event: propEvent, isOpen, onClose, onRegister }) {
   const [cachedEvent, setCachedEvent] = useState(propEvent);
 
-  useEffect(() => {
-    if (propEvent) {
-      setCachedEvent(propEvent);
-    }
-  }, [propEvent]);
+  if (propEvent && propEvent !== cachedEvent) {
+    setCachedEvent(propEvent);
+  }
 
   const event = propEvent || cachedEvent;
   const [openPaperDept, setOpenPaperDept] = useState('it');
@@ -84,7 +82,7 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.15 }}
         >
           <motion.div
             className="event-split-modal-container"
@@ -96,10 +94,10 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
             '--modal-bg': modalTheme.bg
           }}
           onClick={(e) => e.stopPropagation()}
-          initial={{ opacity: 0, scale: 0.96, y: 22 }}
+          initial={{ opacity: 0, scale: 0.98, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 22 }}
-          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          exit={{ opacity: 0, scale: 0.98, y: 10 }}
+          transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
           role="dialog"
           aria-modal="true"
           aria-label={`${event.title} Details`}
@@ -169,6 +167,12 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                       <span>{event.teamSize}</span>
                     </div>
                   )}
+                  {event.fee && (
+                    <div className="split-meta-item split-meta-fee-item">
+                      <IndianRupee size={15} className="split-meta-icon split-meta-fee-icon" />
+                      <span className="split-meta-fee-val">{event.fee}</span>
+                    </div>
+                  )}
                   {event.category && (
                     <div className="split-meta-item">
                       <Award size={15} className="split-meta-icon" />
@@ -176,6 +180,13 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                     </div>
                   )}
                 </div>
+
+                {event.feeNote && (
+                  <div className="split-left-fee-note">
+                    <span className="split-fee-note-badge">NOTE</span>
+                    <p className="split-fee-note-text">{event.feeNote}</p>
+                  </div>
+                )}
 
                 {event.registrationUrl ? (
                   <div className="split-register-action-wrap">
@@ -238,6 +249,22 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                 </div>
               </div>
 
+              {/* 2.5 Lore / Game Story (e.g. Magic Witch) */}
+              {event.gameStory && (
+                <div className="split-detail-block">
+                  <div className="split-title-with-badge">
+                    <h4 className="split-block-title">🧙‍♂️ GAME DESCRIPTION &amp; STORY</h4>
+                    <span className="split-badge-count">OFFICIAL LORE</span>
+                  </div>
+                  <div className="split-story-card">
+                    <div className="split-story-decor" />
+                    <p className="split-story-lead">
+                      {event.gameStory}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* 3. Quick Key Highlights Grid */}
               <div className="split-spec-grid">
                 <div className="split-spec-card spec-accent">
@@ -255,10 +282,10 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                   </div>
                 </div>
                 <div className="split-spec-card spec-purple">
-                  <span className="split-spec-emoji">📅</span>
+                  <span className="split-spec-emoji">{event.fee ? '💳' : '📅'}</span>
                   <div className="split-spec-text">
-                    <span className="split-spec-label">FEST DATES</span>
-                    <span className="split-spec-value">Oct 9 &amp; 10, 2026</span>
+                    <span className="split-spec-label">{event.fee ? 'REGISTRATION FEE' : 'FEST DATES'}</span>
+                    <span className="split-spec-value">{event.fee || 'Oct 9 & 10, 2026'}</span>
                   </div>
                 </div>
                 <div className="split-spec-card spec-green">
@@ -270,8 +297,134 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                 </div>
               </div>
 
-              {/* 4. Official Rules & Guidelines */}
-              {event.rules && (
+              {/* 3.5 Prominent Fee & Team Pricing Note Banner (e.g. Magic Witch) */}
+              {event.feeNote && (
+                <div className="split-fee-highlight-card">
+                  <div className="split-fee-highlight-icon-box">
+                    <IndianRupee size={20} className="split-fee-highlight-icon" />
+                  </div>
+                  <div className="split-fee-highlight-info">
+                    <span className="split-fee-highlight-eyebrow">REGISTRATION &amp; TEAM PRICING</span>
+                    <p className="split-fee-highlight-lead">
+                      <strong>{event.fee}</strong> &nbsp;—&nbsp; {event.feeNote}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* 4. Structured Guidelines List (e.g. Short Films, Photography) */}
+              {event.guidelinesList && (
+                <div className="split-detail-block">
+                  <div className="split-title-with-badge">
+                    <h4 className="split-block-title">📋 OFFICIAL GUIDELINES</h4>
+                    <span className="split-badge-count">{event.guidelinesList.length} CLAUSES</span>
+                  </div>
+                  <div className="split-guidelines-grid">
+                    {event.guidelinesList.map((g, idx) => (
+                      <div key={idx} className="split-guideline-card">
+                        <span className="split-guideline-label">{g.label}</span>
+                        <p className="split-guideline-detail">{g.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 4.5 Judging Criteria (e.g. Short Films, Photography) */}
+              {event.judgingCriteria && (
+                <div className="split-detail-block">
+                  <div className="split-title-with-badge">
+                    <h4 className="split-block-title">🏆 JUDGING CRITERIA</h4>
+                    <span className="split-badge-count">OFFICIAL RUBRIC</span>
+                  </div>
+                  <div className="split-criteria-grid">
+                    {event.judgingCriteria.map((crit, idx) => (
+                      <div key={idx} className="split-criteria-card">
+                        <span className="split-criteria-num">0{idx + 1}</span>
+                        <span className="split-criteria-text">{crit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 4.6 Numbered Rules (e.g. LAN Gaming 15 Rules) */}
+              {event.numberedRules && (
+                <div className="split-detail-block">
+                  <div className="split-title-with-badge">
+                    <h4 className="split-block-title">📜 RULES &amp; REGULATIONS</h4>
+                    <span className="split-badge-count">{event.numberedRules.length} MANDATORY RULES</span>
+                  </div>
+                  <div className="split-numbered-rules-card">
+                    <ol className="split-numbered-rules-list">
+                      {event.numberedRules.map((rule, idx) => (
+                        <li key={idx} className="split-numbered-rule-item">
+                          <span className="split-rule-idx">{idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
+                          <span className="split-rule-text">{rule}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
+              )}
+
+              {/* 4.7 Categorized Rule Sections (e.g. Magic Witch 7 Sections) */}
+              {event.ruleSections && (
+                <div className="split-detail-block">
+                  <div className="split-title-with-badge">
+                    <h4 className="split-block-title">📜 RULES &amp; REGULATIONS</h4>
+                    <span className="split-badge-count">{event.ruleSections.length} CATEGORIES</span>
+                  </div>
+                  <div className="split-rule-sections-list">
+                    {event.ruleSections.map((sec, idx) => (
+                      <div 
+                        key={idx} 
+                        className={`split-rule-section-card ${sec.isDisqualification ? 'is-disqualification-section' : ''}`}
+                      >
+                        <div className="split-rule-sec-header">
+                          {sec.isDisqualification ? (
+                            <ShieldAlert size={18} className="split-rule-sec-icon icon-danger" />
+                          ) : (
+                            <CheckCircle2 size={18} className="split-rule-sec-icon" />
+                          )}
+                          <span className="split-rule-sec-title">{sec.title}</span>
+                        </div>
+                        <ul className="split-rule-sec-points">
+                          {sec.points.map((pt, pIdx) => (
+                            <li key={pIdx} className="split-sec-point">
+                              <span className="split-sec-bullet">•</span>
+                              <span>{pt}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* 4.8 General Instructions (e.g. Short Films) */}
+              {event.generalInstructions && (
+                <div className="split-detail-block">
+                  <div className="split-title-with-badge">
+                    <h4 className="split-block-title">⚠️ GENERAL INSTRUCTIONS</h4>
+                    <span className="split-badge-count">DISCIPLINE &amp; ETHICS</span>
+                  </div>
+                  <div className="split-instructions-card">
+                    <ul className="split-instructions-list">
+                      {event.generalInstructions.map((inst, idx) => (
+                        <li key={idx} className="split-instruction-item">
+                          <CheckCircle2 size={16} className="split-instruction-icon" />
+                          <span>{inst}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* 4.9 Fallback Standard Rules & Guidelines */}
+              {event.rules && !event.numberedRules && !event.ruleSections && !event.guidelinesList && (
                 <div className="split-detail-block">
                   <h4 className="split-block-title">📜 RULES &amp; GUIDELINES</h4>
                   <div className="split-rules-card">

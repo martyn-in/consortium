@@ -32,27 +32,29 @@ class SoundSystem {
 
   playBeep(frequency = 440, duration = 0.05, type = 'sine', volume = 0.05) {
     if (this.isMuted) return;
-    try {
-      this.init();
-      if (!this.ctx) return;
+    setTimeout(() => {
+      try {
+        this.init();
+        if (!this.ctx) return;
 
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
 
-      osc.type = type;
-      osc.frequency.setValueAtTime(frequency, this.ctx.currentTime);
+        osc.type = type;
+        osc.frequency.setValueAtTime(frequency, this.ctx.currentTime);
 
-      gain.gain.setValueAtTime(volume, this.ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+        gain.gain.setValueAtTime(volume, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
 
-      osc.connect(gain);
-      gain.connect(this.ctx.destination);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
 
-      osc.start();
-      osc.stop(this.ctx.currentTime + duration);
-    } catch {
-      // Audio context might fail silently if autoplay blocked
-    }
+        osc.start();
+        osc.stop(this.ctx.currentTime + duration);
+      } catch {
+        // Audio context might fail silently if autoplay blocked
+      }
+    }, 0);
   }
 
   playHover() {

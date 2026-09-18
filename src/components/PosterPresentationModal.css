@@ -8,14 +8,14 @@
 .pm-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(10, 4, 18, 0.88);
+  background: rgba(3, 7, 20, 0.95);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
 .pm-split-container {
@@ -30,11 +30,12 @@
   overflow: hidden;
   background: radial-gradient(circle at 85% 15%, rgba(4, 28, 68, 0.98) 0%, rgba(2, 14, 38, 0.98) 45%, rgba(2, 8, 23, 0.99) 100%);
   transform: translateZ(0);
+  will-change: transform, opacity;
   contain: paint;
   border: 1px solid rgba(0, 229, 255, 0.35);
   box-shadow: 
-    0 30px 90px rgba(0, 0, 0, 0.92), 
-    0 0 70px rgba(0, 229, 255, 0.22), 
+    0 20px 60px rgba(0, 0, 0, 0.92), 
+    0 0 45px rgba(0, 229, 255, 0.22), 
     inset 0 1px 2px rgba(255, 255, 255, 0.2);
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -168,14 +169,13 @@
 .pm-tag-fest {
   padding: 3px 9px;
   border-radius: 6px;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #cbd5e1;
   font-family: 'Outfit', sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  backdrop-filter: blur(8px);
 }
 
 .pm-left-content {

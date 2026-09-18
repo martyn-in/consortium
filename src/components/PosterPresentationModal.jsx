@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   X, ArrowRight, ArrowUpRight, Calendar, MapPin, 
-  Users, Layers, Clock, Award, Building2, AlertTriangle, Lightbulb
+  Users, Layers, Clock, Building2, AlertTriangle, Lightbulb
 } from 'lucide-react';
 import imgPosterPresentation from '../assets/real_poster_presentation.jpg';
 import { sound } from '../utils/soundEffects';
@@ -77,15 +77,15 @@ export default function PosterPresentationModal({ isOpen, onClose }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.15 }}
         >
           <motion.div
             className="pm-split-container"
             onClick={(e) => e.stopPropagation()}
-            initial={{ opacity: 0, scale: 0.96, y: 22 }}
+            initial={{ opacity: 0, scale: 0.98, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: 22 }}
-            transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            exit={{ opacity: 0, scale: 0.98, y: 10 }}
+            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
             role="dialog"
             aria-modal="true"
             aria-label="Poster Presentation Event Details"

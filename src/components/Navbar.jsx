@@ -11,7 +11,7 @@ const navItems = [
   { label: 'ABOUT', href: '#about' },
   { label: 'EVENTS', href: '#events' },
   { label: 'COUNTDOWN', href: '#schedule' },
-  { label: 'CONTACT', href: '#venue' }
+  { label: 'CONTACT', href: '#contact' }
 ];
 
 export default function Navbar({ onNavigateToEvents }) {
@@ -21,25 +21,31 @@ export default function Navbar({ onNavigateToEvents }) {
 
   useEffect(() => {
     let ticking = false;
+    let lastCheckTime = 0;
+    const sections = ['home', 'about', 'events', 'schedule', 'arena-experience', 'venue', 'contact'];
 
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const scrolled = window.scrollY > 25;
+          const currentY = window.scrollY;
+          const scrolled = currentY > 25;
           setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
 
-          // Section spy
-          const sections = ['home', 'about', 'events', 'schedule', 'arena-experience', 'venue'];
-          const scrollPos = window.scrollY + 220;
+          // Throttle layout queries to every 120ms to eliminate layout thrashing
+          const now = performance.now();
+          if (now - lastCheckTime > 120) {
+            lastCheckTime = now;
+            const scrollPos = currentY + 220;
 
-          for (const sectionId of sections) {
-            const el = document.getElementById(sectionId);
-            if (el) {
-              const top = el.offsetTop;
-              const height = el.offsetHeight;
-              if (scrollPos >= top && scrollPos < top + height) {
-                setActiveSection((prev) => (prev !== sectionId ? sectionId : prev));
-                break;
+            for (const sectionId of sections) {
+              const el = document.getElementById(sectionId);
+              if (el) {
+                const top = el.offsetTop;
+                const height = el.offsetHeight;
+                if (scrollPos >= top && scrollPos < top + height) {
+                  setActiveSection((prev) => (prev !== sectionId ? sectionId : prev));
+                  break;
+                }
               }
             }
           }

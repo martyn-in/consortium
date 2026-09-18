@@ -7,14 +7,14 @@
 .event-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(4, 7, 16, 0.92);
+  background: rgba(3, 7, 20, 0.95);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
 .event-split-modal-container {
@@ -29,11 +29,12 @@
   overflow: hidden;
   background: var(--modal-bg, radial-gradient(circle at 85% 15%, rgba(4, 28, 68, 0.98) 0%, rgba(2, 14, 38, 0.98) 45%, rgba(2, 8, 23, 0.99) 100%));
   transform: translateZ(0);
+  will-change: transform, opacity;
   contain: paint;
   border: 1px solid var(--modal-border, rgba(0, 229, 255, 0.35));
   box-shadow: 
-    0 30px 90px rgba(0, 0, 0, 0.92), 
-    0 0 70px var(--modal-glow, rgba(0, 229, 255, 0.22)),
+    0 20px 60px rgba(0, 0, 0, 0.92), 
+    0 0 45px var(--modal-glow, rgba(0, 229, 255, 0.22)),
     inset 0 1px 2px rgba(255, 255, 255, 0.2);
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -167,14 +168,13 @@
 .split-tag-fest {
   padding: 3px 9px;
   border-radius: 6px;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #cbd5e1;
   font-family: 'Outfit', sans-serif;
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  backdrop-filter: blur(8px);
 }
 
 .split-left-content {
@@ -862,6 +862,396 @@
   filter: brightness(1.15);
   transform: translateY(-1px);
   box-shadow: 0 8px 24px var(--modal-glow, rgba(0, 229, 255, 0.6));
+}
+
+/* ============================================================
+   ENRICHED EVENT SECTIONS: FEES, STORY, GUIDELINES & RULES
+   ============================================================ */
+
+/* Registration Fee Item in Left Meta List */
+.split-meta-fee-item {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.split-meta-fee-icon {
+  color: #38bdf8;
+}
+
+.split-meta-fee-val {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+/* Fee Note in Left Column */
+.split-left-fee-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  margin-top: -4px;
+}
+
+.split-fee-note-badge {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f59e0b;
+  color: #0b0f19;
+  flex-shrink: 0;
+}
+
+.split-fee-note-text {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #fde68a;
+  margin: 0;
+}
+
+/* Mystical Game Story Lore Box (Magic Witch) */
+.split-story-card {
+  position: relative;
+  padding: 18px 22px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.12) 0%, rgba(236, 72, 153, 0.08) 50%, rgba(14, 4, 26, 0.3) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 4px 24px rgba(168, 85, 247, 0.15);
+  overflow: hidden;
+}
+
+.split-story-decor {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.split-story-lead {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #f1f5f9;
+  margin: 0;
+  font-style: normal;
+  letter-spacing: 0.01em;
+}
+
+/* Prominent Registration & Team Pricing Highlight Banner */
+.split-fee-highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(14, 165, 233, 0.05) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.1);
+}
+
+.split-fee-highlight-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.split-fee-highlight-icon {
+  color: #38bdf8;
+}
+
+.split-fee-highlight-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.split-fee-highlight-eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #38bdf8;
+  text-transform: uppercase;
+}
+
+.split-fee-highlight-lead {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.split-fee-highlight-lead strong {
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+}
+
+/* Structured Guidelines Grid */
+.split-guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .split-guidelines-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-guideline-card {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.split-guideline-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--modal-accent, rgba(0, 229, 255, 0.4));
+}
+
+.split-guideline-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--modal-accent, #00e5ff);
+  text-transform: uppercase;
+}
+
+.split-guideline-detail {
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* Judging Criteria Grid */
+.split-criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .split-criteria-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-criteria-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.split-criteria-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--modal-accent, #00e5ff);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--modal-accent, rgba(0, 229, 255, 0.3));
+}
+
+.split-criteria-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+/* Numbered Rules List (LAN Gaming 15 Rules) */
+.split-numbered-rules-card {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--modal-border, rgba(255, 255, 255, 0.1));
+  overflow: hidden;
+}
+
+.split-numbered-rules-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.split-numbered-rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.15s ease;
+}
+
+.split-numbered-rule-item:last-child {
+  border-bottom: none;
+}
+
+.split-numbered-rule-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.split-rule-idx {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--modal-accent, #00e5ff);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--modal-accent, rgba(0, 229, 255, 0.3));
+  flex-shrink: 0;
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+.split-rule-text {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+}
+
+/* Categorized Rule Sections (Magic Witch 7 Categories) */
+.split-rule-sections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.split-rule-section-card {
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.split-rule-section-card.is-disqualification-section {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.split-rule-sec-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.split-rule-sec-icon {
+  color: var(--modal-accent, #00e5ff);
+  flex-shrink: 0;
+}
+
+.split-rule-sec-icon.icon-danger {
+  color: #ef4444;
+}
+
+.split-rule-sec-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+}
+
+.is-disqualification-section .split-rule-sec-title {
+  color: #fca5a5;
+}
+
+.split-rule-sec-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.split-sec-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+}
+
+.split-sec-bullet {
+  color: var(--modal-accent, #00e5ff);
+  font-weight: bold;
+}
+
+.is-disqualification-section .split-sec-bullet {
+  color: #ef4444;
+}
+
+/* General Instructions Panel */
+.split-instructions-card {
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.split-instructions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.split-instruction-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+}
+
+.split-instruction-icon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
 /* ============================================================

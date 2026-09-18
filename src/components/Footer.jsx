@@ -66,10 +66,11 @@ export default function Footer() {
             </div>
 
             <div className="footer-nav-col">
-              <span className="footer-nav-heading">CAMPUS</span>
+              <span className="footer-nav-heading">CAMPUS &amp; CONTACT</span>
               <ul>
+                <li><a href="#contact">Faculty Coordinators</a></li>
                 <li><a href="#venue">IARE Hyderabad</a></li>
-                <li><a href="#register">Registration</a></li>
+                <li><a href="#events">Registration</a></li>
               </ul>
             </div>
           </div>
@@ -78,10 +79,17 @@ export default function Footer() {
           <div className="footer-social-side">
             <span className="footer-nav-heading">CONNECT</span>
             <div className="footer-social-icons">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="footer-social-link">
+              <a 
+                href="https://www.instagram.com/iareconsortium2026?stkn=bHpncG9tNTluYXZw" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Instagram @iareconsortium2026" 
+                className="footer-social-link"
+                title="Consortium 2026 on Instagram (@iareconsortium2026)"
+              >
                 <InstagramIcon size={18} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-link">
+              <a href="https://www.linkedin.com/in/pulivarthi-martyn-16a74b3a8/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" className="footer-social-link" title="Pulivarthi Martyn on LinkedIn">
                 <LinkedinIcon size={18} />
               </a>
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="footer-social-link">
@@ -94,11 +102,38 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Back to Top */}
+        {/* Bottom Bar: Copyright, Developers & Back to Top */}
         <div className="footer-bottom-row">
-          <span className="footer-copyright-text">
-            © 2026 CONSORTIUM. All Rights Reserved.
-          </span>
+          <div className="footer-bottom-meta">
+            <span className="footer-copyright-text">
+              © 2026 CONSORTIUM. All Rights Reserved.
+            </span>
+            <span className="footer-meta-sep">·</span>
+            <span className="footer-devs-meta">
+              Website Developers:&nbsp;
+              <a 
+                href="https://www.linkedin.com/in/pulivarthi-martyn-16a74b3a8/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="footer-dev-call-link footer-dev-name"
+                title="Pulivarthi Martyn LinkedIn Profile"
+              >
+                Pulivarthi Martyn
+              </a>
+              &nbsp;(<a href="tel:+918555877044" className="footer-dev-call-link">+91 85558 77044</a>)
+              ,&nbsp;
+              <a 
+                href="https://www.linkedin.com/in/ashwath-amarchinta-2b9905430" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="footer-dev-call-link footer-dev-name"
+                title="Ashwath Amarchinta LinkedIn Profile"
+              >
+                Ashwath Amarchinta
+              </a>
+              &nbsp;(<a href="tel:+919177591324" className="footer-dev-call-link">+91 91775 91324</a>)
+            </span>
+          </div>
 
           <button 
             className="footer-back-to-top-btn"
