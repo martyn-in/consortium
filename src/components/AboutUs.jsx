@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Sparkles, Award, GraduationCap, Building2, 
+  Award, GraduationCap, Building2, 
   FlaskConical, Briefcase, Trophy, Home, 
-  CheckCircle2, ExternalLink, ChevronDown, Zap
+  CheckCircle2, ExternalLink, ChevronDown
 } from 'lucide-react';
 import Reveal from './Reveal';
 import iareLogo from '../assets/iare_logo_white_text.png';
@@ -21,39 +21,8 @@ const stats = [
 
 const sectionsData = [
   {
-    id: 'what-is-consortium',
-    title: 'What is Consortium 2026?',
-    icon: Sparkles,
-    badge: 'ANNUAL NATIONAL LEVEL FEST // OCT 09–10',
-    content: [
-      "CONSORTIUM 2026 is the premier annual 2-Day National-Level Technical, Engineering, and Innovation Fest hosted by the Institute of Aeronautical Engineering (Autonomous), Hyderabad on October 09 & 10, 2026. Designed as South India's premier multi-disciplinary battleground, Consortium brings together over 5,000+ ambitious student engineers, researchers, innovators, developers, gamers, and filmmakers from 100+ prestigious institutions across India.",
-      "The festival bridges hardcore academic research with bleeding-edge applied engineering, competitive esports, and cinematic arts across 10 specialized events. Participants compete before distinguished academic and industry juries, defend IEEE research, pilot authentic aeronautical flight simulators, test structural limits in bridge mockup battles, build disruptive project prototypes, and challenge their reflexes in high-stakes esports.",
-      "With ₹2,00,000+ in awards and prize pools, hands-on experiential zones, national certificates, and an electric atmosphere, Consortium 2026 is more than a fest — it is a career-defining launchpad for tomorrow's technology leaders."
-    ],
-    festPillars: [
-      { title: '2 Days National Fest', desc: 'October 09 & 10, 2026' },
-      { title: '10 Flagship Events', desc: 'Research, Tech, Esports & Arts' },
-      { title: '₹2,00,000+ Prize Pool', desc: 'Cash Awards & Trophies' },
-      { title: '5,000+ Innovators', desc: '100+ Engineering Colleges' },
-      { title: 'Autonomous Campus', desc: '10 Acres at IARE Hyderabad' },
-      { title: 'National Recognition', desc: 'Official Merit Certificates' }
-    ],
-    eventHighlights: [
-      { num: '01', name: 'Paper Presentation', dept: 'Inter-Departmental Technical Board' },
-      { num: '02', name: 'Poster Presentation', dept: 'Dept. of ECE' },
-      { num: '03', name: 'Project Expo', dept: 'Dept. of IT' },
-      { num: '04', name: 'LAN Gaming', dept: 'Mobile Esports Tournament' },
-      { num: '05', name: 'CINEVO Photography', dept: 'Dept. of CSE' },
-      { num: '06', name: 'Magic Witch', dept: 'Mystic Quest Challenge' },
-      { num: '07', name: 'Treasure Hunt', dept: 'Dept. of EEE' },
-      { num: '08', name: 'CINEVO Short Films', dept: 'Cinematic Storytelling' },
-      { num: '09', name: 'Flight Simulator', dept: 'Dept. of Aeronautical' },
-      { num: '10', name: 'Bridge Mockup', dept: 'Dept. of Civil Engineering' }
-    ]
-  },
-  {
     id: 'overview',
-    title: 'Host Institution: IARE',
+    title: 'Overview & Programs',
     icon: GraduationCap,
     badge: 'EST. 2000 // AUTONOMOUS',
     content: [
@@ -139,7 +108,7 @@ const sectionsData = [
 ];
 
 export default function AboutUs() {
-  const [activeTab, setActiveTab] = useState('what-is-consortium');
+  const [activeTab, setActiveTab] = useState('overview');
   const [showAllSections, setShowAllSections] = useState(false);
 
   const currentSection = sectionsData.find((s) => s.id === activeTab) || sectionsData[0];
@@ -155,61 +124,15 @@ export default function AboutUs() {
         <Reveal direction="up" distance={25}>
           <div className="about-header-block">
             <div className="about-eyebrow-pill">
-              <Sparkles size={14} className="text-cyan inline mr-1" />
-              <span>ABOUT // CONSORTIUM 2026</span>
+              <Building2 size={14} className="text-cyan inline mr-1" />
+              <span>ABOUT US // HOST INSTITUTION</span>
             </div>
             <h2 className="about-main-title">
-              APEX OF <span className="about-title-highlight">ENGINEERING &amp; INNOVATION</span>
+              WELCOME FROM <span className="about-title-highlight">INSTITUTE OF AERONAUTICAL ENGINEERING</span>
             </h2>
             <p className="about-lead-kicker">
-              Consortium 2026 • 2 Days National Level Fest • October 09 &amp; 10, 2026 • Hosted by IARE Hyderabad
+              Autonomous College • Hyderabad, Telangana • Established 2000 • NAAC &apos;A++&apos; Grade • NBA Accredited
             </p>
-          </div>
-        </Reveal>
-
-        {/* Dedicated Consortium 2026 Feature Spotlight Card */}
-        <Reveal direction="up" distance={20} delay={0.05}>
-          <div className="about-consortium-spotlight aura-glow-border">
-            <div className="spotlight-header-row">
-              <div className="spotlight-badge-row">
-                <span className="spotlight-tag">
-                  <Zap size={13} className="text-cyan inline mr-1" />
-                  NATIONAL LEVEL TECHNICAL SYMPOSIUM
-                </span>
-                <span className="spotlight-dates">OCTOBER 09 – 10, 2026</span>
-              </div>
-              <span className="spotlight-pill-live">2 DAYS NATIONAL FEST</span>
-            </div>
-
-            <h3 className="spotlight-title">
-              WHAT IS <span className="spotlight-title-cyan">CONSORTIUM 2026</span>?
-            </h3>
-
-            <p className="spotlight-desc">
-              <strong>CONSORTIUM 2026</strong> is the premier annual 2-day national level engineering, technology, and innovation festival hosted by the <strong>Institute of Aeronautical Engineering (Autonomous), Hyderabad</strong>. Uniting over <strong>5,000+</strong> student innovators, technical researchers, programmers, gamers, and filmmakers from across India, Consortium serves as a high-intensity battleground designed to challenge convention, defend original research, pilot flight simulators, construct load-bearing structures, and compete for excellence across <strong>10 flagship events</strong>.
-            </p>
-
-            <div className="spotlight-metrics-row">
-              <div className="spotlight-metric-item">
-                <span className="spotlight-metric-val">10</span>
-                <span className="spotlight-metric-lbl">Flagship Events</span>
-              </div>
-              <div className="spotlight-metric-div" />
-              <div className="spotlight-metric-item">
-                <span className="spotlight-metric-val">5000+</span>
-                <span className="spotlight-metric-lbl">Participants</span>
-              </div>
-              <div className="spotlight-metric-div" />
-              <div className="spotlight-metric-item">
-                <span className="spotlight-metric-val">100+</span>
-                <span className="spotlight-metric-lbl">Colleges Pan-India</span>
-              </div>
-              <div className="spotlight-metric-div" />
-              <div className="spotlight-metric-item">
-                <span className="spotlight-metric-val">₹2,00,000+</span>
-                <span className="spotlight-metric-lbl">Prize Pool &amp; Awards</span>
-              </div>
-            </div>
           </div>
         </Reveal>
 
@@ -241,23 +164,23 @@ export default function AboutUs() {
           </div>
         </Reveal>
 
-        {/* Stats Grid Matrix */}
-        <Reveal direction="up" distance={20} delay={0.15}>
-          <div className="about-stats-grid">
-            {stats.map((stat) => (
-              <div key={stat.label} className="about-stat-box aura-glow-border">
-                <span className="stat-box-label">{stat.label}</span>
-                <span className="stat-box-val">{stat.value}</span>
-                <span className="stat-box-sub">{stat.sub}</span>
+        {/* 6 High-Impact Stat Tiles */}
+        <div className="about-stats-matrix">
+          {stats.map((st, i) => (
+            <Reveal key={i} direction="up" distance={15} delay={i * 0.06}>
+              <div className="about-stat-tile aura-glow-border">
+                <span className="stat-tile-val">{st.value}</span>
+                <span className="stat-tile-label">{st.label}</span>
+                <span className="stat-tile-sub">{st.sub}</span>
               </div>
-            ))}
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+        </div>
 
-        {/* Interactive Explorer / Tab Navigation */}
-        <div className="about-content-explorer">
-          <div className="about-nav-row">
-            <div className="about-tabs-scroll">
+        {/* Interactive Tabs / Expandable Container */}
+        <div className="about-content-interactive">
+          <div className="about-controls-bar">
+            <div className="about-tabs-strip">
               {sectionsData.map((sec) => {
                 const TabIcon = sec.icon;
                 const isActive = activeTab === sec.id && !showAllSections;
@@ -327,39 +250,6 @@ export default function AboutUs() {
                     </p>
                   ))}
 
-                  {/* Fest Pillars highlight matrix */}
-                  {currentSection.festPillars && (
-                    <div className="about-sub-matrix">
-                      <h4 className="sub-matrix-heading">CONSORTIUM 2026 KEY HIGHLIGHTS:</h4>
-                      <div className="fest-pillars-grid">
-                        {currentSection.festPillars.map((pillar, i) => (
-                          <div key={i} className="fest-pillar-box aura-glow-border">
-                            <span className="fest-pillar-title">{pillar.title}</span>
-                            <span className="fest-pillar-desc">{pillar.desc}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* 10 Events quick overview */}
-                  {currentSection.eventHighlights && (
-                    <div className="about-sub-matrix">
-                      <h4 className="sub-matrix-heading">10 OFFICIAL FLAGSHIP COMPETITION EVENTS:</h4>
-                      <div className="event-highlights-grid arena-highlights-grid">
-                        {currentSection.eventHighlights.map((eventItem, i) => (
-                          <div key={i} className="event-highlight-chip arena-highlight-chip">
-                            <span className="event-chip-num arena-chip-num">{eventItem.num}</span>
-                            <div className="event-chip-info arena-chip-info">
-                              <span className="event-chip-name arena-chip-name">{eventItem.name}</span>
-                              <span className="event-chip-dept arena-chip-dept">{eventItem.dept}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
                   {/* Rankings highlight list */}
                   {currentSection.rankingsList && (
                     <div className="about-sub-matrix">
@@ -422,37 +312,6 @@ export default function AboutUs() {
                             {paragraph}
                           </p>
                         ))}
-
-                        {sec.festPillars && (
-                          <div className="about-sub-matrix">
-                            <h4 className="sub-matrix-heading">CONSORTIUM 2026 KEY HIGHLIGHTS:</h4>
-                            <div className="fest-pillars-grid">
-                              {sec.festPillars.map((pillar, i) => (
-                                <div key={i} className="fest-pillar-box aura-glow-border">
-                                  <span className="fest-pillar-title">{pillar.title}</span>
-                                  <span className="fest-pillar-desc">{pillar.desc}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        {sec.eventHighlights && (
-                          <div className="about-sub-matrix">
-                            <h4 className="sub-matrix-heading">10 OFFICIAL FLAGSHIP COMPETITION EVENTS:</h4>
-                            <div className="event-highlights-grid arena-highlights-grid">
-                              {sec.eventHighlights.map((eventItem, i) => (
-                                <div key={i} className="event-highlight-chip arena-highlight-chip">
-                                  <span className="event-chip-num arena-chip-num">{eventItem.num}</span>
-                                  <div className="event-chip-info arena-chip-info">
-                                    <span className="event-chip-name arena-chip-name">{eventItem.name}</span>
-                                    <span className="event-chip-dept arena-chip-dept">{eventItem.dept}</span>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
 
                         {sec.rankingsList && (
                           <div className="about-sub-matrix">
