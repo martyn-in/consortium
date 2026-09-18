@@ -27,24 +27,24 @@ const sectionsData = [
     badge: 'ANNUAL NATIONAL LEVEL FEST // OCT 09–10',
     content: [
       "CONSORTIUM 2026 is the premier annual 2-Day National-Level Technical, Engineering, and Innovation Fest hosted by the Institute of Aeronautical Engineering (Autonomous), Hyderabad on October 09 & 10, 2026. Designed as South India's premier multi-disciplinary battleground, Consortium brings together over 5,000+ ambitious student engineers, researchers, innovators, developers, gamers, and filmmakers from 100+ prestigious institutions across India.",
-      "The festival bridges hardcore academic research with bleeding-edge applied engineering, competitive esports, and cinematic arts across 10 specialized arenas. Participants compete before distinguished academic and industry juries, defend IEEE research, pilot authentic aeronautical flight simulators, test structural limits in bridge mockup battles, build disruptive project prototypes, and challenge their reflexes in high-stakes esports.",
+      "The festival bridges hardcore academic research with bleeding-edge applied engineering, competitive esports, and cinematic arts across 10 specialized events. Participants compete before distinguished academic and industry juries, defend IEEE research, pilot authentic aeronautical flight simulators, test structural limits in bridge mockup battles, build disruptive project prototypes, and challenge their reflexes in high-stakes esports.",
       "With ₹2,00,000+ in awards and prize pools, hands-on experiential zones, national certificates, and an electric atmosphere, Consortium 2026 is more than a fest — it is a career-defining launchpad for tomorrow's technology leaders."
     ],
     festPillars: [
       { title: '2 Days National Fest', desc: 'October 09 & 10, 2026' },
-      { title: '10 Flagship Arenas', desc: 'Research, Tech, Esports & Arts' },
+      { title: '10 Flagship Events', desc: 'Research, Tech, Esports & Arts' },
       { title: '₹2,00,000+ Prize Pool', desc: 'Cash Awards & Trophies' },
       { title: '5,000+ Innovators', desc: '100+ Engineering Colleges' },
       { title: 'Autonomous Campus', desc: '10 Acres at IARE Hyderabad' },
       { title: 'National Recognition', desc: 'Official Merit Certificates' }
     ],
-    arenaHighlights: [
+    eventHighlights: [
       { num: '01', name: 'Paper Presentation', dept: 'Inter-Departmental Technical Board' },
       { num: '02', name: 'Poster Presentation', dept: 'Dept. of ECE' },
       { num: '03', name: 'Project Expo', dept: 'Dept. of IT' },
-      { num: '04', name: 'LAN Gaming', dept: 'Mobile Esports Arena' },
+      { num: '04', name: 'LAN Gaming', dept: 'Mobile Esports Tournament' },
       { num: '05', name: 'CINEVO Photography', dept: 'Dept. of CSE' },
-      { num: '06', name: 'Magic Witch', dept: 'Mystic Quest Arena' },
+      { num: '06', name: 'Magic Witch', dept: 'Mystic Quest Challenge' },
       { num: '07', name: 'Treasure Hunt', dept: 'Dept. of EEE' },
       { num: '08', name: 'CINEVO Short Films', dept: 'Cinematic Storytelling' },
       { num: '09', name: 'Flight Simulator', dept: 'Dept. of Aeronautical' },
@@ -186,13 +186,13 @@ export default function AboutUs() {
             </h3>
 
             <p className="spotlight-desc">
-              <strong>CONSORTIUM 2026</strong> is the premier annual 2-day national level engineering, technology, and innovation festival hosted by the <strong>Institute of Aeronautical Engineering (Autonomous), Hyderabad</strong>. Uniting over <strong>5,000+</strong> student innovators, technical researchers, programmers, gamers, and filmmakers from across India, Consortium serves as a high-intensity battleground designed to challenge convention, defend original research, pilot flight simulators, construct load-bearing structures, and compete for excellence across <strong>10 flagship arenas</strong>.
+              <strong>CONSORTIUM 2026</strong> is the premier annual 2-day national level engineering, technology, and innovation festival hosted by the <strong>Institute of Aeronautical Engineering (Autonomous), Hyderabad</strong>. Uniting over <strong>5,000+</strong> student innovators, technical researchers, programmers, gamers, and filmmakers from across India, Consortium serves as a high-intensity battleground designed to challenge convention, defend original research, pilot flight simulators, construct load-bearing structures, and compete for excellence across <strong>10 flagship events</strong>.
             </p>
 
             <div className="spotlight-metrics-row">
               <div className="spotlight-metric-item">
                 <span className="spotlight-metric-val">10</span>
-                <span className="spotlight-metric-lbl">Flagship Arenas</span>
+                <span className="spotlight-metric-lbl">Flagship Events</span>
               </div>
               <div className="spotlight-metric-div" />
               <div className="spotlight-metric-item">
@@ -342,17 +342,17 @@ export default function AboutUs() {
                     </div>
                   )}
 
-                  {/* 10 Arenas quick overview */}
-                  {currentSection.arenaHighlights && (
+                  {/* 10 Events quick overview */}
+                  {currentSection.eventHighlights && (
                     <div className="about-sub-matrix">
-                      <h4 className="sub-matrix-heading">10 OFFICIAL FLAGSHIP COMPETITION ARENAS:</h4>
-                      <div className="arena-highlights-grid">
-                        {currentSection.arenaHighlights.map((arena, i) => (
-                          <div key={i} className="arena-highlight-chip">
-                            <span className="arena-chip-num">{arena.num}</span>
-                            <div className="arena-chip-info">
-                              <span className="arena-chip-name">{arena.name}</span>
-                              <span className="arena-chip-dept">{arena.dept}</span>
+                      <h4 className="sub-matrix-heading">10 OFFICIAL FLAGSHIP COMPETITION EVENTS:</h4>
+                      <div className="event-highlights-grid arena-highlights-grid">
+                        {currentSection.eventHighlights.map((eventItem, i) => (
+                          <div key={i} className="event-highlight-chip arena-highlight-chip">
+                            <span className="event-chip-num arena-chip-num">{eventItem.num}</span>
+                            <div className="event-chip-info arena-chip-info">
+                              <span className="event-chip-name arena-chip-name">{eventItem.name}</span>
+                              <span className="event-chip-dept arena-chip-dept">{eventItem.dept}</span>
                             </div>
                           </div>
                         ))}
@@ -437,16 +437,16 @@ export default function AboutUs() {
                           </div>
                         )}
 
-                        {sec.arenaHighlights && (
+                        {sec.eventHighlights && (
                           <div className="about-sub-matrix">
-                            <h4 className="sub-matrix-heading">10 OFFICIAL FLAGSHIP COMPETITION ARENAS:</h4>
-                            <div className="arena-highlights-grid">
-                              {sec.arenaHighlights.map((arena, i) => (
-                                <div key={i} className="arena-highlight-chip">
-                                  <span className="arena-chip-num">{arena.num}</span>
-                                  <div className="arena-chip-info">
-                                    <span className="arena-chip-name">{arena.name}</span>
-                                    <span className="arena-chip-dept">{arena.dept}</span>
+                            <h4 className="sub-matrix-heading">10 OFFICIAL FLAGSHIP COMPETITION EVENTS:</h4>
+                            <div className="event-highlights-grid arena-highlights-grid">
+                              {sec.eventHighlights.map((eventItem, i) => (
+                                <div key={i} className="event-highlight-chip arena-highlight-chip">
+                                  <span className="event-chip-num arena-chip-num">{eventItem.num}</span>
+                                  <div className="event-chip-info arena-chip-info">
+                                    <span className="event-chip-name arena-chip-name">{eventItem.name}</span>
+                                    <span className="event-chip-dept arena-chip-dept">{eventItem.dept}</span>
                                   </div>
                                 </div>
                               ))}

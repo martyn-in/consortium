@@ -720,7 +720,8 @@
   font-weight: 600;
 }
 
-/* Arena Highlights Grid */
+/* Event Highlights Grid */
+.event-highlights-grid,
 .arena-highlights-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -728,6 +729,7 @@
   margin-top: 10px;
 }
 
+.event-highlight-chip,
 .arena-highlight-chip {
   display: flex;
   align-items: center;
@@ -739,12 +741,14 @@
   transition: all 0.2s ease;
 }
 
+.event-highlight-chip:hover,
 .arena-highlight-chip:hover {
   background: rgba(0, 229, 255, 0.08);
   border-color: rgba(0, 229, 255, 0.35);
   transform: translateY(-1px);
 }
 
+.event-chip-num,
 .arena-chip-num {
   font-family: 'Outfit', sans-serif;
   font-size: 0.78rem;
@@ -756,6 +760,7 @@
   border: 1px solid rgba(0, 229, 255, 0.3);
 }
 
+.event-chip-info,
 .arena-chip-info {
   display: flex;
   flex-direction: column;
@@ -763,6 +768,7 @@
   overflow: hidden;
 }
 
+.event-chip-name,
 .arena-chip-name {
   font-family: 'Outfit', sans-serif;
   font-size: 0.88rem;
@@ -773,6 +779,7 @@
   text-overflow: ellipsis;
 }
 
+.event-chip-dept,
 .arena-chip-dept {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.72rem;
@@ -786,6 +793,7 @@
   .fest-pillars-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .event-highlights-grid,
   .arena-highlights-grid {
     grid-template-columns: 1fr;
   }

@@ -116,7 +116,7 @@ export const eventsList = [
     type: 'ESPORTS / COMBAT',
     category: 'Experience',
     department: 'Department of Information Technology (IT)',
-    tagline: 'Enter the arena. Play for the win.',
+    tagline: 'Enter the tournament. Play for the win.',
     description: 'The ultimate collegiate mobile esports championship featuring Battlegrounds Mobile India (BGMI) and Free Fire Max. Tactical squad warfare, high-pressure clutch plays, and live esports stage showdowns.',
     image: imgLanGaming,
     icon: Gamepad2,

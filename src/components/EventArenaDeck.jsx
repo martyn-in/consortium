@@ -63,7 +63,7 @@ export default function EventArenaDeck({
           type="button"
           className="deck-nav-btn deck-nav-prev"
           onClick={handlePrev}
-          aria-label="Previous Arena Event"
+          aria-label="Previous Event"
           title="Previous Event (Left Arrow)"
         >
           <ChevronLeft size={24} />
@@ -178,7 +178,7 @@ export default function EventArenaDeck({
           type="button"
           className="deck-nav-btn deck-nav-next"
           onClick={handleNext}
-          aria-label="Next Arena Event"
+          aria-label="Next Event"
           title="Next Event (Right Arrow)"
         >
           <ChevronRight size={24} />
@@ -203,7 +203,7 @@ export default function EventArenaDeck({
         {/* Mobile Swipe Hint */}
         <div className="deck-swipe-hint">
           <span className="swipe-dot">●</span>
-          <span>SWIPE OR USE ARROWS TO NAVIGATE ARENAS</span>
+          <span>SWIPE OR USE ARROWS TO NAVIGATE EVENTS</span>
         </div>
       </div>
     </div>

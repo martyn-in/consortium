@@ -22,7 +22,7 @@ export default function Navbar({ onNavigateToEvents }) {
   useEffect(() => {
     let ticking = false;
     let lastCheckTime = 0;
-    const sections = ['home', 'about', 'events', 'schedule', 'arena-experience', 'venue', 'contact'];
+    const sections = ['home', 'about', 'events', 'schedule', 'venue', 'contact'];
 
     const handleScroll = () => {
       if (!ticking) {
