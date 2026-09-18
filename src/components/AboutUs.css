@@ -1,11 +1,12 @@
 /* ============================================================
    ABOUT US: WELCOME FROM INSTITUTE OF AERONAUTICAL ENGINEERING
-   (True Glassmorphism Aesthetic with Outfit & Plus Jakarta Sans)
+   (Futuristic Frosted Glassmorphism with Outfit & Plus Jakarta Sans)
    ============================================================ */
 
 .about-us-section {
   position: relative;
-  padding: 80px 0 60px;
+  padding: 110px 0 70px;
+  scroll-margin-top: 85px;
   background: radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.2) 0%, transparent 70%);
   overflow: hidden;
 }
@@ -48,56 +49,60 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 18px;
+  padding: 6px 16px;
   border-radius: 999px;
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.78rem;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
   font-weight: 800;
   color: #00e5ff;
   letter-spacing: 1.5px;
-  margin-bottom: 16px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.about-pill-emoji {
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
 .about-main-title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 3.8vw, 2.75rem);
   font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: #ffffff;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 }
 
 .about-title-highlight {
-  background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 60%, #00e5ff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #bae6fd 40%, #38bdf8 70%, #00e5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline;
+  filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.45));
 }
 
 .about-lead-kicker {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.98rem;
-  color: #cbd5e1;
-  font-weight: 600;
-  letter-spacing: 0.3px;
+  font-size: 0.94rem;
+  color: #94a3b8;
+  max-width: 720px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
 /* Institutional Card - Premium Glassmorphism */
 .about-institution-card {
-  border-radius: 22px;
-  background: rgba(4, 16, 38, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 28px 34px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(6, 24, 60, 0.75) 0%, rgba(3, 14, 38, 0.92) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  padding: 26px 32px;
   margin-bottom: 26px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.45), 0 0 24px rgba(0, 229, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .about-brand-row {
@@ -110,9 +115,16 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.about-brand-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .about-iare-logo {
   height: 52px;
   width: auto;
+  max-width: 240px;
   object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.35));
 }
@@ -125,16 +137,45 @@
 }
 
 .about-cred-badge {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
-  letter-spacing: 0.8px;
-  padding: 5px 12px;
+  letter-spacing: 0.6px;
+  padding: 6px 12px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid currentColor;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.cred-naac {
+  color: #00e5ff;
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+}
+
+.cred-nirf {
+  color: #f472b6;
+  background: rgba(244, 114, 182, 0.08);
+  border: 1px solid rgba(244, 114, 182, 0.4);
+}
+
+.cred-ugc {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+
+.cred-nba {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.cred-estd {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.4);
 }
 
 .about-mission-quote {
@@ -144,21 +185,31 @@
   gap: 6px;
 }
 
+.mission-label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mission-emoji {
+  font-size: 0.95rem;
+}
+
 .mission-label {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 1.5px;
   color: #00e5ff;
+  text-transform: uppercase;
 }
 
 .mission-quote-text {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.98rem;
-  font-style: italic;
-  color: #e2e8f0;
-  margin: 0;
+  font-size: 0.96rem;
+  color: #cbd5e1;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* Stats Matrix - Frosted Glassmorphism Tiles */
@@ -166,57 +217,71 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 14px;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
 }
 
 .about-stat-box {
-  background: rgba(4, 16, 38, 0.55);
+  background: linear-gradient(145deg, rgba(6, 26, 64, 0.7) 0%, rgba(3, 15, 38, 0.85) 100%);
   border-radius: 16px;
-  padding: 18px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 12px;
+  border: 1px solid rgba(56, 189, 248, 0.22);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 16px rgba(0, 229, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.25s ease;
 }
 
 .about-stat-box:hover {
   transform: translateY(-4px);
-  background: rgba(8, 28, 64, 0.75);
-  border-color: rgba(0, 229, 255, 0.45);
-  box-shadow: 0 12px 30px rgba(0, 229, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  background: linear-gradient(145deg, rgba(8, 34, 82, 0.85) 0%, rgba(4, 20, 52, 0.95) 100%);
+  border-color: #00e5ff;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 24px rgba(0, 229, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-.stat-box-label {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #94a3b8;
-  margin-bottom: 6px;
+.stat-box-emoji {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
 }
 
 .stat-box-val {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 4px;
+  text-shadow: 0 0 14px rgba(0, 229, 255, 0.5);
+}
+
+.stat-box-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
   font-weight: 800;
-  color: #00e5ff;
-  line-height: 1.1;
+  letter-spacing: 0.8px;
+  color: #38bdf8;
+  text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .stat-box-sub {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.74rem;
-  color: rgba(203, 213, 225, 0.85);
-  line-height: 1.35;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.3;
+  font-weight: 500;
 }
 
 /* Content Explorer / Nav */
+.about-content-explorer {
+  position: relative;
+}
+
 .about-nav-row {
   display: flex;
   align-items: center;
@@ -232,56 +297,67 @@
   gap: 8px;
   overflow-x: auto;
   padding-bottom: 6px;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.about-tabs-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .about-tab-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 18px;
+  padding: 10px 18px;
   border-radius: 12px;
-  background: rgba(15, 23, 42, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(6, 24, 60, 0.55);
+  border: 1px solid rgba(56, 189, 248, 0.2);
   color: #cbd5e1;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.82rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.84rem;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: all 0.22s ease;
 }
 
+.tab-btn-emoji {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
 .about-tab-btn:hover {
-  background: rgba(0, 229, 255, 0.12);
-  border-color: rgba(0, 229, 255, 0.4);
+  background: rgba(14, 165, 233, 0.18);
+  border-color: rgba(0, 229, 255, 0.45);
   color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .about-tab-btn.is-active {
-  background: rgba(0, 229, 255, 0.18);
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.35) 0%, rgba(0, 229, 255, 0.22) 100%);
   border-color: #00e5ff;
-  color: #00e5ff;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .about-view-all-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 9px 18px;
+  gap: 8px;
+  padding: 10px 18px;
   border-radius: 12px;
   background: rgba(14, 165, 233, 0.12);
-  border: 1px solid rgba(14, 165, 233, 0.35);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   color: #38bdf8;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.8rem;
   font-weight: 800;
   cursor: pointer;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: all 0.22s ease;
 }
 
@@ -289,19 +365,20 @@
 .about-view-all-toggle.is-active {
   background: rgba(14, 165, 233, 0.25);
   color: #ffffff;
-  box-shadow: 0 0 18px rgba(14, 165, 233, 0.25);
+  border-color: #00e5ff;
+  box-shadow: 0 0 18px rgba(14, 165, 233, 0.3);
 }
 
 /* Active Tab Panel & Full View Cards - Rich Glassmorphism */
 .about-active-panel,
 .about-single-card {
-  border-radius: 22px;
-  background: rgba(4, 16, 38, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(6, 24, 60, 0.72) 0%, rgba(3, 14, 38, 0.9) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   padding: 32px 36px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 .about-all-sections-wrap {
@@ -314,8 +391,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
-  padding-bottom: 14px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -335,18 +412,23 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.2);
+}
+
+.panel-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
 }
 
 .panel-badge {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.72rem;
   font-weight: 800;
   color: #00e5ff;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
   display: block;
-  margin-bottom: 4px;
 }
 
 .panel-title {
@@ -354,43 +436,46 @@
   font-size: 1.35rem;
   font-weight: 800;
   color: #ffffff;
+  letter-spacing: -0.01em;
   margin: 0;
-}
-
-.panel-body {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 }
 
 .panel-paragraph {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.96rem;
-  line-height: 1.75;
+  line-height: 1.8;
   color: #cbd5e1;
-  margin: 0;
+  margin: 0 0 16px;
   text-align: justify;
 }
 
-/* Sub-matrices: Rankings & Recruiters */
+.panel-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Sub-matrices (Rankings & Recruiters) */
 .about-sub-matrix {
-  margin-top: 16px;
-  padding-top: 18px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.12);
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sub-matrix-heading {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.8rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.84rem;
   font-weight: 800;
-  letter-spacing: 1.5px;
-  color: #00e5ff;
-  margin: 0 0 12px;
+  letter-spacing: 1px;
+  color: #38bdf8;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .rankings-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
@@ -398,26 +483,37 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 14px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(4, 18, 48, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  transition: all 0.2s ease;
+}
+
+.ranking-badge-item:hover {
+  border-color: #00e5ff;
+  background: rgba(6, 28, 72, 0.8);
+  transform: translateY(-2px);
 }
 
 .ranking-agency {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #e2e8f0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .ranking-score {
   font-family: 'Outfit', sans-serif;
   font-size: 0.82rem;
-  font-weight: 700;
-  color: #34d399;
+  font-weight: 800;
+  color: #00e5ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  white-space: nowrap;
 }
 
 .recruiters-chips-wrap {
@@ -429,48 +525,58 @@
 .recruiter-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 8px;
-  background: rgba(0, 229, 255, 0.08);
-  border: 1px solid rgba(0, 229, 255, 0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(4, 18, 48, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.22);
   color: #f1f5f9;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.recruiter-chip:hover {
+  border-color: #00e5ff;
+  background: rgba(0, 229, 255, 0.12);
+  color: #00e5ff;
+  transform: translateY(-1px);
 }
 
 /* Official Portal Banner */
 .about-official-portal-banner {
-  margin-top: 30px;
-  border-radius: 18px;
-  background: rgba(4, 16, 38, 0.65);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  margin-top: 28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(6, 24, 60, 0.6) 0%, rgba(2, 132, 199, 0.15) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   padding: 22px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.portal-banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .portal-badge {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.74rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
   font-weight: 800;
   color: #00e5ff;
-  letter-spacing: 1px;
-  display: inline-block;
-  margin-bottom: 4px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
 .portal-text {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: #cbd5e1;
   margin: 0;
   line-height: 1.5;
@@ -480,24 +586,24 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 22px;
+  padding: 11px 22px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #0284c7, #0ea5e9, #00e5ff);
-  border: none;
-  color: #ffffff;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(135deg, #0284c7 0%, #00e5ff 100%);
+  color: #020817;
+  font-family: 'Outfit', sans-serif;
   font-size: 0.84rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.5px;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.25s ease;
-  white-space: nowrap;
+  transition: all 0.22s ease;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
 }
 
 .portal-external-btn:hover {
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
   transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(0, 229, 255, 0.55);
+  color: #000000;
 }
 
 /* Responsive */
@@ -509,7 +615,7 @@
 
 @media (max-width: 768px) {
   .about-us-section {
-    padding: 60px 0 45px;
+    padding: 90px 0 50px;
   }
 
   .about-institution-card,
@@ -521,6 +627,15 @@
   .about-stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+  }
+
+  .rankings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-brand-row {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .panel-title {
@@ -543,5 +658,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-
