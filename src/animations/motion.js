@@ -45,18 +45,16 @@ export const letterByLetter = {
 export const letterItem = {
   hidden: {
     opacity: 0,
-    y: 35,
-    filter: 'blur(14px)',
-    scale: 0.92
+    y: 25,
+    scale: 0.95
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
     scale: 1,
     transition: {
-      duration: 0.65,
-      ease: [0.22, 1, 0.36, 1]
+      duration: 0.5,
+      ease: [0.16, 1, 0.3, 1]
     }
   }
 };
@@ -64,13 +62,11 @@ export const letterItem = {
 export const energyPulse = {
   hidden: {
     opacity: 0,
-    scale: 0.8,
-    filter: 'blur(10px)'
+    scale: 0.9
   },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: 'blur(0px)',
     transition: {
       type: 'spring',
       stiffness: 220,
@@ -79,20 +75,18 @@ export const energyPulse = {
   }
 };
 
-export const fadeUp = (delay = 0, distance = 40) => ({
+export const fadeUp = (delay = 0, distance = 25) => ({
   hidden: {
     opacity: 0,
-    y: distance,
-    filter: 'blur(6px)'
+    y: distance
   },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       delay,
-      ease: [0.22, 1, 0.36, 1]
+      ease: [0.16, 1, 0.3, 1]
     }
   }
 });
@@ -138,17 +132,15 @@ export const pulseGlow = {
 export const scaleEntrance = (delay = 0) => ({
   hidden: {
     opacity: 0,
-    scale: 0.9,
-    filter: 'blur(8px)'
+    scale: 0.95
   },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: 'blur(0px)',
     transition: {
-      duration: 0.7,
+      duration: 0.5,
       delay,
-      ease: [0.22, 1, 0.36, 1]
+      ease: [0.16, 1, 0.3, 1]
     }
   }
 });

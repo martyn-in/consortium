@@ -21,9 +21,9 @@
 
 .c26-navbar-header.is-scrolled {
   padding: clamp(0.65rem, 1.5vh, 0.85rem) clamp(1.2rem, 3vw, 2.5rem);
-  background: rgba(4, 18, 48, 0.82);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  background: rgba(4, 18, 48, 0.90);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.18);
 }

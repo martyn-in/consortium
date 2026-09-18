@@ -54,10 +54,10 @@ const Hero = ({ onNavigateToEvents }) => {
           {/* Slanted Vibrant Neon Year 2026 */}
           <motion.span 
             className="hero-title-year-brush"
-            initial={{ opacity: 0, scale: 0.7, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{
-              delay: 0.25,
+              delay: 0.2,
               type: 'spring',
               stiffness: 260,
               damping: 20

@@ -4,8 +4,8 @@
 .mockup-footer-section {
   position: relative;
   background: rgba(2, 8, 23, 0.88);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(0, 229, 255, 0.15);
   padding: 4rem 1.5rem 2.5rem;
   overflow: hidden;

@@ -88,23 +88,17 @@
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85))
           drop-shadow(0 0 14px rgba(56, 189, 248, 0.7))
           drop-shadow(0 0 28px rgba(0, 229, 255, 0.55));
-  animation: neonYearPulse 3s infinite ease-in-out;
-  will-change: opacity, filter;
+  animation: neonYearPulse 3.5s infinite ease-in-out;
+  will-change: opacity;
   position: relative;
 }
 
 @keyframes neonYearPulse {
   0%, 100% {
     opacity: 0.92;
-    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85))
-            drop-shadow(0 0 12px rgba(56, 189, 248, 0.6))
-            drop-shadow(0 0 24px rgba(0, 229, 255, 0.45));
   }
   50% {
     opacity: 1;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9))
-            drop-shadow(0 0 18px rgba(56, 189, 248, 0.85))
-            drop-shadow(0 0 32px rgba(0, 229, 255, 0.65));
   }
 }
 
@@ -303,17 +297,12 @@
   z-index: 5;
 }
 
-/* ── Slash sweep animation ── */
+/* ── Slash sweep animation (GPU Transform only) ── */
 @keyframes btn-slash-sweep {
-  0%   { left: -80%; opacity: 0; }
-  10%  { opacity: 1; }
-  60%  { opacity: 1; }
-  100% { left: 160%; opacity: 0; }
-}
-
-@keyframes btn-pulse-glow {
-  0%, 100% { box-shadow: 0 8px 26px rgba(14, 165, 233, 0.5), 0 0 48px rgba(0, 229, 255, 0.35), 0 14px 32px rgba(0,0,0,0.55), inset 0 1.5px 2px rgba(255,255,255,0.7); }
-  50%       { box-shadow: 0 10px 36px rgba(14, 165, 233, 0.75), 0 0 70px rgba(0, 229, 255, 0.55), 0 18px 38px rgba(0,0,0,0.6), inset 0 2px 3px rgba(255,255,255,0.9); }
+  0%   { transform: translateX(-180%) skewX(-22deg); opacity: 0; }
+  15%  { opacity: 1; }
+  65%  { opacity: 1; }
+  100% { transform: translateX(380%) skewX(-22deg); opacity: 0; }
 }
 
 .hero-btn-primary-mockup {
@@ -332,10 +321,10 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border: 1.5px solid rgba(255, 255, 255, 0.55);
-  animation: btn-pulse-glow 3s ease-in-out infinite;
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.6), 0 0 45px rgba(0, 229, 255, 0.4), 0 14px 32px rgba(0,0,0,0.55), inset 0 1.5px 2px rgba(255,255,255,0.8);
   white-space: nowrap;
   cursor: pointer;
-  transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease;
   position: relative;
   overflow: hidden;
   user-select: none;
@@ -374,20 +363,20 @@
   content: '';
   position: absolute;
   top: -20%;
-  left: -80%;
+  left: 0;
   width: 38%;
   height: 140%;
   background: linear-gradient(
     105deg,
     transparent 0%,
     rgba(255, 255, 255, 0.12) 30%,
-    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.6) 50%,
     rgba(255, 255, 255, 0.12) 70%,
     transparent 100%
   );
-  transform: skewX(-22deg);
   pointer-events: none;
-  animation: btn-slash-sweep 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: btn-slash-sweep 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  will-change: transform;
 }
 
 /* Static hover sheen on top */
