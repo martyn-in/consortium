@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 import './GraphicBackground.css';
 
-// Consortium 2026 Executive Aqua Premium Blue Sky Ambient Palette
-const GLASS_PARTICLE_COLORS = [
-  { r: 0, g: 229, b: 255 },     // Radiant Aqua (#00e5ff)
-  { r: 56, g: 189, b: 248 },    // Sky Blue (#38bdf8)
-  { r: 14, g: 165, b: 233 },    // Deep Sky Cyan (#0ea5e9)
-  { r: 96, g: 165, b: 250 },    // Azure Sky (#60a5fa)
-  { r: 186, g: 230, b: 253 },   // Soft Ice Sky (#bae6fd)
+// Consortium 2026 Executive Radiant Aqua & Cyber Sky Glow Palette
+const GLOW_PARTICLE_COLORS = [
+  { r: 0, g: 229, b: 255 },     // Radiant Neon Aqua (#00e5ff)
+  { r: 56, g: 189, b: 248 },    // Electric Sky Blue (#38bdf8)
+  { r: 14, g: 165, b: 233 },    // Deep Azure Cyan (#0ea5e9)
+  { r: 186, g: 230, b: 253 },   // Brilliant Ice White (#bae6fd)
+  { r: 125, g: 211, b: 252 },   // Stellar Cyan (#7dd3fc)
 ];
 
 export default function GraphicBackground() {
@@ -17,7 +17,6 @@ export default function GraphicBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Use desynchronized for low latency rendering if supported
     const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true });
     if (!ctx) return;
 
@@ -25,7 +24,7 @@ export default function GraphicBackground() {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // Mouse tracking for subtle interactive spotlight
+    // Mouse tracking for interactive particle illumination
     const mouse = {
       x: width / 2,
       y: height / 2,
@@ -52,7 +51,6 @@ export default function GraphicBackground() {
     const resizeCanvas = () => {
       width = window.innerWidth;
       height = window.innerHeight;
-      // Cap at 1.0 DPR for background stardust to save 75% GPU fill rate
       canvas.width = width;
       canvas.height = height;
       canvas.style.width = `${width}px`;
@@ -61,19 +59,19 @@ export default function GraphicBackground() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas, { passive: true });
 
-    // Lightweight stardust particle motes (22 particles is visually great and costs 0ms)
-    const particleCount = 22;
+    // 42 luminous glowing stardust particles
+    const particleCount = 42;
     const particles = Array.from({ length: particleCount }, (_, i) => {
-      const color = GLASS_PARTICLE_COLORS[i % GLASS_PARTICLE_COLORS.length];
+      const color = GLOW_PARTICLE_COLORS[i % GLOW_PARTICLE_COLORS.length];
       return {
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: -(0.18 + Math.random() * 0.25),
-        radius: Math.random() * 1.6 + 0.8,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: -(0.15 + Math.random() * 0.28),
+        radius: Math.random() * 1.8 + 0.9,
         color,
-        baseAlpha: Math.random() * 0.45 + 0.25,
-        pulseSpeed: 0.015 + Math.random() * 0.02,
+        baseAlpha: Math.random() * 0.45 + 0.4,
+        pulseSpeed: 0.012 + Math.random() * 0.02,
         phase: Math.random() * Math.PI * 2
       };
     });
@@ -108,56 +106,61 @@ export default function GraphicBackground() {
       if (!isRunning) return;
       animId = requestAnimationFrame(loop);
 
-      // Dedicated GPU allocation: skip canvas repainting during active scroll
+      // Dedicated GPU bandwidth: pause canvas repaint during scrolling gestures
       if (isScrolling) return;
 
       const now = performance.now();
-      const dt = Math.min((now - lastTime) / 16.67, 2.0); // normalize to 60fps
+      const dt = Math.min((now - lastTime) / 16.67, 2.0);
       lastTime = now;
 
       ctx.clearRect(0, 0, width, height);
 
-      // Smooth mouse spotlight only if active within last 2 seconds
       const isMouseRecentlyActive = mouse.isActive && (now - mouse.lastMoveTime < 2000);
-
       if (isMouseRecentlyActive) {
         mouse.x += (mouse.targetX - mouse.x) * 0.08 * dt;
         mouse.y += (mouse.targetY - mouse.y) * 0.08 * dt;
-
-        // Bounded spotlight fill to save 85% GPU fill rate
-        const spotR = 260;
-        const spotGrad = ctx.createRadialGradient(
-          mouse.x, mouse.y, 0,
-          mouse.x, mouse.y, spotR
-        );
-        spotGrad.addColorStop(0, 'rgba(0, 229, 255, 0.08)');
-        spotGrad.addColorStop(0.5, 'rgba(14, 165, 233, 0.03)');
-        spotGrad.addColorStop(1, 'transparent');
-        ctx.fillStyle = spotGrad;
-        ctx.fillRect(
-          Math.max(0, mouse.x - spotR),
-          Math.max(0, mouse.y - spotR),
-          spotR * 2,
-          spotR * 2
-        );
       }
 
-      // Draw floating stardust motes
+      // Render each glowing particle mote
       for (let i = 0; i < particleCount; i++) {
         const p = particles[i];
         p.y += p.vy * dt;
-        p.x += (p.vx + Math.sin(now * 0.001 + p.phase) * 0.2) * dt;
+        p.x += (p.vx + Math.sin(now * 0.0012 + p.phase) * 0.22) * dt;
 
-        // Wrap around screen
-        if (p.y < -10) p.y = height + 10;
-        if (p.x < -10) p.x = width + 10;
-        if (p.x > width + 10) p.x = -10;
+        // Wrap boundaries
+        if (p.y < -20) p.y = height + 20;
+        if (p.x < -20) p.x = width + 20;
+        if (p.x > width + 20) p.x = -20;
 
-        const currentAlpha = p.baseAlpha * (0.8 + 0.2 * Math.sin(now * p.pulseSpeed + p.phase));
+        // Gentle breathing pulsation
+        let currentAlpha = p.baseAlpha * (0.75 + 0.25 * Math.sin(now * p.pulseSpeed + p.phase));
 
-        ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha})`;
+        // Proximity glow illumination when mouse is near
+        if (isMouseRecentlyActive) {
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
+          const distSq = dx * dx + dy * dy;
+          if (distSq < 40000) {
+            currentAlpha = Math.min(1.0, currentAlpha + (1 - Math.sqrt(distSq) / 200) * 0.45);
+          }
+        }
+
+        // 1. Outer luminous radiant glow aura
+        const glowRadius = p.radius * 3.8;
+        const glowGrad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, glowRadius);
+        glowGrad.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha * 0.9})`);
+        glowGrad.addColorStop(0.35, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha * 0.28})`);
+        glowGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+        ctx.fillStyle = glowGrad;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, glowRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 2. High-intensity diamond-bright core spark
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(1, currentAlpha * 1.25)})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius * 0.65, 0, Math.PI * 2);
         ctx.fill();
       }
     };
@@ -176,26 +179,12 @@ export default function GraphicBackground() {
   }, []);
 
   return (
-    <div className="graphic-background-wrapper glass-black-theme" aria-hidden="true">
-      {/* 1. Full Black Base Canvas with Blue Middle Part Color */}
-      <div className="glass-black-blue-base" />
-
-      {/* 2. Vibrant Ambient Blue Middle Glows (matching uploaded pic) */}
-      <div className="glass-ambient-blue-core" />
-      <div className="glass-light-aurora-cyan" />
-      <div className="glass-light-aurora-sapphire" />
-
-      {/* 3. Fine Frosted Dot Matrix */}
+    <div className="graphic-background-wrapper" aria-hidden="true">
+      {/* 1. Subtle Luminous Cyber Dot Matrix on Total Black */}
       <div className="glass-light-dot-matrix" />
 
-      {/* 4. 60FPS Glass Particle Canvas */}
+      {/* 2. 60-120 FPS Luminous Glowing Stardust Particle Canvas */}
       <canvas ref={canvasRef} className="glass-motion-canvas" />
-
-      {/* 5. Deep Black Perimeter Vignette */}
-      <div className="glass-light-vignette" />
-
-      {/* 6. Deep Black Lateral Curtains */}
-      <div className="glass-light-side-curtains" />
     </div>
   );
 }
