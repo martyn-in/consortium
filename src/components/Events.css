@@ -702,7 +702,7 @@
   background: rgba(4, 18, 48, 0.88) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(56, 189, 248, 0.22) !important;
+  border: none !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
@@ -711,22 +711,48 @@
   transform: translateZ(0);
   contain: content;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.25s ease,
               box-shadow 0.25s ease,
               background 0.25s ease;
   user-select: none;
 }
 
-/* Vibrant Top Border in Unified Aqua Sky Accent */
+/* Professional Full Top-to-Bottom Card Line & Border Fade */
+.event-pure-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1.5px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 229, 255, 0.95) 0%,
+    rgba(56, 189, 248, 0.6) 28%,
+    rgba(14, 165, 233, 0.22) 60%,
+    rgba(56, 189, 248, 0.05) 85%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 6;
+  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Full Top-to-Bottom Ambient Card Lighting Fade */
 .event-color-top-bar {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #00e5ff 0%, #38bdf8 50%, #0284c7 100%);
-  z-index: 5;
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.45);
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 229, 255, 0.16) 0%,
+    rgba(14, 165, 233, 0.07) 32%,
+    rgba(4, 18, 48, 0.02) 65%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* Card Top Badge Row */
@@ -790,12 +816,22 @@
 
 .event-pure-card:hover {
   transform: translateY(-6px);
-  background: rgba(6, 26, 68, 0.92) !important;
-  border-color: rgba(56, 189, 248, 0.65) !important;
+  background: rgba(6, 26, 68, 0.94) !important;
   box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.6),
+    0 20px 50px rgba(0, 0, 0, 0.65),
     0 0 32px rgba(0, 229, 255, 0.35),
-    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+    inset 0 1px 2px rgba(255, 255, 255, 0.25);
+}
+
+.event-pure-card:hover::before {
+  background: linear-gradient(
+    180deg,
+    #00e5ff 0%,
+    rgba(56, 189, 248, 0.85) 30%,
+    rgba(14, 165, 233, 0.45) 65%,
+    rgba(56, 189, 248, 0.12) 88%,
+    transparent 100%
+  );
 }
 
 .event-pure-media-wrap {
