@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   X, ArrowRight, Building2, 
   FileCheck, Calendar, MapPin, Users, ChevronRight, CheckCircle2, Clock,
-  Award, Sparkles, IndianRupee, ShieldAlert
+  Award, Sparkles, IndianRupee, ShieldAlert, Phone, MessageSquare
 } from 'lucide-react';
 import { paperPresentationDepartments } from '../data/eventsData';
 import { sound } from '../utils/soundEffects';
@@ -22,11 +22,13 @@ const UNIFIED_MODAL_THEME = {
 const EVENT_MODAL_THEMES = {
   'paper-presentation': { ...UNIFIED_MODAL_THEME, deptCode: 'MULTI-DEPT' },
   'poster-presentations': { ...UNIFIED_MODAL_THEME, deptCode: 'ECE' },
-  'project-expo': { ...UNIFIED_MODAL_THEME, deptCode: 'ECE' },
+  'project-expo': { ...UNIFIED_MODAL_THEME, deptCode: 'MECH' },
+  'inventra': { ...UNIFIED_MODAL_THEME, deptCode: 'MECH' },
   'lan-gaming': { ...UNIFIED_MODAL_THEME, deptCode: 'IT' },
   'photography': { ...UNIFIED_MODAL_THEME, deptCode: 'CSE' },
-  'death-mystery': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
-  'death-mystery-investigation': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
+  'data-glitch': { ...UNIFIED_MODAL_THEME, deptCode: 'CSD' },
+  'death-mystery': { ...UNIFIED_MODAL_THEME, deptCode: 'CSD' },
+  'death-mystery-investigation': { ...UNIFIED_MODAL_THEME, deptCode: 'CSD' },
   'magic-witch': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
   'treasure-hunt': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
   'short-films': { ...UNIFIED_MODAL_THEME, deptCode: 'CSE' },
@@ -141,7 +143,7 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
 
               <div className="split-left-content">
                 <div className="split-left-meta-top">
-                  <span className="split-meta-number">EVENT {event.number || event.displayNumber || '01'} / 10</span>
+                  <span className="split-meta-number">EVENT #{event.displayNumber || event.number || '01'}</span>
                   <span className="split-meta-sep">·</span>
                   <span className="split-meta-type">{event.type || event.category}</span>
                 </div>
@@ -213,6 +215,22 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                     <span>REGISTER NOW</span>
                     <ArrowRight size={17} />
                   </button>
+                )}
+
+                {event.whatsappGroupUrl && (
+                  <div className="split-whatsapp-action-wrap">
+                    <a
+                      href={event.whatsappGroupUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="split-left-whatsapp-btn"
+                      onClick={() => sound.playClick()}
+                    >
+                      <MessageSquare size={16} />
+                      <span>JOIN WHATSAPP GROUP</span>
+                    </a>
+                    <span className="split-whatsapp-subtext">Official Participant Group ↗</span>
+                  </div>
                 )}
               </div>
             </div>
@@ -314,6 +332,36 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                 </div>
               )}
 
+              {/* 3.6 Formula Card if available (e.g. Bridge Mockup) */}
+              {event.highlightFormula && (
+                <div className="split-detail-block">
+                  <div className="split-formula-card">
+                    <span className="split-formula-label">📐 EVALUATION &amp; SCORING FORMULA</span>
+                    <div className="split-formula-box">
+                      <code>{event.highlightFormula}</code>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 3.7 Core Objectives (e.g. Data Glitch) */}
+              {event.objectives && (
+                <div className="split-detail-block">
+                  <div className="split-title-with-badge">
+                    <h4 className="split-block-title">🎯 CORE OBJECTIVES</h4>
+                    <span className="split-badge-count">OFFICIAL GOALS</span>
+                  </div>
+                  <div className="split-objectives-grid">
+                    {event.objectives.map((obj, oIdx) => (
+                      <div key={oIdx} className="split-objective-item">
+                        <CheckCircle2 size={16} className="split-objective-icon" />
+                        <span>{obj}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* 4. Structured Guidelines List (e.g. Short Films, Photography) */}
               {event.guidelinesList && (
                 <div className="split-detail-block">
@@ -332,11 +380,11 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                 </div>
               )}
 
-              {/* 4.5 Judging Criteria (e.g. Short Films, Photography) */}
+              {/* 4.5 Judging Criteria (e.g. Short Films, Photography, INVENTRA) */}
               {event.judgingCriteria && (
                 <div className="split-detail-block">
                   <div className="split-title-with-badge">
-                    <h4 className="split-block-title">🏆 JUDGING CRITERIA</h4>
+                    <h4 className="split-block-title">🏆 {event.judgingCriteriaTitle || 'JUDGING CRITERIA'}</h4>
                     <span className="split-badge-count">OFFICIAL RUBRIC</span>
                   </div>
                   <div className="split-criteria-grid">
@@ -436,6 +484,44 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
                     <div className="split-rules-content">
                       <p className="split-rules-text">{event.rules}</p>
                     </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 4.95 Event Coordinators (Faculty & Student Leads) */}
+              {(event.facultyCoordinator || event.studentCoordinators) && (
+                <div className="split-detail-block">
+                  <div className="split-title-with-badge">
+                    <h4 className="split-block-title">📞 EVENT COORDINATORS</h4>
+                    <span className="split-badge-count">FACULTY &amp; STUDENT LEADS</span>
+                  </div>
+                  <div className="split-coordinators-grid">
+                    {event.facultyCoordinator && (
+                      <div className="split-coord-card faculty-card">
+                        <span className="split-coord-badge">👨‍🏫 FACULTY COORDINATOR</span>
+                        <strong className="split-coord-name">{event.facultyCoordinator.name}</strong>
+                        <span className="split-coord-role">{event.facultyCoordinator.role}</span>
+                        {event.facultyCoordinator.phone && (
+                          <a href={`tel:${event.facultyCoordinator.phone}`} className="split-coord-phone">
+                            <Phone size={13} />
+                            <span>{event.facultyCoordinator.phone}</span>
+                          </a>
+                        )}
+                      </div>
+                    )}
+                    {event.studentCoordinators && event.studentCoordinators.map((sc, scIdx) => (
+                      <div key={scIdx} className="split-coord-card student-card">
+                        <span className="split-coord-badge">🎓 STUDENT COORDINATOR</span>
+                        <strong className="split-coord-name">{sc.name}</strong>
+                        <span className="split-coord-role">{sc.year}</span>
+                        {sc.phone && (
+                          <a href={`tel:${sc.phone}`} className="split-coord-phone">
+                            <Phone size={13} />
+                            <span>{sc.phone}</span>
+                          </a>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}

@@ -1,0 +1,171 @@
+/* ============================================================
+   TOP COUNTDOWN OVERLAY — LEGENDARY METALLIC SILVER-WHITE
+   - Clean, focused timer: Zero unnecessary information
+   - Polished titanium silver-white specular chrome gradient
+   - Luminous ambient platinum sheen
+   ============================================================ */
+
+.top-countdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 34px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 6, 20, 0.96) 0%,
+    rgba(1, 4, 15, 0.94) 100%
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.75),
+              0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  user-select: none;
+}
+
+/* Hairline chrome specular beam at top edge */
+.top-countdown-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.top-countdown-metallic-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.top-countdown-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-countdown-slot {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+/* Legendary Metallic Silver-White Digits */
+.top-countdown-digit {
+  font-family: 'Orbitron', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 24%,
+    #e2e8f0 46%,
+    #94a3b8 54%,
+    #cbd5e1 76%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45)) 
+         drop-shadow(0 1px 3px rgba(0, 0, 0, 0.9));
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  min-width: 1.85ch;
+  text-align: center;
+}
+
+/* Legendary Metallic Silver-White Unit Labels */
+.top-countdown-unit-full,
+.top-countdown-unit-short {
+  font-family: 'Outfit', 'Space Grotesk', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #e2e8f0 45%,
+    #94a3b8 80%,
+    #cbd5e1 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
+  text-transform: uppercase;
+}
+
+.top-countdown-unit-short {
+  display: none;
+}
+
+/* Metallic Silver Divider Colons with Subtle Pulse */
+.top-countdown-divider {
+  font-family: 'Orbitron', monospace, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #e2e8f0;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.9);
+  opacity: 0.85;
+  margin: 0 1px;
+  animation: metallicPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes metallicPulse {
+  0% {
+    opacity: 0.5;
+    filter: brightness(0.9);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1.25) drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+  }
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 640px) {
+  .top-countdown-overlay {
+    height: 30px;
+  }
+
+  .top-countdown-track {
+    gap: 8px;
+  }
+
+  .top-countdown-digit {
+    font-size: 0.82rem;
+    min-width: 1.6ch;
+  }
+
+  .top-countdown-unit-full {
+    display: none;
+  }
+
+  .top-countdown-unit-short {
+    display: inline;
+    font-size: 0.6rem;
+  }
+
+  .top-countdown-divider {
+    font-size: 0.78rem;
+    margin: 0;
+  }
+}

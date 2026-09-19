@@ -144,7 +144,7 @@ export default function SplitArenaSection() {
               <div className="battle-features-row">
                 <div className="battle-feat-item">
                   <Target size={16} className="text-cyan" />
-                  <span>🎯 10 Flagship Events</span>
+                  <span>🎯 Flagship Competitions</span>
                 </div>
                 <div className="battle-feat-item">
                   <Zap size={16} className="text-magenta" />
@@ -162,7 +162,7 @@ export default function SplitArenaSection() {
                   className="battle-btn-know-more"
                   onClick={() => sound.playClick()}
                 >
-                  <span>🚀 EXPLORE ALL 10 EVENTS</span>
+                  <span>🚀 EXPLORE ALL EVENTS</span>
                   <ArrowRight size={15} />
                 </a>
               </div>

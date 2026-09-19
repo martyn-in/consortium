@@ -151,30 +151,25 @@ export default function GraphicBackground() {
   }, []);
 
   return (
-    <div className="graphic-background-wrapper glass-light-theme" aria-hidden="true">
-      {/* 1. Light, Luminous Radial Base Canvas */}
-      <div className="glass-light-base" />
+    <div className="graphic-background-wrapper glass-black-theme" aria-hidden="true">
+      {/* 1. Full Black Base Canvas with Blue Middle Part Color */}
+      <div className="glass-black-blue-base" />
 
-      {/* 2. Vibrant Ambient Glass Aurora Glows */}
+      {/* 2. Vibrant Ambient Blue Middle Glows (matching uploaded pic) */}
+      <div className="glass-ambient-blue-core" />
       <div className="glass-light-aurora-cyan" />
-      <div className="glass-light-aurora-violet" />
-      <div className="glass-light-aurora-rose" />
       <div className="glass-light-aurora-sapphire" />
-      <div className="glass-light-aurora-teal" />
 
-      {/* 3. Center Luminous Core */}
-      <div className="glass-light-center-core" />
-
-      {/* 4. Fine Frosted Dot Matrix */}
+      {/* 3. Fine Frosted Dot Matrix */}
       <div className="glass-light-dot-matrix" />
 
-      {/* 5. 60FPS Glass Light Canvas */}
+      {/* 4. 60FPS Glass Particle Canvas */}
       <canvas ref={canvasRef} className="glass-motion-canvas" />
 
-      {/* 6. Soft Perimeter Vignette */}
+      {/* 5. Deep Black Perimeter Vignette */}
       <div className="glass-light-vignette" />
 
-      {/* 7. Dark Side Screens */}
+      {/* 6. Deep Black Lateral Curtains */}
       <div className="glass-light-side-curtains" />
     </div>
   );

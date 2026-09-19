@@ -59,16 +59,21 @@
   line-height: 1.6;
 }
 
-/* Countdown Card */
+/* Countdown Card - Iconic Sapphire Ocean Blue Matching Uploaded Pic */
 .countdown-card {
   border-radius: 24px;
-  background: rgba(4, 16, 38, 0.65) !important;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 46, 101, 0.9) 0%,
+    rgba(0, 98, 181, 0.85) 48%,
+    rgba(0, 113, 194, 0.9) 100%
+  ) !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
   padding: 32px;
   margin-bottom: 40px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 35px rgba(0, 229, 255, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 40px rgba(0, 98, 181, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   position: relative;
   overflow: hidden;
 }
@@ -85,7 +90,7 @@
   flex-wrap: wrap;
   gap: 14px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   margin-bottom: 26px;
 }
 
@@ -121,55 +126,81 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.07) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 111, 195, 0.78) 0%,
+    rgba(0, 85, 165, 0.88) 100%
+  ) !important;
+  border: 1px solid rgba(56, 189, 248, 0.45) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 18px;
-  width: 140px;
-  height: 130px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  width: 135px;
+  height: 118px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 
+              inset 0 1px 1.5px rgba(255, 255, 255, 0.3) !important;
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .countdown-unit-box:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: #00e5ff;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 229, 255, 0.35);
+  transform: translateY(-3px);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 130, 225, 0.85) 0%,
+    rgba(0, 100, 190, 0.95) 100%
+  ) !important;
+  border-color: #00e5ff !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 16px rgba(0, 229, 255, 0.25);
 }
 
 .countdown-digit-glow {
-  font-family: 'Outfit', sans-serif;
-  font-size: 3.4rem;
+  font-family: 'Outfit', -apple-system, sans-serif;
+  font-size: 2.6rem;
   font-weight: 800;
   line-height: 1;
-  color: #ffffff;
-  text-shadow: 0 0 25px rgba(0, 229, 255, 0.6);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 30%,
+    #cbd5e1 70%,
+    #94a3b8 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
 .countdown-digit-glow.text-accent-cyan,
 .countdown-digit-glow.text-accent-violet {
-  color: #00e5ff;
-  text-shadow: 0 0 25px rgba(0, 229, 255, 0.9);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #e0f2fe 30%,
+    #38bdf8 70%,
+    #0284c7 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
 .countdown-unit-label {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: #7dd3fc;
-  margin-top: 8px;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #e2e8f0;
+  margin-top: 6px;
+  text-transform: uppercase;
 }
 
 .countdown-colon {
   font-family: 'Outfit', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #00e5ff;
-  text-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
-  animation: colonBlink 1.5s infinite ease-in-out;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #94a3b8;
+  opacity: 0.7;
+  line-height: 1;
 }
 
 @keyframes colonBlink {
@@ -382,11 +413,11 @@
   gap: 0.65rem;
   padding: 0.42rem 1.25rem;
   border-radius: 999px;
-  background: rgba(4, 16, 38, 0.85);
+  background: rgba(255, 255, 255, 0.025);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 229, 255, 0.4);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.65), 0 0 16px rgba(0, 229, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), 0 0 16px rgba(0, 229, 255, 0.15);
   margin-bottom: 1.2rem;
   user-select: none;
 }

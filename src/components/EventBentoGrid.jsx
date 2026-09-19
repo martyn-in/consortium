@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, IndianRupee } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
 
 // Unified Professional Signature Theme (Consistent Aqua & Deep Oceanic Sky)
@@ -9,7 +9,7 @@ const UNIFIED_THEME = {
   glow: 'rgba(0, 229, 255, 0.35)' 
 };
 
-export default function EventBentoGrid({ events, onOpenDetails }) {
+export default function EventBentoGrid({ events, onOpenDetails, onRegister }) {
   return (
     <div className="events-pure-grid">
       {events.map((evt, index) => {
@@ -48,7 +48,17 @@ export default function EventBentoGrid({ events, onOpenDetails }) {
             {/* Top Color Accent Line */}
             <div className="event-color-top-bar" />
 
-            {/* Media Wrap with Solid Color Vignette (No Glassmorphism) */}
+            {/* Top Row: Registration Fee Badge (Event count number removed) */}
+            {evt.fee && (
+              <div className="event-pure-badge-row">
+                <div className="event-pure-fee-pill" title={`Registration Fee: ${evt.fee}`}>
+                  <IndianRupee size={12} className="fee-rupee-icon" />
+                  <span>{evt.fee}</span>
+                </div>
+              </div>
+            )}
+
+            {/* Media Wrap with Solid Color Vignette */}
             <div className="event-pure-media-wrap">
               <img
                 src={evt.image}
@@ -59,12 +69,42 @@ export default function EventBentoGrid({ events, onOpenDetails }) {
               <div className="event-pure-color-scrim" />
             </div>
 
-            {/* Outside View: Clean Event Name & Colored Action Callout */}
+            {/* Card Preview Content: Title & Dual Actions (View Details + Register) */}
             <div className="event-pure-content">
               <h3 className="event-pure-title">{evt.title}</h3>
-              <div className="event-pure-action-hint">
-                <span>VIEW DETAILS</span>
-                <ArrowUpRight size={15} className="hint-arrow" />
+              
+              <div className="event-pure-actions">
+                <button
+                  type="button"
+                  className="event-pure-btn-view"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    sound.playClick();
+                    onOpenDetails(evt);
+                  }}
+                  aria-label={`View details for ${evt.title}`}
+                >
+                  <span>VIEW DETAILS</span>
+                  <ArrowUpRight size={14} className="hint-arrow" />
+                </button>
+
+                <button
+                  type="button"
+                  className="event-pure-btn-register"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    sound.playSuccess();
+                    if (onRegister) {
+                      onRegister(evt);
+                    } else if (evt.registrationUrl) {
+                      window.open(evt.registrationUrl, '_blank', 'noopener,noreferrer');
+                    }
+                  }}
+                  aria-label={`Register for ${evt.title}`}
+                >
+                  <span>REGISTER</span>
+                  <ArrowRight size={14} />
+                </button>
               </div>
             </div>
           </motion.div>

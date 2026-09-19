@@ -50,35 +50,35 @@ export default function Footer() {
               <img src={c26Logo} alt="Consortium 2026" className="footer-c26-logo-img" />
             </div>
             <p className="footer-brand-motto">Innovate Today. Impact Tomorrow.</p>
-            <p className="footer-brand-dates">📍 OCTOBER 9 &amp; 10, 2026 • IARE HYDERABAD</p>
+            <p className="footer-brand-dates">OCTOBER 9 &amp; 10, 2026 • IARE HYDERABAD</p>
           </div>
 
           {/* Links to Active Sections */}
           <div className="footer-nav-groups">
             <div className="footer-nav-col">
-              <span className="footer-nav-heading">🧭 NAVIGATION</span>
+              <span className="footer-nav-heading">NAVIGATION</span>
               <ul>
-                <li><a href="#home">🏠 Home</a></li>
-                <li><a href="#events">🏆 Events (10 Flagships)</a></li>
-                <li><a href="#schedule">⏳ Live Countdown</a></li>
-                <li><a href="#about">🏛️ Host Institution (IARE)</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Flagship Events</a></li>
+                <li><a href="#schedule">Live Countdown</a></li>
+                <li><a href="#about">Host Institution (IARE)</a></li>
               </ul>
             </div>
 
             <div className="footer-nav-col">
-              <span className="footer-nav-heading">🏛️ CAMPUS &amp; CONTACT</span>
+              <span className="footer-nav-heading">CAMPUS &amp; CONTACT</span>
               <ul>
-                <li><a href="#contact">👑 Fest Leadership &amp; Conveners</a></li>
-                <li><a href="#contact">👥 Faculty Coordinators</a></li>
-                <li><a href="#venue">📍 IARE Campus Venue</a></li>
-                <li><a href="#events">🎟️ Event Registration</a></li>
+                <li><a href="#contact">Fest Leadership &amp; Conveners</a></li>
+                <li><a href="#contact">Faculty Coordinators</a></li>
+                <li><a href="#venue">IARE Campus Venue</a></li>
+                <li><a href="#events">Event Registration</a></li>
               </ul>
             </div>
           </div>
 
           {/* Social Icons matching mockup */}
           <div className="footer-social-side">
-            <span className="footer-nav-heading">🌐 CONNECT</span>
+            <span className="footer-nav-heading">CONNECT</span>
             <div className="footer-social-icons">
               <a 
                 href="https://www.instagram.com/iareconsortium2026?stkn=bHpncG9tNTluYXZw" 
@@ -119,7 +119,7 @@ export default function Footer() {
                 className="footer-dev-call-link footer-dev-name"
                 title="Pulivarthi Martyn LinkedIn Profile"
               >
-                👨‍💻 Pulivarthi Martyn
+                Pulivarthi Martyn
               </a>
               &nbsp;(<a href="tel:+918555877044" className="footer-dev-call-link">+91 85558 77044</a>)
               ,&nbsp;
@@ -130,7 +130,7 @@ export default function Footer() {
                 className="footer-dev-call-link footer-dev-name"
                 title="Ashwath Amarchinta LinkedIn Profile"
               >
-                👨‍💻 Ashwath Amarchinta
+                Ashwath Amarchinta
               </a>
               &nbsp;(<a href="tel:+919177591324" className="footer-dev-call-link">+91 91775 91324</a>)
             </span>
@@ -141,7 +141,7 @@ export default function Footer() {
             onClick={scrollToTop}
             aria-label="Back to top"
           >
-            <span>Back to Top ⬆️</span>
+            <span>Back to Top</span>
             <ArrowUp size={14} />
           </button>
         </div>

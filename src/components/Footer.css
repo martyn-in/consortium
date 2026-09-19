@@ -3,10 +3,11 @@
    ============================================================ */
 .mockup-footer-section {
   position: relative;
-  background: rgba(2, 8, 23, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(0, 229, 255, 0.15);
+  background: #02040a;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8), 0 -2px 15px rgba(0, 229, 255, 0.15);
   padding: 4rem 1.5rem 2.5rem;
   overflow: hidden;
 }
@@ -76,13 +77,22 @@
 
 .footer-brand-dates {
   font-family: var(--font-sub);
-  font-size: 0.78rem;
-  color: #00e5ff;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   margin: 0.5rem 0 0;
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 25%,
+    #e2e8f0 50%,
+    #cbd5e1 75%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.9));
 }
 
 .footer-nav-groups {
@@ -102,30 +112,59 @@
 
 .footer-nav-heading {
   font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #00e5ff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   display: block;
   margin-bottom: 0.9rem;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f1f5f9 25%,
+    #e2e8f0 50%,
+    #cbd5e1 75%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.9));
 }
 
 .footer-nav-col a {
   font-family: var(--font-sub);
   font-size: 0.92rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: #b9c1d4;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-decoration: none;
   transition: all 0.25s ease;
   text-transform: uppercase;
+  display: inline-block;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 25%,
+    #e2e8f0 50%,
+    #cbd5e1 75%,
+    #f8fafc 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.25)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
 }
 
 .footer-nav-col a:hover {
-  color: #00e5ff;
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
-  padding-left: 3px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #e0f2fe 30%,
+    #38bdf8 70%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.6)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
+  padding-left: 4px;
 }
 
 .footer-social-side {
@@ -211,24 +250,90 @@
   text-decoration: underline;
 }
 
+.footer-dev-name {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 25%,
+    #e2e8f0 50%,
+    #cbd5e1 75%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+.footer-dev-name:hover {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #e0f2fe 30%,
+    #38bdf8 70%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.7));
+  text-decoration: none;
+}
+
 .footer-back-to-top-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: transparent;
   border: none;
-  color: #00e5ff;
-  font-family: var(--font-heading);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   cursor: pointer;
   transition: all 0.25s ease;
 }
 
-.footer-back-to-top-btn:hover {
-  color: #38bdf8;
+.footer-back-to-top-btn span {
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fafc 25%,
+    #e2e8f0 50%,
+    #cbd5e1 75%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.35));
+  transition: all 0.25s ease;
+}
+
+.footer-back-to-top-btn svg {
+  color: #e2e8f0;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+  transition: all 0.25s ease;
+}
+
+.footer-back-to-top-btn:hover span {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #e0f2fe 30%,
+    #38bdf8 70%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.7));
+}
+
+.footer-back-to-top-btn:hover svg {
+  color: #00e5ff;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.8));
   transform: translateY(-2px);
 }
 

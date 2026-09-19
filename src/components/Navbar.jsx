@@ -6,6 +6,31 @@ import './Navbar.css';
 
 const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
 
+// Target date: Day 1 Commencement — October 9, 2026 at 09:00 AM IST
+const FESTIVAL_START_DATE = '2026-10-09T09:00:00+05:30';
+
+function calculateTime(targetDateStr) {
+  const target = new Date(targetDateStr).getTime();
+  const now = new Date().getTime();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    return { days: '00', hours: '00', minutes: '00', seconds: '00' };
+  }
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+  return {
+    days: String(d).padStart(2, '0'),
+    hours: String(h).padStart(2, '0'),
+    minutes: String(m).padStart(2, '0'),
+    seconds: String(s).padStart(2, '0')
+  };
+}
+
 const navItems = [
   { label: 'HOME', href: '#home' },
   { label: 'ABOUT', href: '#about' },
@@ -18,6 +43,14 @@ export default function Navbar({ onNavigateToEvents }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [timeLeft, setTimeLeft] = useState(() => calculateTime(FESTIVAL_START_DATE));
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTime(FESTIVAL_START_DATE));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     let ticking = false;
@@ -28,7 +61,7 @@ export default function Navbar({ onNavigateToEvents }) {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentY = window.scrollY;
-          const scrolled = currentY > 25;
+          const scrolled = currentY > 20;
           setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
 
           // Throttle layout queries to every 120ms to eliminate layout thrashing
@@ -87,7 +120,7 @@ export default function Navbar({ onNavigateToEvents }) {
     <header className={`c26-navbar-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="c26-navbar-inner">
 
-        {/* 1. Left: Official C26 Consortium Logo from User */}
+        {/* 1. Left: Official C26 Consortium Logo */}
         <a 
           href="#home" 
           className="c26-brand-lockup"
@@ -123,8 +156,49 @@ export default function Navbar({ onNavigateToEvents }) {
           })}
         </nav>
 
-        {/* 3. Right: Mobile Hamburger Toggle */}
+        {/* 3. Right: Combined Legendary Metallic Silver-White Countdown HUD & Mobile Toggle */}
         <div className="c26-nav-right-actions">
+          <a
+            href="#schedule"
+            className="c26-nav-countdown-hud"
+            onClick={(e) => handleNavClick(e, '#schedule')}
+            onMouseEnter={() => sound.playHover()}
+            aria-label="Festival Countdown Timer - Click to view detailed schedule"
+            title="Consortium 2026: October 9, 2026 • Click to view detailed countdown"
+          >
+            <div className="c26-nav-countdown-track">
+              <div className="c26-nav-countdown-slot">
+                <span className="c26-nav-countdown-digit">{timeLeft.days}</span>
+                <span className="c26-nav-countdown-unit-full">DAYS</span>
+                <span className="c26-nav-countdown-unit-short">D</span>
+              </div>
+
+              <span className="c26-nav-countdown-divider">:</span>
+
+              <div className="c26-nav-countdown-slot">
+                <span className="c26-nav-countdown-digit">{timeLeft.hours}</span>
+                <span className="c26-nav-countdown-unit-full">HOURS</span>
+                <span className="c26-nav-countdown-unit-short">H</span>
+              </div>
+
+              <span className="c26-nav-countdown-divider">:</span>
+
+              <div className="c26-nav-countdown-slot">
+                <span className="c26-nav-countdown-digit">{timeLeft.minutes}</span>
+                <span className="c26-nav-countdown-unit-full">MIN</span>
+                <span className="c26-nav-countdown-unit-short">M</span>
+              </div>
+
+              <span className="c26-nav-countdown-divider">:</span>
+
+              <div className="c26-nav-countdown-slot">
+                <span className="c26-nav-countdown-digit c26-nav-countdown-sec">{timeLeft.seconds}</span>
+                <span className="c26-nav-countdown-unit-full">SEC</span>
+                <span className="c26-nav-countdown-unit-short">S</span>
+              </div>
+            </div>
+          </a>
+
           {/* Mobile Hamburger Toggle Button */}
           <button
             type="button"
@@ -135,7 +209,7 @@ export default function Navbar({ onNavigateToEvents }) {
             }}
             aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
@@ -144,6 +218,33 @@ export default function Navbar({ onNavigateToEvents }) {
       {/* Mobile Drawer Navigation Menu */}
       {mobileMenuOpen && (
         <div className="c26-mobile-drawer aura-glow-border">
+          <div className="c26-mobile-drawer-countdown">
+            <span className="c26-mobile-countdown-label">FESTIVAL COMMENCES IN</span>
+            <div className="c26-nav-countdown-track">
+              <div className="c26-nav-countdown-slot">
+                <span className="c26-nav-countdown-digit">{timeLeft.days}</span>
+                <span className="c26-nav-countdown-unit-full">DAYS</span>
+              </div>
+              <span className="c26-nav-countdown-divider">:</span>
+              <div className="c26-nav-countdown-slot">
+                <span className="c26-nav-countdown-digit">{timeLeft.hours}</span>
+                <span className="c26-nav-countdown-unit-full">HOURS</span>
+              </div>
+              <span className="c26-nav-countdown-divider">:</span>
+              <div className="c26-nav-countdown-slot">
+                <span className="c26-nav-countdown-digit">{timeLeft.minutes}</span>
+                <span className="c26-nav-countdown-unit-full">MIN</span>
+              </div>
+              <span className="c26-nav-countdown-divider">:</span>
+              <div className="c26-nav-countdown-slot">
+                <span className="c26-nav-countdown-digit c26-nav-countdown-sec">{timeLeft.seconds}</span>
+                <span className="c26-nav-countdown-unit-full">SEC</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="c26-mobile-drawer-divider" />
+
           <div className="c26-mobile-drawer-links">
             {navItems.map((item) => {
               const sectionKey = item.href.replace('#', '');

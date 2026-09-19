@@ -22,7 +22,7 @@ function App() {
       {/* Existing Background System — Untouched as mandated */}
       <GraphicBackground isVideoPlaying={true} />
 
-      {/* 1. Floating Futuristic Navbar */}
+      {/* Combined Top Overlay: Cyber Navbar with Legendary Metallic Silver-White Countdown HUD */}
       <Navbar onNavigateToEvents={handleGoToEvents} />
 
       {/* Main Experience Flow matching Mockup & Brief */}

@@ -307,6 +307,57 @@
   transform: translateY(0);
 }
 
+.split-whatsapp-action-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.split-left-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, rgba(18, 140, 126, 0.25) 100%);
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  color: #25d366;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.split-left-whatsapp-btn:hover {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.28) 0%, rgba(18, 140, 126, 0.38) 100%);
+  border-color: #25d366;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.split-left-whatsapp-btn:active {
+  transform: translateY(0);
+}
+
+.split-whatsapp-subtext {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #25d366;
+  opacity: 0.8;
+  letter-spacing: 0.02em;
+}
+
 /* ============================================================
    RIGHT SIDE: TABBED DETAILS
    ============================================================ */
@@ -1292,4 +1343,141 @@
   .split-spec-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================================
+   FORMULA CARD & OBJECTIVES
+   ============================================================ */
+.split-formula-card {
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(2, 14, 38, 0.6) 100%);
+  border: 1px solid var(--modal-border, rgba(0, 229, 255, 0.3));
+}
+
+.split-formula-label {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--modal-accent, #00e5ff);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.split-formula-box {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f8fafc;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 12px 14px;
+  border-radius: 8px;
+  border-left: 3px solid var(--modal-accent, #00e5ff);
+  word-break: break-word;
+}
+
+.split-objectives-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.split-objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.86rem;
+  color: #e2e8f0;
+}
+
+.split-objective-icon {
+  color: var(--modal-accent, #00e5ff);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   EVENT COORDINATORS GRID (FACULTY & STUDENT LEADS)
+   ============================================================ */
+.split-coordinators-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .split-coordinators-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split-coord-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+}
+
+.split-coord-card:hover {
+  background: rgba(255, 255, 255, 0.065);
+  border-color: var(--modal-accent, rgba(0, 229, 255, 0.35));
+  transform: translateY(-2px);
+}
+
+.split-coord-card.faculty-card {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(14, 165, 233, 0.03) 100%);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+}
+
+.split-coord-badge {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--modal-accent, #00e5ff);
+  text-transform: uppercase;
+}
+
+.split-coord-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.split-coord-role {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.split-coord-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.split-coord-phone:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
