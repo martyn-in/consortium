@@ -78,6 +78,20 @@ export default function GraphicBackground() {
       };
     });
 
+    let isScrolling = false;
+    let scrollTimeout = null;
+
+    const handleScroll = () => {
+      isScrolling = true;
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        isScrolling = false;
+        lastTime = performance.now();
+      }, 90);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     let isRunning = true;
     const handleVisibility = () => {
       isRunning = !document.hidden;
@@ -94,29 +108,38 @@ export default function GraphicBackground() {
       if (!isRunning) return;
       animId = requestAnimationFrame(loop);
 
+      // Dedicated GPU allocation: skip canvas repainting during active scroll
+      if (isScrolling) return;
+
       const now = performance.now();
       const dt = Math.min((now - lastTime) / 16.67, 2.0); // normalize to 60fps
       lastTime = now;
 
       ctx.clearRect(0, 0, width, height);
 
-      // Smooth mouse interpolation only if active within last 2 seconds
-      const isMouseRecentlyActive = mouse.isActive && (now - mouse.lastMoveTime < 2500);
+      // Smooth mouse spotlight only if active within last 2 seconds
+      const isMouseRecentlyActive = mouse.isActive && (now - mouse.lastMoveTime < 2000);
 
       if (isMouseRecentlyActive) {
         mouse.x += (mouse.targetX - mouse.x) * 0.08 * dt;
         mouse.y += (mouse.targetY - mouse.y) * 0.08 * dt;
 
-        // Subtle interactive spotlight (optimized radius)
+        // Bounded spotlight fill to save 85% GPU fill rate
+        const spotR = 260;
         const spotGrad = ctx.createRadialGradient(
           mouse.x, mouse.y, 0,
-          mouse.x, mouse.y, 280
+          mouse.x, mouse.y, spotR
         );
-        spotGrad.addColorStop(0, 'rgba(0, 229, 255, 0.09)');
-        spotGrad.addColorStop(0.4, 'rgba(14, 165, 233, 0.04)');
+        spotGrad.addColorStop(0, 'rgba(0, 229, 255, 0.08)');
+        spotGrad.addColorStop(0.5, 'rgba(14, 165, 233, 0.03)');
         spotGrad.addColorStop(1, 'transparent');
         ctx.fillStyle = spotGrad;
-        ctx.fillRect(0, 0, width, height);
+        ctx.fillRect(
+          Math.max(0, mouse.x - spotR),
+          Math.max(0, mouse.y - spotR),
+          spotR * 2,
+          spotR * 2
+        );
       }
 
       // Draw floating stardust motes
@@ -146,7 +169,9 @@ export default function GraphicBackground() {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('visibilitychange', handleVisibility);
+      if (scrollTimeout) clearTimeout(scrollTimeout);
     };
   }, []);
 

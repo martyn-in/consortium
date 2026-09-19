@@ -14,17 +14,19 @@
   width: 100%;
   z-index: 1100;
   padding: clamp(0.55rem, 1.2vh, 0.75rem) clamp(1rem, 2.5vw, 2.5rem);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
   background: linear-gradient(
     180deg,
-    rgba(2, 6, 20, 0.9) 0%,
-    rgba(2, 6, 20, 0.72) 60%,
-    rgba(1, 4, 15, 0.5) 100%
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(2, 6, 20, 0.88) 65%,
+    rgba(2, 6, 20, 0.45) 90%,
+    transparent 100%
   );
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: none !important;
   user-select: none;
+  transform: translateZ(0);
 }
 
 /* Hairline specular chrome beam across top edge of combined overlay */
@@ -38,7 +40,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.45) 50%,
     transparent 100%
   );
   pointer-events: none;
@@ -46,11 +48,17 @@
 
 .c26-navbar-header.is-scrolled {
   padding: clamp(0.45rem, 1vh, 0.65rem) clamp(1rem, 2.5vw, 2.5rem);
-  background: rgba(2, 8, 24, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(56, 189, 248, 0.22);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.75), 0 2px 12px rgba(56, 189, 248, 0.15);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.98) 0%,
+    rgba(2, 6, 20, 0.96) 75%,
+    rgba(2, 6, 20, 0.7) 90%,
+    transparent 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: none !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.85);
 }
 
 .c26-navbar-inner {
@@ -513,15 +521,16 @@
   .c26-navbar-header {
     padding: 0.5rem 1rem;
     background: rgba(2, 8, 24, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: none !important;
   }
 
   .c26-navbar-header.is-scrolled {
     padding: 0.45rem 1rem;
     background: rgba(2, 8, 24, 0.98);
-    border-bottom: 1px solid rgba(56, 189, 248, 0.28);
+    border-bottom: none !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
   }
 
   .c26-nav-capsule-dock {

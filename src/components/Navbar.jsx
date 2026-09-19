@@ -53,43 +53,35 @@ export default function Navbar({ onNavigateToEvents }) {
   }, []);
 
   useEffect(() => {
-    let ticking = false;
-    let lastCheckTime = 0;
-    const sections = ['home', 'about', 'events', 'schedule', 'venue', 'contact'];
-
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentY = window.scrollY;
-          const scrolled = currentY > 20;
-          setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
-
-          // Throttle layout queries to every 120ms to eliminate layout thrashing
-          const now = performance.now();
-          if (now - lastCheckTime > 120) {
-            lastCheckTime = now;
-            const scrollPos = currentY + 220;
-
-            for (const sectionId of sections) {
-              const el = document.getElementById(sectionId);
-              if (el) {
-                const top = el.offsetTop;
-                const height = el.offsetHeight;
-                if (scrollPos >= top && scrollPos < top + height) {
-                  setActiveSection((prev) => (prev !== sectionId ? sectionId : prev));
-                  break;
-                }
-              }
-            }
-          }
-          ticking = false;
-        });
-        ticking = true;
-      }
+      const scrolled = window.scrollY > 20;
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Zero-jank asynchronous IntersectionObserver for active section tracking
+    const sections = ['home', 'about', 'events', 'schedule', 'venue', 'contact'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-15% 0px -40% 0px', threshold: 0.1 }
+    );
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const handleNavClick = (e, href) => {
