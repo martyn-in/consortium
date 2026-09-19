@@ -7,33 +7,12 @@
   position: relative;
   padding: 110px 0 70px;
   scroll-margin-top: 85px;
-  background: radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.2) 0%, transparent 70%);
+  background: transparent !important;
   overflow: hidden;
 }
 
 .about-glow-orb {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0.28;
-  z-index: 0;
-  transform: translateZ(0);
-}
-
-.about-glow-orb-1 {
-  top: 15%;
-  left: -100px;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.4) 0%, rgba(14, 165, 233, 0.18) 45%, transparent 70%);
-}
-
-.about-glow-orb-2 {
-  bottom: 10%;
-  right: -100px;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, rgba(2, 132, 199, 0.15) 45%, transparent 70%);
+  display: none !important;
 }
 
 /* Header */
@@ -95,19 +74,43 @@
 
 /* Institutional Card - Iconic Sapphire Ocean Blue */
 .about-institution-card {
+  position: relative;
   border-radius: 20px;
   background: linear-gradient(
     135deg,
-    rgba(0, 46, 101, 0.88) 0%,
-    rgba(0, 98, 181, 0.82) 48%,
-    rgba(0, 113, 194, 0.88) 100%
-  );
-  border: 1px solid rgba(56, 189, 248, 0.45);
+    rgba(0, 46, 101, 0.92) 0%,
+    rgba(0, 98, 181, 0.85) 48%,
+    rgba(0, 113, 194, 0.9) 100%
+  ) !important;
+  border: none !important;
   padding: 26px 32px;
   margin-bottom: 26px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(0, 98, 181, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(0, 98, 181, 0.35);
+  overflow: hidden;
+}
+
+.about-institution-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 229, 255, 0.9) 0%,
+    rgba(56, 189, 248, 0.55) 28%,
+    rgba(14, 165, 233, 0.2) 65%,
+    rgba(56, 189, 248, 0.05) 90%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .about-brand-row {

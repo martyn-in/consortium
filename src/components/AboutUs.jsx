@@ -143,6 +143,7 @@ export default function AboutUs() {
                     src={iareLogo} 
                     alt="Institute of Aeronautical Engineering Logo" 
                     className="about-iare-logo" 
+                    decoding="async"
                   />
                 </div>
                 <div className="about-brand-creds">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   X, ArrowRight, Building2, 
@@ -37,13 +37,13 @@ const EVENT_MODAL_THEMES = {
 };
 
 export default function EventDetailModal({ event: propEvent, isOpen, onClose, onRegister }) {
-  const [cachedEvent, setCachedEvent] = useState(propEvent);
+  const lastEventRef = useRef(propEvent);
 
-  if (propEvent && propEvent !== cachedEvent) {
-    setCachedEvent(propEvent);
+  if (propEvent) {
+    lastEventRef.current = propEvent;
   }
 
-  const event = propEvent || cachedEvent;
+  const event = propEvent || lastEventRef.current;
   const [openPaperDept, setOpenPaperDept] = useState('it');
 
   useEffect(() => {

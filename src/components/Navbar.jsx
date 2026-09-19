@@ -124,6 +124,7 @@ export default function Navbar({ onNavigateToEvents }) {
             src={c26Logo} 
             alt="Consortium 2026" 
             className="c26-brand-logo-img" 
+            decoding="async"
           />
         </a>
 

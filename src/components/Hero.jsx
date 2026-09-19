@@ -48,6 +48,7 @@ const Hero = ({ onNavigateToEvents }) => {
               src={consortiumTitleArtwork} 
               alt="CONSORTIUM" 
               className="hero-consortium-artwork" 
+              decoding="async"
             />
           </motion.div>
 
@@ -105,6 +106,7 @@ const Hero = ({ onNavigateToEvents }) => {
               src={iareLogo} 
               alt="Institute of Aeronautical Engineering" 
               className="hero-iare-logo-img" 
+              decoding="async"
             />
           </motion.div>
 

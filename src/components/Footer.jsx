@@ -47,7 +47,7 @@ export default function Footer() {
         <div className="footer-top-row">
           <div className="footer-brand-side">
             <div className="footer-logo-row">
-              <img src={c26Logo} alt="Consortium 2026" className="footer-c26-logo-img" />
+              <img src={c26Logo} alt="Consortium 2026" className="footer-c26-logo-img" decoding="async" />
             </div>
             <p className="footer-brand-motto">Innovate Today. Impact Tomorrow.</p>
             <p className="footer-brand-dates">OCTOBER 9 &amp; 10, 2026 • IARE HYDERABAD</p>

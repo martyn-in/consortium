@@ -65,6 +65,7 @@ export default function EventBentoGrid({ events, onOpenDetails, onRegister }) {
                 alt={evt.title}
                 className="event-pure-img"
                 loading="lazy"
+                decoding="async"
               />
               <div className="event-pure-color-scrim" />
             </div>
