@@ -10,24 +10,6 @@
   background: transparent;
 }
 
-/* Seamless Glow Bridge from Hero (Hardware Accelerated, No filter: blur) */
-.events-arena-glow-bridge {
-  position: absolute;
-  top: -120px;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  width: 1000px;
-  height: 250px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 229, 255, 0.2) 0%,
-    rgba(14, 165, 233, 0.12) 40%,
-    rgba(56, 189, 248, 0.03) 65%,
-    transparent 80%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
 
 .events-arena-container {
   position: relative;

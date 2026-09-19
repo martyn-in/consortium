@@ -69,9 +69,6 @@ export default function Events() {
 
   return (
     <section id="events" className="events-arena-section">
-      {/* Seamless Ambient Gradient Bridge from Hero */}
-      <div className="events-arena-glow-bridge" />
-
       <div className="events-arena-container">
 
         {/* 1. Section Introduction with Clean Heading */}
