@@ -37,8 +37,8 @@ import imgBridgeMockup from '../assets/real_bridge_mockup.jpg';
  * 07 — Magic Witch (EEE)
  * 08 — Death Mystery (CSD)
  * 09 — DATA GLITCH (CSD)
- * 10 — Flight Simulator (Aeronautical)
- * 11 — Bridge Mockup — Span Wars (Civil Engineering)
+ * 10 — FlyZone (Aeronautical)
+ * 11 — SPAN WARS – Bridge Mock-Up Challenge (Civil Engineering)
  */
 
 export const categories = [
@@ -573,8 +573,8 @@ export const eventsList = [
     id: 'flight-simulator',
     number: '10',
     displayNumber: '10',
-    title: 'Flight Simulator Competition',
-    shortTitle: 'Flight Simulator',
+    title: 'FlyZone',
+    shortTitle: 'FlyZone',
     subtitle: 'Cockpit Mastery, Flight Operations & Emergency Simulation',
     type: 'AVIONICS / COCKPIT',
     category: 'Experience',
@@ -652,7 +652,7 @@ export const eventsList = [
           'Possible Scenarios: In-flight engine failure, Instrument failure, Critical low-fuel situation, Loss of communication (NORDO), Navigation system failure, Severe weather / reduced visibility, Extreme crosswind landing, Hydraulic/system warnings, Go-around execution, or Alternate airport diversion.',
           'Evaluation Criteria (100 Marks Total): Recognition of emergency/failure (15 Marks), Immediate aircraft control recovery (15 Marks), Correct checklist decision-making & procedure (20 Marks), Navigation / diversion handling (15 Marks), Team communication & crew coordination (10 Marks), Aircraft control during emergency (10 Marks), Final approach & safe landing completion (15 Marks).',
           'Mandatory Requirement: Teams must successfully execute the assigned emergency procedure. Unsuccessful recovery may lead to disqualification or substantial penalty deductions.',
-          'Winner Selection: The team securing the highest score in Round 3 (after applicable penalties and successful emergency completion) will be crowned the Flight Simulator Champion.'
+          'Winner Selection: The team securing the highest score in Round 3 (after applicable penalties and successful emergency completion) will be crowned the FlyZone Champion.'
         ]
       },
       {
@@ -707,8 +707,8 @@ export const eventsList = [
     id: 'bridge-mockup',
     number: '11',
     displayNumber: '11',
-    title: 'Bridge Mockup — Span Wars',
-    shortTitle: 'Bridge Mockup',
+    title: 'SPAN WARS – Bridge Mock-Up Challenge',
+    shortTitle: 'SPAN WARS',
     subtitle: 'Span Wars — Structural Efficiency Showdown',
     type: 'STRUCTURAL / LOAD TEST',
     category: 'Academic',
@@ -722,6 +722,7 @@ export const eventsList = [
     teamSize: '2–3 B.Tech Students (All Disciplines Eligible)',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,
+    registrationUrl: 'https://forms.gle/Zx4Y8PjJwyhVTcPF9',
     rules: 'Only wooden popsicle sticks (max 110×12×2mm) and adhesive allowed. Max self-weight 300g. Dimensions: length 560-600mm, width 100-110mm, height 120-160mm. Clear opening 150×600mm beneath. Highest structural efficiency wins.',
     highlightFormula: 'Structural Efficiency = Ultimate Load Carried (N) / Self-Weight of Bridge (N)',
     guidelinesList: [
