@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { Menu, X, ArrowUpRight, Clock } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
+import useModalHistory from '../hooks/useModalHistory';
 import c26Logo from '../assets/consortium_c26_logo_clean.png';
 import './Navbar.css';
 
@@ -44,6 +45,13 @@ export default function Navbar({ onNavigateToEvents }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [timeLeft, setTimeLeft] = useState(() => calculateTime(FESTIVAL_START_DATE));
+
+  const handleCloseMobileMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
+
+  // Intercept mobile browser back button to close drawer instead of leaving site
+  useModalHistory(mobileMenuOpen, handleCloseMobileMenu, 'mobile_menu');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -159,6 +167,7 @@ export default function Navbar({ onNavigateToEvents }) {
             aria-label="Festival Countdown Timer - Click to view detailed schedule"
             title="Consortium 2026: October 9, 2026 • Click to view detailed countdown"
           >
+            <Clock size={14} className="c26-nav-countdown-clock" />
             <div className="c26-nav-countdown-track">
               <div className="c26-nav-countdown-slot">
                 <span className="c26-nav-countdown-digit">{timeLeft.days}</span>

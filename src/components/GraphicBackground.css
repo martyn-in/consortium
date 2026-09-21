@@ -1,8 +1,7 @@
 /* ============================================================
-   CONSORTIUM 2026 — TOTAL PURE BLACK BACKGROUND WITH GLOWING DOT PARTICLES
-   - Background: 100% Total Jet Black (#000000)
-   - Particles: Luminous glowing cyber stardust with cyan aura
-   - Ultra-High Performance: Hardware Accelerated 60-120 FPS
+   CONSORTIUM 2026 — INSTITUTIONAL WHITE & ROYAL BLUE BACKGROUND
+   - Background: Predominantly white / very light cool blue
+   - Particles: Royal blue, electric cyan, and gold stardust
    ============================================================ */
 
 .graphic-background-wrapper {
@@ -14,23 +13,16 @@
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  background-color: #000000;
+  background-color: #ffffff;
+  background-image: none;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   contain: strict;
 }
 
-/* 1. Subtle Luminous Cyber Dot Matrix on Pure Black */
+/* 1. Dot Matrix Disabled for Pure Seamless White Background */
 .glass-light-dot-matrix {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(0, 229, 255, 0.22) 1.2px, transparent 1.2px);
-  background-size: 36px 36px;
-  pointer-events: none;
-  opacity: 0.3;
-  filter: drop-shadow(0 0 2px rgba(0, 229, 255, 0.35));
-  mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 30%, transparent 90%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000000 30%, transparent 90%);
+  display: none !important;
 }
 
 /* 2. Hardware Accelerated Glowing Particle Canvas Layer */

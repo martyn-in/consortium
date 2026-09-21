@@ -16,8 +16,7 @@
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: #00e5ff;
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+  color: #003da5;
   text-transform: uppercase;
   display: block;
   margin-bottom: 0.5rem;
@@ -27,7 +26,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.6rem, 3.6vw, 2.6rem);
   font-weight: 800;
-  color: #ffffff;
+  color: #002d72;
   letter-spacing: 0.04em;
   margin: 0;
 }
@@ -37,10 +36,9 @@
   font-family: var(--font-heading);
   font-style: italic;
   font-weight: 800;
-  background: linear-gradient(105deg, #e0f2fe 0%, #38bdf8 45%, #00e5ff 100%);
+  background: linear-gradient(105deg, #002d72 0%, #0066eb 50%, #00a8ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.6));
   transform: skewX(-6deg);
 }
 
@@ -53,16 +51,11 @@
 
 .why-pillar-card {
   position: relative;
-  background: linear-gradient(
-    145deg,
-    rgba(0, 46, 101, 0.88) 0%,
-    rgba(0, 85, 165, 0.82) 50%,
-    rgba(0, 113, 194, 0.88) 100%
-  ) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(56, 189, 248, 0.45) !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 98, 181, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  border: 1.5px solid rgba(0, 102, 235, 0.16) !important;
+  box-shadow: 0 10px 30px rgba(0, 50, 120, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1);
   border-radius: 18px;
   padding: 2.2rem 1.4rem;
   display: flex;
@@ -75,14 +68,9 @@
 
 .why-pillar-card:hover {
   transform: translateY(-4px);
-  background: linear-gradient(
-    145deg,
-    rgba(0, 56, 120, 0.95) 0%,
-    rgba(0, 100, 190, 0.9) 50%,
-    rgba(0, 128, 220, 0.95) 100%
-  ) !important;
-  border-color: #00e5ff !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(0, 229, 255, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: #0066eb !important;
+  box-shadow: 0 16px 36px rgba(0, 50, 120, 0.12);
 }
 
 .pillar-corner-tl,
@@ -94,15 +82,15 @@
   width: 58px;
   height: 58px;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(0, 111, 195, 0.7) 0%, rgba(0, 75, 155, 0.8) 100%);
-  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1.5px solid rgba(0, 102, 235, 0.22);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1.2rem;
-  box-shadow: 0 0 18px rgba(0, 111, 195, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 102, 235, 0.08);
   transition: transform 0.3s ease;
 }
 
@@ -113,14 +101,13 @@
 .pillar-real-emoji {
   font-size: 1.8rem;
   line-height: 1;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
 }
 
 .pillar-title {
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #002d72;
   letter-spacing: 0.04em;
   margin: 0 0 0.5rem;
 }
@@ -130,7 +117,7 @@
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #cbd5e1;
+  color: #334155;
   margin: 0;
 }
 

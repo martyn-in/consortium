@@ -718,7 +718,7 @@ export const eventsList = [
     image: imgBridgeMockup,
     icon: DraftingCompass,
     accentColor: 'blue',
-    fee: '₹200 per team',
+    fee: '₹300 per team',
     teamSize: '2–3 B.Tech Students (All Disciplines Eligible)',
     venue: 'IARE Campus, Hyderabad',
     registrationEnabled: true,

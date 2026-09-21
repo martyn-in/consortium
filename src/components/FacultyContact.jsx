@@ -243,14 +243,14 @@ export default function FacultyContact() {
           )}
         </div>
 
-        {/* 4. Website Developers Contact Card */}
-        <div className="faculty-dev-support-card aura-glow-border">
+        {/* 4. Website Developer Contact Card */}
+        <div className="faculty-dev-support-card">
           <div className="dev-support-info">
             <div className="dev-support-badge">
               <Code2 size={15} className="dev-support-badge-icon" />
-              <span>💻 DIGITAL &amp; TECHNICAL SUPPORT</span>
+              <span>💻 LEAD WEBSITE DEVELOPER</span>
             </div>
-            <h4 className="dev-support-title">Website Developers</h4>
+            <h4 className="dev-support-title">Website Developer</h4>
             <p className="dev-support-desc">
               For technical assistance, portal issues, or web inquiries, reach out directly:
             </p>
@@ -260,7 +260,7 @@ export default function FacultyContact() {
             <div className="dev-contact-card">
               <div className="dev-contact-main">
                 <div className="dev-chip-icon-box">
-                  <Phone size={14} />
+                  <Phone size={15} />
                 </div>
                 <div className="dev-chip-text">
                   <span className="dev-chip-label">👨‍💻 PULIVARTHI MARTYN</span>
@@ -281,37 +281,6 @@ export default function FacultyContact() {
                 className="dev-linkedin-btn"
                 onClick={() => sound.playClick()}
                 title="Pulivarthi Martyn LinkedIn Profile"
-              >
-                <LinkedinIcon size={14} />
-                <span>LINKEDIN</span>
-                <ExternalLink size={12} />
-              </a>
-            </div>
-
-            <div className="dev-contact-card">
-              <div className="dev-contact-main">
-                <div className="dev-chip-icon-box">
-                  <Phone size={14} />
-                </div>
-                <div className="dev-chip-text">
-                  <span className="dev-chip-label">👨‍💻 ASHWATH AMARCHINTA</span>
-                  <a 
-                    href="tel:+919177591324" 
-                    className="dev-phone-num"
-                    onClick={() => sound.playClick()}
-                    title="Call Ashwath Amarchinta"
-                  >
-                    +91 91775 91324
-                  </a>
-                </div>
-              </div>
-              <a
-                href="https://www.linkedin.com/in/ashwath-amarchinta-2b9905430"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="dev-linkedin-btn"
-                onClick={() => sound.playClick()}
-                title="Ashwath Amarchinta LinkedIn Profile"
               >
                 <LinkedinIcon size={14} />
                 <span>LINKEDIN</span>

@@ -4,7 +4,7 @@ import {
   CheckCircle2, ExternalLink, ChevronDown
 } from 'lucide-react';
 import Reveal from './Reveal';
-import iareLogo from '../assets/iare_logo_white_text.png';
+import iareLogo from '../assets/iare_logo_dark_text.png';
 import { sound } from '../utils/soundEffects';
 import './AboutUs.css';
 

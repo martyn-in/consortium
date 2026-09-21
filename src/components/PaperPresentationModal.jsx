@@ -6,12 +6,16 @@ import {
 } from 'lucide-react';
 import { paperPresentationDepartments } from '../data/eventsData';
 import { sound } from '../utils/soundEffects';
+import useModalHistory from '../hooks/useModalHistory';
 
 const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
 
 export default function PaperPresentationModal({ isOpen, onClose, onRegister }) {
   // Start with 'aero' open by default, user can click any department to toggle
   const [openDeptId, setOpenDeptId] = useState('aero');
+
+  // Intercept mobile browser (Chrome/Android) back button to close modal instead of leaving the site
+  useModalHistory(isOpen, onClose, 'paper_presentation');
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -23,7 +27,7 @@ export default function PaperPresentationModal({ isOpen, onClose, onRegister }) 
     }
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = 'unset';
     };
   }, [isOpen, onClose]);
 

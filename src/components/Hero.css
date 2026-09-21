@@ -1,586 +1,431 @@
+/* ============================================================
+   CONSORTIUM 2026 — GRAND & IMPACTFUL HERO SECTION
+   Palette: Pure White #FFFFFF · Royal Blue #0057D9 · Deep Navy #002D72
+   Dark Text #062A67 · Slate #334155 · Gold #F5B800
+   ============================================================ */
+
 .hero-section {
-  padding: clamp(2.5rem, 5vh, 4.5rem) 1.5rem clamp(1.2rem, 2.5vh, 2.2rem);
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
   min-height: 100dvh;
+  width: 100%;
   box-sizing: border-box;
-  overflow: hidden;
+  padding-top: clamp(80px, 10vh, 105px);
+  padding-bottom: clamp(24px, 3.5vh, 44px);
+  overflow-x: clip;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
 }
 
-.hero-inner {
+.hero-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1360px;
+  margin: auto 0;
+  padding: 0 clamp(18px, 3.5vw, 42px);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 1240px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 5;
 }
 
 /* ============================================================
-   MASSIVE REGENERATED 3D CHROME CONSORTIUM TITLE & 2026
+   1. CONSORTIUM 2026 3D ARTWORK (GRAND & MAJESTIC SIZING)
    ============================================================ */
-.hero-title-wrap {
-  margin: 0 auto clamp(0.3rem, 1vh, 0.8rem);
+.hero-title-lockup-wrapper {
   position: relative;
-  z-index: 2;
   width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.hero-consortium-banner-wrap {
+.hero-3d-floating-artwork-wrap {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-  z-index: 2;
-  transform: translateZ(0);
   will-change: transform;
 }
 
-.hero-consortium-artwork {
-  width: 100%;
-  max-width: 1100px;
+.hero-3d-artwork-image {
+  width: auto;
+  max-width: min(96vw, 1020px);
+  max-height: clamp(260px, 44vh, 440px);
   height: auto;
-  max-height: clamp(140px, 18vw, 240px);
+  display: block;
   object-fit: contain;
-  display: block;
-  /* Crisp 3D specular depth with ambient festival glow */
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.92)) 
-         drop-shadow(0 0 20px rgba(0, 229, 255, 0.4));
   user-select: none;
-  pointer-events: none;
-  transform: translateZ(0);
+  -webkit-user-drag: none;
+  /* Natural crisp specular shadow without artificial blue glow */
+  filter: drop-shadow(0 14px 32px rgba(0, 40, 100, 0.14));
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-/* Slanted Radiant Glowing Neon Year 2026 */
-.hero-title-year-brush {
-  display: block;
-  font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 7.5vw, 6.2rem);
-  font-style: italic;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  line-height: 0.95;
-  margin-top: -0.4rem;
-  background: linear-gradient(
-    105deg,
-    #ffffff 0%,
-    #e0f2fe 20%,
-    #38bdf8 45%,
-    #00e5ff 75%,
-    #0284c7 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.45);
-  transform: skewX(-8deg) translateZ(0);
-  user-select: none;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85))
-          drop-shadow(0 0 14px rgba(56, 189, 248, 0.7))
-          drop-shadow(0 0 28px rgba(0, 229, 255, 0.55));
-  animation: neonYearPulse 3.5s infinite ease-in-out;
-  will-change: opacity;
-  position: relative;
-}
-
-@keyframes neonYearPulse {
-  0%, 100% {
-    opacity: 0.92;
-  }
-  50% {
-    opacity: 1;
-  }
+.hero-3d-artwork-image:hover {
+  transform: scale(1.025);
+  filter: drop-shadow(0 20px 42px rgba(0, 40, 100, 0.2));
 }
 
 /* ============================================================
-   OFFICIAL EVENT TIMELINE BADGE (OCTOBER 9 & 10, 2026)
+   2. OFFICIAL MOTTO (BOLD & PROMINENT)
    ============================================================ */
-.hero-timeline-badge-wrap {
-  margin: clamp(0.5rem, 1.2vh, 0.9rem) 0 clamp(0.6rem, 1.4vh, 1rem);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 4;
+.hero-subtitle {
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: clamp(14px, 1.4vw, 21px);
+  font-weight: 800;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: #062A67;
+  margin: clamp(12px, 1.8vh, 22px) 0 0;
+  line-height: 1;
 }
 
-.hero-timeline-badge {
+/* ============================================================
+   3. OFFICIAL DATE PILL (EXPANDED COMFORTABLE PADDING)
+   ============================================================ */
+.hero-date-pill {
   display: inline-flex;
   align-items: center;
-  gap: clamp(0.45rem, 1.1vw, 0.8rem);
-  padding: clamp(0.45rem, 0.9vh, 0.58rem) clamp(1.1rem, 2.6vw, 1.8rem);
+  gap: 16px;
+  margin-top: clamp(16px, 2.2vh, 28px);
+  padding: clamp(11px, 1.4vh, 15px) clamp(26px, 2.6vw, 40px);
   border-radius: 999px;
-  background: rgba(4, 18, 48, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(56, 189, 248, 0.45);
-  box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.85),
-    0 0 24px rgba(14, 165, 233, 0.35),
-    inset 0 1px 2px rgba(255, 255, 255, 0.4);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(240, 247, 255, 0.94);
+  border: 1.8px solid rgba(0, 87, 217, 0.18);
+  box-shadow: 0 6px 24px rgba(0, 87, 217, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   user-select: none;
 }
 
-.hero-timeline-badge:hover {
-  border-color: #38bdf8;
-  box-shadow: 
-    0 8px 28px rgba(0, 0, 0, 0.95),
-    0 0 35px rgba(56, 189, 248, 0.65),
-    inset 0 1px 3px rgba(255, 255, 255, 0.7);
-  transform: translateY(-2px);
-}
-
-.hero-timeline-icon {
-  color: #00e5ff;
-  filter: drop-shadow(0 0 8px #00e5ff);
+.hero-date-icon {
+  color: #0057D9;
   flex-shrink: 0;
 }
 
-.hero-timeline-text {
-  font-family: var(--font-heading);
-  font-size: clamp(0.76rem, 1.25vw, 0.96rem);
+.hero-date-text {
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: clamp(13px, 1.1vw, 16.5px);
   font-weight: 800;
-  letter-spacing: 0.14em;
-  background: linear-gradient(90deg, #ffffff 0%, #e0f2fe 50%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 16px rgba(14, 165, 233, 0.45);
-  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: #062A67;
   white-space: nowrap;
 }
 
-.hero-timeline-spark {
-  color: #00e5ff;
-  font-size: 0.7em;
-  filter: drop-shadow(0 0 6px #00e5ff);
+.hero-date-divider {
+  width: 2px;
+  height: 22px;
+  background: rgba(0, 87, 217, 0.22);
+  flex-shrink: 0;
 }
 
-.hero-timeline-sub {
-  font-family: var(--font-sub);
-  font-size: clamp(0.66rem, 0.9vw, 0.78rem);
+.hero-date-label {
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: clamp(11.5px, 0.95vw, 14.5px);
   font-weight: 700;
-  letter-spacing: 0.16em;
-  color: #cbd5e1;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0057D9;
   white-space: nowrap;
 }
 
 /* ============================================================
-   ORGANIZED BY INSTITUTE OF AERONAUTICAL ENGINEERING
+   4. HOST INSTITUTION ORGANIZER BLOCK (PRESTIGIOUS SCALE)
    ============================================================ */
 .hero-organizer-block {
-  margin-bottom: clamp(0.6rem, 1.4vh, 1.2rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.32rem;
-  position: relative;
-  z-index: 3;
+  margin-top: clamp(18px, 2.5vh, 32px);
+  gap: 6px;
 }
 
-.hero-org-badge-row {
-  display: inline-flex;
+.hero-org-rule {
+  display: flex;
   align-items: center;
-  gap: clamp(0.75rem, 1.8vw, 1.4rem);
-  margin-bottom: 0.25rem;
-  user-select: none;
+  gap: 16px;
+  margin-bottom: 3px;
 }
 
-.org-flourish-line {
-  width: clamp(35px, 5.5vw, 85px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.85));
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
-  position: relative;
+.hero-org-line {
+  display: block;
+  width: 58px;
+  height: 2px;
 }
 
-.org-flourish-line:last-child {
-  background: linear-gradient(90deg, rgba(56, 189, 248, 0.85), transparent);
+.hero-org-line--blue {
+  background: linear-gradient(90deg, transparent, #0057D9);
+}
+
+.hero-org-line--gold {
+  background: linear-gradient(90deg, #F5B800, transparent);
 }
 
 .hero-org-label {
-  font-family: var(--font-sub);
-  font-size: clamp(0.72rem, 1vw, 0.86rem);
-  font-weight: 700;
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: clamp(11px, 0.85vw, 13px);
+  font-weight: 800;
   letter-spacing: 0.24em;
+  color: #0C1F44;
   text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 45%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 16px rgba(14, 165, 233, 0.7));
 }
 
-/* Native dark-mode floating crest (Zero white circle disc) */
 .hero-iare-logo-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(82px, 10.5vh, 108px);
-  height: clamp(82px, 10.5vh, 108px);
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 0.2rem 0 0.3rem;
-  filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.45)) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.9));
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-}
-
-.hero-iare-logo-wrap:hover {
-  filter: drop-shadow(0 0 32px rgba(0, 229, 255, 0.85)) drop-shadow(0 12px 24px rgba(0, 0, 0, 0.98));
-  transform: scale(1.08);
-}
-
-.hero-iare-logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.hero-org-name {
-  font-family: var(--font-heading);
-  font-size: clamp(0.95rem, 2vw, 1.45rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1.25;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 24px rgba(0, 0, 0, 0.85);
-}
-
-.hero-org-sub {
-  font-family: var(--font-sub);
-  font-size: clamp(0.72rem, 1vw, 0.84rem);
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #e2e8f0;
-  margin-top: 0.35rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 16px rgba(14, 165, 233, 0.4);
+  cursor: default;
 }
 
-.hero-sub-diamond {
-  color: #38bdf8;
-  font-size: 0.65em;
-  margin: 0 0.55rem;
-  filter: drop-shadow(0 0 8px #38bdf8);
-  vertical-align: middle;
+.hero-iare-logo {
+  height: clamp(52px, 6.5vh, 76px);
+  width: auto;
+  object-fit: contain;
+  margin: 4px 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero-institute {
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: clamp(13.5px, 1.25vw, 18.5px);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #062A67;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.hero-location {
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: clamp(10.5px, 0.85vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #4B6A9B;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 /* ============================================================
-   PRIMARY ACTION BUTTON (Executive Cyber Festival CTA)
+   5. PRIMARY CTA BUTTON (PROFESSIONAL & EXECUTIVE)
    ============================================================ */
 .hero-actions {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(0.5rem, 1.4vh, 1rem);
-  position: relative;
-  z-index: 5;
+  margin-top: clamp(18px, 2.5vh, 32px);
 }
 
-/* ── Slash sweep animation (GPU Transform only) ── */
-@keyframes btn-slash-sweep {
-  0%   { transform: translateX(-180%) skewX(-22deg); opacity: 0; }
-  15%  { opacity: 1; }
-  65%  { opacity: 1; }
-  100% { transform: translateX(380%) skewX(-22deg); opacity: 0; }
-}
-
-.hero-btn-primary-mockup {
+.hero-cta-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(0.75rem, 1.4vw, 1.15rem);
-  padding: clamp(0.85rem, 1.6vh, 1.05rem) clamp(1.8rem, 3.2vw, 2.6rem);
+  gap: 14px;
+  padding: 0 8px 0 clamp(28px, 2.6vw, 38px);
+  height: clamp(52px, 6.4vh, 62px);
   border-radius: 999px;
-  /* Aqua → Sky Blue → Deep Azure premium gradient */
-  background: linear-gradient(120deg, #0284c7 0%, #0ea5e9 38%, #00e5ff 100%);
-  color: #ffffff !important;
-  font-family: 'Outfit', 'Inter', sans-serif;
-  font-size: clamp(0.92rem, 1.25vw, 1.08rem);
+  background: linear-gradient(180deg, #0066EB 0%, #004BC4 100%);
+  border: 1px solid rgba(0, 45, 120, 0.18);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 87, 217, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-family: 'Inter', 'Outfit', -apple-system, sans-serif;
+  font-size: clamp(13.5px, 1.05vw, 16px);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
-  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.6), 0 0 45px rgba(0, 229, 255, 0.4), 0 14px 32px rgba(0,0,0,0.55), inset 0 1.5px 2px rgba(255,255,255,0.8);
-  white-space: nowrap;
   cursor: pointer;
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease;
   position: relative;
   overflow: hidden;
   user-select: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.25s ease;
 }
 
-.hero-btn-text {
-  white-space: nowrap !important;
-  display: inline-block;
-  color: #ffffff !important;
-  font-family: 'Outfit', 'Inter', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+.hero-cta-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #0072FF 0%, #0052D4 100%);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 12px 32px rgba(0, 87, 217, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
-.hero-btn-icon-capsule {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: #e0f2fe;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease, background 0.25s ease;
-  flex-shrink: 0;
+.hero-cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 6px rgba(0, 87, 217, 0.25),
+    inset 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.hero-btn-arrow {
-  transition: transform 0.25s ease;
+.hero-cta-btn-text {
+  white-space: nowrap;
 }
 
-/* ── Continuous slash / shimmer line ── */
-.hero-btn-primary-mockup::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  left: 0;
-  width: 38%;
-  height: 140%;
-  background: linear-gradient(
-    105deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.12) 30%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0.12) 70%,
-    transparent 100%
-  );
-  pointer-events: none;
-  animation: btn-slash-sweep 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  will-change: transform;
-}
-
-/* Static hover sheen on top */
-.hero-btn-primary-mockup::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 60%);
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  opacity: 1;
-}
-
-.hero-btn-primary-mockup:hover {
-  transform: translateY(-3px) scale(1.03);
-  background: linear-gradient(120deg, #0369a1 0%, #0284c7 38%, #38bdf8 100%);
-  border-color: rgba(255, 255, 255, 0.85);
-}
-
-.hero-btn-primary-mockup:hover .hero-btn-icon-capsule {
-  transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.7);
-}
-
-.hero-btn-primary-mockup:hover .hero-btn-arrow {
-  transform: translateX(3px);
-}
-
-.hero-btn-primary-mockup:active {
-  transform: translateY(0) scale(0.98);
-}
-
-/* ============================================================
-   NATURAL FLOW SCROLL FOR MORE
-   ============================================================ */
-.hero-scroll-indicator {
-  margin-top: clamp(1.2rem, 2.5vh, 2.2rem);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.45rem;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-scroll-text {
-  font-family: var(--font-sub);
-  font-size: clamp(0.7rem, 0.9vw, 0.8rem);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 50%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.95));
-  transition: all 0.3s ease;
-}
-
-.hero-chevron-wrap {
+.hero-cta-btn-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: clamp(36px, 4.4vh, 44px);
+  height: clamp(36px, 4.4vh, 44px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, border-color 0.25s ease;
+  flex-shrink: 0;
+}
+
+.hero-cta-btn:hover .hero-cta-btn-arrow {
+  transform: translateX(3px);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================================
+   6. SCROLL FOR MORE
+   ============================================================ */
+.hero-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: clamp(14px, 2.2vh, 26px);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.hero-scroll:hover {
+  color: #0066eb;
+}
+
+.hero-scroll-text {
+  font-family: 'Inter', 'Manrope', sans-serif;
+  font-size: clamp(10.5px, 0.8vw, 12px);
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  color: #062A67;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.hero-scroll:hover .hero-scroll-text {
+  color: #0066eb;
 }
 
 .hero-scroll-chevron {
-  color: #38bdf8;
-  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.8));
-  transition: all 0.3s ease;
+  color: #0057D9;
 }
 
-.hero-scroll-indicator:hover .hero-scroll-text {
-  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.95));
-  letter-spacing: 0.48em;
+/* ============================================================
+   7. RESPONSIVE
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-section {
+    padding-top: clamp(76px, 9vh, 92px);
+  }
+
+  .hero-stage {
+    padding: 0 24px;
+  }
+
+  .hero-3d-artwork-image {
+    max-height: clamp(230px, 36vh, 340px);
+    max-width: 90vw;
+  }
 }
 
-.hero-scroll-indicator:hover .hero-scroll-chevron {
-  transform: translateY(4px);
-  filter: drop-shadow(0 0 16px #00e5ff);
-}
-
-/* Responsive adjustments */
+/* Small Tablet / Large Phone */
 @media (max-width: 768px) {
   .hero-section {
-    padding: clamp(3.5rem, 8vh, 5.5rem) 1rem clamp(1.8rem, 3.5vh, 2.5rem);
-    min-height: 100svh;
     min-height: 100dvh;
+    padding-top: 74px;
   }
 
-  .hero-consortium-artwork {
-    max-width: 96vw;
-    width: 100%;
+  .hero-stage {
+    padding: 0 18px;
   }
 
-  .hero-timeline-badge-wrap {
-    width: 100%;
-    padding: 0 0.5rem;
+  .hero-3d-artwork-image {
+    max-height: clamp(190px, 28vh, 260px);
+    max-width: 94vw;
   }
 
-  .hero-timeline-badge {
+  .hero-subtitle {
+    font-size: clamp(12px, 3.2vw, 16px);
+    letter-spacing: 0.24em;
+  }
+
+  .hero-date-pill {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.4rem 0.6rem;
-    padding: 0.5rem 1rem;
-    max-width: 100%;
+    padding: 10px 20px;
+    gap: 8px;
   }
 
-  .hero-timeline-sub {
-    white-space: normal;
-    text-align: center;
+  .hero-date-divider {
+    display: none;
   }
 
-  .hero-title-year-brush {
+  .hero-org-line {
+    width: 40px;
+  }
+
+  .hero-cta-btn {
+    width: 100%;
+    max-width: 340px;
+    height: 54px;
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 100dvh;
+    padding-top: 70px;
+  }
+
+  .hero-stage {
+    padding: 0 14px;
+  }
+
+  .hero-3d-artwork-image {
+    max-height: clamp(150px, 24vh, 200px);
+    max-width: 96vw;
+  }
+
+  .hero-date-pill {
+    padding: 8px 16px;
+  }
+
+  .hero-date-text,
+  .hero-date-label {
+    font-size: 11px;
+  }
+
+  .hero-institute {
+    font-size: 12px;
     letter-spacing: 0.08em;
-    margin-top: -0.2rem;
-    margin-bottom: 0.5rem;
-    font-size: clamp(2.4rem, 10vw, 3.8rem);
   }
 
-  .hero-organizer-block {
-    margin-bottom: clamp(1rem, 2.5vh, 1.6rem);
-    gap: 0.4rem;
-  }
-
-  .hero-org-badge-row {
-    gap: 0.75rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .hero-org-label {
-    font-size: clamp(0.66rem, 2.4vw, 0.78rem);
-    letter-spacing: 0.22em;
-  }
-
-  .hero-iare-logo-wrap {
-    width: clamp(74px, 9.5vh, 92px);
-    height: clamp(74px, 9.5vh, 92px);
-    margin: 0.15rem 0 0.25rem;
-  }
-
-  .hero-org-name {
-    font-size: clamp(0.95rem, 3.8vw, 1.25rem);
-    line-height: 1.35;
-    letter-spacing: 0.12em;
-  }
-
-  .hero-org-sub {
-    font-size: clamp(0.64rem, 2.2vw, 0.76rem);
-    letter-spacing: 0.16em;
-    margin-top: 0.25rem;
-  }
-
-  .hero-actions {
-    margin-top: clamp(0.6rem, 1.8vh, 1.1rem);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .hero-btn-primary-mockup {
-    width: 100%;
-    min-width: 0;
-    max-width: 320px;
-    padding: 0.92rem 1.6rem;
-    font-size: clamp(0.85rem, 3.4vw, 1.02rem);
-    letter-spacing: 0.14em;
-    gap: 0.65rem;
-  }
-
-  .hero-scroll-indicator {
-    margin-top: clamp(1.2rem, 2.8vh, 1.8rem);
-    gap: 0.35rem;
+  .hero-iare-logo {
+    height: 46px;
   }
 
   .hero-scroll-text {
-    font-size: clamp(0.62rem, 2vw, 0.72rem);
-    letter-spacing: 0.22em;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-timeline-badge {
-    border-radius: 14px;
-    padding: 0.5rem 0.85rem;
-    gap: 0.35rem 0.5rem;
-  }
-
-  .hero-timeline-text {
-    font-size: 0.76rem;
-    letter-spacing: 0.1em;
-  }
-
-  .hero-timeline-sub {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-  }
-
-  .hero-btn-primary-mockup {
-    padding: 0.85rem 1.2rem;
-    font-size: 0.88rem;
-    letter-spacing: 0.12em;
+    font-size: 9.5px;
   }
 }

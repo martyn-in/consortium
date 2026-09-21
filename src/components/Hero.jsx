@@ -1,163 +1,158 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Calendar } from 'lucide-react';
+import { Calendar, ArrowRight, ChevronDown } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
 import { fadeUp } from '../animations/motion';
-import consortiumTitleArtwork from '../assets/consortium_title.png';
-import iareLogo from '../assets/iare_logo_white_text.png';
+import iareLogo from '../assets/iare_logo_dark_text.png';
+import consortiumUnifiedArtwork from '../assets/consortium_2026_unified_transparent.png';
 import './Hero.css';
 
-const Hero = ({ onNavigateToEvents }) => {
-  const handleRegisterClick = () => {
+export default function Hero({ onNavigateToEvents }) {
+  const handleRegister = (e) => {
+    e.preventDefault();
     sound.playClick();
     if (onNavigateToEvents) {
       onNavigateToEvents();
     } else {
-      const el = document.getElementById('events');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      const target = document.getElementById('events');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const handleScrollDown = () => {
+  const handleScroll = () => {
     sound.playClick();
-    const el = document.getElementById('events');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    const target = document.getElementById('events');
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section id="home" className="hero-section">
-      <div className="container hero-inner">
-        {/* Massive 3D Chrome Title Artwork + Slanted 2026 */}
-        <div className="hero-title-wrap">
-          <h1 className="sr-only">CONSORTIUM 2026</h1>
+      <div className="hero-stage">
 
-          <motion.div 
-            className="hero-consortium-banner-wrap"
-            initial={{ opacity: 0, scale: 0.88, y: 25 }}
-            animate={{ 
-              opacity: 1, 
-              scale: 1, 
-              y: [0, -6, 0] 
-            }}
-            transition={{ 
-              opacity: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
-              scale: { duration: 0.85, ease: [0.16, 1, 0.3, 1] },
-              y: { repeat: Infinity, duration: 5, ease: 'easeInOut', delay: 0.85 }
-            }}
-          >
-            <img 
-              src={consortiumTitleArtwork} 
-              alt="CONSORTIUM" 
-              className="hero-consortium-artwork" 
-              decoding="async"
-            />
-          </motion.div>
-
-          {/* Slanted Vibrant Neon Year 2026 */}
-          <motion.span 
-            className="hero-title-year-brush"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              delay: 0.2,
-              type: 'spring',
-              stiffness: 260,
-              damping: 20
-            }}
-          >
-            2026
-          </motion.span>
-
-          {/* Official Event Timeline Badge: OCTOBER 9 & 10 */}
-          <motion.div 
-            className="hero-timeline-badge-wrap"
-            variants={fadeUp(0.3, 10)}
-            initial="hidden"
-            animate="visible"
-          >
-            <div className="hero-timeline-badge">
-              <Calendar size={14} className="hero-timeline-icon" />
-              <span className="hero-timeline-text">OCTOBER 09 – 10, 2026</span>
-              <span className="hero-timeline-spark">•</span>
-              <span className="hero-timeline-sub">2 DAYS NATIONAL LEVEL FEST</span>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Organized By Section */}
-        <motion.div 
-          className="hero-organizer-block"
-          variants={fadeUp(0.35, 12)}
-          initial="hidden"
-          animate="visible"
+        {/* 1. Transparent 3D Consortium 2026 Title Artwork (No Blue Glow, Prominent Size) */}
+        <motion.div
+          className="hero-title-lockup-wrapper"
+          initial={{ opacity: 0, scale: 0.94, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="hero-org-badge-row">
-            <span className="org-flourish-line"></span>
-            <span className="hero-org-label">ORGANIZED BY</span>
-            <span className="org-flourish-line"></span>
-          </div>
-
-          <motion.div 
-            className="hero-iare-logo-wrap"
-            whileHover={{ scale: 1.08 }}
-            transition={{ type: 'spring', stiffness: 350, damping: 20 }}
-            title="Institute of Aeronautical Engineering"
+          <motion.div
+            className="hero-3d-floating-artwork-wrap"
+            animate={{ y: [0, -6, 0] }}
+            transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
           >
-            <img 
-              src={iareLogo} 
-              alt="Institute of Aeronautical Engineering" 
-              className="hero-iare-logo-img" 
+            <h1 className="sr-only">CONSORTIUM 2026 – National Level Technical Fest</h1>
+            <img
+              src={consortiumUnifiedArtwork}
+              alt="CONSORTIUM 2026"
+              className="hero-3d-artwork-image"
+              width={2938}
+              height={1732}
+              loading="eager"
               decoding="async"
+              draggable="false"
             />
           </motion.div>
-
-          <h2 className="hero-org-name">INSTITUTE OF AERONAUTICAL ENGINEERING</h2>
-          <span className="hero-org-sub">
-            AUTONOMOUS <span className="hero-sub-diamond">•</span> HYDERABAD
-          </span>
         </motion.div>
 
-        {/* Single Primary Register Now Button */}
-        <motion.div 
-          className="hero-actions"
-          variants={fadeUp(0.5, 12)}
+        {/* 2. Official Motto */}
+        <motion.p
+          className="hero-subtitle"
+          variants={fadeUp(0.2, 10)}
           initial="hidden"
           animate="visible"
         >
-          <button 
-            className="hero-btn-primary-mockup"
-            onClick={handleRegisterClick}
-            aria-label="Register for Consortium 2026"
+          IDEAS&nbsp;&nbsp;|&nbsp;&nbsp;INNOVATION&nbsp;&nbsp;|&nbsp;&nbsp;IMPACT
+        </motion.p>
+
+        {/* 3. Official Date Badge */}
+        <motion.div
+          className="hero-date-pill"
+          variants={fadeUp(0.3, 10)}
+          initial="hidden"
+          animate="visible"
+        >
+          <Calendar size={20} className="hero-date-icon" strokeWidth={2.2} />
+          <span className="hero-date-text">OCTOBER 09 – 10, 2026</span>
+          <span className="hero-date-divider" />
+          <span className="hero-date-label">2 DAYS NATIONAL LEVEL FEST</span>
+        </motion.div>
+
+        {/* 4. Host Institution Organizer Block */}
+        <motion.div
+          className="hero-organizer-block"
+          variants={fadeUp(0.4, 10)}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="hero-org-rule">
+            <span className="hero-org-line hero-org-line--blue" />
+            <span className="hero-org-label">ORGANIZED BY</span>
+            <span className="hero-org-line hero-org-line--gold" />
+          </div>
+
+          <motion.div
+            className="hero-iare-logo-wrap"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 20 }}
           >
-            <span className="hero-btn-text">REGISTER NOW</span>
-            <span className="hero-btn-icon-capsule">
-              <ArrowRight size={17} className="hero-btn-arrow" />
+            <img
+              src={iareLogo}
+              alt="Institute of Aeronautical Engineering"
+              className="hero-iare-logo"
+              loading="eager"
+              decoding="async"
+            />
+          </motion.div>
+
+          <h2 className="hero-institute">
+            INSTITUTE OF AERONAUTICAL ENGINEERING
+          </h2>
+          <p className="hero-location">
+            AUTONOMOUS&nbsp;&nbsp;•&nbsp;&nbsp;HYDERABAD
+          </p>
+        </motion.div>
+
+        {/* 5. Primary Register Now CTA Button */}
+        <motion.div
+          className="hero-actions"
+          variants={fadeUp(0.5, 10)}
+          initial="hidden"
+          animate="visible"
+        >
+          <button
+            type="button"
+            className="hero-cta-btn"
+            onClick={handleRegister}
+            aria-label="Register now for Consortium 2026"
+          >
+            <span className="hero-cta-btn-text">REGISTER NOW</span>
+            <span className="hero-cta-btn-arrow">
+              <ArrowRight size={18} strokeWidth={2.2} />
             </span>
           </button>
         </motion.div>
 
-        {/* Natural Flow Scroll for More */}
-        <motion.div 
-          className="hero-scroll-indicator"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.75, duration: 0.5 }}
-          onClick={handleScrollDown}
+        {/* 6. Natural Scroll for More Indicator */}
+        <motion.div
+          className="hero-scroll"
+          variants={fadeUp(0.6, 10)}
+          initial="hidden"
+          animate="visible"
+          onClick={handleScroll}
           role="button"
           tabIndex={0}
-          title="Scroll to explore events"
+          aria-label="Scroll to explore events"
         >
           <span className="hero-scroll-text">SCROLL FOR MORE</span>
           <motion.div
             animate={{ y: [0, 5, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-            className="hero-chevron-wrap"
+            transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }}
           >
-            <ChevronDown size={18} className="hero-scroll-chevron" />
+            <ChevronDown size={20} className="hero-scroll-chevron" />
           </motion.div>
         </motion.div>
+
       </div>
     </section>
   );
-};
-
-export default Hero;
+}

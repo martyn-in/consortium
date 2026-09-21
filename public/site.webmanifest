@@ -4,8 +4,8 @@
   "description": "CONSORTIUM 2026 - October 9 & 10, 2026. The apex national technical fest at IARE Hyderabad.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/favicon-48x48.png",

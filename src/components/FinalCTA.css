@@ -38,19 +38,19 @@
   width: 72px;
   height: 72px;
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(0, 111, 195, 0.75) 0%, rgba(0, 75, 155, 0.88) 100%);
-  border: 1.5px solid rgba(56, 189, 248, 0.55);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1.5px solid rgba(0, 102, 235, 0.22);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 0 25px rgba(0, 111, 195, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 50, 120, 0.06), inset 0 1px 0 rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .trophy-cup-icon {
-  color: #00e5ff;
-  filter: drop-shadow(0 0 12px #00e5ff) drop-shadow(0 0 20px #0284c7);
+  color: #0066eb;
+  filter: drop-shadow(0 2px 6px rgba(0, 102, 235, 0.3));
 }
 
 /* Center Content */
@@ -63,7 +63,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.1rem, 2vw, 1.45rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #002d72;
   letter-spacing: 0.08em;
   margin: 0 0 0.35rem;
 }
@@ -72,7 +72,7 @@
   font-family: var(--font-sub);
   font-size: 0.95rem;
   font-weight: 500;
-  color: #b9c1d4;
+  color: #334155;
   margin: 0;
   line-height: 1.5;
   letter-spacing: 0.04em;
@@ -92,8 +92,8 @@
   gap: 0.85rem;
   padding: 0.95rem 2.2rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 45%, #00e5ff 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: linear-gradient(135deg, #003da5 0%, #0066eb 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
   color: #ffffff;
   font-family: var(--font-heading);
   font-size: clamp(0.88rem, 1.15vw, 1rem);
@@ -101,21 +101,20 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   box-shadow: 
-    0 0 35px rgba(0, 229, 255, 0.6), 
-    0 12px 28px rgba(0, 0, 0, 0.75), 
+    0 4px 20px rgba(0, 102, 235, 0.4), 
+    0 10px 24px rgba(0, 50, 120, 0.15), 
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .trophy-btn-register:hover {
   transform: translateY(-3px) scale(1.03);
   border-color: #ffffff;
   box-shadow: 
-    0 0 50px rgba(0, 229, 255, 0.85), 
-    0 16px 36px rgba(0, 0, 0, 0.85), 
+    0 8px 28px rgba(0, 102, 235, 0.55), 
+    0 14px 32px rgba(0, 50, 120, 0.2), 
     inset 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 

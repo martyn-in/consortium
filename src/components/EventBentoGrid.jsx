@@ -72,7 +72,9 @@ export default function EventBentoGrid({ events, onOpenDetails, onRegister }) {
 
             {/* Card Preview Content: Title & Dual Actions (View Details + Register) */}
             <div className="event-pure-content">
-              <h3 className="event-pure-title">{evt.title}</h3>
+              <div className="event-pure-title-wrap">
+                <h3 className="event-pure-title">{evt.title}</h3>
+              </div>
               
               <div className="event-pure-actions">
                 <button

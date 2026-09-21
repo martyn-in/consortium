@@ -33,12 +33,12 @@
   gap: 8px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(0, 229, 255, 0.08);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1px solid rgba(0, 102, 235, 0.25);
   font-family: 'Outfit', sans-serif;
   font-size: 0.76rem;
   font-weight: 800;
-  color: #00e5ff;
+  color: #003da5;
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
@@ -48,7 +48,7 @@
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: #94a3b8;
+  color: #475569;
   text-transform: uppercase;
 }
 
@@ -60,14 +60,9 @@
 
 .convener-card {
   border-radius: 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 46, 101, 0.88) 0%,
-    rgba(0, 98, 181, 0.82) 48%,
-    rgba(0, 113, 194, 0.88) 100%
-  );
-  border: 1px solid rgba(56, 189, 248, 0.45);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 35px rgba(0, 98, 181, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1.5px solid rgba(0, 102, 235, 0.18);
+  box-shadow: 0 14px 40px rgba(0, 50, 120, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1);
   padding: 24px 28px;
   display: flex;
   flex-direction: column;
@@ -80,14 +75,9 @@
 
 .convener-card:hover {
   transform: translateY(-4px);
-  background: linear-gradient(
-    135deg,
-    rgba(0, 56, 120, 0.95) 0%,
-    rgba(0, 110, 200, 0.9) 48%,
-    rgba(0, 128, 220, 0.95) 100%
-  );
-  border-color: #00e5ff;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), 0 0 40px rgba(0, 113, 194, 0.5);
+  background: rgba(255, 255, 255, 0.98);
+  border-color: #0066eb;
+  box-shadow: 0 18px 48px rgba(0, 50, 120, 0.12);
 }
 
 .convener-card-header {
@@ -102,12 +92,12 @@
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #003da5;
   padding: 4px 14px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(2, 132, 199, 0.6), rgba(0, 229, 255, 0.4));
-  border: 1px solid #00e5ff;
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1px solid rgba(0, 102, 235, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 102, 235, 0.08);
 }
 
 .convener-dept-badge {
@@ -117,11 +107,11 @@
   font-family: 'Outfit', sans-serif;
   font-size: 0.76rem;
   font-weight: 800;
-  color: #38bdf8;
+  color: #0066eb;
   padding: 4px 10px;
   border-radius: 8px;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(0, 102, 235, 0.06);
+  border: 1px solid rgba(0, 102, 235, 0.2);
 }
 
 .convener-card-body {
@@ -134,13 +124,13 @@
   width: 52px;
   height: 52px;
   border-radius: 16px;
-  background: rgba(0, 229, 255, 0.12);
-  border: 1px solid rgba(0, 229, 255, 0.35);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1px solid rgba(0, 102, 235, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 0 18px rgba(0, 229, 255, 0.25);
+  box-shadow: 0 2px 10px rgba(0, 102, 235, 0.1);
 }
 
 .convener-avatar-emoji {
@@ -158,7 +148,7 @@
   font-family: 'Outfit', sans-serif;
   font-size: 1.22rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #002d72;
   letter-spacing: -0.01em;
   margin: 0;
 }
@@ -166,25 +156,25 @@
 .convener-role-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.84rem;
-  color: #bae6fd;
+  color: #334155;
   margin: 0;
   line-height: 1.4;
 }
 
 .convener-role-title strong {
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .convener-institution {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.76rem;
-  color: #94a3b8;
+  color: #64748b;
   margin-top: 2px;
 }
 
 .convener-card-footer {
   padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(0, 53, 128, 0.1);
 }
 
 .convener-profile-btn {
@@ -195,9 +185,9 @@
   width: 100%;
   padding: 10px 16px;
   border-radius: 10px;
-  background: rgba(0, 229, 255, 0.1);
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  color: #00e5ff;
+  background: rgba(0, 102, 235, 0.08);
+  border: 1px solid rgba(0, 102, 235, 0.25);
+  color: #003da5;
   font-family: 'Outfit', sans-serif;
   font-size: 0.82rem;
   font-weight: 800;
@@ -208,9 +198,10 @@
 }
 
 .convener-profile-btn:hover {
-  background: #00e5ff;
-  color: #041026;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  background: #0066eb;
+  color: #ffffff;
+  border-color: #0066eb;
+  box-shadow: 0 4px 16px rgba(0, 102, 235, 0.3);
   transform: translateY(-1px);
 }
 
@@ -250,21 +241,21 @@
   width: 100%;
   padding: 11px 40px 11px 40px;
   border-radius: 999px;
-  background: rgba(4, 16, 38, 0.75);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #ffffff;
+  border: 1.5px solid rgba(0, 102, 235, 0.2);
+  color: #0f172a;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.88rem;
   outline: none;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 10px rgba(0, 50, 120, 0.05);
 }
 
 .faculty-search-input:focus {
-  border-color: #00e5ff;
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.35), 0 4px 16px rgba(0, 0, 0, 0.6);
+  border-color: #0066eb;
+  box-shadow: 0 0 16px rgba(0, 102, 235, 0.25), 0 2px 10px rgba(0, 50, 120, 0.08);
 }
 
 .faculty-search-input::placeholder {
@@ -276,9 +267,9 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 102, 235, 0.08);
   border: none;
-  color: #94a3b8;
+  color: #64748b;
   border-radius: 50%;
   width: 22px;
   height: 22px;
@@ -290,7 +281,7 @@
 }
 
 .faculty-search-clear:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #0066eb;
   color: #ffffff;
 }
 
@@ -309,28 +300,29 @@
   gap: 6px;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 102, 235, 0.16);
+  color: #334155;
   font-family: 'Outfit', sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 50, 120, 0.04);
   transition: all 0.2s ease;
 }
 
 .faculty-dept-pill:hover {
-  color: #ffffff;
-  border-color: rgba(56, 189, 248, 0.4);
-  background: rgba(56, 189, 248, 0.08);
+  color: #0066eb;
+  border-color: #0066eb;
+  background: #f0f7ff;
 }
 
 .faculty-dept-pill.is-active {
-  background: linear-gradient(135deg, rgba(2, 132, 199, 0.4) 0%, rgba(0, 229, 255, 0.25) 100%);
-  border-color: #00e5ff;
+  background: linear-gradient(135deg, #003da5 0%, #0066eb 100%);
+  border-color: #0066eb;
   color: #ffffff;
-  box-shadow: 0 0 16px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 102, 235, 0.3);
 }
 
 .dept-pill-count {
@@ -338,13 +330,13 @@
   font-weight: 800;
   padding: 1px 6px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #bae6fd;
+  background: rgba(0, 102, 235, 0.1);
+  color: #003da5;
 }
 
 .faculty-dept-pill.is-active .dept-pill-count {
-  background: #00e5ff;
-  color: #041026;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
 }
 
 /* Grid Layout */
@@ -356,17 +348,12 @@
   gap: 16px;
 }
 
-/* Faculty Coordinator Card - Iconic Sapphire Ocean Blue */
+/* Faculty Coordinator Card - White Institutional Glassmorphism */
 .faculty-card {
   padding: 20px 22px;
   border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 46, 101, 0.88) 0%,
-    rgba(0, 85, 165, 0.82) 48%,
-    rgba(0, 113, 194, 0.88) 100%
-  );
-  border: 1px solid rgba(56, 189, 248, 0.45);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1.5px solid rgba(0, 102, 235, 0.16);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -374,19 +361,14 @@
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 98, 181, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 50, 120, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .faculty-card:hover {
   transform: translateY(-3px);
-  background: linear-gradient(
-    135deg,
-    rgba(0, 56, 120, 0.95) 0%,
-    rgba(0, 100, 190, 0.9) 48%,
-    rgba(0, 128, 220, 0.95) 100%
-  );
-  border-color: #00e5ff;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65), 0 0 30px rgba(0, 229, 255, 0.4);
+  background: rgba(255, 255, 255, 0.98);
+  border-color: #0066eb;
+  box-shadow: 0 10px 28px rgba(0, 50, 120, 0.1);
 }
 
 /* Card Top: Department Badge & Label */
@@ -400,8 +382,8 @@
 .faculty-dept-badge {
   padding: 3px 10px;
   border-radius: 6px;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.4);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1px solid rgba(0, 102, 235, 0.25);
 }
 
 .dept-badge-code {
@@ -409,14 +391,14 @@
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  color: #38bdf8;
+  color: #003da5;
 }
 
 .faculty-dept-name {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: #64748b;
   text-align: right;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -434,8 +416,8 @@
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1px solid rgba(0, 102, 235, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -444,7 +426,7 @@
 }
 
 .faculty-avatar-icon {
-  color: #00e5ff;
+  color: #0066eb;
 }
 
 .faculty-name-wrap {
@@ -457,7 +439,7 @@
   font-family: 'Outfit', sans-serif;
   font-size: 1.02rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #002d72;
   margin: 0;
   line-height: 1.25;
   letter-spacing: 0.02em;
@@ -479,7 +461,7 @@
   justify-content: space-between;
   gap: 10px;
   padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid rgba(0, 53, 128, 0.1);
 }
 
 .faculty-phone-link {
@@ -487,7 +469,7 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  color: #bae6fd;
+  color: #003da5;
   font-family: 'Outfit', sans-serif;
   font-size: 0.92rem;
   font-weight: 700;
@@ -496,19 +478,19 @@
 }
 
 .faculty-phone-link:hover {
-  color: #00e5ff;
+  color: #0066eb;
 }
 
 .phone-icon-circle {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1px solid rgba(0, 102, 235, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #38bdf8;
+  color: #0066eb;
   flex-shrink: 0;
 }
 
@@ -518,9 +500,9 @@
   gap: 5px;
   padding: 6px 14px;
   border-radius: 8px;
-  background: rgba(0, 229, 255, 0.12);
-  border: 1px solid rgba(0, 229, 255, 0.35);
-  color: #00e5ff;
+  background: rgba(0, 102, 235, 0.08);
+  border: 1px solid rgba(0, 102, 235, 0.25);
+  color: #003da5;
   font-family: 'Outfit', sans-serif;
   font-size: 0.75rem;
   font-weight: 800;
@@ -531,9 +513,9 @@
 }
 
 .faculty-call-action-btn:hover {
-  background: #00e5ff;
-  color: #041026;
-  box-shadow: 0 0 16px rgba(0, 229, 255, 0.5);
+  background: #0066eb;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 102, 235, 0.35);
   transform: translateY(-1px);
 }
 
@@ -583,28 +565,21 @@
 .faculty-dev-support-card {
   max-width: 1140px;
   margin: 2.5rem auto 0;
-  padding: 24px 28px;
+  padding: 24px 32px;
   border-radius: 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 46, 101, 0.88) 0%,
-    rgba(0, 98, 181, 0.82) 48%,
-    rgba(0, 113, 194, 0.88) 100%
-  );
-  border: 1px solid rgba(56, 189, 248, 0.45);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(0, 98, 181, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  background: #ffffff;
+  border: 1px solid rgba(0, 87, 217, 0.14);
+  box-shadow: 0 16px 40px -10px rgba(0, 35, 90, 0.08), 0 2px 8px rgba(0, 87, 217, 0.04);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
 }
 
 .dev-support-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   max-width: 580px;
 }
 
@@ -612,36 +587,36 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 10px;
-  border-radius: 6px;
-  background: rgba(0, 229, 255, 0.15);
-  border: 1px solid rgba(0, 229, 255, 0.4);
+  padding: 4px 12px;
+  border-radius: 980px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  color: #00e5ff;
+  letter-spacing: 0.1em;
+  color: #0066eb;
   width: fit-content;
   margin-bottom: 2px;
 }
 
 .dev-support-badge-icon {
-  color: #00e5ff;
+  color: #0066eb;
 }
 
 .dev-support-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   margin: 0;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.01em;
 }
 
 .dev-support-desc {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.85rem;
-  color: #cbd5e1;
+  font-size: 0.9rem;
+  color: #475569;
   margin: 0;
   line-height: 1.5;
 }
@@ -656,20 +631,20 @@
 .dev-contact-card {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 10px 18px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, rgba(0, 111, 195, 0.75) 0%, rgba(0, 85, 165, 0.88) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-  transition: all 0.25s ease;
+  gap: 16px;
+  padding: 12px 20px;
+  border-radius: 16px;
+  background: #f8faff;
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 4px 14px rgba(0, 45, 114, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .dev-contact-card:hover {
-  border-color: #00e5ff;
-  background: linear-gradient(180deg, rgba(0, 130, 225, 0.85) 0%, rgba(0, 100, 190, 0.95) 100%);
+  border-color: #0066eb;
+  background: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 102, 235, 0.12);
 }
 
 .dev-contact-main {
@@ -679,15 +654,15 @@
 }
 
 .dev-chip-icon-box {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: rgba(0, 229, 255, 0.15);
-  border: 1px solid rgba(0, 229, 255, 0.4);
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #00e5ff;
+  color: #0066eb;
 }
 
 .dev-chip-text {
@@ -698,20 +673,20 @@
 
 .dev-chip-label {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #38bdf8;
+  letter-spacing: 0.08em;
+  color: #0066eb;
   text-transform: uppercase;
   white-space: nowrap !important;
 }
 
 .dev-phone-num {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.02rem;
   font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 0.03em;
+  color: #0f172a;
+  letter-spacing: 0.02em;
   text-decoration: none;
   transition: color 0.2s ease;
   white-space: nowrap !important;
@@ -719,35 +694,36 @@
 }
 
 .dev-phone-num:hover {
-  color: #00e5ff;
+  color: #0066eb;
 }
 
 .dev-linkedin-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: rgba(14, 165, 233, 0.15);
-  border: 1px solid rgba(14, 165, 233, 0.4);
-  color: #38bdf8;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #0071e3 0%, #005bb5 100%);
+  border: 1px solid rgba(0, 113, 227, 0.8);
+  color: #ffffff;
   font-family: 'Outfit', sans-serif;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
   margin-left: 4px;
   white-space: nowrap !important;
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.25);
 }
 
 .dev-linkedin-btn:hover {
-  background: #0284c7;
+  background: linear-gradient(180deg, #0077ed 0%, #0062c4 100%);
   color: #ffffff;
-  border-color: #38bdf8;
-  box-shadow: 0 0 14px rgba(14, 165, 233, 0.5);
+  border-color: #0071e3;
+  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.4);
   transform: translateY(-1px);
 }
 
@@ -757,24 +733,25 @@
   margin: 2rem auto 0;
   padding: 12px 20px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.2px solid rgba(0, 102, 235, 0.16);
+  box-shadow: 0 4px 16px rgba(0, 50, 120, 0.05);
   text-align: center;
 }
 
 .faculty-footer-note p {
   font-size: 0.82rem;
-  color: #94a3b8;
+  color: #334155;
   margin: 0;
   line-height: 1.5;
 }
 
 .faculty-footer-note strong {
-  color: #e2e8f0;
+  color: #002d72;
 }
 
 .faculty-insta-link {
-  color: #00e5ff;
+  color: #0066eb;
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -783,9 +760,8 @@
 }
 
 .faculty-insta-link:hover {
-  color: #38bdf8;
+  color: #003da5;
   text-decoration: underline;
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
 
 /* Responsive */

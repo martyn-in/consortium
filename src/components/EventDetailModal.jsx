@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   X, ArrowRight, Building2, 
@@ -7,44 +7,130 @@ import {
 } from 'lucide-react';
 import { paperPresentationDepartments } from '../data/eventsData';
 import { sound } from '../utils/soundEffects';
+import useModalHistory from '../hooks/useModalHistory';
 import './EventDetailModal.css';
 
 const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
 
 const UNIFIED_MODAL_THEME = {
-  accent: '#00e5ff',
-  accent2: '#0ea5e9',
-  bg: 'radial-gradient(circle at 85% 15%, rgba(4, 28, 68, 0.98) 0%, rgba(2, 14, 38, 0.98) 45%, rgba(2, 8, 23, 0.99) 100%)',
-  glow: 'rgba(0, 229, 255, 0.35)',
-  border: 'rgba(0, 229, 255, 0.3)'
+  accent: '#0066eb',
+  accent2: '#002d72',
+  bg: '#ffffff',
+  leftBg: 'linear-gradient(180deg, #f8faff 0%, #edf2f9 100%)',
+  rightBg: '#ffffff',
+  glow: 'rgba(0, 102, 235, 0.08)',
+  border: 'rgba(0, 87, 217, 0.12)'
 };
 
 const EVENT_MODAL_THEMES = {
-  'paper-presentation': { ...UNIFIED_MODAL_THEME, deptCode: 'MULTI-DEPT' },
-  'poster-presentations': { ...UNIFIED_MODAL_THEME, deptCode: 'ECE' },
-  'project-expo': { ...UNIFIED_MODAL_THEME, deptCode: 'MECH' },
-  'inventra': { ...UNIFIED_MODAL_THEME, deptCode: 'MECH' },
-  'lan-gaming': { ...UNIFIED_MODAL_THEME, deptCode: 'IT' },
-  'photography': { ...UNIFIED_MODAL_THEME, deptCode: 'CSE' },
-  'data-glitch': { ...UNIFIED_MODAL_THEME, deptCode: 'CSD' },
-  'death-mystery': { ...UNIFIED_MODAL_THEME, deptCode: 'CSD' },
-  'death-mystery-investigation': { ...UNIFIED_MODAL_THEME, deptCode: 'CSD' },
-  'magic-witch': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
-  'treasure-hunt': { ...UNIFIED_MODAL_THEME, deptCode: 'EEE' },
-  'short-films': { ...UNIFIED_MODAL_THEME, deptCode: 'CSE' },
-  'flight-simulator': { ...UNIFIED_MODAL_THEME, deptCode: 'AERO' },
-  'bridge-mockup': { ...UNIFIED_MODAL_THEME, deptCode: 'CIVIL' }
+  // National Paper Presentation: Executive Royal Blue
+  'paper-presentation': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#002d72',
+    deptCode: 'MULTI-DEPT' 
+  },
+  // ECE Poster Presentation
+  'poster-presentations': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#4f46e5',
+    deptCode: 'ECE' 
+  },
+  // Mechanical Project Expo & Inventra
+  'project-expo': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#0284c7',
+    deptCode: 'MECH' 
+  },
+  'inventra': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#0284c7',
+    deptCode: 'MECH' 
+  },
+  // IT LAN Gaming
+  'lan-gaming': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#6366f1',
+    deptCode: 'IT' 
+  },
+  // CSE Photography
+  'photography': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#0f172a',
+    deptCode: 'CSE' 
+  },
+  // CSD Investigative/Mystery
+  'data-glitch': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#7c3aed',
+    deptCode: 'CSD' 
+  },
+  'death-mystery': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#e11d48',
+    deptCode: 'CSD' 
+  },
+  'death-mystery-investigation': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#e11d48',
+    deptCode: 'CSD' 
+  },
+  // EEE Electrical / Magic
+  'magic-witch': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#d97706',
+    deptCode: 'EEE' 
+  },
+  'treasure-hunt': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#d97706',
+    deptCode: 'EEE' 
+  },
+  // CSE Short Films
+  'short-films': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#0f172a',
+    deptCode: 'CSE' 
+  },
+  // Aerospace Flight Simulator
+  'flight-simulator': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#0284c7',
+    deptCode: 'AERO' 
+  },
+  // Civil SPAN WARS Bridge Mock-up
+  'bridge-mockup': { 
+    ...UNIFIED_MODAL_THEME, 
+    accent: '#0066eb',
+    accent2: '#ea580c',
+    deptCode: 'CIVIL' 
+  }
 };
 
 export default function EventDetailModal({ event: propEvent, isOpen, onClose, onRegister }) {
-  const lastEventRef = useRef(propEvent);
+  const [cachedEvent, setCachedEvent] = useState(propEvent);
 
-  if (propEvent) {
-    lastEventRef.current = propEvent;
+  if (propEvent && propEvent !== cachedEvent) {
+    setCachedEvent(propEvent);
   }
 
-  const event = propEvent || lastEventRef.current;
+  const event = propEvent || cachedEvent;
   const [openPaperDept, setOpenPaperDept] = useState('it');
+
+  // Intercept mobile browser (Chrome/Android) back button to close modal instead of leaving the site
+  useModalHistory(isOpen, onClose, event?.id ? `event_${event.id}` : 'event_detail');
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -95,7 +181,9 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
             '--modal-accent2': modalTheme.accent2,
             '--modal-glow': modalTheme.glow,
             '--modal-border': modalTheme.border,
-            '--modal-bg': modalTheme.bg
+            '--modal-bg': modalTheme.bg,
+            '--modal-left-bg': modalTheme.leftBg,
+            '--modal-right-bg': modalTheme.rightBg
           }}
           onClick={(e) => e.stopPropagation()}
           initial={{ opacity: 0, scale: 0.98, y: 10 }}
@@ -106,10 +194,6 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
           aria-modal="true"
           aria-label={`${event.title} Details`}
         >
-          {/* Cyber Neon Corners */}
-          <div className="edm-neon-corner edm-neon-tl" />
-          <div className="edm-neon-corner edm-neon-br" />
-
           {/* Close Button */}
           <button
             type="button"

@@ -1,59 +1,64 @@
 :root {
-  /* Futuristic Luxury Aqua Premium Blue Sky Palette */
-  --bg-deep: #020817;
-  --bg-primary: #041026;
-  --bg-secondary: #071a3d;
-  --bg-space: #0b2554;
+  /* Institutional White, Royal Blue, Electric Cyan & Gold Palette */
+  --bg-deep: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --bg-space: #ffffff;
   
-  /* Luminous Aqua & Sky Blue Accents */
-  --neon-cyan: #00e5ff;
-  --neon-cyan-bright: #38e1ff;
-  --neon-cyan-glow: rgba(0, 229, 255, 0.45);
-  --neon-cyan-subtle: rgba(0, 229, 255, 0.15);
+  /* Royal Blue & Electric Cyan Accents */
+  --neon-cyan: #0077ff;
+  --neon-cyan-bright: #00a8ff;
+  --neon-cyan-glow: rgba(0, 119, 255, 0.25);
+  --neon-cyan-subtle: rgba(0, 119, 255, 0.08);
   
-  --neon-violet: #38bdf8;
-  --neon-indigo: #0ea5e9;
-  --neon-violet-glow: rgba(56, 189, 248, 0.45);
-  --neon-violet-subtle: rgba(56, 189, 248, 0.15);
+  --neon-violet: #003580;
+  --neon-indigo: #002d72;
+  --neon-violet-glow: rgba(0, 53, 128, 0.25);
+  --neon-violet-subtle: rgba(0, 53, 128, 0.08);
+
+  /* Gold & Warm Amber Highlights */
+  --neon-gold: #f59e0b;
+  --neon-gold-bright: #fbbf24;
+  --neon-gold-glow: rgba(245, 158, 11, 0.35);
 
   --chrome-white: #ffffff;
-  --chrome-light: #e0f2fe;
-  --silver-metallic: #cbd5e1;
+  --chrome-light: #f8fafc;
+  --silver-metallic: #64748b;
 
-  /* Glass Surfaces (1% Ultra-Sheer Glassmorphism) */
-  --glass-surface: rgba(255, 255, 255, 0.01);
-  --glass-card: rgba(255, 255, 255, 0.01);
-  --glass-hover: rgba(255, 255, 255, 0.035);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-border-bright: rgba(56, 189, 248, 0.45);
-  --glass-border-violet: rgba(14, 165, 233, 0.35);
+  /* Glass Surfaces (Light Institutional Glassmorphism) */
+  --glass-surface: rgba(255, 255, 255, 0.85);
+  --glass-card: rgba(255, 255, 255, 0.9);
+  --glass-hover: rgba(240, 248, 255, 0.95);
+  --glass-border: rgba(0, 102, 235, 0.12);
+  --glass-border-bright: rgba(0, 102, 235, 0.35);
+  --glass-border-violet: rgba(0, 53, 128, 0.2);
 
   /* Primary Typography Colors */
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #7dd3fc;
-  --text-cyan: #bae6fd;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-cyan: #0066eb;
 
   /* Gradients */
-  --cyan-violet-gradient: linear-gradient(135deg, #00e5ff 0%, #38bdf8 50%, #0284c7 100%);
-  --chrome-cyan-gradient: linear-gradient(180deg, #ffffff 0%, #e0f2fe 35%, #38bdf8 70%, #0284c7 100%);
-  --chrome-text-gradient: linear-gradient(90deg, #38e1ff 0%, #ffffff 50%, #38bdf8 100%);
+  --cyan-violet-gradient: linear-gradient(135deg, #003da5 0%, #0066eb 50%, #00a8ff 100%);
+  --chrome-cyan-gradient: linear-gradient(180deg, #002d72 0%, #0052cc 50%, #00a8ff 100%);
+  --chrome-text-gradient: linear-gradient(90deg, #002d72 0%, #0066eb 50%, #00a8ff 100%);
 
-  /* Typography - Modern Executive Tech: Outfit & Plus Jakarta Sans */
-  --font-crazy: 'Outfit', sans-serif;
-  --font-future: 'Outfit', sans-serif;
-  --font-title: 'Outfit', sans-serif;
-  --font-heading: 'Outfit', sans-serif;
+  /* Typography - Modern Condensed & Executive Tech */
+  --font-crazy: 'Bebas Neue', 'Oswald', sans-serif;
+  --font-future: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-title: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   --font-cyber: 'Plus Jakarta Sans', sans-serif;
   --font-hud: 'Plus Jakarta Sans', sans-serif;
   --font-sub: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Glassmorphism 1% Ultra-Sheer Surfaces */
-  --glass-1percent: rgba(255, 255, 255, 0.01);
-  --glass-1percent-hover: rgba(255, 255, 255, 0.03);
-  --glass-1percent-border: rgba(255, 255, 255, 0.08);
+  /* Glassmorphism Surfaces */
+  --glass-1percent: rgba(255, 255, 255, 0.85);
+  --glass-1percent-hover: rgba(240, 248, 255, 0.95);
+  --glass-1percent-border: rgba(0, 102, 235, 0.12);
   --glass-1percent-blur: blur(20px);
 }
 
@@ -66,7 +71,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 85px;
-  color-scheme: dark;
+  color-scheme: light;
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
@@ -77,7 +82,7 @@ section[id] {
 }
 
 body {
-  background-color: #000000;
+  background-color: #ffffff;
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.65;
@@ -95,15 +100,15 @@ main {
   overflow-x: hidden;
 }
 
-/* Futuristic Neon Aqua Sky Scrollbar */
+/* Institutional Royal Blue Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-deep);
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(0, 229, 255, 0.7) 0%, rgba(14, 165, 233, 0.85) 100%);
+  background: linear-gradient(180deg, #003da5 0%, #00a8ff 100%);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -115,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-future);
   letter-spacing: 0.04em;
   line-height: 1.2;
-  color: #ffffff;
+  color: #002d72;
 }
 
 h2.section-heading {
@@ -126,10 +131,10 @@ h2.section-heading {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.9rem;
-  background: linear-gradient(180deg, #ffffff 0%, #e0f2fe 35%, #38bdf8 70%, #0284c7 100%);
+  background: linear-gradient(180deg, #002d72 0%, #0052cc 50%, #00a8ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 25px rgba(56, 189, 248, 0.35));
+  filter: drop-shadow(0 2px 10px rgba(0, 53, 128, 0.15));
 }
 
 p {
@@ -149,7 +154,7 @@ a {
   padding: 0 clamp(0.85rem, 3.5vw, 1.5rem);
 }
 
-/* Futuristic Tagline Badge */
+/* Institutional Tagline Badge */
 .section-tagline,
 .futuristic-tagline-badge {
   display: inline-flex;
@@ -162,14 +167,14 @@ a {
   text-transform: uppercase;
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  background: rgba(14, 165, 233, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  color: #7dd3fc;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+  background: rgba(0, 102, 235, 0.08);
+  border: 1.2px solid rgba(0, 102, 235, 0.25);
+  color: #003da5;
+  box-shadow: 0 2px 10px rgba(0, 102, 235, 0.08);
   margin-bottom: 0.9rem;
 }
 
-/* Futuristic Neon Divider */
+/* Royal Blue & Gold Divider */
 .futuristic-divider {
   display: flex;
   align-items: center;
@@ -183,115 +188,58 @@ a {
   content: '';
   display: inline-block;
   width: 90px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #0066eb, transparent);
 }
 
 .divider-diamond-cyan {
-  color: #00e5ff;
+  color: #f59e0b;
   font-size: 0.8rem;
-  filter: drop-shadow(0 0 8px #00e5ff);
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.5));
 }
 
-/* Reusable Cards (Iconic Ocean Sapphire Blue Matching Screenshot) */
+/* Reusable Institutional Cards */
 .pro-card,
 .luxury-card,
 .future-card {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 46, 101, 0.88) 0%,
-    rgba(0, 98, 181, 0.82) 48%,
-    rgba(0, 113, 194, 0.88) 100%
-  );
-  border: 1px solid rgba(56, 189, 248, 0.45);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(0, 102, 235, 0.16);
   border-radius: 20px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 30px rgba(0, 98, 181, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  box-shadow: 0 14px 35px rgba(0, 50, 120, 0.06), inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .pro-card:hover,
 .luxury-card:hover,
 .future-card:hover {
-  border-color: #00e5ff;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 56, 120, 0.95) 0%,
-    rgba(0, 110, 200, 0.9) 48%,
-    rgba(0, 128, 220, 0.95) 100%
-  );
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.75), 0 0 40px rgba(0, 113, 194, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  border-color: #0066eb;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 18px 45px rgba(0, 50, 120, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
   transform: translateY(-4px);
 }
 
 /* ============================================================
-   ICONIC SAPPHIRE OCEAN AURA BORDER SYSTEM (Matching Uploaded Screenshot)
+   ROYAL BLUE AURA BORDER SYSTEM
    ============================================================ */
 .aura-glow-border {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 46, 101, 0.9) 0%,
-    rgba(0, 98, 181, 0.85) 48%,
-    rgba(0, 113, 194, 0.9) 100%
-  ) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: none !important;
+  border: 1.5px solid rgba(0, 102, 235, 0.18) !important;
   border-radius: 22px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 
-              0 0 35px rgba(0, 98, 181, 0.35) !important;
+  box-shadow: 0 14px 35px rgba(0, 50, 120, 0.06) !important;
   overflow: hidden;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s ease,
-              background 0.3s ease;
-}
-
-/* Professional Full Top-to-Bottom Card Line Fade */
-.aura-glow-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 229, 255, 0.88) 0%,
-    rgba(56, 189, 248, 0.52) 28%,
-    rgba(14, 165, 233, 0.18) 65%,
-    rgba(56, 189, 248, 0.04) 90%,
-    transparent 100%
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: 2;
-  transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+              border-color 0.3s ease;
 }
 
 .aura-glow-border:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 56, 120, 0.95) 0%,
-    rgba(0, 110, 200, 0.9) 48%,
-    rgba(0, 128, 220, 0.95) 100%
-  ) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 
-              0 0 45px rgba(0, 113, 194, 0.5) !important;
-}
-
-.aura-glow-border:hover::before {
-  background: linear-gradient(
-    180deg,
-    #00e5ff 0%,
-    rgba(56, 189, 248, 0.88) 30%,
-    rgba(14, 165, 233, 0.4) 65%,
-    rgba(56, 189, 248, 0.1) 90%,
-    transparent 100%
-  );
+  border-color: #0066eb !important;
+  box-shadow: 0 20px 50px rgba(0, 50, 120, 0.12) !important;
 }
 
 /* Chrome Shimmer Text */
@@ -299,7 +247,7 @@ a {
   background: var(--chrome-text-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.4));
+  filter: drop-shadow(0 2px 8px rgba(0, 53, 128, 0.15));
 }
 
 .text-cyan {
@@ -314,22 +262,22 @@ a {
   color: var(--silver-metallic) !important;
 }
 
-/* Glass Panels & Holographic Helpers */
+/* Glass Panels & Helpers */
 .glass-panel-luxury {
-  background: rgba(4, 18, 48, 0.82);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(0, 102, 235, 0.16);
   border-radius: 20px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 14px 40px rgba(0, 50, 120, 0.06);
 }
 
 .neon-glow-cyan {
-  text-shadow: 0 0 15px rgba(0, 229, 255, 0.6), 0 0 30px rgba(56, 189, 248, 0.3);
+  text-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
 }
 
 .neon-glow-violet {
-  text-shadow: 0 0 15px rgba(56, 189, 248, 0.6), 0 0 30px rgba(2, 132, 199, 0.3);
+  text-shadow: 0 0 15px rgba(0, 53, 128, 0.25);
 }
 
 /* Media Queries */

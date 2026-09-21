@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import imgPosterPresentation from '../assets/real_poster_presentation.jpg';
 import { sound } from '../utils/soundEffects';
+import useModalHistory from '../hooks/useModalHistory';
 import './PosterPresentationModal.css';
 
 const POSTER_REGISTER_URL =
@@ -51,6 +52,9 @@ const fadeUp = {
 };
 
 export default function PosterPresentationModal({ isOpen, onClose }) {
+  // Intercept mobile browser (Chrome/Android) back button to close modal instead of leaving the site
+  useModalHistory(isOpen, onClose, 'poster_presentation');
+
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     if (isOpen) {
@@ -90,10 +94,6 @@ export default function PosterPresentationModal({ isOpen, onClose }) {
             aria-modal="true"
             aria-label="Poster Presentation Event Details"
           >
-          {/* Top Corner Neon Accents */}
-          <div className="pm-neon-corner pm-neon-tl" />
-          <div className="pm-neon-corner pm-neon-br" />
-
           {/* Close button */}
           <button
             type="button"

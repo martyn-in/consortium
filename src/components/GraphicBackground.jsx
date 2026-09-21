@@ -1,13 +1,13 @@
 import { useEffect, useRef } from 'react';
 import './GraphicBackground.css';
 
-// Consortium 2026 Executive Radiant Aqua & Cyber Sky Glow Palette
+// Consortium 2026 Institutional Royal Blue, Electric Cyan & Gold Palette
 const GLOW_PARTICLE_COLORS = [
-  { r: 0, g: 229, b: 255 },     // Radiant Neon Aqua (#00e5ff)
-  { r: 56, g: 189, b: 248 },    // Electric Sky Blue (#38bdf8)
-  { r: 14, g: 165, b: 233 },    // Deep Azure Cyan (#0ea5e9)
-  { r: 186, g: 230, b: 253 },   // Brilliant Ice White (#bae6fd)
-  { r: 125, g: 211, b: 252 },   // Stellar Cyan (#7dd3fc)
+  { r: 0, g: 102, b: 235 },     // Royal Blue (#0066eb)
+  { r: 0, g: 180, b: 216 },    // Electric Cyan (#00b4d8)
+  { r: 245, g: 158, b: 11 },   // Gold (#f59e0b)
+  { r: 2, g: 62, b: 138 },     // Deep Navy (#023e8a)
+  { r: 251, g: 191, b: 36 },   // Warm Amber Gold (#fbbf24)
 ];
 
 export default function GraphicBackground() {
