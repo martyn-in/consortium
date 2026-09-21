@@ -53,7 +53,7 @@ export default function EventBentoGrid({ events, onOpenDetails, onRegister }) {
               <div className="event-pure-badge-row">
                 <div className="event-pure-fee-pill" title={`Registration Fee: ${evt.fee}`}>
                   <IndianRupee size={12} className="fee-rupee-icon" />
-                  <span>{evt.fee}</span>
+                  <span>{evt.fee.replace(/^₹\s*/, '')}</span>
                 </div>
               </div>
             )}
