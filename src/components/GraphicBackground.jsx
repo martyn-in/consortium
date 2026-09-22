@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import bgArtwork from '../assets/futuristic_event_bg.jpg';
+import bgArtworkMobile from '../assets/futuristic_event_bg_mobile.jpg';
 import './GraphicBackground.css';
 
 export default function GraphicBackground() {
@@ -72,13 +73,16 @@ export default function GraphicBackground() {
 
       {/* 2. Fluid Moving Aerospace Background Artwork with Parallax Inertia */}
       <div ref={moverRef} className="graphic-background-mover">
-        <img
-          src={bgArtwork}
-          alt=""
-          className="graphic-background-art"
-          loading="eager"
-          decoding="async"
-        />
+        <picture className="graphic-background-picture">
+          <source media="(max-width: 768px)" srcSet={bgArtworkMobile} />
+          <img
+            src={bgArtwork}
+            alt=""
+            className="graphic-background-art"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
 
         {/* 3. Traveling Photonic Sheen Beam (Glistening Light Sweep Across Ribbons) */}
         <div className="graphic-background-sheen" />
