@@ -169,31 +169,31 @@ export default function Navbar({ onNavigateToEvents }) {
           >
             <Clock size={14} className="c26-nav-countdown-clock" />
             <div className="c26-nav-countdown-track">
-              <div className="c26-nav-countdown-slot">
+              <div className="c26-nav-countdown-slot c26-slot--blue">
                 <span className="c26-nav-countdown-digit">{timeLeft.days}</span>
                 <span className="c26-nav-countdown-unit-full">DAYS</span>
                 <span className="c26-nav-countdown-unit-short">D</span>
               </div>
 
-              <span className="c26-nav-countdown-divider">:</span>
+              <span className="c26-nav-countdown-divider c26-divider--blue">:</span>
 
-              <div className="c26-nav-countdown-slot">
+              <div className="c26-nav-countdown-slot c26-slot--emerald">
                 <span className="c26-nav-countdown-digit">{timeLeft.hours}</span>
                 <span className="c26-nav-countdown-unit-full">HOURS</span>
                 <span className="c26-nav-countdown-unit-short">H</span>
               </div>
 
-              <span className="c26-nav-countdown-divider">:</span>
+              <span className="c26-nav-countdown-divider c26-divider--emerald">:</span>
 
-              <div className="c26-nav-countdown-slot">
+              <div className="c26-nav-countdown-slot c26-slot--amber">
                 <span className="c26-nav-countdown-digit">{timeLeft.minutes}</span>
                 <span className="c26-nav-countdown-unit-full">MIN</span>
                 <span className="c26-nav-countdown-unit-short">M</span>
               </div>
 
-              <span className="c26-nav-countdown-divider">:</span>
+              <span className="c26-nav-countdown-divider c26-divider--amber">:</span>
 
-              <div className="c26-nav-countdown-slot">
+              <div className="c26-nav-countdown-slot c26-slot--purple">
                 <span className="c26-nav-countdown-digit c26-nav-countdown-sec">{timeLeft.seconds}</span>
                 <span className="c26-nav-countdown-unit-full">SEC</span>
                 <span className="c26-nav-countdown-unit-short">S</span>
@@ -223,22 +223,22 @@ export default function Navbar({ onNavigateToEvents }) {
           <div className="c26-mobile-drawer-countdown">
             <span className="c26-mobile-countdown-label">FESTIVAL COMMENCES IN</span>
             <div className="c26-nav-countdown-track">
-              <div className="c26-nav-countdown-slot">
+              <div className="c26-nav-countdown-slot c26-slot--blue">
                 <span className="c26-nav-countdown-digit">{timeLeft.days}</span>
                 <span className="c26-nav-countdown-unit-full">DAYS</span>
               </div>
-              <span className="c26-nav-countdown-divider">:</span>
-              <div className="c26-nav-countdown-slot">
+              <span className="c26-nav-countdown-divider c26-divider--blue">:</span>
+              <div className="c26-nav-countdown-slot c26-slot--emerald">
                 <span className="c26-nav-countdown-digit">{timeLeft.hours}</span>
                 <span className="c26-nav-countdown-unit-full">HOURS</span>
               </div>
-              <span className="c26-nav-countdown-divider">:</span>
-              <div className="c26-nav-countdown-slot">
+              <span className="c26-nav-countdown-divider c26-divider--emerald">:</span>
+              <div className="c26-nav-countdown-slot c26-slot--amber">
                 <span className="c26-nav-countdown-digit">{timeLeft.minutes}</span>
                 <span className="c26-nav-countdown-unit-full">MIN</span>
               </div>
-              <span className="c26-nav-countdown-divider">:</span>
-              <div className="c26-nav-countdown-slot">
+              <span className="c26-nav-countdown-divider c26-divider--amber">:</span>
+              <div className="c26-nav-countdown-slot c26-slot--purple">
                 <span className="c26-nav-countdown-digit c26-nav-countdown-sec">{timeLeft.seconds}</span>
                 <span className="c26-nav-countdown-unit-full">SEC</span>
               </div>

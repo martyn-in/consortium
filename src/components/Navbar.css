@@ -193,13 +193,14 @@
 
 /* Deep Royal Blue Tabular Digits */
 .c26-nav-countdown-digit {
-  font-family: 'Inter', 'Manrope', system-ui, sans-serif;
-  font-size: 0.85rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+  font-size: 0.88rem;
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.01em;
   line-height: 1;
-  color: #062A67;
+  color: #002d72;
   font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
   display: inline-block;
   min-width: 1.6ch;
   text-align: center;
@@ -208,18 +209,18 @@
 /* Slate Unit Labels */
 .c26-nav-countdown-unit-full,
 .c26-nav-countdown-unit-short {
-  font-family: 'Inter', 'Manrope', sans-serif;
-  font-size: 0.72rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   line-height: 1;
-  color: #4B6A9B;
+  color: #4b6a9b;
   text-transform: uppercase;
 }
 
 .c26-nav-countdown-unit-short {
   display: none;
-  font-size: 0.74rem;
+  font-size: 0.72rem;
 }
 
 /* Electric Cyan Divider Colons */
@@ -232,6 +233,59 @@
   transform: translateY(-1px);
   display: inline-block;
 }
+
+/* ============================================================
+   APPLE LUXURY SIGNATURE PALETTES FOR NAVBAR HUD
+   ============================================================ */
+
+/* 1. DAYS — Apple Pacific Ultramarine Blue */
+.c26-slot--blue .c26-nav-countdown-digit {
+  color: #0057d9;
+}
+.c26-slot--blue .c26-nav-countdown-unit-full,
+.c26-slot--blue .c26-nav-countdown-unit-short {
+  color: #0071e3;
+}
+.c26-divider--blue {
+  color: #0071e3;
+  opacity: 0.65;
+}
+
+/* 2. HOURS — Apple Emerald Jade Green */
+.c26-slot--emerald .c26-nav-countdown-digit {
+  color: #047857;
+}
+.c26-slot--emerald .c26-nav-countdown-unit-full,
+.c26-slot--emerald .c26-nav-countdown-unit-short {
+  color: #10b981;
+}
+.c26-divider--emerald {
+  color: #10b981;
+  opacity: 0.65;
+}
+
+/* 3. MINUTES — Apple Desert Titanium Amber */
+.c26-slot--amber .c26-nav-countdown-digit {
+  color: #b45309;
+}
+.c26-slot--amber .c26-nav-countdown-unit-full,
+.c26-slot--amber .c26-nav-countdown-unit-short {
+  color: #f59e0b;
+}
+.c26-divider--amber {
+  color: #f59e0b;
+  opacity: 0.65;
+}
+
+/* 4. SECONDS — Apple Cosmic Violet / Electric Purple */
+.c26-slot--purple .c26-nav-countdown-digit {
+  color: #6d28d9;
+}
+.c26-slot--purple .c26-nav-countdown-unit-full,
+.c26-slot--purple .c26-nav-countdown-unit-short {
+  color: #8b5cf6;
+}
+
 
 /* Mobile menu toggle */
 .c26-mobile-menu-toggle {
@@ -279,6 +333,75 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.c26-mobile-drawer-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 10px;
+  margin-bottom: 0.8rem;
+  background: rgba(248, 250, 252, 0.9);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 102, 235, 0.12);
+}
+
+.c26-mobile-countdown-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #003da5;
+  text-transform: uppercase;
+}
+
+.c26-mobile-drawer-countdown .c26-nav-countdown-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.c26-mobile-drawer-countdown .c26-nav-countdown-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1.2px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 30, 80, 0.04);
+}
+
+.c26-mobile-drawer-countdown .c26-slot--blue {
+  background: rgba(240, 247, 255, 0.95);
+  border-color: rgba(0, 113, 227, 0.28);
+}
+
+.c26-mobile-drawer-countdown .c26-slot--emerald {
+  background: rgba(240, 253, 244, 0.95);
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+.c26-mobile-drawer-countdown .c26-slot--amber {
+  background: rgba(255, 251, 235, 0.95);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.c26-mobile-drawer-countdown .c26-slot--purple {
+  background: rgba(245, 243, 255, 0.95);
+  border-color: rgba(124, 58, 237, 0.28);
+}
+
+.c26-mobile-drawer-countdown .c26-nav-countdown-digit {
+  font-size: 1.1rem;
+}
+
+.c26-mobile-drawer-countdown .c26-nav-countdown-divider {
+  display: none;
 }
 
 .c26-mobile-drawer-links {

@@ -40,31 +40,31 @@ export default function TopCountdownOverlay() {
     <aside className="top-countdown-overlay" aria-label="Festival Countdown">
       <div className="top-countdown-metallic-bar">
         <div className="top-countdown-track">
-          <div className="top-countdown-slot">
+          <div className="top-countdown-slot top-slot--blue">
             <span className="top-countdown-digit">{timeLeft.days}</span>
             <span className="top-countdown-unit-full">DAYS</span>
             <span className="top-countdown-unit-short">D</span>
           </div>
 
-          <span className="top-countdown-divider">:</span>
+          <span className="top-countdown-divider top-divider--blue">:</span>
 
-          <div className="top-countdown-slot">
+          <div className="top-countdown-slot top-slot--emerald">
             <span className="top-countdown-digit">{timeLeft.hours}</span>
             <span className="top-countdown-unit-full">HOURS</span>
             <span className="top-countdown-unit-short">H</span>
           </div>
 
-          <span className="top-countdown-divider">:</span>
+          <span className="top-countdown-divider top-divider--emerald">:</span>
 
-          <div className="top-countdown-slot">
+          <div className="top-countdown-slot top-slot--amber">
             <span className="top-countdown-digit">{timeLeft.minutes}</span>
             <span className="top-countdown-unit-full">MINUTES</span>
             <span className="top-countdown-unit-short">M</span>
           </div>
 
-          <span className="top-countdown-divider">:</span>
+          <span className="top-countdown-divider top-divider--amber">:</span>
 
-          <div className="top-countdown-slot">
+          <div className="top-countdown-slot top-slot--purple">
             <span className="top-countdown-digit top-countdown-sec">{timeLeft.seconds}</span>
             <span className="top-countdown-unit-full">SECONDS</span>
             <span className="top-countdown-unit-short">S</span>

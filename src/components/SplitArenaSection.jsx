@@ -86,32 +86,32 @@ export default function SplitArenaSection() {
                 </div>
               </div>
 
-              {/* 4 Glowing Digit Modules */}
+              {/* 4 Glowing Digit Modules with Apple Luxury Signature Palette */}
               <div className="countdown-digits-grid">
-                <div className="countdown-unit-box">
-                  <div className="countdown-digit-glow">{countdown.days}</div>
-                  <span className="countdown-unit-label">DAYS</span>
+                <div className="countdown-unit-box countdown-unit-box--blue">
+                  <div className="countdown-digit-glow countdown-digit-glow--blue">{countdown.days}</div>
+                  <span className="countdown-unit-label countdown-unit-label--blue">DAYS</span>
                 </div>
 
-                <span className="countdown-colon">:</span>
+                <span className="countdown-colon countdown-colon--blue">:</span>
 
-                <div className="countdown-unit-box">
-                  <div className="countdown-digit-glow">{countdown.hours}</div>
-                  <span className="countdown-unit-label">HOURS</span>
+                <div className="countdown-unit-box countdown-unit-box--emerald">
+                  <div className="countdown-digit-glow countdown-digit-glow--emerald">{countdown.hours}</div>
+                  <span className="countdown-unit-label countdown-unit-label--emerald">HOURS</span>
                 </div>
 
-                <span className="countdown-colon">:</span>
+                <span className="countdown-colon countdown-colon--emerald">:</span>
 
-                <div className="countdown-unit-box">
-                  <div className="countdown-digit-glow">{countdown.minutes}</div>
-                  <span className="countdown-unit-label">MINUTES</span>
+                <div className="countdown-unit-box countdown-unit-box--amber">
+                  <div className="countdown-digit-glow countdown-digit-glow--amber">{countdown.minutes}</div>
+                  <span className="countdown-unit-label countdown-unit-label--amber">MINUTES</span>
                 </div>
 
-                <span className="countdown-colon">:</span>
+                <span className="countdown-colon countdown-colon--amber">:</span>
 
-                <div className="countdown-unit-box">
-                  <div className="countdown-digit-glow text-accent-violet">{countdown.seconds}</div>
-                  <span className="countdown-unit-label">SECONDS</span>
+                <div className="countdown-unit-box countdown-unit-box--purple">
+                  <div className="countdown-digit-glow countdown-digit-glow--purple">{countdown.seconds}</div>
+                  <span className="countdown-unit-label countdown-unit-label--purple">SECONDS</span>
                 </div>
               </div>
 
@@ -142,16 +142,16 @@ export default function SplitArenaSection() {
               </p>
 
               <div className="battle-features-row">
-                <div className="battle-feat-item">
-                  <Target size={16} className="text-cyan" />
+                <div className="battle-feat-item battle-feat-item--blue">
+                  <Target size={16} />
                   <span>🎯 Flagship Competitions</span>
                 </div>
-                <div className="battle-feat-item">
-                  <Zap size={16} className="text-magenta" />
+                <div className="battle-feat-item battle-feat-item--amber">
+                  <Zap size={16} />
                   <span>🔥 Competitive Showdowns</span>
                 </div>
-                <div className="battle-feat-item">
-                  <Shield size={16} className="text-cyan" />
+                <div className="battle-feat-item battle-feat-item--emerald">
+                  <Shield size={16} />
                   <span>🛡️ National Adjudication</span>
                 </div>
               </div>

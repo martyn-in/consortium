@@ -686,21 +686,21 @@
 
 .event-pure-card {
   position: relative;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  min-height: 295px;
+  min-height: 310px;
   height: auto;
   cursor: pointer;
-  /* Crisp Dark Clean Card (No Blue Frosted Glass Covering Entire Card) */
-  background: #030712 !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  /* Apple Luxury Institutional Crisp White Card */
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1.5px solid rgba(0, 102, 235, 0.18) !important;
+  box-shadow: 0 12px 35px rgba(0, 50, 120, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px 16px;
+  padding: 18px 16px;
   transform: translateZ(0);
   contain: content;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
@@ -714,7 +714,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid transparent;
   pointer-events: none;
   z-index: 6;
@@ -722,12 +722,25 @@
 }
 
 .event-pure-card:hover::before {
-  border-color: rgba(0, 229, 255, 0.35);
+  border-color: rgba(0, 102, 235, 0.35);
 }
 
-/* Hide heavy blue top wash */
+/* Sleek Apple Luxury Top Horizon Accent */
 .event-color-top-bar {
-  display: none;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--evt-deep, #003da5), var(--evt-color, #0071e3));
+  border-radius: 20px 20px 0 0;
+  z-index: 5;
+  transition: height 0.25s ease;
+}
+
+.event-pure-card:hover .event-color-top-bar {
+  height: 4px;
 }
 
 /* Card Top Badge Row */
@@ -744,15 +757,16 @@
 }
 
 .event-pure-num {
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Outfit', sans-serif;
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: #38bdf8;
-  background: rgba(4, 18, 48, 0.85);
+  color: var(--evt-deep, #003da5);
+  background: rgba(255, 255, 255, 0.92);
   padding: 3px 8px;
   border-radius: 6px;
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  border: 1px solid var(--evt-pill-border, rgba(0, 102, 235, 0.25));
+  box-shadow: 0 2px 8px rgba(0, 50, 120, 0.06);
 }
 
 .event-pure-fee-pill {
@@ -761,38 +775,38 @@
   gap: 4px;
   padding: 5px 12px;
   border-radius: 980px;
-  background: rgba(15, 23, 42, 0.82);
-  border: 1px solid rgba(16, 185, 129, 0.45);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  background: var(--evt-pill-bg, rgba(255, 255, 255, 0.95));
+  border: 1.2px solid var(--evt-pill-border, rgba(16, 185, 129, 0.45));
+  box-shadow: 0 4px 14px rgba(0, 50, 120, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Outfit', sans-serif;
   font-size: 0.76rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--evt-pill-text, #065f46);
   letter-spacing: 0.03em;
   transition: all 0.25s ease;
   white-space: nowrap;
 }
 
 .event-pure-card:hover .event-pure-fee-pill {
-  background: rgba(15, 23, 42, 0.94);
-  border-color: #10b981;
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
+  background: #ffffff;
+  border-color: var(--evt-color, #10b981);
+  box-shadow: 0 0 16px var(--evt-glow, rgba(16, 185, 129, 0.25));
   transform: scale(1.04);
 }
 
 .fee-rupee-icon {
-  color: #10b981;
+  color: var(--evt-color, #10b981);
   flex-shrink: 0;
 }
 
 .event-pure-card:hover {
   transform: translateY(-6px);
   box-shadow: 
-    0 20px 48px rgba(0, 0, 0, 0.75),
-    0 0 24px rgba(0, 229, 255, 0.15);
-  border-color: rgba(0, 229, 255, 0.35) !important;
+    0 20px 48px rgba(0, 50, 120, 0.12),
+    0 0 24px var(--evt-glow, rgba(0, 102, 235, 0.12));
+  border-color: var(--evt-color, #0066eb) !important;
 }
 
 .event-pure-media-wrap {
@@ -804,12 +818,12 @@
   z-index: 1;
 }
 
-/* Clear Vibrant Event Photography (No Dimming or Blue Fog) */
+/* Clear Vibrant Event Photography */
 .event-pure-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.92;
+  opacity: 0.94;
   filter: contrast(1.04) saturate(1.06);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
@@ -819,16 +833,16 @@
   opacity: 1;
 }
 
-/* Neutral Bottom Vignette Only — Keeps Top & Center Completely Transparent and Clear */
+/* Bottom Vignette for Crisp Legibility */
 .event-pure-color-scrim {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0) 42%,
-    rgba(2, 6, 18, 0.45) 68%,
-    rgba(2, 6, 18, 0.94) 100%
+    rgba(2, 6, 18, 0.04) 0%,
+    rgba(2, 6, 18, 0) 30%,
+    rgba(2, 6, 18, 0.28) 60%,
+    rgba(2, 6, 18, 0.82) 100%
   );
   transition: background 0.3s ease;
 }
@@ -841,40 +855,40 @@
   gap: 12px;
 }
 
-/* 0.1% Glassmorphism Container specifically behind Event Name Only */
+/* Glassmorphism Title Container */
 .event-pure-title-wrap {
   display: block;
-  background: rgba(2, 6, 18, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.2px solid rgba(0, 102, 235, 0.18);
+  border-radius: 12px;
   padding: 8px 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 50, 120, 0.08);
   transition: all 0.25s ease;
 }
 
 .event-pure-card:hover .event-pure-title-wrap {
-  background: rgba(2, 6, 18, 0.75);
-  border-color: rgba(0, 229, 255, 0.3);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55), 0 0 12px rgba(0, 229, 255, 0.12);
+  background: #ffffff;
+  border-color: #0066eb;
+  box-shadow: 0 6px 20px rgba(0, 50, 120, 0.14);
 }
 
 .event-pure-title {
   font-family: 'Outfit', sans-serif;
-  font-size: clamp(1.15rem, 1.4vw, 1.38rem);
-  font-weight: 700;
-  color: #ffffff;
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-weight: 800;
+  color: #002d72;
   margin: 0;
   line-height: 1.25;
   letter-spacing: -0.01em;
-  text-transform: capitalize;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  text-shadow: none;
   transition: color 0.2s ease;
 }
 
 .event-pure-card:hover .event-pure-title {
-  color: #ffffff;
+  color: #0066eb;
 }
 
 /* Preview Actions Row: View Details & Register */
@@ -891,28 +905,28 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 8px 14px;
+  padding: 9px 14px;
   border-radius: 980px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  font-family: 'Outfit', sans-serif;
+  background: var(--evt-pill-bg, rgba(240, 248, 255, 0.92));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.2px solid var(--evt-pill-border, rgba(0, 102, 235, 0.22));
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Outfit', sans-serif;
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: #ffffff;
+  color: var(--evt-deep, #003da5);
   cursor: pointer;
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 50, 120, 0.05);
 }
 
 .event-pure-btn-view:hover {
-  background: rgba(255, 255, 255, 0.24);
-  border-color: rgba(255, 255, 255, 0.65);
-  color: #ffffff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  background: #ffffff;
+  border-color: var(--evt-color, #0066eb);
+  color: var(--evt-color, #0066eb);
+  box-shadow: 0 4px 14px var(--evt-glow, rgba(0, 102, 235, 0.2));
   transform: translateY(-1px);
 }
 
@@ -922,25 +936,24 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 9px 16px;
   border-radius: 980px;
-  background: linear-gradient(180deg, #0071e3 0%, #005bb5 100%);
-  border: 1px solid rgba(0, 113, 227, 0.9);
-  font-family: 'Outfit', sans-serif;
+  background: var(--evt-btn-bg, linear-gradient(135deg, #003da5 0%, #0066eb 100%));
+  border: 1.2px solid var(--evt-pill-border, rgba(0, 102, 235, 0.3));
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Outfit', sans-serif;
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: #ffffff;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 14px var(--evt-glow, rgba(0, 102, 235, 0.32));
   transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
 .event-pure-btn-register:hover {
-  background: linear-gradient(180deg, #0077ed 0%, #0062c4 100%);
-  border-color: #38bdf8;
-  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 20px var(--evt-glow, rgba(0, 102, 235, 0.45));
   transform: translateY(-1px);
 }
 
@@ -1545,7 +1558,19 @@
     opacity: 0.35 !important;
   }
 
-  /* Bento grid on mobile */
+  /* Bento & Pure Grid on mobile */
+  .events-pure-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 16px 0 36px;
+  }
+
+  .event-pure-card {
+    min-height: 285px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
   .arena-bento-grid {
     grid-template-columns: 1fr;
     gap: 18px;

@@ -1,13 +1,15 @@
 import { useEffect, useRef } from 'react';
+import bgArtwork from '../assets/futuristic_event_bg.jpg';
 import './GraphicBackground.css';
 
-// Consortium 2026 Institutional Royal Blue, Electric Cyan & Gold Palette
+// Consortium 2026 High-Contrast Institutional Stardust Palette (Royal Blue, Cyan, Gold & Deep Navy)
 const GLOW_PARTICLE_COLORS = [
-  { r: 0, g: 102, b: 235 },     // Royal Blue (#0066eb)
-  { r: 0, g: 180, b: 216 },    // Electric Cyan (#00b4d8)
-  { r: 245, g: 158, b: 11 },   // Gold (#f59e0b)
-  { r: 2, g: 62, b: 138 },     // Deep Navy (#023e8a)
-  { r: 251, g: 191, b: 36 },   // Warm Amber Gold (#fbbf24)
+  { r: 0, g: 87, b: 217 },    // Royal Blue (#0057d9)
+  { r: 0, g: 168, b: 255 },   // Electric Cyan (#00a8ff)
+  { r: 245, g: 158, b: 11 },  // Amber Gold (#f59e0b)
+  { r: 0, g: 45, b: 120 },    // Deep Navy (#002d78)
+  { r: 217, g: 119, b: 6 },   // Warm Honey Gold (#d97706)
+  { r: 14, g: 116, b: 144 },  // Deep Azure (#0e7490)
 ];
 
 export default function GraphicBackground() {
@@ -17,15 +19,15 @@ export default function GraphicBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true });
+    const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
     let animId;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // Mouse tracking for interactive particle illumination
-    const mouse = {
+    // Pointer tracking (mouse + touch) for interactive illumination
+    const pointer = {
       x: width / 2,
       y: height / 2,
       targetX: width / 2,
@@ -35,18 +37,30 @@ export default function GraphicBackground() {
     };
 
     const handleMouseMove = (e) => {
-      mouse.targetX = e.clientX;
-      mouse.targetY = e.clientY;
-      mouse.isActive = true;
-      mouse.lastMoveTime = performance.now();
+      pointer.targetX = e.clientX;
+      pointer.targetY = e.clientY;
+      pointer.isActive = true;
+      pointer.lastMoveTime = performance.now();
     };
 
-    const handleMouseLeave = () => {
-      mouse.isActive = false;
+    const handleTouchMove = (e) => {
+      if (e.touches && e.touches[0]) {
+        pointer.targetX = e.touches[0].clientX;
+        pointer.targetY = e.touches[0].clientY;
+        pointer.isActive = true;
+        pointer.lastMoveTime = performance.now();
+      }
+    };
+
+    const handlePointerLeave = () => {
+      pointer.isActive = false;
     };
 
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+    window.addEventListener('touchstart', handleTouchMove, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    window.addEventListener('touchend', handlePointerLeave, { passive: true });
+    document.addEventListener('mouseleave', handlePointerLeave, { passive: true });
 
     const resizeCanvas = () => {
       width = window.innerWidth;
@@ -59,36 +73,22 @@ export default function GraphicBackground() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas, { passive: true });
 
-    // 42 luminous glowing stardust particles
-    const particleCount = 42;
+    // 38 refined, high-contrast stardust particles
+    const particleCount = 38;
     const particles = Array.from({ length: particleCount }, (_, i) => {
       const color = GLOW_PARTICLE_COLORS[i % GLOW_PARTICLE_COLORS.length];
       return {
         x: Math.random() * width,
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.35,
-        vy: -(0.15 + Math.random() * 0.28),
-        radius: Math.random() * 1.8 + 0.9,
+        vy: -(0.18 + Math.random() * 0.28),
+        radius: Math.random() * 2.0 + 1.2,
         color,
-        baseAlpha: Math.random() * 0.45 + 0.4,
-        pulseSpeed: 0.012 + Math.random() * 0.02,
+        baseAlpha: Math.random() * 0.45 + 0.55,
+        pulseSpeed: 0.015 + Math.random() * 0.02,
         phase: Math.random() * Math.PI * 2
       };
     });
-
-    let isScrolling = false;
-    let scrollTimeout = null;
-
-    const handleScroll = () => {
-      isScrolling = true;
-      if (scrollTimeout) clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        isScrolling = false;
-        lastTime = performance.now();
-      }, 90);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
 
     let isRunning = true;
     const handleVisibility = () => {
@@ -106,22 +106,19 @@ export default function GraphicBackground() {
       if (!isRunning) return;
       animId = requestAnimationFrame(loop);
 
-      // Dedicated GPU bandwidth: pause canvas repaint during scrolling gestures
-      if (isScrolling) return;
-
       const now = performance.now();
       const dt = Math.min((now - lastTime) / 16.67, 2.0);
       lastTime = now;
 
       ctx.clearRect(0, 0, width, height);
 
-      const isMouseRecentlyActive = mouse.isActive && (now - mouse.lastMoveTime < 2000);
-      if (isMouseRecentlyActive) {
-        mouse.x += (mouse.targetX - mouse.x) * 0.08 * dt;
-        mouse.y += (mouse.targetY - mouse.y) * 0.08 * dt;
+      const isPointerActive = pointer.isActive && (now - pointer.lastMoveTime < 2400);
+      if (isPointerActive) {
+        pointer.x += (pointer.targetX - pointer.x) * 0.1 * dt;
+        pointer.y += (pointer.targetY - pointer.y) * 0.1 * dt;
       }
 
-      // Render each glowing particle mote
+      // Render each glowing particle mote with high contrast against white canvas
       for (let i = 0; i < particleCount; i++) {
         const p = particles[i];
         p.y += p.vy * dt;
@@ -135,32 +132,38 @@ export default function GraphicBackground() {
         // Gentle breathing pulsation
         let currentAlpha = p.baseAlpha * (0.75 + 0.25 * Math.sin(now * p.pulseSpeed + p.phase));
 
-        // Proximity glow illumination when mouse is near
-        if (isMouseRecentlyActive) {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
+        // Proximity glow illumination when finger/cursor is near
+        if (isPointerActive) {
+          const dx = p.x - pointer.x;
+          const dy = p.y - pointer.y;
           const distSq = dx * dx + dy * dy;
-          if (distSq < 40000) {
-            currentAlpha = Math.min(1.0, currentAlpha + (1 - Math.sqrt(distSq) / 200) * 0.45);
+          if (distSq < 36000) {
+            currentAlpha = Math.min(1.0, currentAlpha + (1 - Math.sqrt(distSq) / 190) * 0.45);
           }
         }
 
-        // 1. Outer luminous radiant glow aura
-        const glowRadius = p.radius * 3.8;
+        // 1. Outer luminous radiant glow aura (fading to clean transparent white)
+        const glowRadius = p.radius * 4.5;
         const glowGrad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, glowRadius);
-        glowGrad.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha * 0.9})`);
-        glowGrad.addColorStop(0.35, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha * 0.28})`);
-        glowGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        glowGrad.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha * 0.55})`);
+        glowGrad.addColorStop(0.4, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${currentAlpha * 0.2})`);
+        glowGrad.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
         ctx.fillStyle = glowGrad;
         ctx.beginPath();
         ctx.arc(p.x, p.y, glowRadius, 0, Math.PI * 2);
         ctx.fill();
 
-        // 2. High-intensity diamond-bright core spark
-        ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(1, currentAlpha * 1.25)})`;
+        // 2. High-contrast solid colored core (crystal clear on white)
+        ctx.fillStyle = `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${Math.min(1, currentAlpha * 1.3)})`;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius * 0.65, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 3. Ultra-subtle specular highlight center
+        ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha * 0.7})`;
+        ctx.beginPath();
+        ctx.arc(p.x - p.radius * 0.25, p.y - p.radius * 0.25, p.radius * 0.35, 0, Math.PI * 2);
         ctx.fill();
       }
     };
@@ -170,20 +173,30 @@ export default function GraphicBackground() {
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('touchstart', handleTouchMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handlePointerLeave);
+      document.removeEventListener('mouseleave', handlePointerLeave);
       window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('visibilitychange', handleVisibility);
-      if (scrollTimeout) clearTimeout(scrollTimeout);
     };
   }, []);
 
   return (
     <div className="graphic-background-wrapper" aria-hidden="true">
-      {/* 1. Subtle Luminous Cyber Dot Matrix on Total Black */}
+      {/* 1. Cinematic 16:9 Aerospace Orbital Ribbon Background Artwork */}
+      <img
+        src={bgArtwork}
+        alt=""
+        className="graphic-background-art"
+        loading="eager"
+        decoding="async"
+      />
+
+      {/* 2. Subtle High-Tech Institutional Dot Matrix Grid */}
       <div className="glass-light-dot-matrix" />
 
-      {/* 2. 60-120 FPS Luminous Glowing Stardust Particle Canvas */}
+      {/* 3. 60-120 FPS High-Contrast Stardust Particle Canvas */}
       <canvas ref={canvasRef} className="glass-motion-canvas" />
     </div>
   );

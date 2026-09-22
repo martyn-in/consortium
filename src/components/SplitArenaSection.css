@@ -59,16 +59,24 @@
   line-height: 1.6;
 }
 
-/* Countdown Card - High Contrast Institutional Glassmorphism */
+/* ============================================================
+   EVENT COUNTDOWN — APPLE LUXURY AESTHETIC
+   Typography: SF Pro Display / Plus Jakarta Sans Tabular Numerics
+   Palette: Deep Midnight Navy #00205B, Royal Blue #0057D9, Slate #4B6A9B
+   ============================================================ */
+
 .countdown-card {
-  border-radius: 24px;
+  border-radius: 26px;
   background: rgba(255, 255, 255, 0.94) !important;
-  border: 1.5px solid rgba(0, 102, 235, 0.18) !important;
-  padding: 32px;
+  border: 1px solid rgba(0, 87, 217, 0.16) !important;
+  padding: clamp(24px, 3.5vw, 36px);
   margin-bottom: 40px;
-  box-shadow: 0 14px 40px rgba(0, 50, 120, 0.08), inset 0 1px 1px rgba(255, 255, 255, 1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 
+    0 20px 50px -15px rgba(0, 35, 95, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.03),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   position: relative;
   overflow: hidden;
 }
@@ -76,132 +84,256 @@
 .countdown-inner {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .countdown-top-banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(0, 53, 128, 0.1);
-  margin-bottom: 26px;
+  border-bottom: 1px solid rgba(0, 87, 217, 0.1);
+  margin-bottom: 28px;
 }
 
-.countdown-badge-left,
-.countdown-badge-right {
-  display: flex;
+.countdown-badge-left {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.82rem;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(240, 247, 255, 0.95);
+  border: 1.2px solid rgba(0, 113, 227, 0.25);
+  box-shadow: 0 1px 6px rgba(0, 87, 217, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #002d72;
+  letter-spacing: 0.06em;
+  color: #0057d9;
+}
+
+.countdown-badge-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 251, 235, 0.95);
+  border: 1.2px solid rgba(245, 158, 11, 0.28);
+  box-shadow: 0 1px 6px rgba(245, 158, 11, 0.06);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #b45309;
 }
 
 .countdown-real-emoji {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   line-height: 1;
   display: inline-block;
-  vertical-align: middle;
 }
 
 .countdown-digits-grid {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: clamp(10px, 1.8vw, 20px);
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
+/* Base Unit Box (Apple Frosted Glass) */
 .countdown-unit-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #f0f7ff !important;
-  border: 1.5px solid rgba(0, 102, 235, 0.18) !important;
+  border-radius: 20px;
+  flex: 1 1 130px;
+  max-width: 155px;
+  height: clamp(110px, 14vh, 130px);
+  padding: 16px 12px 14px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-radius: 18px;
-  width: 135px;
-  height: 118px;
-  box-shadow: 0 6px 18px rgba(0, 50, 120, 0.06) !important;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.25s ease, 
+              border-color 0.25s ease,
+              background 0.25s ease;
 }
 
-.countdown-unit-box:hover {
+/* 1. DAYS — Apple Pacific Ultramarine Blue */
+.countdown-unit-box--blue {
+  background: rgba(240, 247, 255, 0.95) !important;
+  border: 1.5px solid rgba(0, 113, 227, 0.22) !important;
+  box-shadow: 0 4px 18px rgba(0, 87, 217, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
+}
+
+.countdown-unit-box--blue:hover {
   transform: translateY(-3px);
-  background: #e0f0fe !important;
-  border-color: #0066eb !important;
-  box-shadow: 0 10px 24px rgba(0, 50, 120, 0.12), 0 0 16px rgba(0, 102, 235, 0.15) !important;
+  border-color: #0071e3 !important;
+  box-shadow: 0 10px 28px rgba(0, 113, 227, 0.16), 0 0 20px rgba(0, 113, 227, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1) !important;
+  background: #ffffff !important;
 }
 
+.countdown-digit-glow--blue {
+  color: #002d72;
+  background: linear-gradient(180deg, #001f54 0%, #003da5 50%, #0071e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 3px rgba(0, 45, 120, 0.12));
+}
+
+.countdown-unit-label--blue {
+  color: #0057d9;
+}
+
+.countdown-colon--blue {
+  color: #0071e3;
+  opacity: 0.55;
+}
+
+/* 2. HOURS — Apple Emerald Jade Green */
+.countdown-unit-box--emerald {
+  background: rgba(240, 253, 244, 0.95) !important;
+  border: 1.5px solid rgba(16, 185, 129, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
+}
+
+.countdown-unit-box--emerald:hover {
+  transform: translateY(-3px);
+  border-color: #10b981 !important;
+  box-shadow: 0 10px 28px rgba(16, 185, 129, 0.16), 0 0 20px rgba(16, 185, 129, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1) !important;
+  background: #ffffff !important;
+}
+
+.countdown-digit-glow--emerald {
+  color: #064e3b;
+  background: linear-gradient(180deg, #064e3b 0%, #047857 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 3px rgba(6, 78, 59, 0.12));
+}
+
+.countdown-unit-label--emerald {
+  color: #059669;
+}
+
+.countdown-colon--emerald {
+  color: #10b981;
+  opacity: 0.55;
+}
+
+/* 3. MINUTES — Apple Desert Titanium / Sunset Amber */
+.countdown-unit-box--amber {
+  background: rgba(255, 251, 235, 0.95) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.28) !important;
+  box-shadow: 0 4px 18px rgba(245, 158, 11, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
+}
+
+.countdown-unit-box--amber:hover {
+  transform: translateY(-3px);
+  border-color: #f59e0b !important;
+  box-shadow: 0 10px 28px rgba(245, 158, 11, 0.18), 0 0 20px rgba(245, 158, 11, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1) !important;
+  background: #ffffff !important;
+}
+
+.countdown-digit-glow--amber {
+  color: #78350f;
+  background: linear-gradient(180deg, #78350f 0%, #b45309 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 3px rgba(120, 53, 15, 0.12));
+}
+
+.countdown-unit-label--amber {
+  color: #d97706;
+}
+
+.countdown-colon--amber {
+  color: #f59e0b;
+  opacity: 0.55;
+}
+
+/* 4. SECONDS — Apple Cosmic Violet / Electric Purple */
+.countdown-unit-box--purple {
+  background: rgba(245, 243, 255, 0.95) !important;
+  border: 1.5px solid rgba(124, 58, 237, 0.25) !important;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
+}
+
+.countdown-unit-box--purple:hover {
+  transform: translateY(-3px);
+  border-color: #7c3aed !important;
+  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.16), 0 0 20px rgba(124, 58, 237, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1) !important;
+  background: #ffffff !important;
+}
+
+.countdown-digit-glow--purple {
+  color: #3b0764;
+  background: linear-gradient(180deg, #3b0764 0%, #6d28d9 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 3px rgba(59, 7, 100, 0.12));
+}
+
+.countdown-unit-label--purple {
+  color: #7c3aed;
+}
+
+/* Shared Digit & Label Specs (Apple Typography) */
 .countdown-digit-glow {
-  font-family: 'Outfit', -apple-system, sans-serif;
-  font-size: 2.6rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Plus Jakarta Sans", "Inter", sans-serif;
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
   font-weight: 800;
   line-height: 1;
-  background: linear-gradient(
-    180deg,
-    #002d72 0%,
-    #0052cc 50%,
-    #00a8ff 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: none;
-}
-
-.countdown-digit-glow.text-accent-cyan,
-.countdown-digit-glow.text-accent-violet {
-  background: linear-gradient(
-    180deg,
-    #002d72 0%,
-    #0052cc 50%,
-    #00a8ff 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: none;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "cv02" 1, "cv03" 1, "cv04" 1;
+  display: block;
 }
 
 .countdown-unit-label {
-  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #003da5;
-  margin-top: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Plus Jakarta Sans", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  margin-top: 8px;
   text-transform: uppercase;
 }
 
 .countdown-colon {
-  font-family: 'Outfit', sans-serif;
-  font-size: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
-  color: #0066eb;
-  opacity: 0.8;
   line-height: 1;
+  margin-top: -12px;
+  user-select: none;
 }
 
-@keyframes colonBlink {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(0.9); }
-}
-
+/* Footer Note with Emerald Accent */
 .countdown-footer-note {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: 24px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.85rem;
-  color: #64748b;
-  letter-spacing: 0.5px;
+  margin-top: 26px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: rgba(240, 253, 244, 0.9);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  box-shadow: 0 1px 6px rgba(16, 185, 129, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Plus Jakarta Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #065f46;
+  letter-spacing: 0.02em;
 }
 
 /* Schedule Container & Day Tabs */
@@ -441,14 +573,50 @@
 }
 
 .battle-feat-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-sub);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  color: #0f172a;
+  gap: 0.55rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Plus Jakarta Sans", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.battle-feat-item:hover {
+  transform: translateY(-2px);
+}
+
+.battle-feat-item--blue {
+  background: rgba(240, 247, 255, 0.95);
+  border: 1.2px solid rgba(0, 113, 227, 0.25);
+  color: #003da5;
+  box-shadow: 0 2px 8px rgba(0, 87, 217, 0.05);
+}
+.battle-feat-item--blue svg {
+  color: #0071e3;
+}
+
+.battle-feat-item--amber {
+  background: rgba(255, 251, 235, 0.95);
+  border: 1.2px solid rgba(245, 158, 11, 0.28);
+  color: #b45309;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.05);
+}
+.battle-feat-item--amber svg {
+  color: #f59e0b;
+}
+
+.battle-feat-item--emerald {
+  background: rgba(240, 253, 244, 0.95);
+  border: 1.2px solid rgba(16, 185, 129, 0.25);
+  color: #065f46;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.05);
+}
+.battle-feat-item--emerald svg {
+  color: #10b981;
 }
 
 .battle-heading {
@@ -699,6 +867,34 @@
     padding: clamp(2rem, 5vh, 3.5rem) 1rem;
   }
 
+  .countdown-card {
+    padding: clamp(20px, 3vh, 28px) clamp(16px, 3vw, 24px);
+    border-radius: 22px;
+    margin-bottom: 32px;
+  }
+
+  .countdown-top-banner {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 16px;
+    margin-bottom: 22px;
+  }
+
+  .countdown-digits-grid {
+    gap: 10px;
+  }
+
+  .countdown-unit-box {
+    flex: 1 1 100px;
+    height: 112px;
+    padding: 14px 8px 12px;
+  }
+
+  .countdown-digit-glow {
+    font-size: clamp(2rem, 3.8vw, 2.6rem);
+  }
+
   .split-arena-grid {
     grid-template-columns: 1fr;
   }
@@ -746,6 +942,63 @@
 @media (max-width: 480px) {
   .split-arena-section {
     padding: 2rem 0.75rem 3rem;
+  }
+
+  .countdown-card {
+    padding: 16px 12px 20px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .countdown-top-banner {
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    gap: 6px;
+  }
+
+  .countdown-badge-left,
+  .countdown-badge-right {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+
+  .countdown-digits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .countdown-colon {
+    display: none;
+  }
+
+  .countdown-unit-box {
+    width: 100%;
+    max-width: 100%;
+    height: 92px;
+    padding: 10px 4px 8px;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 50, 120, 0.04) !important;
+  }
+
+  .countdown-digit-glow {
+    font-size: 1.65rem;
+  }
+
+  .countdown-unit-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  .countdown-footer-note {
+    width: 100%;
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    text-align: center;
+    margin-top: 16px;
   }
 
   .full-battle-card {

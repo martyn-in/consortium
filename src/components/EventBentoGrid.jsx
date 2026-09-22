@@ -2,18 +2,69 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, IndianRupee } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
 
-// Unified Professional Signature Theme (Consistent Aqua & Deep Oceanic Sky)
-const UNIFIED_THEME = { 
-  color: '#00e5ff', 
-  bg: '#041026', 
-  glow: 'rgba(0, 229, 255, 0.35)' 
-};
+// Curated Apple Luxury Finishes (Pacific Blue, Emerald Jade, Desert Amber, Cosmic Violet, Rose Ruby, Alpine Cyan)
+const APPLE_LUXURY_THEMES = [
+  {
+    color: '#0071e3',
+    deep: '#003da5',
+    pillBg: 'rgba(240, 247, 255, 0.96)',
+    pillBorder: 'rgba(0, 113, 227, 0.3)',
+    pillText: '#003da5',
+    btnBg: 'linear-gradient(135deg, #003da5 0%, #0071e3 100%)',
+    glow: 'rgba(0, 113, 227, 0.22)'
+  },
+  {
+    color: '#10b981',
+    deep: '#047857',
+    pillBg: 'rgba(240, 253, 244, 0.96)',
+    pillBorder: 'rgba(16, 185, 129, 0.3)',
+    pillText: '#065f46',
+    btnBg: 'linear-gradient(135deg, #047857 0%, #10b981 100%)',
+    glow: 'rgba(16, 185, 129, 0.22)'
+  },
+  {
+    color: '#f59e0b',
+    deep: '#b45309',
+    pillBg: 'rgba(255, 251, 235, 0.96)',
+    pillBorder: 'rgba(245, 158, 11, 0.32)',
+    pillText: '#92400e',
+    btnBg: 'linear-gradient(135deg, #b45309 0%, #f59e0b 100%)',
+    glow: 'rgba(245, 158, 11, 0.22)'
+  },
+  {
+    color: '#8b5cf6',
+    deep: '#6d28d9',
+    pillBg: 'rgba(245, 243, 255, 0.96)',
+    pillBorder: 'rgba(124, 58, 237, 0.3)',
+    pillText: '#5b21b6',
+    btnBg: 'linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%)',
+    glow: 'rgba(124, 58, 237, 0.22)'
+  },
+  {
+    color: '#f43f5e',
+    deep: '#be123c',
+    pillBg: 'rgba(255, 241, 242, 0.96)',
+    pillBorder: 'rgba(244, 63, 94, 0.3)',
+    pillText: '#9f1239',
+    btnBg: 'linear-gradient(135deg, #be123c 0%, #f43f5e 100%)',
+    glow: 'rgba(244, 63, 94, 0.22)'
+  },
+  {
+    color: '#06b6d4',
+    deep: '#0e7490',
+    pillBg: 'rgba(236, 254, 255, 0.96)',
+    pillBorder: 'rgba(6, 182, 212, 0.3)',
+    pillText: '#155e75',
+    btnBg: 'linear-gradient(135deg, #0e7490 0%, #06b6d4 100%)',
+    glow: 'rgba(6, 182, 212, 0.22)'
+  }
+];
 
 export default function EventBentoGrid({ events, onOpenDetails, onRegister }) {
   return (
     <div className="events-pure-grid">
       {events.map((evt, index) => {
-        const theme = UNIFIED_THEME;
+        const theme = APPLE_LUXURY_THEMES[index % APPLE_LUXURY_THEMES.length];
 
         return (
           <motion.div
@@ -21,7 +72,11 @@ export default function EventBentoGrid({ events, onOpenDetails, onRegister }) {
             className="event-pure-card"
             style={{
               '--evt-color': theme.color,
-              '--evt-bg': theme.bg,
+              '--evt-deep': theme.deep,
+              '--evt-pill-bg': theme.pillBg,
+              '--evt-pill-border': theme.pillBorder,
+              '--evt-pill-text': theme.pillText,
+              '--evt-btn-bg': theme.btnBg,
               '--evt-glow': theme.glow
             }}
             initial={{ opacity: 0, y: 14 }}

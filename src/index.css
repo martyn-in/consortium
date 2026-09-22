@@ -71,10 +71,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 85px;
-  color-scheme: light;
+  color-scheme: light !important;
+  background-color: #ffffff !important;
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 section[id] {
@@ -82,15 +84,26 @@ section[id] {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.65;
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+#root {
+  background-color: #ffffff;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 100%;
   position: relative;
 }
 

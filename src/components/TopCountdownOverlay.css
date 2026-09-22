@@ -140,6 +140,63 @@
   }
 }
 
+/* Apple Luxury Color Finishes for Top Countdown */
+.top-slot--blue .top-countdown-digit {
+  color: #0071e3;
+  -webkit-text-fill-color: #0071e3;
+  filter: drop-shadow(0 0 8px rgba(0, 113, 227, 0.4));
+}
+.top-slot--blue .top-countdown-unit-full,
+.top-slot--blue .top-countdown-unit-short {
+  color: #0071e3;
+  -webkit-text-fill-color: #0071e3;
+}
+.top-divider--blue {
+  color: #0071e3 !important;
+  text-shadow: 0 0 6px rgba(0, 113, 227, 0.5) !important;
+}
+
+.top-slot--emerald .top-countdown-digit {
+  color: #10b981;
+  -webkit-text-fill-color: #10b981;
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4));
+}
+.top-slot--emerald .top-countdown-unit-full,
+.top-slot--emerald .top-countdown-unit-short {
+  color: #10b981;
+  -webkit-text-fill-color: #10b981;
+}
+.top-divider--emerald {
+  color: #10b981 !important;
+  text-shadow: 0 0 6px rgba(16, 185, 129, 0.5) !important;
+}
+
+.top-slot--amber .top-countdown-digit {
+  color: #f59e0b;
+  -webkit-text-fill-color: #f59e0b;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+}
+.top-slot--amber .top-countdown-unit-full,
+.top-slot--amber .top-countdown-unit-short {
+  color: #f59e0b;
+  -webkit-text-fill-color: #f59e0b;
+}
+.top-divider--amber {
+  color: #f59e0b !important;
+  text-shadow: 0 0 6px rgba(245, 158, 11, 0.5) !important;
+}
+
+.top-slot--purple .top-countdown-digit {
+  color: #8b5cf6;
+  -webkit-text-fill-color: #8b5cf6;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
+}
+.top-slot--purple .top-countdown-unit-full,
+.top-slot--purple .top-countdown-unit-short {
+  color: #8b5cf6;
+  -webkit-text-fill-color: #8b5cf6;
+}
+
 /* Mobile & Tablet Responsiveness */
 @media (max-width: 640px) {
   .top-countdown-overlay {
