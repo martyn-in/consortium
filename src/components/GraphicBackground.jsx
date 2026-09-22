@@ -18,7 +18,6 @@ export default function GraphicBackground() {
 
     const handleMouseMove = (e) => {
       const { innerWidth, innerHeight } = window;
-      // Gentle parallax offset based on pointer position (-22px to +22px)
       targetX = ((e.clientX / innerWidth) - 0.5) * 44;
       targetY = ((e.clientY / innerHeight) - 0.5) * 28;
     };
@@ -26,8 +25,8 @@ export default function GraphicBackground() {
     const handleTouchMove = (e) => {
       if (e.touches && e.touches[0]) {
         const { innerWidth, innerHeight } = window;
-        targetX = ((e.touches[0].clientX / innerWidth) - 0.5) * 32;
-        targetY = ((e.touches[0].clientY / innerHeight) - 0.5) * 20;
+        targetX = ((e.touches[0].clientX / innerWidth) - 0.5) * 28;
+        targetY = ((e.touches[0].clientY / innerHeight) - 0.5) * 18;
       }
     };
 
@@ -43,7 +42,6 @@ export default function GraphicBackground() {
 
     const loop = () => {
       if (!isRunning) return;
-      // Fluid inertial damping
       currentX += (targetX - currentX) * 0.055;
       currentY += (targetY - currentY) * 0.055;
 
@@ -67,7 +65,7 @@ export default function GraphicBackground() {
 
   return (
     <div className="graphic-background-wrapper" aria-hidden="true">
-      {/* 1. Dynamic Flowing Aurora Light Pools (Continuous Ambient Motion) */}
+      {/* 1. Dynamic Flowing Aurora Light Pools in Corners */}
       <div className="bg-motion-aurora bg-motion-aurora-top" />
       <div className="bg-motion-aurora bg-motion-aurora-bottom" />
 
