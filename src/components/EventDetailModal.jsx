@@ -75,13 +75,13 @@ const EVENT_MODAL_THEMES = {
     ...UNIFIED_MODAL_THEME, 
     accent: '#0066eb',
     accent2: '#e11d48',
-    deptCode: 'CSD' 
+    deptCode: 'CSM' 
   },
   'death-mystery-investigation': { 
     ...UNIFIED_MODAL_THEME, 
     accent: '#0066eb',
     accent2: '#e11d48',
-    deptCode: 'CSD' 
+    deptCode: 'CSM' 
   },
   // EEE Electrical / Magic
   'magic-witch': { 

@@ -50,6 +50,7 @@ export default function Hero({ onNavigateToEvents }) {
               loading="eager"
               decoding="async"
               draggable="false"
+              onContextMenu={(e) => e.preventDefault()}
             />
           </motion.div>
         </motion.div>

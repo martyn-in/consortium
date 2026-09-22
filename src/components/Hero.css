@@ -45,6 +45,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero-3d-floating-artwork-wrap {
@@ -54,6 +56,8 @@
   align-items: center;
   width: 100%;
   will-change: transform;
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero-3d-artwork-image {
@@ -65,14 +69,16 @@
   object-fit: contain;
   user-select: none;
   -webkit-user-drag: none;
-  /* Natural crisp specular shadow without artificial blue glow */
-  filter: drop-shadow(0 14px 32px rgba(0, 40, 100, 0.14));
-  transition: transform 0.35s ease, filter 0.35s ease;
+  /* Clean — zero artificial glow or shadow */
+  filter: none;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.35s ease;
 }
 
 .hero-3d-artwork-image:hover {
   transform: scale(1.025);
-  filter: drop-shadow(0 20px 42px rgba(0, 40, 100, 0.2));
+  filter: none;
 }
 
 /* ============================================================
@@ -99,11 +105,11 @@
   margin-top: clamp(16px, 2.2vh, 28px);
   padding: clamp(11px, 1.4vh, 15px) clamp(26px, 2.6vw, 40px);
   border-radius: 999px;
-  background: rgba(240, 247, 255, 0.94);
-  border: 1.8px solid rgba(0, 87, 217, 0.18);
-  box-shadow: 0 6px 24px rgba(0, 87, 217, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 87, 217, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
   user-select: none;
 }
 
@@ -262,12 +268,14 @@
   padding: 0 8px 0 clamp(28px, 2.6vw, 38px);
   height: clamp(52px, 6.4vh, 62px);
   border-radius: 999px;
-  background: linear-gradient(180deg, #0066EB 0%, #004BC4 100%);
-  border: 1px solid rgba(0, 45, 120, 0.18);
+  background: linear-gradient(180deg, rgba(0, 102, 235, 0.88) 0%, rgba(0, 75, 196, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 
     0 2px 4px rgba(0, 0, 0, 0.04),
-    0 8px 24px rgba(0, 87, 217, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 8px 24px rgba(0, 87, 217, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px) saturate(1.3);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
   color: #ffffff;
   font-family: 'Inter', 'Outfit', -apple-system, sans-serif;
   font-size: clamp(13.5px, 1.05vw, 16px);

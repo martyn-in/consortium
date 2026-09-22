@@ -35,7 +35,7 @@ import imgBridgeMockup from '../assets/real_bridge_mockup.jpg';
  * 05 — CSE Photography (CSE)
  * 06 — CSE Short Film (CSE)
  * 07 — Magic Witch (EEE)
- * 08 — Death Mystery (CSD)
+ * 08 — Death Mystery (CSM)
  * 09 — DATA GLITCH (CSD)
  * 10 — FlyZone (Aeronautical)
  * 11 — SPAN WARS – Bridge Mock-Up Challenge (Civil Engineering)
@@ -373,7 +373,7 @@ export const eventsList = [
     subtitle: 'A Technical Investigation Challenge',
     type: 'INVESTIGATION / MYSTERY',
     category: 'Experience',
-    department: 'Department of Computer Science and Engineering (Data Science) — CSD',
+    department: 'Department of Computer Science and Engineering (AI & ML) — CSM',
     tagline: 'Debug. Decode. Investigate. Deduce.',
     description: 'A laptop-only digital investigation challenge. Teams qualify through a technical entry gate, receive a confidential QR case briefing, and solve a multi-level mystery using coding, SQL, logs, timestamps, and digital forensics inside a custom investigation portal to deliver the final verdict.',
     image: imgDeathMystery,
