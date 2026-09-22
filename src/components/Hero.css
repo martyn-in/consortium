@@ -202,14 +202,14 @@
 }
 
 .hero-iare-logo {
-  height: clamp(68px, 8.5vh, 92px);
+  height: clamp(76px, 9.6vh, 106px);
   width: auto;
   object-fit: contain;
   margin: 0;
   display: block;
   user-select: none;
   -webkit-user-drag: none;
-  filter: drop-shadow(0 2px 8px rgba(0, 45, 120, 0.1));
+  filter: drop-shadow(0 3px 10px rgba(0, 45, 120, 0.12));
 }
 
 .hero-institute-link {
@@ -451,7 +451,7 @@
   }
 
   .hero-iare-logo {
-    height: 46px;
+    height: clamp(56px, 13vw, 72px);
   }
 
   .hero-scroll-text {
