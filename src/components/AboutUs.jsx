@@ -139,12 +139,24 @@ export default function AboutUs() {
             <div className="about-institution-inner">
               <div className="about-brand-row">
                 <div className="about-brand-left">
-                  <img 
-                    src={iareLogo} 
-                    alt="Institute of Aeronautical Engineering Logo" 
-                    className="about-iare-logo" 
-                    decoding="async"
-                  />
+                  <a
+                    href="https://www.iare.ac.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about-iare-logo-wrap"
+                    title="Visit Institute of Aeronautical Engineering Official Portal (iare.ac.in)"
+                  >
+                    <img 
+                      src={iareLogo} 
+                      alt="Institute of Aeronautical Engineering Logo" 
+                      className="about-iare-logo" 
+                      decoding="async"
+                    />
+                  </a>
+                  <div className="about-brand-text-block">
+                    <h3 className="about-college-heading">INSTITUTE OF AERONAUTICAL ENGINEERING</h3>
+                    <p className="about-college-sub">Autonomous Institution • Hyderabad, Telangana • Estd. 2000</p>
+                  </div>
                 </div>
                 <div className="about-brand-creds">
                   <span className="about-cred-badge cred-naac">⭐ NAAC &apos;A++&apos; GRADE</span>

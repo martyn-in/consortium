@@ -90,10 +90,15 @@ export default function Hero({ onNavigateToEvents }) {
             <span className="hero-org-line hero-org-line--gold" />
           </div>
 
-          <motion.div
+          <motion.a
+            href="https://www.iare.ac.in"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hero-iare-logo-wrap"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 350, damping: 20 }}
+            title="Visit Institute of Aeronautical Engineering Official Portal (iare.ac.in)"
           >
             <img
               src={iareLogo}
@@ -102,11 +107,19 @@ export default function Hero({ onNavigateToEvents }) {
               loading="eager"
               decoding="async"
             />
-          </motion.div>
+          </motion.a>
 
-          <h2 className="hero-institute">
-            INSTITUTE OF AERONAUTICAL ENGINEERING
-          </h2>
+          <a
+            href="https://www.iare.ac.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-institute-link"
+            title="Visit Institute of Aeronautical Engineering Official Portal (iare.ac.in)"
+          >
+            <h2 className="hero-institute">
+              INSTITUTE OF AERONAUTICAL ENGINEERING
+            </h2>
+          </a>
           <p className="hero-location">
             AUTONOMOUS&nbsp;&nbsp;•&nbsp;&nbsp;HYDERABAD
           </p>
