@@ -85,22 +85,15 @@ export default function GraphicBackground() {
 
   return (
     <div ref={wrapperRef} className="graphic-background-wrapper" aria-hidden="true">
-      {/* 1. Precision Cyber Blueprint Grid & Architectural Coordinate System */}
-      <div className="bg-blueprint-grid" />
-
-      {/* 2. Dynamic Flowing Aurora Light Pools (Continuous Ambient Motion) */}
+      {/* 1. Side Aurora Light Pools framing corners */}
       <div className="bg-motion-aurora bg-motion-aurora-top" />
       <div className="bg-motion-aurora bg-motion-aurora-bottom" />
-      <div className="bg-motion-aurora bg-motion-aurora-center" />
 
-      {/* 3. Interactive Volumetric Cursor Glow Spotlight */}
-      <div className="bg-interactive-spotlight" />
-
-      {/* 4. Elegant Geometric Aerospace Orbital Rings */}
+      {/* 2. Geometric Aerospace Orbital Rings strictly framing side corners */}
       <div className="bg-orbital-ring bg-orbital-ring-1" />
       <div className="bg-orbital-ring bg-orbital-ring-2" />
 
-      {/* 5. Fluid Moving Aerospace Background Artwork with Parallax Inertia */}
+      {/* 3. Fluid Moving Side Crystal Ribbons with Parallax Inertia (Clean Empty Center) */}
       <div ref={moverRef} className="graphic-background-mover">
         <picture className="graphic-background-picture">
           <source media="(max-width: 768px)" srcSet={bgArtworkMobile} />
@@ -113,7 +106,7 @@ export default function GraphicBackground() {
           />
         </picture>
 
-        {/* 6. Traveling Photonic Sheen Beam (Glistening Light Sweep Across Ribbons) */}
+        {/* 4. Traveling Photonic Sheen Beam Across Side Ribbons */}
         <div className="graphic-background-sheen" />
       </div>
     </div>
