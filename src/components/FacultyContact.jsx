@@ -115,7 +115,87 @@ export default function FacultyContact() {
           </div>
         </Reveal>
 
-        {/* 2. Filter Controls: Department Pills & Search */}
+        {/* 2. Website Developers (Positioned centrally between Conveners and Coordinators) */}
+        <Reveal direction="up" distance={20} delay={0.08}>
+          <div className="faculty-dev-support-card">
+            <div className="dev-support-info">
+              <div className="dev-support-badge">
+                <Code2 size={15} className="dev-support-badge-icon" />
+                <span>💻 WEBSITE DEVELOPERS</span>
+              </div>
+              <h4 className="dev-support-title">Website Developers</h4>
+              <p className="dev-support-desc">
+                For technical assistance, portal issues, or web inquiries, reach out directly:
+              </p>
+            </div>
+
+            <div className="dev-support-contacts">
+              <div className="dev-contact-card">
+                <div className="dev-contact-main">
+                  <div className="dev-chip-icon-box">
+                    <Phone size={15} />
+                  </div>
+                  <div className="dev-chip-text">
+                    <span className="dev-chip-label">👨‍💻 PULIVARTHI MARTYN</span>
+                    <a 
+                      href="tel:+918555877044" 
+                      className="dev-phone-num"
+                      onClick={() => sound.playClick()}
+                      title="Call Pulivarthi Martyn"
+                    >
+                      +91 85558 77044
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/pulivarthi-martyn-16a74b3a8/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dev-linkedin-btn"
+                  onClick={() => sound.playClick()}
+                  title="Pulivarthi Martyn LinkedIn Profile"
+                >
+                  <LinkedinIcon size={14} />
+                  <span>LINKEDIN</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+
+              <div className="dev-contact-card">
+                <div className="dev-contact-main">
+                  <div className="dev-chip-icon-box">
+                    <Phone size={15} />
+                  </div>
+                  <div className="dev-chip-text">
+                    <span className="dev-chip-label">👨‍💻 ASHWATH AMARCHINTA</span>
+                    <a 
+                      href="tel:+919177591324" 
+                      className="dev-phone-num"
+                      onClick={() => sound.playClick()}
+                      title="Call Ashwath Amarchinta"
+                    >
+                      +91 91775 91324
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/ashwath-amarchinta-2b9905430"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dev-linkedin-btn"
+                  onClick={() => sound.playClick()}
+                  title="Ashwath Amarchinta LinkedIn Profile"
+                >
+                  <LinkedinIcon size={14} />
+                  <span>LINKEDIN</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* 3. Filter Controls: Department Pills & Search */}
         <Reveal direction="up" distance={20} delay={0.1}>
           <div className="faculty-controls-bar">
             {/* Search Input */}
@@ -241,84 +321,6 @@ export default function FacultyContact() {
               </button>
             </div>
           )}
-        </div>
-
-        {/* 4. Website Developer Contact Card */}
-        <div className="faculty-dev-support-card">
-          <div className="dev-support-info">
-            <div className="dev-support-badge">
-              <Code2 size={15} className="dev-support-badge-icon" />
-              <span>💻 WEBSITE DEVELOPERS</span>
-            </div>
-            <h4 className="dev-support-title">Website Developers</h4>
-            <p className="dev-support-desc">
-              For technical assistance, portal issues, or web inquiries, reach out directly:
-            </p>
-          </div>
-
-          <div className="dev-support-contacts">
-            <div className="dev-contact-card">
-              <div className="dev-contact-main">
-                <div className="dev-chip-icon-box">
-                  <Phone size={15} />
-                </div>
-                <div className="dev-chip-text">
-                  <span className="dev-chip-label">👨‍💻 PULIVARTHI MARTYN</span>
-                  <a 
-                    href="tel:+918555877044" 
-                    className="dev-phone-num"
-                    onClick={() => sound.playClick()}
-                    title="Call Pulivarthi Martyn"
-                  >
-                    +91 85558 77044
-                  </a>
-                </div>
-              </div>
-              <a
-                href="https://www.linkedin.com/in/pulivarthi-martyn-16a74b3a8/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="dev-linkedin-btn"
-                onClick={() => sound.playClick()}
-                title="Pulivarthi Martyn LinkedIn Profile"
-              >
-                <LinkedinIcon size={14} />
-                <span>LINKEDIN</span>
-                <ExternalLink size={12} />
-              </a>
-            </div>
-
-            <div className="dev-contact-card">
-              <div className="dev-contact-main">
-                <div className="dev-chip-icon-box">
-                  <Phone size={15} />
-                </div>
-                <div className="dev-chip-text">
-                  <span className="dev-chip-label">👨‍💻 ASHWATH AMARCHINTA</span>
-                  <a 
-                    href="tel:+919177591324" 
-                    className="dev-phone-num"
-                    onClick={() => sound.playClick()}
-                    title="Call Ashwath Amarchinta"
-                  >
-                    +91 91775 91324
-                  </a>
-                </div>
-              </div>
-              <a
-                href="https://www.linkedin.com/in/ashwath-amarchinta-2b9905430"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="dev-linkedin-btn"
-                onClick={() => sound.playClick()}
-                title="Ashwath Amarchinta LinkedIn Profile"
-              >
-                <LinkedinIcon size={14} />
-                <span>LINKEDIN</span>
-                <ExternalLink size={12} />
-              </a>
-            </div>
-          </div>
         </div>
 
         {/* 5. Institutional Helpdesk Note */}

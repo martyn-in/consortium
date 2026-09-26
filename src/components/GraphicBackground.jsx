@@ -1,9 +1,14 @@
 import bgArtwork from '../assets/futuristic_event_bg.jpg';
+import bgArtworkDark from '../assets/futuristic_event_bg_dark.jpg';
+import { useTheme } from '../context/ThemeContext';
 import './GraphicBackground.css';
 
 export default function GraphicBackground() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   return (
-    <div className="graphic-background-wrapper" aria-hidden="true">
+    <div className={`graphic-background-wrapper ${isDark ? 'is-dark' : 'is-light'}`} aria-hidden="true">
       {/* 1. Precision Cyber Blueprint Grid */}
       <div className="bg-blueprint-grid" />
 
@@ -18,7 +23,7 @@ export default function GraphicBackground() {
       {/* 4. Auto-Flowing Aerospace Background Artwork */}
       <div className="graphic-background-mover">
         <img
-          src={bgArtwork}
+          src={isDark ? bgArtworkDark : bgArtwork}
           alt=""
           className="graphic-background-art"
           loading="eager"

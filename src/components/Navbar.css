@@ -35,6 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.2rem;
   position: relative;
   width: 100%;
 }
@@ -70,12 +71,11 @@
    2. CENTER NAVIGATION DOCK
    ============================================================ */
 .c26-nav-capsule-dock {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: clamp(0.85rem, 2.2vw, 2.4rem);
+  justify-content: center;
+  gap: clamp(0.75rem, 1.8vw, 2.2rem);
+  flex: 1;
   padding: 0;
   background: transparent;
   border: none;
@@ -168,21 +168,22 @@
 }
 
 .c26-nav-countdown-hud:hover {
-  border-color: rgba(0, 102, 235, 0.45);
-  box-shadow: 0 4px 16px rgba(0, 60, 160, 0.12),
-              inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: #ff1744;
+  box-shadow: 0 4px 18px rgba(255, 23, 68, 0.35),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transform: translateY(-1px);
 }
 
 .c26-nav-countdown-clock {
-  color: #0066eb;
+  color: #ff1744;
   flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 23, 68, 0.6));
 }
 
 .c26-nav-countdown-track {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .c26-nav-countdown-slot {
@@ -191,14 +192,14 @@
   gap: 2.5px;
 }
 
-/* Deep Royal Blue Tabular Digits */
+/* Crisp Tabular Digits */
 .c26-nav-countdown-digit {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
-  font-size: 0.88rem;
+  font-family: 'Space Grotesk', 'Outfit', -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
   font-weight: 800;
   letter-spacing: -0.01em;
   line-height: 1;
-  color: #002d72;
+  color: #F5F5F5;
   font-variant-numeric: tabular-nums;
   font-feature-settings: 'tnum' 1;
   display: inline-block;
@@ -206,84 +207,31 @@
   text-align: center;
 }
 
-/* Slate Unit Labels */
-.c26-nav-countdown-unit-full,
-.c26-nav-countdown-unit-short {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.7rem;
+.c26-nav-countdown-sec {
+  color: #ff1744 !important;
+  text-shadow: 0 0 10px rgba(255, 23, 68, 0.7);
+}
+
+/* Unit Labels */
+.c26-nav-countdown-unit {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   line-height: 1;
-  color: #4b6a9b;
+  color: rgba(245, 245, 245, 0.65);
   text-transform: uppercase;
 }
 
-.c26-nav-countdown-unit-short {
-  display: none;
-  font-size: 0.72rem;
-}
-
-/* Electric Cyan Divider Colons */
+/* Vibrant Ruby Divider Colons */
 .c26-nav-countdown-divider {
-  font-family: 'Inter', monospace;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #008CFF;
-  opacity: 0.75;
-  transform: translateY(-1px);
+  font-family: 'Outfit', monospace;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ff1744;
+  opacity: 0.85;
+  transform: translateY(-0.5px);
   display: inline-block;
-}
-
-/* ============================================================
-   APPLE LUXURY SIGNATURE PALETTES FOR NAVBAR HUD
-   ============================================================ */
-
-/* 1. DAYS — Apple Pacific Ultramarine Blue */
-.c26-slot--blue .c26-nav-countdown-digit {
-  color: #0057d9;
-}
-.c26-slot--blue .c26-nav-countdown-unit-full,
-.c26-slot--blue .c26-nav-countdown-unit-short {
-  color: #0071e3;
-}
-.c26-divider--blue {
-  color: #0071e3;
-  opacity: 0.65;
-}
-
-/* 2. HOURS — Apple Emerald Jade Green */
-.c26-slot--emerald .c26-nav-countdown-digit {
-  color: #047857;
-}
-.c26-slot--emerald .c26-nav-countdown-unit-full,
-.c26-slot--emerald .c26-nav-countdown-unit-short {
-  color: #10b981;
-}
-.c26-divider--emerald {
-  color: #10b981;
-  opacity: 0.65;
-}
-
-/* 3. MINUTES — Apple Desert Titanium Amber */
-.c26-slot--amber .c26-nav-countdown-digit {
-  color: #b45309;
-}
-.c26-slot--amber .c26-nav-countdown-unit-full,
-.c26-slot--amber .c26-nav-countdown-unit-short {
-  color: #f59e0b;
-}
-.c26-divider--amber {
-  color: #f59e0b;
-  opacity: 0.65;
-}
-
-/* 4. SECONDS — Apple Cosmic Violet / Electric Purple */
-.c26-slot--purple .c26-nav-countdown-digit {
-  color: #6d28d9;
-}
-.c26-slot--purple .c26-nav-countdown-unit-full,
-.c26-slot--purple .c26-nav-countdown-unit-short {
-  color: #8b5cf6;
 }
 
 
@@ -569,3 +517,84 @@
     gap: 3px;
   }
 }
+
+/* ============================================================
+   APPLE PRO LUXURY THEME TOGGLE SWITCH
+   ============================================================ */
+.c26-theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.2px solid rgba(229, 9, 46, 0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.c26-theme-toggle-btn:hover {
+  transform: translateY(-1px);
+  border-color: #e50914;
+  box-shadow: 0 4px 14px rgba(229, 9, 20, 0.25);
+}
+
+.c26-theme-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 999px;
+  background: rgba(0, 102, 235, 0.08);
+}
+
+.c26-theme-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #64748b;
+  transition: all 0.25s ease;
+}
+
+.c26-theme-icon.is-active {
+  background: #ffffff;
+  color: #0066eb;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.c26-theme-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+/* Mobile theme row inside drawer */
+.c26-mobile-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+}
+
+.c26-mobile-theme-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #002d72;
+}
+
+.c26-theme-toggle-mobile {
+  padding: 5px 12px 5px 6px;
+}
+

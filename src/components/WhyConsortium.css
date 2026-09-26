@@ -36,7 +36,7 @@
   font-family: var(--font-heading);
   font-style: italic;
   font-weight: 800;
-  background: linear-gradient(105deg, #002d72 0%, #0066eb 50%, #00a8ff 100%);
+  background: linear-gradient(105deg, #ff1744 0%, #e5092e 50%, #8b0018 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: skewX(-6deg);
@@ -54,8 +54,8 @@
   background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid var(--pillar-border, rgba(0, 102, 235, 0.16)) !important;
-  box-shadow: 0 10px 30px rgba(0, 50, 120, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1);
+  border: 1.5px solid var(--pillar-border, rgba(255, 23, 68, 0.18)) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1);
   border-radius: 18px;
   padding: 2.2rem 1.4rem;
   display: flex;
@@ -69,8 +69,8 @@
 .why-pillar-card:hover {
   transform: translateY(-4px);
   background: #ffffff !important;
-  border-color: var(--pillar-accent, #0066eb) !important;
-  box-shadow: 0 16px 36px rgba(0, 50, 120, 0.12), 0 0 24px var(--pillar-glow, rgba(0, 102, 235, 0.12));
+  border-color: var(--pillar-accent, #ff1744) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), 0 0 24px var(--pillar-glow, rgba(255, 23, 68, 0.15));
 }
 
 .pillar-corner-tl,

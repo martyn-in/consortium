@@ -1,7 +1,10 @@
 import { ArrowUp } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
-import c26Logo from '../assets/consortium_c26_logo_clean.png';
-import iareLogo from '../assets/iare_logo_dark_text.png';
+import { useTheme } from '../context/ThemeContext';
+import c26LogoDark from '../assets/consortium_c26_logo_dark.png';
+import c26LogoLight from '../assets/consortium_c26_logo_clean.png';
+import iareLogoDark from '../assets/iare_logo_dark_text.png';
+import iareLogoWhite from '../assets/iare_logo_white_text.png';
 import './Footer.css';
 
 const InstagramIcon = ({ size = 18 }) => (
@@ -34,6 +37,10 @@ const TwitterXIcon = ({ size = 18 }) => (
 );
 
 export default function Footer() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+  const c26Logo = isDark ? c26LogoDark : c26LogoLight;
+  const iareLogo = isDark ? iareLogoWhite : iareLogoDark;
   const scrollToTop = () => {
     sound.playClick();
     window.scrollTo({ top: 0, behavior: 'smooth' });

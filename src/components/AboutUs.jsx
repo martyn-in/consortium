@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
+import {
   CheckCircle2, ExternalLink, ChevronDown
 } from 'lucide-react';
 import Reveal from './Reveal';
-import iareLogo from '../assets/iare_logo_dark_text.png';
+import { useTheme } from '../context/ThemeContext';
+import iareLogoDark from '../assets/iare_logo_dark_text.png';
+import iareLogoWhite from '../assets/iare_logo_white_text.png';
 import { sound } from '../utils/soundEffects';
 import './AboutUs.css';
 
@@ -20,12 +22,12 @@ const stats = [
 const sectionsData = [
   {
     id: 'overview',
-    title: 'Overview & Programs',
+    title: 'Host Institution & Legacy',
     emoji: '🏛️',
     badge: 'EST. 2000 // AUTONOMOUS',
     content: [
-      "Institute of Aeronautical Engineering (IARE), Hyderabad was established in the year 2000 and is run by Maruthi Educational Society founded by a devoted group of eminent professionals and industrialists having a long and outstanding experience in educational system with a mission ‘Education for Liberation’. It is the first institute to start B.Tech program in Aeronautical Engineering in the state of Telangana and has gradually transformed itself into an integrated multi-disciplinary technological institute. It is the most preferred institute with 100% admissions in the state of Telangana.",
-      "IARE is a prestigious Autonomous engineering college offering nine B.Tech programs: Computer Science and Engineering (CSE), CSE (Artificial Intelligence and Machine Learning), CSE (Data Science), Information Technology, Electronics and Communication Engineering, Electrical and Electronics Engineering, Aeronautical Engineering, Mechanical Engineering, Civil Engineering and five M.Tech programs in engineering and MBA (Master of Business Administration) with 25 years of rich standing in the educational sphere. The institute is approved by AICTE, New Delhi; recognized by Govt. of Telangana; affiliated to Jawaharlal Nehru Technological University Hyderabad (JNTUH); and accredited by National Assessment and Accreditation Council (NAAC) with ‘A++’ Grade. 100% Eligible B.Tech programs, 85% M.Tech programs and MBA program are accredited by National Board of Accreditation (NBA), New Delhi since 2008. The institute also received UGC recognition under Sections 2(f) and 12(B) of the UGC Act."
+      "Institute of Aeronautical Engineering (IARE), Hyderabad was established in the year 2000 with a mission 'Education for Liberation'. As the premier autonomous technical institution in Telangana, IARE is celebrated for 25 years of relentless excellence in technology, engineering, and innovation.",
+      "Approved by AICTE and accredited with NAAC 'A++' Grade, IARE is the home of Consortium 2026—a grand confluence of national engineering talent, autonomous AI, combat robotics, and cutting-edge research."
     ]
   },
   {
@@ -34,78 +36,32 @@ const sectionsData = [
     emoji: '🏆',
     badge: 'NATIONAL RECOGNITION',
     content: [
-      "It is a matter of great pride that the Institute of Aeronautical Engineering has been ranked in the 151–200 band in the Engineering category by the National Institutional Ranking Framework (NIRF) - 2025, Ministry of Education, Govt. of India. It has sustained its rank in the 151–200 band for the EIGHTH time in a row across TEN editions of NIRF. This reflects our commitment to excellence and the high standards we uphold in teaching, research, employability, and innovation.",
-      "Besides the institute has been ranked by different independent national agencies which include Careers 360 (AAAA), India Today (54), The Week (60), Times of India (64), Competition Success Review (16), Outlook (50), Data Quest (78), BW Business World (60)."
+      "Ranked in the prestigious 151–200 band in Engineering by NIRF (Ministry of Education, Govt. of India) for the eighth time in a row, demonstrating continuous excellence in education, employability, and innovation.",
+      "Consistently recognized among top engineering hubs across India by India Today, Careers360 (AAAA), and The Week."
     ],
     rankingsList: [
-      { name: 'NIRF Engineering (Govt. of India)', rank: 'Rank-Band 151–200 (8 Consecutive Times)' },
+      { name: 'NIRF Engineering (Govt. of India)', rank: 'Rank-Band 151–200 (8x in a row)' },
       { name: 'Careers 360', rank: 'AAAA Rating' },
       { name: 'India Today', rank: 'Rank 54' },
       { name: 'The Week', rank: 'Rank 60' },
       { name: 'Times of India', rank: 'Rank 64' },
-      { name: 'Competition Success Review', rank: 'Rank 16' },
-      { name: 'Outlook Magazine', rank: 'Rank 50' },
-      { name: 'Data Quest', rank: 'Rank 78' },
-      { name: 'BW Business World', rank: 'Rank 60' },
-    ]
-  },
-  {
-    id: 'research',
-    title: 'Research, Grants & Patents',
-    emoji: '🔬',
-    badge: 'INNOVATION ECOSYSTEM',
-    content: [
-      "The total number of students is 6,337 and that of faculty is 345, out of which, 138 are Ph.D’s (40%) ensuring healthy faculty student ratio. The research activity on campus is woven in pursuance of its vision & mission statements around the philosophy of Inspire, Innovate and Implement to benefit the contemporary society. It unwinds itself into different fields such as environment, aerospace, PLC, CAD/CAM, CNC machining, tool design, welding, embedded systems, and low power VLSI digital system design. Emphasis is also being laid on manufacturing, automation, business analytics, big data, cloud computing, wireless technology, image processing, and next generation networks.",
-      "IARE has fourteen sponsored research projects, and has received grants worth Rs. 925.59 lakhs for research and other activities by different agencies including DST, AICTE, UGC etc. The institute has a record of intellectual property with 3,100+ research paper publications by faculty as well as students and 23,000+ citations, 72 h-index, 720 patents published and 45 patents granted. Internal revenue generation through consultancy facilitates and promotes activities pertaining to energy audit, mobile apps, drones in agriculture, agricultural tools, and material testing."
-    ]
-  },
-  {
-    id: 'placements',
-    title: 'Placements & Industry MoUs',
-    emoji: '💼',
-    badge: 'CAREER EXCELLENCE',
-    content: [
-      "Big placements greet our students with ample opportunities with around 62 core and software companies visiting the institute every year with 700+ Placements. Placement and training centre is instrumental in signing the Memorandum of Understanding (MOU) with many reputed organizations including Microsoft, Zscaler, JPMorgan Chase & Co, Amazon, Juspay, Amadeus, EPAM, ZeroCodeHR, Sears, DBS, Accolite Digital, ARCADIS IBI, Capgemini, Lumen, IBM, Accenture, Virtusa, Cognizant, UST, Byteridge, JSW, LTIMindtree, Ernst & Young, Wiley Edge, TATA Consultancy Services, TATA Technologies, TATA Advanced Systems, Infosys, Wipro, MPhasis, Quest Global, NTT Data, Hexaware, Optum, JBM, Tech Mahindra and so on."
-    ],
-    recruiters: [
-      'Microsoft', 'Amazon', 'JPMorgan Chase & Co', 'Zscaler', 'Juspay', 'Amadeus', 'EPAM',
-      'IBM', 'Accenture', 'TCS', 'Infosys', 'Capgemini', 'Virtusa', 'Cognizant', 'LTIMindtree',
-      'Ernst & Young', 'TATA Advanced Systems', 'Wipro', 'Tech Mahindra', 'Optum', 'Hexaware'
-    ]
-  },
-  {
-    id: 'competitions',
-    title: 'Student Innovation & Competitions',
-    emoji: '🥇',
-    badge: 'GLOBAL COMPETITIVENESS',
-    content: [
-      "The students are provided with avenues to showcase their talents and innovative skills. They also participate in various national level engineering competitions like Baja SAEINDIA, Supra SAEINDIA, Go-kart, ADC championships to name a few and have made their mark by winning prizes and ranks. They participate in national and state level project competitions as well as conferences to share their research findings. Students have represented the institute at international level as well."
     ]
   },
   {
     id: 'infrastructure',
-    title: 'Library & Smart Campus',
-    emoji: '📚',
-    badge: '10 ACRES // 3,90,837 SQ.FT',
+    title: 'Smart Campus & Tech Arena',
+    emoji: '🚀',
+    badge: '10 ACRES // INNOVATION HUB',
     content: [
-      "The central library houses a rich collection of books for all subjects with recent publications. There are about 56,862 books, 7,998 individual titles, nearly 132 National / International Journals, 2,715 back volumes, and e-journals from IEEE, ASME and ASCE. Apart from this, the students have an exclusive access to DELNET for resource sharing. The library is open for 10 hours on weekdays and even on Sundays. Book distribution process has been automated for quick and easy access. For circulation of library books ‘Automated Self Service Kiosk’ has been installed, which enables users to issue, return and renew books by themselves.",
-      "Institute has state of art infrastructural facilities to support teaching-learning, research and administrative services. The institute is spread over 10 acres with built up area of 3,90,837 sft. housing 72+ smart classrooms, 3 ICT studio rooms, 4 flipped classrooms, 4 conference halls, 760 seating capacity auditorium, 10 research laboratories, 103 academic laboratories, science and technology startup park, technology innovation and incubation center, open air amphitheater, makerspace, community facilitation center, skill development center and library. Campus-wide networking with 2,000 Mbps internet connectivity, Wi-Fi and CCTV facility is available. To reduce the consumption of electricity efficient lightings are used with solar electric energy of 160 KW on the grid. A captive power of 480 KVA is provided to ensure smooth working of the institute in times of power outage. The institute operates 32 buses for the benefit of students and staff."
-    ]
-  },
-  {
-    id: 'campus-life',
-    title: 'Hostels, Sports & Campus Life',
-    emoji: '🏡',
-    badge: 'CAMPUS LIVING & CULTURE',
-    content: [
-      "IARE has a home away from home with the best amenities for the students to provide them a comfortable lifestyle within a vicinity of 1 km of the campus. The institute provides separate hostels for boys and girls, made to grow as places to support learning not only academics but also life skills in a multi-cultural and multi-lingual environment.",
-      "Students are encouraged to participate as actively in sports and other extracurricular activities as in academics. The institute maintains a separate unoccupied open area of 4 acres for the play fields in any time fit condition. Apart from this, the institute also has several sports rooms where students can play and revive their energies and be mentally and physically fit.",
-      "With its belief in holistic approach to excellence, the institute offers distinct Teaching-Learning Process to push the boundaries of skill and knowledge. The Institute excels in supporting “Research initiatives among students and faculty members” and “Entrepreneurship drive among students” which makes IARE as one of the best institutions to enhance the performance of the students."
+      "IARE's lush 10-acre campus features world-class technology infrastructure: 103 high-tech laboratories, state-of-the-art incubation centres, robotics maker-spaces, and a 760-seater air-conditioned auditorium.",
+      "Equipped with gigabit internet connectivity, smart stages, and dynamic arena facilities designed to stage high-intensity national tech competitions."
     ]
   }
 ];
 
 export default function AboutUs() {
+  const { theme } = useTheme();
+  const iareLogo = theme === 'dark' ? iareLogoWhite : iareLogoDark;
   const [activeTab, setActiveTab] = useState('overview');
   const [showAllSections, setShowAllSections] = useState(false);
 
@@ -146,10 +102,10 @@ export default function AboutUs() {
                     className="about-iare-logo-wrap"
                     title="Visit Institute of Aeronautical Engineering Official Portal (iare.ac.in)"
                   >
-                    <img 
-                      src={iareLogo} 
-                      alt="Institute of Aeronautical Engineering Logo" 
-                      className="about-iare-logo" 
+                    <img
+                      src={iareLogo}
+                      alt="Institute of Aeronautical Engineering Logo"
+                      className="about-iare-logo"
                       decoding="async"
                     />
                   </a>
@@ -160,7 +116,7 @@ export default function AboutUs() {
                 </div>
                 <div className="about-brand-creds">
                   <span className="about-cred-badge cred-naac">⭐ NAAC &apos;A++&apos; GRADE</span>
-                  <span className="about-cred-badge cred-nirf">🏆 NIRF 151–200 BAND</span>
+                  <span className="about-cred-badge cred-nirf">🏆 NIRF 151-200 BAND</span>
                   <span className="about-cred-badge cred-ugc">📜 UGC 2(f) &amp; 12(B)</span>
                   <span className="about-cred-badge cred-nba">✅ NBA ACCREDITED</span>
                   <span className="about-cred-badge cred-estd">🎓 ESTD. 2000</span>
@@ -175,34 +131,6 @@ export default function AboutUs() {
                 <p className="mission-quote-text">
                   &ldquo;Education for Liberation&rdquo; — Run by Maruthi Educational Society founded by eminent professionals and industrialists. Autonomous Engineering College established in 2000.
                 </p>
-              </div>
-
-              <div className="about-conveners-strip">
-                <span className="conveners-strip-label">👑 FEST CONVENERSHIP:</span>
-                <div className="conveners-strip-links">
-                  <a 
-                    href="https://www.iare.ac.in/?q=electrical-and-electronics-engineering/ms-d-shobha-rani" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="convener-strip-pill"
-                    onClick={() => sound.playClick()}
-                    title="Dr. D. Shoba Rani - Convener"
-                  >
-                    <span>👑 Convener: Dr. D. Shoba Rani (EEE)</span>
-                    <ExternalLink size={12} />
-                  </a>
-                  <a 
-                    href="https://www.iare.ac.in/?q=freshman-engineering/dr-p-srilatha" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="convener-strip-pill"
-                    onClick={() => sound.playClick()}
-                    title="Dr. P. Srilatha - Co-Convener"
-                  >
-                    <span>🎖️ Co-Convener: Dr. P. Srilatha (FE)</span>
-                    <ExternalLink size={12} />
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -257,9 +185,9 @@ export default function AboutUs() {
               }}
             >
               <span>{showAllSections ? '📋 SHOW TABBED VIEW' : '📊 EXPAND ALL SECTIONS'}</span>
-              <ChevronDown 
-                size={16} 
-                style={{ transform: showAllSections ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }} 
+              <ChevronDown
+                size={16}
+                style={{ transform: showAllSections ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}
               />
             </button>
           </div>

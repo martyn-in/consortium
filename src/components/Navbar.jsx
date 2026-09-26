@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Menu, X, ArrowUpRight, Clock } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Clock, Sun, Moon } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
 import useModalHistory from '../hooks/useModalHistory';
+import { useTheme } from '../context/ThemeContext';
 import c26Logo from '../assets/consortium_c26_logo_clean.png';
 import './Navbar.css';
 
@@ -41,6 +42,7 @@ const navItems = [
 ];
 
 export default function Navbar({ onNavigateToEvents }) {
+  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -128,12 +130,24 @@ export default function Navbar({ onNavigateToEvents }) {
           onMouseEnter={() => sound.playHover()}
           aria-label="Consortium 2026 Home"
         >
-          <img 
-            src={c26Logo} 
-            alt="Consortium 2026" 
-            className="c26-brand-logo-img" 
-            decoding="async"
-          />
+          {theme === 'dark' ? (
+            <div className="c26-brand-editorial-lockup">
+              <span className="c26-brand-red-c" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 7.5C21.8 5.3 18.6 4 15 4C8.37 4 3 9.37 3 16C3 22.63 8.37 28 15 28C18.6 28 21.8 26.7 24 24.5" stroke="#FF1744" strokeWidth="4.2" strokeLinecap="round" />
+                  <circle cx="15" cy="16" r="5" fill="#E5092E" opacity="0.8" filter="blur(3px)" />
+                </svg>
+              </span>
+              <span className="c26-brand-wordmark-editorial">CONSORTIUM</span>
+            </div>
+          ) : (
+            <img 
+              src={c26Logo} 
+              alt="Consortium 2026" 
+              className="c26-brand-logo-img" 
+              decoding="async"
+            />
+          )}
         </a>
 
         {/* 2. Center: Floating Cyber Capsule Navigation Dock */}
@@ -169,37 +183,54 @@ export default function Navbar({ onNavigateToEvents }) {
           >
             <Clock size={14} className="c26-nav-countdown-clock" />
             <div className="c26-nav-countdown-track">
-              <div className="c26-nav-countdown-slot c26-slot--blue">
+              <div className="c26-nav-countdown-slot">
                 <span className="c26-nav-countdown-digit">{timeLeft.days}</span>
-                <span className="c26-nav-countdown-unit-full">DAYS</span>
-                <span className="c26-nav-countdown-unit-short">D</span>
+                <span className="c26-nav-countdown-unit">DAYS</span>
               </div>
 
-              <span className="c26-nav-countdown-divider c26-divider--blue">:</span>
+              <span className="c26-nav-countdown-divider">:</span>
 
-              <div className="c26-nav-countdown-slot c26-slot--emerald">
+              <div className="c26-nav-countdown-slot">
                 <span className="c26-nav-countdown-digit">{timeLeft.hours}</span>
-                <span className="c26-nav-countdown-unit-full">HOURS</span>
-                <span className="c26-nav-countdown-unit-short">H</span>
+                <span className="c26-nav-countdown-unit">HRS</span>
               </div>
 
-              <span className="c26-nav-countdown-divider c26-divider--emerald">:</span>
+              <span className="c26-nav-countdown-divider">:</span>
 
-              <div className="c26-nav-countdown-slot c26-slot--amber">
+              <div className="c26-nav-countdown-slot">
                 <span className="c26-nav-countdown-digit">{timeLeft.minutes}</span>
-                <span className="c26-nav-countdown-unit-full">MIN</span>
-                <span className="c26-nav-countdown-unit-short">M</span>
+                <span className="c26-nav-countdown-unit">MIN</span>
               </div>
 
-              <span className="c26-nav-countdown-divider c26-divider--amber">:</span>
+              <span className="c26-nav-countdown-divider">:</span>
 
-              <div className="c26-nav-countdown-slot c26-slot--purple">
+              <div className="c26-nav-countdown-slot c26-slot--sec">
                 <span className="c26-nav-countdown-digit c26-nav-countdown-sec">{timeLeft.seconds}</span>
-                <span className="c26-nav-countdown-unit-full">SEC</span>
-                <span className="c26-nav-countdown-unit-short">S</span>
+                <span className="c26-nav-countdown-unit">SEC</span>
               </div>
             </div>
           </a>
+
+          {/* Theme Mode Switch Button - Icon only per user request */}
+          <button
+            type="button"
+            className="c26-theme-toggle-btn"
+            onClick={() => {
+              sound.playClick();
+              toggleTheme();
+            }}
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            title={`Switch to ${theme === 'dark' ? 'Light Mode' : 'Dark Mode'}`}
+          >
+            <div className="c26-theme-toggle-pill">
+              <span className={`c26-theme-icon ${theme === 'dark' ? 'is-active' : ''}`}>
+                <Moon size={14} />
+              </span>
+              <span className={`c26-theme-icon ${theme === 'light' ? 'is-active' : ''}`}>
+                <Sun size={14} />
+              </span>
+            </div>
+          </button>
 
           {/* Mobile Hamburger Toggle Button */}
           <button
@@ -223,11 +254,11 @@ export default function Navbar({ onNavigateToEvents }) {
           <div className="c26-mobile-drawer-countdown">
             <span className="c26-mobile-countdown-label">FESTIVAL COMMENCES IN</span>
             <div className="c26-nav-countdown-track">
-              <div className="c26-nav-countdown-slot c26-slot--blue">
+              <div className="c26-nav-countdown-slot c26-slot--ruby">
                 <span className="c26-nav-countdown-digit">{timeLeft.days}</span>
                 <span className="c26-nav-countdown-unit-full">DAYS</span>
               </div>
-              <span className="c26-nav-countdown-divider c26-divider--blue">:</span>
+              <span className="c26-nav-countdown-divider c26-divider--ruby">:</span>
               <div className="c26-nav-countdown-slot c26-slot--emerald">
                 <span className="c26-nav-countdown-digit">{timeLeft.hours}</span>
                 <span className="c26-nav-countdown-unit-full">HOURS</span>
@@ -238,7 +269,7 @@ export default function Navbar({ onNavigateToEvents }) {
                 <span className="c26-nav-countdown-unit-full">MIN</span>
               </div>
               <span className="c26-nav-countdown-divider c26-divider--amber">:</span>
-              <div className="c26-nav-countdown-slot c26-slot--purple">
+              <div className="c26-nav-countdown-slot c26-slot--crimson">
                 <span className="c26-nav-countdown-digit c26-nav-countdown-sec">{timeLeft.seconds}</span>
                 <span className="c26-nav-countdown-unit-full">SEC</span>
               </div>
@@ -268,6 +299,30 @@ export default function Navbar({ onNavigateToEvents }) {
                 </a>
               );
             })}
+
+            <div className="c26-mobile-drawer-divider" />
+
+            <div className="c26-mobile-theme-row">
+              <span className="c26-mobile-theme-label">THEME</span>
+              <button
+                type="button"
+                className="c26-theme-toggle-btn c26-theme-toggle-mobile"
+                onClick={() => {
+                  sound.playClick();
+                  toggleTheme();
+                }}
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                <div className="c26-theme-toggle-pill">
+                  <span className={`c26-theme-icon ${theme === 'dark' ? 'is-active' : ''}`}>
+                    <Moon size={14} />
+                  </span>
+                  <span className={`c26-theme-icon ${theme === 'light' ? 'is-active' : ''}`}>
+                    <Sun size={14} />
+                  </span>
+                </div>
+              </button>
+            </div>
 
             <div className="c26-mobile-drawer-divider" />
 

@@ -4,7 +4,8 @@
    ============================================================ */
 
 .faculty-contact-section {
-  padding: 5rem 1.5rem 4rem;
+  padding: 5rem 1.5rem 5.5rem;
+  scroll-margin-top: 90px;
   position: relative;
   background: transparent;
 }
@@ -564,7 +565,7 @@
 /* Website Developers Technical Support Card */
 .faculty-dev-support-card {
   max-width: 1140px;
-  margin: 2.5rem auto 0;
+  margin: 2.2rem auto 2.5rem;
   padding: 24px 32px;
   border-radius: 20px;
   background: #ffffff;
@@ -731,29 +732,31 @@
 
 /* Institutional Note */
 .faculty-footer-note {
-  max-width: 700px;
-  margin: 2rem auto 0;
-  padding: 12px 20px;
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding: 14px 24px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1.2px solid rgba(0, 102, 235, 0.16);
-  box-shadow: 0 4px 16px rgba(0, 50, 120, 0.05);
+  background: rgba(18, 18, 22, 0.95);
+  border: 1px solid rgba(255, 23, 68, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
   text-align: center;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .faculty-footer-note p {
-  font-size: 0.82rem;
-  color: #334155;
+  font-size: 0.85rem;
+  color: #B3B3B3;
   margin: 0;
   line-height: 1.5;
 }
 
 .faculty-footer-note strong {
-  color: #002d72;
+  color: #F5F5F5;
 }
 
 .faculty-insta-link {
-  color: #0066eb;
+  color: #FF1744;
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -762,7 +765,8 @@
 }
 
 .faculty-insta-link:hover {
-  color: #003da5;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(255, 23, 68, 0.7);
   text-decoration: underline;
 }
 

@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, IndianRupee } from 'lucide-react';
 import { sound } from '../utils/soundEffects';
 
+import { useTheme } from '../context/ThemeContext';
+
 // Curated Apple Luxury Finishes (Pacific Blue, Emerald Jade, Desert Amber, Cosmic Violet, Rose Ruby, Alpine Cyan)
 const APPLE_LUXURY_THEMES = [
   {
@@ -60,24 +62,84 @@ const APPLE_LUXURY_THEMES = [
   }
 ];
 
+const DARK_CONSORTIUM_THEMES = [
+  {
+    color: '#E5092E',
+    deep: '#F5F5F5',
+    pillBg: '#141418',
+    pillBorder: '#29292D',
+    pillText: '#FF1744',
+    btnBg: 'linear-gradient(135deg, #8B0018 0%, #E5092E 100%)',
+    glow: 'rgba(229, 9, 46, 0.35)'
+  },
+  {
+    color: '#FF1744',
+    deep: '#F5F5F5',
+    pillBg: '#141418',
+    pillBorder: '#29292D',
+    pillText: '#F5F5F5',
+    btnBg: 'linear-gradient(135deg, #E5092E 0%, #FF1744 100%)',
+    glow: 'rgba(255, 23, 68, 0.35)'
+  },
+  {
+    color: '#E5092E',
+    deep: '#F5F5F5',
+    pillBg: '#141418',
+    pillBorder: '#29292D',
+    pillText: '#FF1744',
+    btnBg: 'linear-gradient(135deg, #8B0018 0%, #E5092E 100%)',
+    glow: 'rgba(229, 9, 46, 0.4)'
+  },
+  {
+    color: '#FF1744',
+    deep: '#F5F5F5',
+    pillBg: '#141418',
+    pillBorder: '#29292D',
+    pillText: '#F5F5F5',
+    btnBg: 'linear-gradient(135deg, #E5092E 0%, #FF1744 100%)',
+    glow: 'rgba(229, 9, 46, 0.35)'
+  },
+  {
+    color: '#FF1744',
+    deep: '#F5F5F5',
+    pillBg: '#141418',
+    pillBorder: '#29292D',
+    pillText: '#FF1744',
+    btnBg: 'linear-gradient(135deg, #8B0018 0%, #FF1744 100%)',
+    glow: 'rgba(255, 23, 68, 0.4)'
+  },
+  {
+    color: '#E5092E',
+    deep: '#F5F5F5',
+    pillBg: '#141418',
+    pillBorder: '#29292D',
+    pillText: '#B3B3B3',
+    btnBg: 'linear-gradient(135deg, #8B0018 0%, #E5092E 100%)',
+    glow: 'rgba(229, 9, 46, 0.35)'
+  }
+];
+
 export default function EventBentoGrid({ events, onOpenDetails, onRegister }) {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+  const themeList = isDark ? DARK_CONSORTIUM_THEMES : APPLE_LUXURY_THEMES;
   return (
     <div className="events-pure-grid">
       {events.map((evt, index) => {
-        const theme = APPLE_LUXURY_THEMES[index % APPLE_LUXURY_THEMES.length];
+        const currentTheme = themeList[index % themeList.length];
 
         return (
           <motion.div
             key={evt.id}
             className="event-pure-card"
             style={{
-              '--evt-color': theme.color,
-              '--evt-deep': theme.deep,
-              '--evt-pill-bg': theme.pillBg,
-              '--evt-pill-border': theme.pillBorder,
-              '--evt-pill-text': theme.pillText,
-              '--evt-btn-bg': theme.btnBg,
-              '--evt-glow': theme.glow
+              '--evt-color': currentTheme.color,
+              '--evt-deep': currentTheme.deep,
+              '--evt-pill-bg': currentTheme.pillBg,
+              '--evt-pill-border': currentTheme.pillBorder,
+              '--evt-pill-text': currentTheme.pillText,
+              '--evt-btn-bg': currentTheme.btnBg,
+              '--evt-glow': currentTheme.glow
             }}
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}

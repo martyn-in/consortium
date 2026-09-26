@@ -7,10 +7,11 @@ import {
 import imgPosterPresentation from '../assets/real_poster_presentation.jpg';
 import { sound } from '../utils/soundEffects';
 import useModalHistory from '../hooks/useModalHistory';
+import { useTheme } from '../context/ThemeContext';
 import './PosterPresentationModal.css';
 
 const POSTER_REGISTER_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSchaK7ITyJpLmpnR5xrP4tqj3GlPk9i2JV6PJW8qpLbvlap0A/viewform?usp=sharing&ouid=107083885521705451845';
+  'https://docs.google.com/forms/d/e/1FAIpQLSfi32OWJxH5_jxUXHI8V0K2Z2_Knx3VjQGEG5fzszQqC5yyFQ/viewform?usp=sharing&ouid=107083885521705451845';
 
 /* ── POSTER THEMES with real emojis & colors ─────────────── */
 const POSTER_THEMES = [
@@ -52,6 +53,9 @@ const fadeUp = {
 };
 
 export default function PosterPresentationModal({ isOpen, onClose }) {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   // Intercept mobile browser (Chrome/Android) back button to close modal instead of leaving the site
   useModalHistory(isOpen, onClose, 'poster_presentation');
 
@@ -84,7 +88,7 @@ export default function PosterPresentationModal({ isOpen, onClose }) {
           transition={{ duration: 0.15 }}
         >
           <motion.div
-            className="pm-split-container"
+            className={`pm-split-container ${isDark ? 'pm-theme-dark' : ''}`}
             onClick={(e) => e.stopPropagation()}
             initial={{ opacity: 0, scale: 0.98, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}

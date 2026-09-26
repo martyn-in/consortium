@@ -8,6 +8,7 @@ import {
 import { paperPresentationDepartments } from '../data/eventsData';
 import { sound } from '../utils/soundEffects';
 import useModalHistory from '../hooks/useModalHistory';
+import { useTheme } from '../context/ThemeContext';
 import './EventDetailModal.css';
 
 const GOOGLE_FORM_URL = 'https://forms.gle/consortium2026';
@@ -20,6 +21,16 @@ const UNIFIED_MODAL_THEME = {
   rightBg: '#ffffff',
   glow: 'rgba(0, 102, 235, 0.08)',
   border: 'rgba(0, 87, 217, 0.12)'
+};
+
+const UNIFIED_DARK_MODAL_THEME = {
+  accent: '#E5092E',
+  accent2: '#FF1744',
+  bg: '#0E0E10',
+  leftBg: 'linear-gradient(180deg, #141418 0%, #0E0E10 100%)',
+  rightBg: '#0E0E10',
+  glow: 'rgba(229, 9, 46, 0.25)',
+  border: '#29292D'
 };
 
 const EVENT_MODAL_THEMES = {
@@ -127,7 +138,7 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
   }
 
   const event = propEvent || cachedEvent;
-  const [openPaperDept, setOpenPaperDept] = useState('it');
+  const [openPaperDept, setOpenPaperDept] = useState(null);
 
   // Intercept mobile browser (Chrome/Android) back button to close modal instead of leaving the site
   useModalHistory(isOpen, onClose, event?.id ? `event_${event.id}` : 'event_detail');
@@ -146,11 +157,16 @@ export default function EventDetailModal({ event: propEvent, isOpen, onClose, on
     };
   }, [isOpen, onClose]);
 
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
   const isPaperPresentation = event?.id === 'paper-presentation';
-  const modalTheme = (event && EVENT_MODAL_THEMES[event.id]) || { 
+  const rawModalTheme = (event && EVENT_MODAL_THEMES[event.id]) || { 
     ...UNIFIED_MODAL_THEME,
     deptCode: 'C26'
   };
+  const modalTheme = isDark
+    ? { ...rawModalTheme, ...UNIFIED_DARK_MODAL_THEME }
+    : rawModalTheme;
 
   const handleRegister = () => {
     sound.playSuccess();

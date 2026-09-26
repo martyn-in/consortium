@@ -7,11 +7,11 @@ const pillars = [
     emoji: '⚔️',
     title: 'COMPETE',
     desc: 'Face the finest engineering minds. Test your skill & win.',
-    accent: '#0071e3',
-    deep: '#003da5',
-    bg: 'rgba(240, 247, 255, 0.95)',
-    border: 'rgba(0, 113, 227, 0.28)',
-    glow: 'rgba(0, 113, 227, 0.18)'
+    accent: '#E5092E',
+    deep: '#8B0018',
+    bg: 'rgba(255, 241, 242, 0.95)',
+    border: 'rgba(229, 9, 46, 0.28)',
+    glow: 'rgba(229, 9, 46, 0.18)'
   },
   {
     emoji: '💡',

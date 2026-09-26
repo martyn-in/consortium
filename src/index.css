@@ -71,12 +71,25 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 85px;
-  color-scheme: light !important;
-  background-color: #ffffff !important;
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Light Mode Locked */
+:root,
+[data-theme="light"],
+.light-mode {
+  color-scheme: light;
+}
+
+html[data-theme="light"],
+html.light-mode,
+body[data-theme="light"],
+body.light-mode {
+  color-scheme: light !important;
+  background-color: #ffffff !important;
 }
 
 section[id] {
@@ -84,7 +97,7 @@ section[id] {
 }
 
 body {
-  background-color: #ffffff !important;
+  background-color: #ffffff;
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.65;
@@ -96,10 +109,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
-  background-color: #ffffff;
+  background-color: transparent;
   min-height: 100vh;
   min-height: 100dvh;
   width: 100%;
