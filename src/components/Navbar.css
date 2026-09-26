@@ -480,41 +480,97 @@
     padding: 0.45rem 0.85rem;
   }
 
+  .c26-navbar-inner {
+    gap: 0.6rem;
+  }
+
+  .c26-nav-right-actions {
+    gap: 0.45rem;
+  }
+
+  .c26-brand-wordmark-editorial {
+    font-size: 1.02rem !important;
+    letter-spacing: 0.08em !important;
+  }
+
   .c26-nav-countdown-hud {
-    padding: 4px 10px;
+    padding: 4px 8px;
+    gap: 6px;
   }
 
   .c26-nav-countdown-digit {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
+  }
+
+  .c26-nav-countdown-unit {
+    font-size: 0.58rem;
   }
 }
 
 @media (max-width: 520px) {
   .c26-navbar-header {
     top: 0;
-    padding: 0.4rem 0.75rem;
+    padding: 0.38rem 0.6rem;
+  }
+
+  .c26-navbar-inner {
+    gap: 0.4rem;
   }
 
   .c26-brand-logo-img {
-    height: 30px;
+    height: 28px;
+  }
+
+  .c26-brand-editorial-lockup {
+    gap: 0.35rem;
+  }
+
+  .c26-brand-wordmark-editorial {
+    font-size: 0.88rem !important;
+    letter-spacing: 0.06em !important;
+  }
+
+  .c26-brand-red-c svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .c26-nav-right-actions {
+    gap: 0.35rem;
   }
 
   .c26-nav-countdown-hud {
-    padding: 3px 8px;
-    gap: 5px;
+    padding: 3px 6px;
+    gap: 3.5px;
+  }
+
+  .c26-nav-countdown-clock {
+    display: none;
   }
 
   .c26-nav-countdown-digit {
-    font-size: 0.74rem;
-    min-width: 1.55ch;
+    font-size: 0.72rem;
+    min-width: 1.5ch;
   }
 
-  .c26-nav-countdown-unit-short {
-    font-size: 0.52rem;
+  .c26-nav-countdown-unit {
+    font-size: 0.5rem;
+  }
+
+  .c26-nav-countdown-divider {
+    font-size: 0.72rem;
   }
 
   .c26-nav-countdown-track {
-    gap: 3px;
+    gap: 2.5px;
+  }
+
+  .c26-theme-toggle-btn {
+    padding: 2px;
+  }
+
+  .c26-mobile-menu-toggle {
+    padding: 0.25rem;
   }
 }
 
